@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package media;
+
+service MediaService {
+
+  rpc CompressImage(ImageRequest)
+      returns (ImageResponse);
+
+  rpc GenerateThumbnail(VideoRequest)
+      returns (ThumbnailResponse);
+
+  rpc CompressVideo(VideoRequest)
+      returns (VideoResponse);
+
+}
+
+message ImageRequest {
+  string imagePath = 1;
+}
+
+message ImageResponse {
+  string outputPath = 1;
+}
+
+message VideoRequest {
+  string videoPath = 1;
+}
+
+message ThumbnailResponse {
+  string thumbnailPath = 1;
+}
+
+message VideoResponse {
+  string outputPath = 1;
+}
