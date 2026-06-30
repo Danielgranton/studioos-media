@@ -1,0 +1,3 @@
+/home/linux/Documents/studioos-media/build/CMakeFiles/studioos-media.dir
+/home/linux/Documents/studioos-media/build/CMakeFiles/edit_cache.dir
+/home/linux/Documents/studioos-media/build/CMakeFiles/rebuild_cache.dir
