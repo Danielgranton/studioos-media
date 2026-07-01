@@ -2,12 +2,18 @@
 
 #include <string>
 
-class VideoService {
-    public:
-        std::string compress(const std::string& path);
+#include "core/Result.hpp"
+#include "media/VideoProcessor.hpp"
 
-        std::string thumbnail(const std::string& path);
+class VideoService
+{
+public:
+    Result<std::string> compress(const std::string& path);
 
-        std::string extractAudio(const std::string& path);
+    Result<std::string> thumbnail(const std::string& path);
 
+    Result<std::string> extractAudio(const std::string& path);
+
+private:
+    VideoProcessor processor;
 };

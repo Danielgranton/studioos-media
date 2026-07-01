@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/linux/Documents/studioos-media/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -129,6 +139,32 @@ studioos-media/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/build
 .PHONY : studioos-media/fast
 
+#=============================================================================
+# Target rules for targets named video-processor-test
+
+# Build rule for target.
+video-processor-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 video-processor-test
+.PHONY : video-processor-test
+
+# fast build rule for target.
+video-processor-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/build
+.PHONY : video-processor-test/fast
+
+#=============================================================================
+# Target rules for targets named image-processor-test
+
+# Build rule for target.
+image-processor-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image-processor-test
+.PHONY : image-processor-test
+
+# fast build rule for target.
+image-processor-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/build
+.PHONY : image-processor-test/fast
+
 generated/media.grpc.pb.o: generated/media.grpc.pb.cc.o
 .PHONY : generated/media.grpc.pb.o
 
@@ -183,6 +219,8 @@ src/config/config.o: src/config/config.cpp.o
 # target to build an object file
 src/config/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.o
 .PHONY : src/config/config.cpp.o
 
 src/config/config.i: src/config/config.cpp.i
@@ -191,6 +229,8 @@ src/config/config.i: src/config/config.cpp.i
 # target to preprocess a source file
 src/config/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.i
 .PHONY : src/config/config.cpp.i
 
 src/config/config.s: src/config/config.cpp.s
@@ -199,6 +239,8 @@ src/config/config.s: src/config/config.cpp.s
 # target to generate assembly for a file
 src/config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.s
 .PHONY : src/config/config.cpp.s
 
 src/grpc/MediaServer.o: src/grpc/MediaServer.cpp.o
@@ -255,6 +297,7 @@ src/media/ImageProcessor.o: src/media/ImageProcessor.cpp.o
 # target to build an object file
 src/media/ImageProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.o
 .PHONY : src/media/ImageProcessor.cpp.o
 
 src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
@@ -263,6 +306,7 @@ src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
 # target to preprocess a source file
 src/media/ImageProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.i
 .PHONY : src/media/ImageProcessor.cpp.i
 
 src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
@@ -271,6 +315,7 @@ src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
 # target to generate assembly for a file
 src/media/ImageProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.s
 .PHONY : src/media/ImageProcessor.cpp.s
 
 src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
@@ -279,6 +324,7 @@ src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
 # target to build an object file
 src/media/VideoProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o
 .PHONY : src/media/VideoProcessor.cpp.o
 
 src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
@@ -287,6 +333,7 @@ src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
 # target to preprocess a source file
 src/media/VideoProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.i
 .PHONY : src/media/VideoProcessor.cpp.i
 
 src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
@@ -295,6 +342,7 @@ src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
 # target to generate assembly for a file
 src/media/VideoProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.s
 .PHONY : src/media/VideoProcessor.cpp.s
 
 src/services/AdService.o: src/services/AdService.cpp.o
@@ -399,6 +447,7 @@ src/services/VideoService.o: src/services/VideoService.cpp.o
 # target to build an object file
 src/services/VideoService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o
 .PHONY : src/services/VideoService.cpp.o
 
 src/services/VideoService.i: src/services/VideoService.cpp.i
@@ -407,6 +456,7 @@ src/services/VideoService.i: src/services/VideoService.cpp.i
 # target to preprocess a source file
 src/services/VideoService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.i
 .PHONY : src/services/VideoService.cpp.i
 
 src/services/VideoService.s: src/services/VideoService.cpp.s
@@ -415,7 +465,38 @@ src/services/VideoService.s: src/services/VideoService.cpp.s
 # target to generate assembly for a file
 src/services/VideoService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.s
 .PHONY : src/services/VideoService.cpp.s
+
+src/utils/FileUtils.o: src/utils/FileUtils.cpp.o
+.PHONY : src/utils/FileUtils.o
+
+# target to build an object file
+src/utils/FileUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.o
+.PHONY : src/utils/FileUtils.cpp.o
+
+src/utils/FileUtils.i: src/utils/FileUtils.cpp.i
+.PHONY : src/utils/FileUtils.i
+
+# target to preprocess a source file
+src/utils/FileUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.i
+.PHONY : src/utils/FileUtils.cpp.i
+
+src/utils/FileUtils.s: src/utils/FileUtils.cpp.s
+.PHONY : src/utils/FileUtils.s
+
+# target to generate assembly for a file
+src/utils/FileUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.s
+.PHONY : src/utils/FileUtils.cpp.s
 
 src/utils/Logger.o: src/utils/Logger.cpp.o
 .PHONY : src/utils/Logger.o
@@ -423,6 +504,8 @@ src/utils/Logger.o: src/utils/Logger.cpp.o
 # target to build an object file
 src/utils/Logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.o
 .PHONY : src/utils/Logger.cpp.o
 
 src/utils/Logger.i: src/utils/Logger.cpp.i
@@ -431,6 +514,8 @@ src/utils/Logger.i: src/utils/Logger.cpp.i
 # target to preprocess a source file
 src/utils/Logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.i
 .PHONY : src/utils/Logger.cpp.i
 
 src/utils/Logger.s: src/utils/Logger.cpp.s
@@ -439,7 +524,87 @@ src/utils/Logger.s: src/utils/Logger.cpp.s
 # target to generate assembly for a file
 src/utils/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.s
 .PHONY : src/utils/Logger.cpp.s
+
+src/utils/Timer.o: src/utils/Timer.cpp.o
+.PHONY : src/utils/Timer.o
+
+# target to build an object file
+src/utils/Timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.o
+.PHONY : src/utils/Timer.cpp.o
+
+src/utils/Timer.i: src/utils/Timer.cpp.i
+.PHONY : src/utils/Timer.i
+
+# target to preprocess a source file
+src/utils/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.i
+.PHONY : src/utils/Timer.cpp.i
+
+src/utils/Timer.s: src/utils/Timer.cpp.s
+.PHONY : src/utils/Timer.s
+
+# target to generate assembly for a file
+src/utils/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.s
+.PHONY : src/utils/Timer.cpp.s
+
+tests/image_processor_test.o: tests/image_processor_test.cpp.o
+.PHONY : tests/image_processor_test.o
+
+# target to build an object file
+tests/image_processor_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/tests/image_processor_test.cpp.o
+.PHONY : tests/image_processor_test.cpp.o
+
+tests/image_processor_test.i: tests/image_processor_test.cpp.i
+.PHONY : tests/image_processor_test.i
+
+# target to preprocess a source file
+tests/image_processor_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/tests/image_processor_test.cpp.i
+.PHONY : tests/image_processor_test.cpp.i
+
+tests/image_processor_test.s: tests/image_processor_test.cpp.s
+.PHONY : tests/image_processor_test.s
+
+# target to generate assembly for a file
+tests/image_processor_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/tests/image_processor_test.cpp.s
+.PHONY : tests/image_processor_test.cpp.s
+
+tests/video_processor_test.o: tests/video_processor_test.cpp.o
+.PHONY : tests/video_processor_test.o
+
+# target to build an object file
+tests/video_processor_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/tests/video_processor_test.cpp.o
+.PHONY : tests/video_processor_test.cpp.o
+
+tests/video_processor_test.i: tests/video_processor_test.cpp.i
+.PHONY : tests/video_processor_test.i
+
+# target to preprocess a source file
+tests/video_processor_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/tests/video_processor_test.cpp.i
+.PHONY : tests/video_processor_test.cpp.i
+
+tests/video_processor_test.s: tests/video_processor_test.cpp.s
+.PHONY : tests/video_processor_test.s
+
+# target to generate assembly for a file
+tests/video_processor_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/tests/video_processor_test.cpp.s
+.PHONY : tests/video_processor_test.cpp.s
 
 # Help Target
 help:
@@ -449,7 +614,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... image-processor-test"
 	@echo "... studioos-media"
+	@echo "... video-processor-test"
 	@echo "... generated/media.grpc.pb.o"
 	@echo "... generated/media.grpc.pb.i"
 	@echo "... generated/media.grpc.pb.s"
@@ -486,9 +654,21 @@ help:
 	@echo "... src/services/VideoService.o"
 	@echo "... src/services/VideoService.i"
 	@echo "... src/services/VideoService.s"
+	@echo "... src/utils/FileUtils.o"
+	@echo "... src/utils/FileUtils.i"
+	@echo "... src/utils/FileUtils.s"
 	@echo "... src/utils/Logger.o"
 	@echo "... src/utils/Logger.i"
 	@echo "... src/utils/Logger.s"
+	@echo "... src/utils/Timer.o"
+	@echo "... src/utils/Timer.i"
+	@echo "... src/utils/Timer.s"
+	@echo "... tests/image_processor_test.o"
+	@echo "... tests/image_processor_test.i"
+	@echo "... tests/image_processor_test.s"
+	@echo "... tests/video_processor_test.o"
+	@echo "... tests/video_processor_test.i"
+	@echo "... tests/video_processor_test.s"
 .PHONY : help
 
 

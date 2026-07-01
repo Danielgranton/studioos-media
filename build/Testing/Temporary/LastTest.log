@@ -1,0 +1,47 @@
+Start testing: Jul 01 18:34 EAT
+----------------------------------------------------------
+1/2 Testing: video-processor-test
+1/2 Test: video-processor-test
+Command: "/home/linux/Documents/studioos-media/build/video-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"video-processor-test" start time: Jul 01 18:34 EAT
+Output:
+----------------------------------------------------------
+2026-07-01 18:34:09[INFO]Compressing video: temp/tests/sample.mp4
+2026-07-01 18:34:09[INFO]Video compression completed in 0 ms
+2026-07-01 18:34:09[INFO]Generating thumbnail: temp/tests/sample.mp4
+2026-07-01 18:34:09[INFO]Thumbnail generation completed in 0 ms
+2026-07-01 18:34:09[INFO]Extracting audio: temp/tests/sample.mp4
+2026-07-01 18:34:09[INFO]Audio extraction completed in 0 ms
+video processor smoke test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"video-processor-test" end time: Jul 01 18:34 EAT
+"video-processor-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: image-processor-test
+2/2 Test: image-processor-test
+Command: "/home/linux/Documents/studioos-media/build/image-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"image-processor-test" start time: Jul 01 18:34 EAT
+Output:
+----------------------------------------------------------
+2026-07-01 18:34:09[INFO]Compressing image: temp/tests/sample.jpg
+2026-07-01 18:34:09[INFO]Compression completed in 0 ms
+2026-07-01 18:34:09[INFO]Resizing image: temp/tests/sample.jpg
+2026-07-01 18:34:09[INFO]Resize completed in 0 ms
+2026-07-01 18:34:09[INFO]Resizing image: temp/tests/sample.jpg
+2026-07-01 18:34:09[INFO]Resize completed in 8 ms
+image processor smoke test passed
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"image-processor-test" end time: Jul 01 18:34 EAT
+"image-processor-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 01 18:34 EAT

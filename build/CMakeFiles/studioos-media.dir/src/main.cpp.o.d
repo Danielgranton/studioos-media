@@ -386,7 +386,7 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/grpcpp/impl/server_builder_plugin.h \
  /usr/include/grpcpp/security/authorization_policy_provider.h \
  /usr/include/grpcpp/server_posix.h /usr/include/grpcpp/version_info.h \
- /home/linux/Documents/studioos-media/src/server/MediaServer.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/MediaServer.hpp \
  /home/linux/Documents/studioos-media/generated/media.grpc.pb.h \
  /home/linux/Documents/studioos-media/generated/media.pb.h \
  /usr/include/google/protobuf/port_def.inc \
@@ -410,6 +410,12 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/google/protobuf/arenaz_sampler.h \
  /usr/include/google/protobuf/arenastring.h \
  /usr/include/google/protobuf/explicitly_constructed.h \
+ /usr/include/google/protobuf/generated_message_bases.h \
+ /usr/include/google/protobuf/io/zero_copy_stream_impl.h \
+ /usr/include/google/protobuf/io/zero_copy_stream.h \
+ /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
+ /usr/include/google/protobuf/stubs/callback.h \
+ /usr/include/google/protobuf/stubs/stl_util.h \
  /usr/include/google/protobuf/generated_message_util.h \
  /usr/include/google/protobuf/stubs/once.h \
  /usr/include/google/protobuf/any.h \
@@ -421,20 +427,16 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/google/protobuf/repeated_ptr_field.h \
  /usr/include/google/protobuf/wire_format_lite.h \
  /usr/include/google/protobuf/stubs/casts.h \
- /usr/include/google/protobuf/generated_message_reflection.h \
+ /usr/include/google/protobuf/message.h \
  /usr/include/google/protobuf/descriptor.h \
  /usr/include/google/protobuf/stubs/mutex.h \
+ /usr/include/google/protobuf/generated_message_reflection.h \
  /usr/include/google/protobuf/generated_enum_reflection.h \
  /usr/include/google/protobuf/generated_enum_util.h \
  /usr/include/google/protobuf/unknown_field_set.h \
- /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
- /usr/include/google/protobuf/stubs/callback.h \
- /usr/include/google/protobuf/io/zero_copy_stream.h \
- /usr/include/google/protobuf/stubs/stl_util.h \
  /usr/include/google/protobuf/parse_context.h \
  /usr/include/google/protobuf/endian.h \
  /usr/include/google/protobuf/inlined_string_field.h \
- /usr/include/google/protobuf/message.h \
  /usr/include/google/protobuf/map.h \
  /usr/include/google/protobuf/map_type_handler.h \
  /usr/include/google/protobuf/extension_set.h \
@@ -465,4 +467,16 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/grpcpp/impl/codegen/proto_buffer_writer.h \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
- /usr/include/grpcpp/support/stub_options.h
+ /usr/include/grpcpp/support/stub_options.h \
+ /home/linux/Documents/studioos-media/src/grpc/../services/ImageService.hpp \
+ /home/linux/Documents/studioos-media/src/core/Result.hpp \
+ /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
+ /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/../services/VideoService.hpp \
+ /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
+ /home/linux/Documents/studioos-media/src/config/config.hpp \
+ /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp \
+ /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \
+ /usr/include/c++/15/bits/fs_path.h /usr/include/c++/15/codecvt \
+ /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
+ /home/linux/Documents/studioos-media/src/utils/Logger.hpp

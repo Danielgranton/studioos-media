@@ -1,27 +1,33 @@
 #include "ImageProcessor.hpp"
 
 #include <opencv2/opencv.hpp>
-#include <filesystem>
 #include <vector>
 
-namespace fs = std::filesystem;
+#include "config/config.hpp"
+#include "utils/FileUtils.hpp"
+#include "utils/Logger.hpp"
+#include "utils/Timer.hpp"
 
-std::string ImageProcessor::compress(
+Result<std::string> ImageProcessor::compress(
     const std::string& inputPath,
     int quality)
 {
+    Timer timer;
+    Logger::info("Compressing image: " + inputPath);
+
     cv::Mat image = cv::imread(inputPath);
 
     if (image.empty())
     {
-        return "";
+        return Result<std::string>::fail(
+            "Unable to load image",
+            StatusCode::FILE_NOT_FOUND
+        );
     }
 
-    fs::path path(inputPath);
-
-    std::string output =
-        "temp/compressed_" +
-        path.filename().string();
+    const std::string output =
+        Config::instance().tempFolder() + "/compressed_" +
+        FileUtils::filename(inputPath);
 
     std::vector<int> params =
     {
@@ -29,21 +35,34 @@ std::string ImageProcessor::compress(
         quality
     };
 
-    cv::imwrite(output, image, params);
+    if (!cv::imwrite(output, image, params))
+    {
+        Logger::error("Image compression failed for " + inputPath);
+        return Result<std::string>::fail(
+            "Failed to write compressed image"
+        );
+    }
 
-    return output;
+    Logger::info("Compression completed in " + std::to_string(timer.elapsedMilliseconds()) + " ms");
+    return Result<std::string>::ok(output);
 }
 
-std::string ImageProcessor::resize(
+Result<std::string> ImageProcessor::resize(
     const std::string& inputPath,
     int width,
     int height)
 {
+    Timer timer;
+    Logger::info("Resizing image: " + inputPath);
+
     cv::Mat image = cv::imread(inputPath);
 
     if (image.empty())
     {
-        return "";
+        return Result<std::string>::fail(
+            "Unable to load image",
+            StatusCode::FILE_NOT_FOUND
+        );
     }
 
     cv::Mat resized;
@@ -54,18 +73,23 @@ std::string ImageProcessor::resize(
         cv::Size(width, height)
     );
 
-    fs::path path(inputPath);
+    const std::string output =
+        Config::instance().tempFolder() + "/resized_" +
+        FileUtils::filename(inputPath);
 
-    std::string output =
-        "temp/resized_" +
-        path.filename().string();
+    if (!cv::imwrite(output, resized))
+    {
+        Logger::error("Image resize failed for " + inputPath);
+        return Result<std::string>::fail(
+            "Failed to save resized image"
+        );
+    }
 
-    cv::imwrite(output, resized);
-
-    return output;
+    Logger::info("Resize completed in " + std::to_string(timer.elapsedMilliseconds()) + " ms");
+    return Result<std::string>::ok(output);
 }
 
-std::string ImageProcessor::thumbnail(
+Result<std::string> ImageProcessor::thumbnail(
     const std::string& inputPath,
     int size)
 {

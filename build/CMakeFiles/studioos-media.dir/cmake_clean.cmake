@@ -24,8 +24,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o.d"
   "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o"
   "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o.d"
+  "CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o"
+  "CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o.d"
   "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o"
   "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o.d"
+  "CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o"
+  "CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o.d"
   "studioos-media"
   "studioos-media.pdb"
 )

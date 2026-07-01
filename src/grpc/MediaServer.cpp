@@ -14,9 +14,16 @@ grpc::Status MediaServer::CompressImage(
     const media::ImageRequest* request,
     media::ImageResponse* response)
 {
-    response->set_outputpath(
-        imageService.compress(request->imagepath())
-    );
+    auto result = imageService.compress(request->imagepath());
+
+    if (!result.success)
+    {
+        return grpc::Status(
+            grpc::StatusCode::NOT_FOUND,
+            result.message.empty() ? "Image compression failed" : result.message);
+    }
+
+    response->set_outputpath(result.value);
 
     return grpc::Status::OK;
 }
@@ -26,9 +33,16 @@ grpc::Status MediaServer::CompressVideo(
     const media::VideoRequest* request,
     media::VideoResponse* response)
 {
-    response->set_outputpath(
-        videoService.compress(request->videopath())
-    );
+    auto result = videoService.compress(request->videopath());
+
+    if (!result.success)
+    {
+        return grpc::Status(
+            grpc::StatusCode::NOT_FOUND,
+            result.message.empty() ? "Video compression failed" : result.message);
+    }
+
+    response->set_outputpath(result.value);
 
     return grpc::Status::OK;
 }
@@ -38,9 +52,16 @@ grpc::Status MediaServer::GenerateThumbnail(
     const media::VideoRequest* request,
     media::ThumbnailResponse* response)
 {
-    response->set_thumbnailpath(
-        videoService.thumbnail(request->videopath())
-    );
+    auto result = videoService.thumbnail(request->videopath());
+
+    if (!result.success)
+    {
+        return grpc::Status(
+            grpc::StatusCode::NOT_FOUND,
+            result.message.empty() ? "Thumbnail generation failed" : result.message);
+    }
+
+    response->set_thumbnailpath(result.value);
 
     return grpc::Status::OK;
 }
@@ -50,9 +71,16 @@ grpc::Status MediaServer::ExtractAudio(
     const media::VideoRequest* request,
     media::AudioResponse* response)
 {
-    response->set_audiopath(
-        videoService.extractAudio(request->videopath())
-    );
+    auto result = videoService.extractAudio(request->videopath());
+
+    if (!result.success)
+    {
+        return grpc::Status(
+            grpc::StatusCode::NOT_FOUND,
+            result.message.empty() ? "Audio extraction failed" : result.message);
+    }
+
+    response->set_audiopath(result.value);
 
     return grpc::Status::OK;
 }

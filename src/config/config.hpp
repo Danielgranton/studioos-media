@@ -6,14 +6,13 @@ class Config {
 public:
     static Config& instance();
 
-    bool load(const std::string& filename);
+    bool load(const std::string& filename = "config/config.json");
+    bool save(const std::string& filename = "config/config.json") const;
+    bool reload(const std::string& filename = "config/config.json");
 
     int grpcPort() const;
-
     const std::string& tempFolder() const;
-
     const std::string& assetsFolder() const;
-
     int imageQuality() const;
 
 private:

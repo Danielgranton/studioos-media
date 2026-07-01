@@ -28,6 +28,8 @@ add_executable(
     src/services/AdService.cpp
     src/config/config.cpp
     src/utils/Logger.cpp
+    src/utils/FileUtils.cpp
+    src/utils/Timer.cpp
     )
 
 target_link_libraries(
@@ -47,3 +49,60 @@ target_include_directories(
         config
         ${OpenCV_INCLUDE_DIRS}
 )
+
+add_executable(
+    video-processor-test
+    tests/video_processor_test.cpp
+    src/media/VideoProcessor.cpp
+    src/services/VideoService.cpp
+    src/config/config.cpp
+    src/utils/FileUtils.cpp
+    src/utils/Timer.cpp
+    src/utils/Logger.cpp
+)
+
+target_link_libraries(
+    video-processor-test
+    PRIVATE
+        ${OpenCV_LIBS}
+        nlohmann_json::nlohmann_json
+)
+
+target_include_directories(
+    video-processor-test
+    PRIVATE
+        src
+        generated
+        config
+        ${OpenCV_INCLUDE_DIRS}
+)
+
+add_executable(
+    image-processor-test
+    tests/image_processor_test.cpp
+    src/media/ImageProcessor.cpp
+    src/config/config.cpp
+    src/utils/FileUtils.cpp
+    src/utils/Timer.cpp
+    src/utils/Logger.cpp
+)
+
+target_link_libraries(
+    image-processor-test
+    PRIVATE
+        ${OpenCV_LIBS}
+        nlohmann_json::nlohmann_json
+)
+
+target_include_directories(
+    image-processor-test
+    PRIVATE
+        src
+        generated
+        config
+        ${OpenCV_INCLUDE_DIRS}
+)
+
+enable_testing()
+add_test(NAME video-processor-test COMMAND video-processor-test)
+add_test(NAME image-processor-test COMMAND image-processor-test)

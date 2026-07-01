@@ -20,7 +20,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/linux/Documents/studioos-media/src/services/ImageService.cpp" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/StreamingService.cpp" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/VideoService.cpp" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/utils/FileUtils.cpp" "CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/utils/Logger.cpp" "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/utils/Timer.cpp" "CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o.d"
   "" "studioos-media" "gcc" "CMakeFiles/studioos-media.dir/link.d"
   )
 

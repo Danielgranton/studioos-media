@@ -89,4 +89,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/studioos-media.dir/DependInfo.cmake"
+  "CMakeFiles/video-processor-test.dir/DependInfo.cmake"
+  "CMakeFiles/image-processor-test.dir/DependInfo.cmake"
   )

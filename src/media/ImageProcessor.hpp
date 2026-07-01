@@ -1,26 +1,27 @@
 #pragma once
 
 #include <string>
+#include "core/Result.hpp"
 
 class ImageProcessor
 {
 public:
 
     // Compress an image
-    std::string compress(
+    Result<std::string> compress(
         const std::string& inputPath,
         int quality = 85
     );
 
     // Resize an image
-    std::string resize(
+    Result<std::string> resize(
         const std::string& inputPath,
         int width,
         int height
     );
 
     // Generate a thumbnail
-    std::string thumbnail(
+    Result<std::string> thumbnail(
         const std::string& inputPath,
         int size = 300
     );

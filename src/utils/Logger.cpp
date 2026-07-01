@@ -1,29 +1,38 @@
 #include "Logger.hpp"
 
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 #include <iostream>
+#include <sstream>
+
+namespace
+{
+std::string timestamp()
+{
+    const auto now = std::chrono::system_clock::now();
+    const std::time_t time = std::chrono::system_clock::to_time_t(now);
+    std::tm tm{};
+    localtime_r(&time, &tm);
+
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S");
+    return oss.str();
+}
+}
 
 void Logger::log(LogLevel level, const std::string& message)
 {
-    switch(level)
+    const char* levelName = "[INFO]";
+    switch (level)
     {
-        case LogLevel::INFO:
-            std::cout << "[INFO] ";
-            break;
-
-        case LogLevel::WARNING:
-            std::cout << "[WARNING] ";
-            break;
-
-        case LogLevel::ERROR:
-            std::cout << "[ERROR] ";
-            break;
-
-        case LogLevel::DEBUG:
-            std::cout << "[DEBUG] ";
-            break;
+        case LogLevel::WARNING: levelName = "[WARN]"; break;
+        case LogLevel::ERROR: levelName = "[ERROR]"; break;
+        case LogLevel::DEBUG: levelName = "[DEBUG]"; break;
+        default: break;
     }
 
-    std::cout << message << std::endl;
+    std::cout << timestamp() << levelName << message << std::endl;
 }
 
 void Logger::info(const std::string& message)
