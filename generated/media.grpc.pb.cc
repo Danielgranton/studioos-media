@@ -22,9 +22,11 @@
 namespace media {
 
 static const char* MediaService_method_names[] = {
+  "/media.MediaService/Health",
   "/media.MediaService/CompressImage",
-  "/media.MediaService/GenerateThumbnail",
   "/media.MediaService/CompressVideo",
+  "/media.MediaService/GenerateThumbnail",
+  "/media.MediaService/ExtractAudio",
 };
 
 std::unique_ptr< MediaService::Stub> MediaService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -34,10 +36,35 @@ std::unique_ptr< MediaService::Stub> MediaService::NewStub(const std::shared_ptr
 }
 
 MediaService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_CompressImage_(MediaService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GenerateThumbnail_(MediaService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_Health_(MediaService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CompressImage_(MediaService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CompressVideo_(MediaService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GenerateThumbnail_(MediaService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ExtractAudio_(MediaService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
+
+::grpc::Status MediaService::Stub::Health(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::media::HealthResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::HealthRequest, ::media::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Health_, context, request, response);
+}
+
+void MediaService::Stub::async::Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::HealthRequest, ::media::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Health_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::HealthResponse>* MediaService::Stub::PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::HealthResponse, ::media::HealthRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Health_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::HealthResponse>* MediaService::Stub::AsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncHealthRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
 ::grpc::Status MediaService::Stub::CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::media::ImageResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::media::ImageRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CompressImage_, context, request, response);
@@ -58,29 +85,6 @@ void MediaService::Stub::async::CompressImage(::grpc::ClientContext* context, co
 ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::AsyncCompressImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCompressImageRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status MediaService::Stub::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GenerateThumbnail_, context, request, response);
-}
-
-void MediaService::Stub::async::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GenerateThumbnail_, context, request, response, std::move(f));
-}
-
-void MediaService::Stub::async::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GenerateThumbnail_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* MediaService::Stub::PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::ThumbnailResponse, ::media::VideoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GenerateThumbnail_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* MediaService::Stub::AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGenerateThumbnailRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -108,9 +112,65 @@ void MediaService::Stub::async::CompressVideo(::grpc::ClientContext* context, co
   return result;
 }
 
+::grpc::Status MediaService::Stub::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GenerateThumbnail_, context, request, response);
+}
+
+void MediaService::Stub::async::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GenerateThumbnail_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GenerateThumbnail_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* MediaService::Stub::PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::ThumbnailResponse, ::media::VideoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GenerateThumbnail_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* MediaService::Stub::AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGenerateThumbnailRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::VideoRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ExtractAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::VideoRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ExtractAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ExtractAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::VideoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ExtractAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncExtractAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 MediaService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::HealthRequest, ::media::HealthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::HealthRequest* req,
+             ::media::HealthResponse* resp) {
+               return service->Health(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::ImageRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -118,16 +178,6 @@ MediaService::Service::Service() {
              const ::media::ImageRequest* req,
              ::media::ImageResponse* resp) {
                return service->CompressImage(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MediaService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::media::VideoRequest* req,
-             ::media::ThumbnailResponse* resp) {
-               return service->GenerateThumbnail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[2],
@@ -139,12 +189,46 @@ MediaService::Service::Service() {
              ::media::VideoResponse* resp) {
                return service->CompressVideo(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoRequest, ::media::ThumbnailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::VideoRequest* req,
+             ::media::ThumbnailResponse* resp) {
+               return service->GenerateThumbnail(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::VideoRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->ExtractAudio(ctx, req, resp);
+             }, this)));
 }
 
 MediaService::Service::~Service() {
 }
 
+::grpc::Status MediaService::Service::Health(::grpc::ServerContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status MediaService::Service::CompressImage(::grpc::ServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::CompressVideo(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -158,7 +242,7 @@ MediaService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MediaService::Service::CompressVideo(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response) {
+::grpc::Status MediaService::Service::ExtractAudio(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response) {
   (void) context;
   (void) request;
   (void) response;

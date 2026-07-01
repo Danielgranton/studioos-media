@@ -1,11 +1,17 @@
 #include <iostream>
 #include <grpcpp/grpcpp.h>
-#include "server/MediaServer.hpp"
+#include "grpc/MediaServer.hpp"
+#include "config/Config.hpp"
 
 using grpc::Server;
 using grpc::ServerBuilder;
 
 int main() {
+
+    if(!Config::instance().load("config/config.json"))
+    {
+        return 1;
+    }
 
     MediaServer service;
 

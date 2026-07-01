@@ -21,6 +21,30 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace media {
+PROTOBUF_CONSTEXPR HealthRequest::HealthRequest(
+    ::_pbi::ConstantInitialized) {}
+struct HealthRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HealthRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~HealthRequestDefaultTypeInternal() {}
+  union {
+    HealthRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
+PROTOBUF_CONSTEXPR HealthResponse::HealthResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct HealthResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HealthResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~HealthResponseDefaultTypeInternal() {}
+  union {
+    HealthResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HealthResponseDefaultTypeInternal _HealthResponse_default_instance_;
 PROTOBUF_CONSTEXPR ImageRequest::ImageRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.imagepath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -60,19 +84,6 @@ struct VideoRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VideoRequestDefaultTypeInternal _VideoRequest_default_instance_;
-PROTOBUF_CONSTEXPR ThumbnailResponse::ThumbnailResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.thumbnailpath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ThumbnailResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ThumbnailResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ThumbnailResponseDefaultTypeInternal() {}
-  union {
-    ThumbnailResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ThumbnailResponseDefaultTypeInternal _ThumbnailResponse_default_instance_;
 PROTOBUF_CONSTEXPR VideoResponse::VideoResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.outputpath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -86,12 +97,51 @@ struct VideoResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VideoResponseDefaultTypeInternal _VideoResponse_default_instance_;
+PROTOBUF_CONSTEXPR ThumbnailResponse::ThumbnailResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.thumbnailpath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ThumbnailResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ThumbnailResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ThumbnailResponseDefaultTypeInternal() {}
+  union {
+    ThumbnailResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ThumbnailResponseDefaultTypeInternal _ThumbnailResponse_default_instance_;
+PROTOBUF_CONSTEXPR AudioResponse::AudioResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.audiopath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct AudioResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AudioResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AudioResponseDefaultTypeInternal() {}
+  union {
+    AudioResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AudioResponseDefaultTypeInternal _AudioResponse_default_instance_;
 }  // namespace media
-static ::_pb::Metadata file_level_metadata_media_2eproto[5];
+static ::_pb::Metadata file_level_metadata_media_2eproto[8];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_media_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_media_2eproto = nullptr;
 
 const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::HealthRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::HealthResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::HealthResponse, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::ImageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -114,6 +164,13 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::media::VideoRequest, _impl_.videopath_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::VideoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::VideoResponse, _impl_.outputpath_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::ThumbnailResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -121,47 +178,58 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::media::ThumbnailResponse, _impl_.thumbnailpath_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::media::VideoResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::media::AudioResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::media::VideoResponse, _impl_.outputpath_),
+  PROTOBUF_FIELD_OFFSET(::media::AudioResponse, _impl_.audiopath_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::media::ImageRequest)},
-  { 7, -1, -1, sizeof(::media::ImageResponse)},
-  { 14, -1, -1, sizeof(::media::VideoRequest)},
-  { 21, -1, -1, sizeof(::media::ThumbnailResponse)},
-  { 28, -1, -1, sizeof(::media::VideoResponse)},
+  { 0, -1, -1, sizeof(::media::HealthRequest)},
+  { 6, -1, -1, sizeof(::media::HealthResponse)},
+  { 13, -1, -1, sizeof(::media::ImageRequest)},
+  { 20, -1, -1, sizeof(::media::ImageResponse)},
+  { 27, -1, -1, sizeof(::media::VideoRequest)},
+  { 34, -1, -1, sizeof(::media::VideoResponse)},
+  { 41, -1, -1, sizeof(::media::ThumbnailResponse)},
+  { 48, -1, -1, sizeof(::media::AudioResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::media::_HealthRequest_default_instance_._instance,
+  &::media::_HealthResponse_default_instance_._instance,
   &::media::_ImageRequest_default_instance_._instance,
   &::media::_ImageResponse_default_instance_._instance,
   &::media::_VideoRequest_default_instance_._instance,
-  &::media::_ThumbnailResponse_default_instance_._instance,
   &::media::_VideoResponse_default_instance_._instance,
+  &::media::_ThumbnailResponse_default_instance_._instance,
+  &::media::_AudioResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_media_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013media.proto\022\005media\"!\n\014ImageRequest\022\021\n\t"
-  "imagePath\030\001 \001(\t\"#\n\rImageResponse\022\022\n\noutp"
-  "utPath\030\001 \001(\t\"!\n\014VideoRequest\022\021\n\tvideoPat"
-  "h\030\001 \001(\t\"*\n\021ThumbnailResponse\022\025\n\rthumbnai"
-  "lPath\030\001 \001(\t\"#\n\rVideoResponse\022\022\n\noutputPa"
-  "th\030\001 \001(\t2\312\001\n\014MediaService\022:\n\rCompressIma"
-  "ge\022\023.media.ImageRequest\032\024.media.ImageRes"
-  "ponse\022B\n\021GenerateThumbnail\022\023.media.Video"
-  "Request\032\030.media.ThumbnailResponse\022:\n\rCom"
-  "pressVideo\022\023.media.VideoRequest\032\024.media."
-  "VideoResponseb\006proto3"
+  "\n\013media.proto\022\005media\"\017\n\rHealthRequest\" \n"
+  "\016HealthResponse\022\016\n\006status\030\001 \001(\t\"!\n\014Image"
+  "Request\022\021\n\timagePath\030\001 \001(\t\"#\n\rImageRespo"
+  "nse\022\022\n\noutputPath\030\001 \001(\t\"!\n\014VideoRequest\022"
+  "\021\n\tvideoPath\030\001 \001(\t\"#\n\rVideoResponse\022\022\n\no"
+  "utputPath\030\001 \001(\t\"*\n\021ThumbnailResponse\022\025\n\r"
+  "thumbnailPath\030\001 \001(\t\"\"\n\rAudioResponse\022\021\n\t"
+  "audioPath\030\001 \001(\t2\274\002\n\014MediaService\0225\n\006Heal"
+  "th\022\024.media.HealthRequest\032\025.media.HealthR"
+  "esponse\022:\n\rCompressImage\022\023.media.ImageRe"
+  "quest\032\024.media.ImageResponse\022:\n\rCompressV"
+  "ideo\022\023.media.VideoRequest\032\024.media.VideoR"
+  "esponse\022B\n\021GenerateThumbnail\022\023.media.Vid"
+  "eoRequest\032\030.media.ThumbnailResponse\0229\n\014E"
+  "xtractAudio\022\023.media.VideoRequest\032\024.media"
+  ".AudioResponseb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_media_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_media_2eproto = {
-    false, false, 421, descriptor_table_protodef_media_2eproto,
+    false, false, 622, descriptor_table_protodef_media_2eproto,
     "media.proto",
-    &descriptor_table_media_2eproto_once, nullptr, 0, 5,
+    &descriptor_table_media_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_media_2eproto::offsets,
     file_level_metadata_media_2eproto, file_level_enum_descriptors_media_2eproto,
     file_level_service_descriptors_media_2eproto,
@@ -173,6 +241,249 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_media_2e
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_media_2eproto(&descriptor_table_media_2eproto);
 namespace media {
+
+// ===================================================================
+
+class HealthRequest::_Internal {
+ public:
+};
+
+HealthRequest::HealthRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:media.HealthRequest)
+}
+HealthRequest::HealthRequest(const HealthRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  HealthRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:media.HealthRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HealthRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HealthRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata HealthRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[0]);
+}
+
+// ===================================================================
+
+class HealthResponse::_Internal {
+ public:
+};
+
+HealthResponse::HealthResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.HealthResponse)
+}
+HealthResponse::HealthResponse(const HealthResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  HealthResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.status_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_status().empty()) {
+    _this->_impl_.status_.Set(from._internal_status(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:media.HealthResponse)
+}
+
+inline void HealthResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.status_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+HealthResponse::~HealthResponse() {
+  // @@protoc_insertion_point(destructor:media.HealthResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void HealthResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.status_.Destroy();
+}
+
+void HealthResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void HealthResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.HealthResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.status_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* HealthResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string status = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_status();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.HealthResponse.status"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* HealthResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.HealthResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string status = 1;
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.HealthResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.HealthResponse)
+  return target;
+}
+
+size_t HealthResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.HealthResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 1;
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HealthResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    HealthResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HealthResponse::GetClassData() const { return &_class_data_; }
+
+
+void HealthResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<HealthResponse*>(&to_msg);
+  auto& from = static_cast<const HealthResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.HealthResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _this->_internal_set_status(from._internal_status());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void HealthResponse::CopyFrom(const HealthResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.HealthResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HealthResponse::IsInitialized() const {
+  return true;
+}
+
+void HealthResponse::InternalSwap(HealthResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.status_, lhs_arena,
+      &other->_impl_.status_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata HealthResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[1]);
+}
 
 // ===================================================================
 
@@ -374,7 +685,7 @@ void ImageRequest::InternalSwap(ImageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ImageRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[0]);
+      file_level_metadata_media_2eproto[2]);
 }
 
 // ===================================================================
@@ -577,7 +888,7 @@ void ImageResponse::InternalSwap(ImageResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ImageResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[1]);
+      file_level_metadata_media_2eproto[3]);
 }
 
 // ===================================================================
@@ -780,210 +1091,7 @@ void VideoRequest::InternalSwap(VideoRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[2]);
-}
-
-// ===================================================================
-
-class ThumbnailResponse::_Internal {
- public:
-};
-
-ThumbnailResponse::ThumbnailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:media.ThumbnailResponse)
-}
-ThumbnailResponse::ThumbnailResponse(const ThumbnailResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ThumbnailResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.thumbnailpath_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.thumbnailpath_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.thumbnailpath_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_thumbnailpath().empty()) {
-    _this->_impl_.thumbnailpath_.Set(from._internal_thumbnailpath(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:media.ThumbnailResponse)
-}
-
-inline void ThumbnailResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.thumbnailpath_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.thumbnailpath_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.thumbnailpath_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-ThumbnailResponse::~ThumbnailResponse() {
-  // @@protoc_insertion_point(destructor:media.ThumbnailResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void ThumbnailResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.thumbnailpath_.Destroy();
-}
-
-void ThumbnailResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void ThumbnailResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:media.ThumbnailResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.thumbnailpath_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* ThumbnailResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string thumbnailPath = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_thumbnailpath();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "media.ThumbnailResponse.thumbnailPath"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* ThumbnailResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:media.ThumbnailResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string thumbnailPath = 1;
-  if (!this->_internal_thumbnailpath().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_thumbnailpath().data(), static_cast<int>(this->_internal_thumbnailpath().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "media.ThumbnailResponse.thumbnailPath");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_thumbnailpath(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:media.ThumbnailResponse)
-  return target;
-}
-
-size_t ThumbnailResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:media.ThumbnailResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string thumbnailPath = 1;
-  if (!this->_internal_thumbnailpath().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_thumbnailpath());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ThumbnailResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ThumbnailResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ThumbnailResponse::GetClassData() const { return &_class_data_; }
-
-
-void ThumbnailResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ThumbnailResponse*>(&to_msg);
-  auto& from = static_cast<const ThumbnailResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:media.ThumbnailResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_thumbnailpath().empty()) {
-    _this->_internal_set_thumbnailpath(from._internal_thumbnailpath());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ThumbnailResponse::CopyFrom(const ThumbnailResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:media.ThumbnailResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ThumbnailResponse::IsInitialized() const {
-  return true;
-}
-
-void ThumbnailResponse::InternalSwap(ThumbnailResponse* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.thumbnailpath_, lhs_arena,
-      &other->_impl_.thumbnailpath_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata ThumbnailResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[3]);
+      file_level_metadata_media_2eproto[4]);
 }
 
 // ===================================================================
@@ -1186,12 +1294,426 @@ void VideoResponse::InternalSwap(VideoResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[4]);
+      file_level_metadata_media_2eproto[5]);
+}
+
+// ===================================================================
+
+class ThumbnailResponse::_Internal {
+ public:
+};
+
+ThumbnailResponse::ThumbnailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.ThumbnailResponse)
+}
+ThumbnailResponse::ThumbnailResponse(const ThumbnailResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ThumbnailResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.thumbnailpath_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.thumbnailpath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.thumbnailpath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_thumbnailpath().empty()) {
+    _this->_impl_.thumbnailpath_.Set(from._internal_thumbnailpath(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:media.ThumbnailResponse)
+}
+
+inline void ThumbnailResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.thumbnailpath_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.thumbnailpath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.thumbnailpath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ThumbnailResponse::~ThumbnailResponse() {
+  // @@protoc_insertion_point(destructor:media.ThumbnailResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ThumbnailResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.thumbnailpath_.Destroy();
+}
+
+void ThumbnailResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ThumbnailResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.ThumbnailResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.thumbnailpath_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ThumbnailResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string thumbnailPath = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_thumbnailpath();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.ThumbnailResponse.thumbnailPath"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ThumbnailResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.ThumbnailResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string thumbnailPath = 1;
+  if (!this->_internal_thumbnailpath().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_thumbnailpath().data(), static_cast<int>(this->_internal_thumbnailpath().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.ThumbnailResponse.thumbnailPath");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_thumbnailpath(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.ThumbnailResponse)
+  return target;
+}
+
+size_t ThumbnailResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.ThumbnailResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string thumbnailPath = 1;
+  if (!this->_internal_thumbnailpath().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_thumbnailpath());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ThumbnailResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ThumbnailResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ThumbnailResponse::GetClassData() const { return &_class_data_; }
+
+
+void ThumbnailResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ThumbnailResponse*>(&to_msg);
+  auto& from = static_cast<const ThumbnailResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.ThumbnailResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_thumbnailpath().empty()) {
+    _this->_internal_set_thumbnailpath(from._internal_thumbnailpath());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ThumbnailResponse::CopyFrom(const ThumbnailResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.ThumbnailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ThumbnailResponse::IsInitialized() const {
+  return true;
+}
+
+void ThumbnailResponse::InternalSwap(ThumbnailResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.thumbnailpath_, lhs_arena,
+      &other->_impl_.thumbnailpath_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ThumbnailResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[6]);
+}
+
+// ===================================================================
+
+class AudioResponse::_Internal {
+ public:
+};
+
+AudioResponse::AudioResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.AudioResponse)
+}
+AudioResponse::AudioResponse(const AudioResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AudioResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.audiopath_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.audiopath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.audiopath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_audiopath().empty()) {
+    _this->_impl_.audiopath_.Set(from._internal_audiopath(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:media.AudioResponse)
+}
+
+inline void AudioResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.audiopath_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.audiopath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.audiopath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+AudioResponse::~AudioResponse() {
+  // @@protoc_insertion_point(destructor:media.AudioResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void AudioResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.audiopath_.Destroy();
+}
+
+void AudioResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AudioResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.AudioResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.audiopath_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AudioResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string audioPath = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_audiopath();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.AudioResponse.audioPath"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AudioResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.AudioResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string audioPath = 1;
+  if (!this->_internal_audiopath().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_audiopath().data(), static_cast<int>(this->_internal_audiopath().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.AudioResponse.audioPath");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_audiopath(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.AudioResponse)
+  return target;
+}
+
+size_t AudioResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.AudioResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string audioPath = 1;
+  if (!this->_internal_audiopath().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_audiopath());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AudioResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AudioResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AudioResponse::GetClassData() const { return &_class_data_; }
+
+
+void AudioResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AudioResponse*>(&to_msg);
+  auto& from = static_cast<const AudioResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.AudioResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_audiopath().empty()) {
+    _this->_internal_set_audiopath(from._internal_audiopath());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AudioResponse::CopyFrom(const AudioResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.AudioResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AudioResponse::IsInitialized() const {
+  return true;
+}
+
+void AudioResponse::InternalSwap(AudioResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.audiopath_, lhs_arena,
+      &other->_impl_.audiopath_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AudioResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[7]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace media
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::media::HealthRequest*
+Arena::CreateMaybeMessage< ::media::HealthRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::HealthRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::HealthResponse*
+Arena::CreateMaybeMessage< ::media::HealthResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::HealthResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::media::ImageRequest*
 Arena::CreateMaybeMessage< ::media::ImageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::media::ImageRequest >(arena);
@@ -1204,13 +1726,17 @@ template<> PROTOBUF_NOINLINE ::media::VideoRequest*
 Arena::CreateMaybeMessage< ::media::VideoRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::media::VideoRequest >(arena);
 }
+template<> PROTOBUF_NOINLINE ::media::VideoResponse*
+Arena::CreateMaybeMessage< ::media::VideoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::VideoResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::media::ThumbnailResponse*
 Arena::CreateMaybeMessage< ::media::ThumbnailResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::media::ThumbnailResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::media::VideoResponse*
-Arena::CreateMaybeMessage< ::media::VideoResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::media::VideoResponse >(arena);
+template<> PROTOBUF_NOINLINE ::media::AudioResponse*
+Arena::CreateMaybeMessage< ::media::AudioResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::AudioResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

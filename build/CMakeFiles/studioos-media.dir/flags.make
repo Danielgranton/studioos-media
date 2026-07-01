@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/linux/Documents/studioos-media/generated -I/home/linux/Documents/studioos-media/src -I/home/linux/Documents/studioos-media/config -isystem /usr/include/opencv4
 
-CXX_FLAGS = -std=gnu++23
+CXX_FLAGS = -std=gnu++23 -pthread -DNOMINMAX
 

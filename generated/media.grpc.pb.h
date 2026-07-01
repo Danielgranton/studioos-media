@@ -35,19 +35,19 @@ class MediaService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    virtual ::grpc::Status Health(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::media::HealthResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>> AsyncHealth(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>>(AsyncHealthRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>> PrepareAsyncHealth(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>>(PrepareAsyncHealthRaw(context, request, cq));
+    }
     virtual ::grpc::Status CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::media::ImageResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>> AsyncCompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>>(AsyncCompressImageRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>> PrepareAsyncCompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>>(PrepareAsyncCompressImageRaw(context, request, cq));
-    }
-    virtual ::grpc::Status GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>> AsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>>(AsyncGenerateThumbnailRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>> PrepareAsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>>(PrepareAsyncGenerateThumbnailRaw(context, request, cq));
     }
     virtual ::grpc::Status CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::VideoResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::VideoResponse>> AsyncCompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
@@ -56,43 +56,65 @@ class MediaService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::VideoResponse>> PrepareAsyncCompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::VideoResponse>>(PrepareAsyncCompressVideoRaw(context, request, cq));
     }
+    virtual ::grpc::Status GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>> AsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>>(AsyncGenerateThumbnailRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>> PrepareAsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>>(PrepareAsyncGenerateThumbnailRaw(context, request, cq));
+    }
+    virtual ::grpc::Status ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::AudioResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>> AsyncExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>>(AsyncExtractAudioRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>> PrepareAsyncExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>>(PrepareAsyncExtractAudioRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
+      virtual void Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>* AsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::HealthResponse>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>* AsyncCompressImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>* PrepareAsyncCompressImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>* AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>* PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::VideoResponse>* AsyncCompressVideoRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::VideoResponse>* PrepareAsyncCompressVideoRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>* AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ThumbnailResponse>* PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>* AsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>* PrepareAsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    ::grpc::Status Health(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::media::HealthResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>> AsyncHealth(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>>(AsyncHealthRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>> PrepareAsyncHealth(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>>(PrepareAsyncHealthRaw(context, request, cq));
+    }
     ::grpc::Status CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::media::ImageResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>> AsyncCompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>>(AsyncCompressImageRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>> PrepareAsyncCompressImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>>(PrepareAsyncCompressImageRaw(context, request, cq));
-    }
-    ::grpc::Status GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>> AsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>>(AsyncGenerateThumbnailRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>> PrepareAsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>>(PrepareAsyncGenerateThumbnailRaw(context, request, cq));
     }
     ::grpc::Status CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::VideoResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::VideoResponse>> AsyncCompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
@@ -101,15 +123,33 @@ class MediaService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::VideoResponse>> PrepareAsyncCompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::VideoResponse>>(PrepareAsyncCompressVideoRaw(context, request, cq));
     }
+    ::grpc::Status GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::ThumbnailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>> AsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>>(AsyncGenerateThumbnailRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>> PrepareAsyncGenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>>(PrepareAsyncGenerateThumbnailRaw(context, request, cq));
+    }
+    ::grpc::Status ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::media::AudioResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>> AsyncExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>>(AsyncExtractAudioRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>> PrepareAsyncExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>>(PrepareAsyncExtractAudioRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
+      void Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, std::function<void(::grpc::Status)>) override;
+      void Health(::grpc::ClientContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)>) override;
       void CompressImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)>) override;
-      void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response, std::function<void(::grpc::Status)>) override;
       void CompressVideo(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, std::function<void(::grpc::Status)>) override;
+      void GenerateThumbnail(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) override;
+      void ExtractAudio(::grpc::ClientContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -121,15 +161,21 @@ class MediaService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>* AsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::HealthResponse>* PrepareAsyncHealthRaw(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* AsyncCompressImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* PrepareAsyncCompressImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* AsyncCompressVideoRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* PrepareAsyncCompressVideoRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* AsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::ThumbnailResponse>* PrepareAsyncGenerateThumbnailRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* AsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* PrepareAsyncExtractAudioRaw(::grpc::ClientContext* context, const ::media::VideoRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_Health_;
     const ::grpc::internal::RpcMethod rpcmethod_CompressImage_;
-    const ::grpc::internal::RpcMethod rpcmethod_GenerateThumbnail_;
     const ::grpc::internal::RpcMethod rpcmethod_CompressVideo_;
+    const ::grpc::internal::RpcMethod rpcmethod_GenerateThumbnail_;
+    const ::grpc::internal::RpcMethod rpcmethod_ExtractAudio_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -137,9 +183,31 @@ class MediaService final {
    public:
     Service();
     virtual ~Service();
+    virtual ::grpc::Status Health(::grpc::ServerContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response);
     virtual ::grpc::Status CompressImage(::grpc::ServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response);
-    virtual ::grpc::Status GenerateThumbnail(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response);
     virtual ::grpc::Status CompressVideo(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::VideoResponse* response);
+    virtual ::grpc::Status GenerateThumbnail(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response);
+    virtual ::grpc::Status ExtractAudio(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Health() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHealth(::grpc::ServerContext* context, ::media::HealthRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::HealthResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
   };
   template <class BaseClass>
   class WithAsyncMethod_CompressImage : public BaseClass {
@@ -147,7 +215,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CompressImage() {
-      ::grpc::Service::MarkMethodAsync(0);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_CompressImage() override {
       BaseClassMustBeDerivedFromService(this);
@@ -158,26 +226,6 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCompressImage(::grpc::ServerContext* context, ::media::ImageRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::ImageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodAsync(1);
-    }
-    ~WithAsyncMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGenerateThumbnail(::grpc::ServerContext* context, ::media::VideoRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::ThumbnailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -201,20 +249,87 @@ class MediaService final {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CompressImage<WithAsyncMethod_GenerateThumbnail<WithAsyncMethod_CompressVideo<Service > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGenerateThumbnail(::grpc::ServerContext* context, ::media::VideoRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::ThumbnailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestExtractAudio(::grpc::ServerContext* context, ::media::VideoRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_Health<WithAsyncMethod_CompressImage<WithAsyncMethod_CompressVideo<WithAsyncMethod_GenerateThumbnail<WithAsyncMethod_ExtractAudio<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithCallbackMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Health() {
+      ::grpc::Service::MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::media::HealthRequest, ::media::HealthResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::media::HealthRequest* request, ::media::HealthResponse* response) { return this->Health(context, request, response); }));}
+    void SetMessageAllocatorFor_Health(
+        ::grpc::MessageAllocator< ::media::HealthRequest, ::media::HealthResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::HealthRequest, ::media::HealthResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Health(
+      ::grpc::CallbackServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/)  { return nullptr; }
+  };
   template <class BaseClass>
   class WithCallbackMethod_CompressImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CompressImage() {
-      ::grpc::Service::MarkMethodCallback(0,
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::media::ImageRequest, ::media::ImageResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response) { return this->CompressImage(context, request, response); }));}
     void SetMessageAllocatorFor_CompressImage(
         ::grpc::MessageAllocator< ::media::ImageRequest, ::media::ImageResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::ImageRequest, ::media::ImageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -228,33 +343,6 @@ class MediaService final {
     }
     virtual ::grpc::ServerUnaryReactor* CompressImage(
       ::grpc::CallbackServerContext* /*context*/, const ::media::ImageRequest* /*request*/, ::media::ImageResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::ThumbnailResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response) { return this->GenerateThumbnail(context, request, response); }));}
-    void SetMessageAllocatorFor_GenerateThumbnail(
-        ::grpc::MessageAllocator< ::media::VideoRequest, ::media::ThumbnailResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::ThumbnailResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* GenerateThumbnail(
-      ::grpc::CallbackServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_CompressVideo : public BaseClass {
@@ -283,38 +371,92 @@ class MediaService final {
     virtual ::grpc::ServerUnaryReactor* CompressVideo(
       ::grpc::CallbackServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::VideoResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CompressImage<WithCallbackMethod_GenerateThumbnail<WithCallbackMethod_CompressVideo<Service > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::ThumbnailResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::media::VideoRequest* request, ::media::ThumbnailResponse* response) { return this->GenerateThumbnail(context, request, response); }));}
+    void SetMessageAllocatorFor_GenerateThumbnail(
+        ::grpc::MessageAllocator< ::media::VideoRequest, ::media::ThumbnailResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::ThumbnailResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GenerateThumbnail(
+      ::grpc::CallbackServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::AudioResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response) { return this->ExtractAudio(context, request, response); }));}
+    void SetMessageAllocatorFor_ExtractAudio(
+        ::grpc::MessageAllocator< ::media::VideoRequest, ::media::AudioResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::VideoRequest, ::media::AudioResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ExtractAudio(
+      ::grpc::CallbackServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_Health<WithCallbackMethod_CompressImage<WithCallbackMethod_CompressVideo<WithCallbackMethod_GenerateThumbnail<WithCallbackMethod_ExtractAudio<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Health() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
   template <class BaseClass>
   class WithGenericMethod_CompressImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CompressImage() {
-      ::grpc::Service::MarkMethodGeneric(0);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_CompressImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
     ::grpc::Status CompressImage(::grpc::ServerContext* /*context*/, const ::media::ImageRequest* /*request*/, ::media::ImageResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodGeneric(1);
-    }
-    ~WithGenericMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -337,12 +479,66 @@ class MediaService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Health() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHealth(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_CompressImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CompressImage() {
-      ::grpc::Service::MarkMethodRaw(0);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_CompressImage() override {
       BaseClassMustBeDerivedFromService(this);
@@ -353,26 +549,6 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCompressImage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodRaw(1);
-    }
-    ~WithRawMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestGenerateThumbnail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -397,12 +573,74 @@ class MediaService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGenerateThumbnail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestExtractAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Health() {
+      ::grpc::Service::MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Health(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Health(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_CompressImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CompressImage() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CompressImage(context, request, response); }));
@@ -416,28 +654,6 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* CompressImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodRawCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GenerateThumbnail(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* GenerateThumbnail(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -463,12 +679,83 @@ class MediaService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GenerateThumbnail(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GenerateThumbnail(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ExtractAudio(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ExtractAudio(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Health : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Health() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::media::HealthRequest, ::media::HealthResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::media::HealthRequest, ::media::HealthResponse>* streamer) {
+                       return this->StreamedHealth(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Health() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Health(::grpc::ServerContext* /*context*/, const ::media::HealthRequest* /*request*/, ::media::HealthResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedHealth(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::HealthRequest,::media::HealthResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CompressImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CompressImage() {
-      ::grpc::Service::MarkMethodStreamed(0,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::ImageRequest, ::media::ImageResponse>(
             [this](::grpc::ServerContext* context,
@@ -488,33 +775,6 @@ class MediaService final {
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCompressImage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::ImageRequest,::media::ImageResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_GenerateThumbnail : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_GenerateThumbnail() {
-      ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::media::VideoRequest, ::media::ThumbnailResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::media::VideoRequest, ::media::ThumbnailResponse>* streamer) {
-                       return this->StreamedGenerateThumbnail(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_GenerateThumbnail() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGenerateThumbnail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::VideoRequest,::media::ThumbnailResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CompressVideo : public BaseClass {
@@ -543,9 +803,63 @@ class MediaService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCompressVideo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::VideoRequest,::media::VideoResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_CompressVideo<Service > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GenerateThumbnail : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GenerateThumbnail() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::media::VideoRequest, ::media::ThumbnailResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::media::VideoRequest, ::media::ThumbnailResponse>* streamer) {
+                       return this->StreamedGenerateThumbnail(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GenerateThumbnail() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GenerateThumbnail(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::ThumbnailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGenerateThumbnail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::VideoRequest,::media::ThumbnailResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ExtractAudio : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ExtractAudio() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::media::VideoRequest, ::media::AudioResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::media::VideoRequest, ::media::AudioResponse>* streamer) {
+                       return this->StreamedExtractAudio(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ExtractAudio() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ExtractAudio(::grpc::ServerContext* /*context*/, const ::media::VideoRequest* /*request*/, ::media::AudioResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedExtractAudio(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::VideoRequest,::media::AudioResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_CompressVideo<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<Service > > > > > StreamedService;
 };
 
 }  // namespace media

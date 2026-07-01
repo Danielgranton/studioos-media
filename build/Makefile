@@ -129,6 +129,102 @@ studioos-media/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/build
 .PHONY : studioos-media/fast
 
+generated/media.grpc.pb.o: generated/media.grpc.pb.cc.o
+.PHONY : generated/media.grpc.pb.o
+
+# target to build an object file
+generated/media.grpc.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o
+.PHONY : generated/media.grpc.pb.cc.o
+
+generated/media.grpc.pb.i: generated/media.grpc.pb.cc.i
+.PHONY : generated/media.grpc.pb.i
+
+# target to preprocess a source file
+generated/media.grpc.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.i
+.PHONY : generated/media.grpc.pb.cc.i
+
+generated/media.grpc.pb.s: generated/media.grpc.pb.cc.s
+.PHONY : generated/media.grpc.pb.s
+
+# target to generate assembly for a file
+generated/media.grpc.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.s
+.PHONY : generated/media.grpc.pb.cc.s
+
+generated/media.pb.o: generated/media.pb.cc.o
+.PHONY : generated/media.pb.o
+
+# target to build an object file
+generated/media.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.o
+.PHONY : generated/media.pb.cc.o
+
+generated/media.pb.i: generated/media.pb.cc.i
+.PHONY : generated/media.pb.i
+
+# target to preprocess a source file
+generated/media.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.i
+.PHONY : generated/media.pb.cc.i
+
+generated/media.pb.s: generated/media.pb.cc.s
+.PHONY : generated/media.pb.s
+
+# target to generate assembly for a file
+generated/media.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.s
+.PHONY : generated/media.pb.cc.s
+
+src/config/config.o: src/config/config.cpp.o
+.PHONY : src/config/config.o
+
+# target to build an object file
+src/config/config.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.o
+.PHONY : src/config/config.cpp.o
+
+src/config/config.i: src/config/config.cpp.i
+.PHONY : src/config/config.i
+
+# target to preprocess a source file
+src/config/config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.i
+.PHONY : src/config/config.cpp.i
+
+src/config/config.s: src/config/config.cpp.s
+.PHONY : src/config/config.s
+
+# target to generate assembly for a file
+src/config/config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.s
+.PHONY : src/config/config.cpp.s
+
+src/grpc/MediaServer.o: src/grpc/MediaServer.cpp.o
+.PHONY : src/grpc/MediaServer.o
+
+# target to build an object file
+src/grpc/MediaServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o
+.PHONY : src/grpc/MediaServer.cpp.o
+
+src/grpc/MediaServer.i: src/grpc/MediaServer.cpp.i
+.PHONY : src/grpc/MediaServer.i
+
+# target to preprocess a source file
+src/grpc/MediaServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.i
+.PHONY : src/grpc/MediaServer.cpp.i
+
+src/grpc/MediaServer.s: src/grpc/MediaServer.cpp.s
+.PHONY : src/grpc/MediaServer.s
+
+# target to generate assembly for a file
+src/grpc/MediaServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.s
+.PHONY : src/grpc/MediaServer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -153,6 +249,198 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/media/ImageProcessor.o: src/media/ImageProcessor.cpp.o
+.PHONY : src/media/ImageProcessor.o
+
+# target to build an object file
+src/media/ImageProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o
+.PHONY : src/media/ImageProcessor.cpp.o
+
+src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
+.PHONY : src/media/ImageProcessor.i
+
+# target to preprocess a source file
+src/media/ImageProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i
+.PHONY : src/media/ImageProcessor.cpp.i
+
+src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
+.PHONY : src/media/ImageProcessor.s
+
+# target to generate assembly for a file
+src/media/ImageProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s
+.PHONY : src/media/ImageProcessor.cpp.s
+
+src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
+.PHONY : src/media/VideoProcessor.o
+
+# target to build an object file
+src/media/VideoProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o
+.PHONY : src/media/VideoProcessor.cpp.o
+
+src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
+.PHONY : src/media/VideoProcessor.i
+
+# target to preprocess a source file
+src/media/VideoProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i
+.PHONY : src/media/VideoProcessor.cpp.i
+
+src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
+.PHONY : src/media/VideoProcessor.s
+
+# target to generate assembly for a file
+src/media/VideoProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s
+.PHONY : src/media/VideoProcessor.cpp.s
+
+src/services/AdService.o: src/services/AdService.cpp.o
+.PHONY : src/services/AdService.o
+
+# target to build an object file
+src/services/AdService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o
+.PHONY : src/services/AdService.cpp.o
+
+src/services/AdService.i: src/services/AdService.cpp.i
+.PHONY : src/services/AdService.i
+
+# target to preprocess a source file
+src/services/AdService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.i
+.PHONY : src/services/AdService.cpp.i
+
+src/services/AdService.s: src/services/AdService.cpp.s
+.PHONY : src/services/AdService.s
+
+# target to generate assembly for a file
+src/services/AdService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.s
+.PHONY : src/services/AdService.cpp.s
+
+src/services/AudioService.o: src/services/AudioService.cpp.o
+.PHONY : src/services/AudioService.o
+
+# target to build an object file
+src/services/AudioService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o
+.PHONY : src/services/AudioService.cpp.o
+
+src/services/AudioService.i: src/services/AudioService.cpp.i
+.PHONY : src/services/AudioService.i
+
+# target to preprocess a source file
+src/services/AudioService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.i
+.PHONY : src/services/AudioService.cpp.i
+
+src/services/AudioService.s: src/services/AudioService.cpp.s
+.PHONY : src/services/AudioService.s
+
+# target to generate assembly for a file
+src/services/AudioService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.s
+.PHONY : src/services/AudioService.cpp.s
+
+src/services/ImageService.o: src/services/ImageService.cpp.o
+.PHONY : src/services/ImageService.o
+
+# target to build an object file
+src/services/ImageService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o
+.PHONY : src/services/ImageService.cpp.o
+
+src/services/ImageService.i: src/services/ImageService.cpp.i
+.PHONY : src/services/ImageService.i
+
+# target to preprocess a source file
+src/services/ImageService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.i
+.PHONY : src/services/ImageService.cpp.i
+
+src/services/ImageService.s: src/services/ImageService.cpp.s
+.PHONY : src/services/ImageService.s
+
+# target to generate assembly for a file
+src/services/ImageService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.s
+.PHONY : src/services/ImageService.cpp.s
+
+src/services/StreamingService.o: src/services/StreamingService.cpp.o
+.PHONY : src/services/StreamingService.o
+
+# target to build an object file
+src/services/StreamingService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o
+.PHONY : src/services/StreamingService.cpp.o
+
+src/services/StreamingService.i: src/services/StreamingService.cpp.i
+.PHONY : src/services/StreamingService.i
+
+# target to preprocess a source file
+src/services/StreamingService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i
+.PHONY : src/services/StreamingService.cpp.i
+
+src/services/StreamingService.s: src/services/StreamingService.cpp.s
+.PHONY : src/services/StreamingService.s
+
+# target to generate assembly for a file
+src/services/StreamingService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s
+.PHONY : src/services/StreamingService.cpp.s
+
+src/services/VideoService.o: src/services/VideoService.cpp.o
+.PHONY : src/services/VideoService.o
+
+# target to build an object file
+src/services/VideoService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o
+.PHONY : src/services/VideoService.cpp.o
+
+src/services/VideoService.i: src/services/VideoService.cpp.i
+.PHONY : src/services/VideoService.i
+
+# target to preprocess a source file
+src/services/VideoService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i
+.PHONY : src/services/VideoService.cpp.i
+
+src/services/VideoService.s: src/services/VideoService.cpp.s
+.PHONY : src/services/VideoService.s
+
+# target to generate assembly for a file
+src/services/VideoService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s
+.PHONY : src/services/VideoService.cpp.s
+
+src/utils/Logger.o: src/utils/Logger.cpp.o
+.PHONY : src/utils/Logger.o
+
+# target to build an object file
+src/utils/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o
+.PHONY : src/utils/Logger.cpp.o
+
+src/utils/Logger.i: src/utils/Logger.cpp.i
+.PHONY : src/utils/Logger.i
+
+# target to preprocess a source file
+src/utils/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i
+.PHONY : src/utils/Logger.cpp.i
+
+src/utils/Logger.s: src/utils/Logger.cpp.s
+.PHONY : src/utils/Logger.s
+
+# target to generate assembly for a file
+src/utils/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s
+.PHONY : src/utils/Logger.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +450,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... studioos-media"
+	@echo "... generated/media.grpc.pb.o"
+	@echo "... generated/media.grpc.pb.i"
+	@echo "... generated/media.grpc.pb.s"
+	@echo "... generated/media.pb.o"
+	@echo "... generated/media.pb.i"
+	@echo "... generated/media.pb.s"
+	@echo "... src/config/config.o"
+	@echo "... src/config/config.i"
+	@echo "... src/config/config.s"
+	@echo "... src/grpc/MediaServer.o"
+	@echo "... src/grpc/MediaServer.i"
+	@echo "... src/grpc/MediaServer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/media/ImageProcessor.o"
+	@echo "... src/media/ImageProcessor.i"
+	@echo "... src/media/ImageProcessor.s"
+	@echo "... src/media/VideoProcessor.o"
+	@echo "... src/media/VideoProcessor.i"
+	@echo "... src/media/VideoProcessor.s"
+	@echo "... src/services/AdService.o"
+	@echo "... src/services/AdService.i"
+	@echo "... src/services/AdService.s"
+	@echo "... src/services/AudioService.o"
+	@echo "... src/services/AudioService.i"
+	@echo "... src/services/AudioService.s"
+	@echo "... src/services/ImageService.o"
+	@echo "... src/services/ImageService.i"
+	@echo "... src/services/ImageService.s"
+	@echo "... src/services/StreamingService.o"
+	@echo "... src/services/StreamingService.i"
+	@echo "... src/services/StreamingService.s"
+	@echo "... src/services/VideoService.o"
+	@echo "... src/services/VideoService.i"
+	@echo "... src/services/VideoService.s"
+	@echo "... src/utils/Logger.o"
+	@echo "... src/utils/Logger.i"
+	@echo "... src/utils/Logger.s"
 .PHONY : help
 
 

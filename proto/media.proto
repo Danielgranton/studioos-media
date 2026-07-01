@@ -4,33 +4,54 @@ package media;
 
 service MediaService {
 
-  rpc CompressImage(ImageRequest)
-      returns (ImageResponse);
+    rpc Health(HealthRequest)
+        returns (HealthResponse);
 
-  rpc GenerateThumbnail(VideoRequest)
-      returns (ThumbnailResponse);
+    rpc CompressImage(ImageRequest)
+        returns (ImageResponse);
 
-  rpc CompressVideo(VideoRequest)
-      returns (VideoResponse);
+    rpc CompressVideo(VideoRequest)
+        returns (VideoResponse);
 
+    rpc GenerateThumbnail(VideoRequest)
+        returns (ThumbnailResponse);
+
+    rpc ExtractAudio(VideoRequest)
+        returns (AudioResponse);
+
+    rpc ResizeImage(ImageResizeRequest)
+        returns (ImageResponse);
+
+    rpc ThumbnailImage(ImageRequest)
+        returns (ImageResponse);
 }
 
-message ImageRequest {
-  string imagePath = 1;
+message HealthRequest {}
+
+message HealthResponse{
+    string status = 1;
 }
 
-message ImageResponse {
-  string outputPath = 1;
+message ImageRequest{
+    string imagePath = 1;
 }
 
-message VideoRequest {
-  string videoPath = 1;
+message ImageResponse{
+    string outputPath = 1;
 }
 
-message ThumbnailResponse {
-  string thumbnailPath = 1;
+message VideoRequest{
+    string videoPath = 1;
 }
 
-message VideoResponse {
-  string outputPath = 1;
+message VideoResponse{
+    string outputPath = 1;
+}
+
+message ThumbnailResponse{
+    string thumbnailPath = 1;
+}
+
+message AudioResponse{
+    string audioPath = 1;
 }

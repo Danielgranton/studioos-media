@@ -8,7 +8,19 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/linux/Documents/studioos-media/generated/media.grpc.pb.cc" "CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o" "gcc" "CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o.d"
+  "/home/linux/Documents/studioos-media/generated/media.pb.cc" "CMakeFiles/studioos-media.dir/generated/media.pb.cc.o" "gcc" "CMakeFiles/studioos-media.dir/generated/media.pb.cc.o.d"
+  "/home/linux/Documents/studioos-media/src/config/config.cpp" "CMakeFiles/studioos-media.dir/src/config/config.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/config/config.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp" "CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/main.cpp" "CMakeFiles/studioos-media.dir/src/main.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/main.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp" "CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp" "CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/AdService.cpp" "CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/AudioService.cpp" "CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/ImageService.cpp" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/StreamingService.cpp" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/VideoService.cpp" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/utils/Logger.cpp" "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o.d"
   "" "studioos-media" "gcc" "CMakeFiles/studioos-media.dir/link.d"
   )
 

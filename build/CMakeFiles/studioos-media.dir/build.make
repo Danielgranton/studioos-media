@@ -86,18 +86,329 @@ CMakeFiles/studioos-media.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/main.cpp -o CMakeFiles/studioos-media.dir/src/main.cpp.s
 
+CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o: /home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp
+CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o -MF CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o.d -o CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o -c /home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp
+
+CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp > CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.i
+
+CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp -o CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.s
+
+CMakeFiles/studioos-media.dir/generated/media.pb.cc.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/generated/media.pb.cc.o: /home/linux/Documents/studioos-media/generated/media.pb.cc
+CMakeFiles/studioos-media.dir/generated/media.pb.cc.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/studioos-media.dir/generated/media.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/generated/media.pb.cc.o -MF CMakeFiles/studioos-media.dir/generated/media.pb.cc.o.d -o CMakeFiles/studioos-media.dir/generated/media.pb.cc.o -c /home/linux/Documents/studioos-media/generated/media.pb.cc
+
+CMakeFiles/studioos-media.dir/generated/media.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/generated/media.pb.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/generated/media.pb.cc > CMakeFiles/studioos-media.dir/generated/media.pb.cc.i
+
+CMakeFiles/studioos-media.dir/generated/media.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/generated/media.pb.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/generated/media.pb.cc -o CMakeFiles/studioos-media.dir/generated/media.pb.cc.s
+
+CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o: /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc
+CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o -MF CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o.d -o CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o -c /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc
+
+CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc > CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.i
+
+CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc -o CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.s
+
+CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
+CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o -MF CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o.d -o CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
+
+CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp > CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i
+
+CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp -o CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s
+
+CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
+CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o -MF CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o.d -o CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
+
+CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp > CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i
+
+CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp -o CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s
+
+CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o: /home/linux/Documents/studioos-media/src/services/ImageService.cpp
+CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o -MF CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o.d -o CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o -c /home/linux/Documents/studioos-media/src/services/ImageService.cpp
+
+CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/ImageService.cpp > CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.i
+
+CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/ImageService.cpp -o CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.s
+
+CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o: /home/linux/Documents/studioos-media/src/services/VideoService.cpp
+CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o -MF CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o.d -o CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o -c /home/linux/Documents/studioos-media/src/services/VideoService.cpp
+
+CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/VideoService.cpp > CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i
+
+CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/VideoService.cpp -o CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s
+
+CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o: /home/linux/Documents/studioos-media/src/services/AudioService.cpp
+CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o -MF CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o.d -o CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o -c /home/linux/Documents/studioos-media/src/services/AudioService.cpp
+
+CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/AudioService.cpp > CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.i
+
+CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/AudioService.cpp -o CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.s
+
+CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o: /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o -MF CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o.d -o CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o -c /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+
+CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/StreamingService.cpp > CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i
+
+CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/StreamingService.cpp -o CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s
+
+CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o: /home/linux/Documents/studioos-media/src/services/AdService.cpp
+CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o -MF CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o.d -o CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o -c /home/linux/Documents/studioos-media/src/services/AdService.cpp
+
+CMakeFiles/studioos-media.dir/src/services/AdService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/services/AdService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/AdService.cpp > CMakeFiles/studioos-media.dir/src/services/AdService.cpp.i
+
+CMakeFiles/studioos-media.dir/src/services/AdService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/services/AdService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/AdService.cpp -o CMakeFiles/studioos-media.dir/src/services/AdService.cpp.s
+
+CMakeFiles/studioos-media.dir/src/config/config.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/config/config.cpp.o: /home/linux/Documents/studioos-media/src/config/config.cpp
+CMakeFiles/studioos-media.dir/src/config/config.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/studioos-media.dir/src/config/config.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/config/config.cpp.o -MF CMakeFiles/studioos-media.dir/src/config/config.cpp.o.d -o CMakeFiles/studioos-media.dir/src/config/config.cpp.o -c /home/linux/Documents/studioos-media/src/config/config.cpp
+
+CMakeFiles/studioos-media.dir/src/config/config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/config/config.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/config/config.cpp > CMakeFiles/studioos-media.dir/src/config/config.cpp.i
+
+CMakeFiles/studioos-media.dir/src/config/config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/config/config.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/config/config.cpp -o CMakeFiles/studioos-media.dir/src/config/config.cpp.s
+
+CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o: CMakeFiles/studioos-media.dir/flags.make
+CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o: /home/linux/Documents/studioos-media/src/utils/Logger.cpp
+CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o: CMakeFiles/studioos-media.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o -MF CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o.d -o CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Logger.cpp
+
+CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/utils/Logger.cpp > CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i
+
+CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/utils/Logger.cpp -o CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s
+
 # Object files for target studioos-media
 studioos__media_OBJECTS = \
-"CMakeFiles/studioos-media.dir/src/main.cpp.o"
+"CMakeFiles/studioos-media.dir/src/main.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o" \
+"CMakeFiles/studioos-media.dir/generated/media.pb.cc.o" \
+"CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o" \
+"CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/config/config.cpp.o" \
+"CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o"
 
 # External object files for target studioos-media
 studioos__media_EXTERNAL_OBJECTS =
 
 studioos-media: CMakeFiles/studioos-media.dir/src/main.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/generated/media.pb.cc.o
+studioos-media: CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o
+studioos-media: CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/config/config.cpp.o
+studioos-media: CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o
 studioos-media: CMakeFiles/studioos-media.dir/build.make
 studioos-media: CMakeFiles/studioos-media.dir/compiler_depend.ts
+studioos-media: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+studioos-media: /usr/lib/x86_64-linux-gnu/libgrpc++.so.1.51.1
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_cvv.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_face.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_intensity_transform.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_mcc.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_rapid.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_signal.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+studioos-media: /usr/lib/x86_64-linux-gnu/libgrpc.so.29.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libz.so
+studioos-media: /usr/lib/x86_64-linux-gnu/libcares.so.2.19.5
+studioos-media: /usr/lib/x86_64-linux-gnu/libaddress_sorting.so.29.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libgpr.so.29.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_status.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_leak_check.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_cord.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_crc32c.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_crc_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_crc_cpu_detect.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_city.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_int128.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260107.0.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libssl.so
+studioos-media: /usr/lib/x86_64-linux-gnu/libcrypto.so
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_text.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_video.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.10.0
+studioos-media: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.10.0
 studioos-media: CMakeFiles/studioos-media.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable studioos-media"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable studioos-media"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/studioos-media.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,0 +1,14 @@
+{
+    "grpc": {
+        "port": 50051
+    },
+
+    "storage": {
+        "temp": "temp",
+        "assets": "assets"
+    },
+
+    "image": {
+        "quality": 85
+    }
+}

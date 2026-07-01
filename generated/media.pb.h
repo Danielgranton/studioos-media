@@ -23,6 +23,7 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
+#include <google/protobuf/generated_message_bases.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
 #include <google/protobuf/generated_message_reflection.h>
@@ -45,6 +46,15 @@ struct TableStruct_media_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_media_2eproto;
 namespace media {
+class AudioResponse;
+struct AudioResponseDefaultTypeInternal;
+extern AudioResponseDefaultTypeInternal _AudioResponse_default_instance_;
+class HealthRequest;
+struct HealthRequestDefaultTypeInternal;
+extern HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
+class HealthResponse;
+struct HealthResponseDefaultTypeInternal;
+extern HealthResponseDefaultTypeInternal _HealthResponse_default_instance_;
 class ImageRequest;
 struct ImageRequestDefaultTypeInternal;
 extern ImageRequestDefaultTypeInternal _ImageRequest_default_instance_;
@@ -62,6 +72,9 @@ struct VideoResponseDefaultTypeInternal;
 extern VideoResponseDefaultTypeInternal _VideoResponse_default_instance_;
 }  // namespace media
 PROTOBUF_NAMESPACE_OPEN
+template<> ::media::AudioResponse* Arena::CreateMaybeMessage<::media::AudioResponse>(Arena*);
+template<> ::media::HealthRequest* Arena::CreateMaybeMessage<::media::HealthRequest>(Arena*);
+template<> ::media::HealthResponse* Arena::CreateMaybeMessage<::media::HealthResponse>(Arena*);
 template<> ::media::ImageRequest* Arena::CreateMaybeMessage<::media::ImageRequest>(Arena*);
 template<> ::media::ImageResponse* Arena::CreateMaybeMessage<::media::ImageResponse>(Arena*);
 template<> ::media::ThumbnailResponse* Arena::CreateMaybeMessage<::media::ThumbnailResponse>(Arena*);
@@ -71,6 +84,277 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace media {
 
 // ===================================================================
+
+class HealthRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:media.HealthRequest) */ {
+ public:
+  inline HealthRequest() : HealthRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR HealthRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HealthRequest(const HealthRequest& from);
+  HealthRequest(HealthRequest&& from) noexcept
+    : HealthRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline HealthRequest& operator=(const HealthRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HealthRequest& operator=(HealthRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HealthRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HealthRequest* internal_default_instance() {
+    return reinterpret_cast<const HealthRequest*>(
+               &_HealthRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(HealthRequest& a, HealthRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HealthRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HealthRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HealthRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HealthRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HealthRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HealthRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.HealthRequest";
+  }
+  protected:
+  explicit HealthRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:media.HealthRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HealthResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.HealthResponse) */ {
+ public:
+  inline HealthResponse() : HealthResponse(nullptr) {}
+  ~HealthResponse() override;
+  explicit PROTOBUF_CONSTEXPR HealthResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HealthResponse(const HealthResponse& from);
+  HealthResponse(HealthResponse&& from) noexcept
+    : HealthResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline HealthResponse& operator=(const HealthResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HealthResponse& operator=(HealthResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HealthResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HealthResponse* internal_default_instance() {
+    return reinterpret_cast<const HealthResponse*>(
+               &_HealthResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(HealthResponse& a, HealthResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HealthResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HealthResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HealthResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HealthResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HealthResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const HealthResponse& from) {
+    HealthResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HealthResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.HealthResponse";
+  }
+  protected:
+  explicit HealthResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 1,
+  };
+  // string status = 1;
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_NODISCARD std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.HealthResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
 
 class ImageRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ImageRequest) */ {
@@ -120,7 +404,7 @@ class ImageRequest final :
                &_ImageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(ImageRequest& a, ImageRequest& b) {
     a.Swap(&b);
@@ -273,7 +557,7 @@ class ImageResponse final :
                &_ImageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(ImageResponse& a, ImageResponse& b) {
     a.Swap(&b);
@@ -426,7 +710,7 @@ class VideoRequest final :
                &_VideoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(VideoRequest& a, VideoRequest& b) {
     a.Swap(&b);
@@ -531,6 +815,159 @@ class VideoRequest final :
 };
 // -------------------------------------------------------------------
 
+class VideoResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoResponse) */ {
+ public:
+  inline VideoResponse() : VideoResponse(nullptr) {}
+  ~VideoResponse() override;
+  explicit PROTOBUF_CONSTEXPR VideoResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VideoResponse(const VideoResponse& from);
+  VideoResponse(VideoResponse&& from) noexcept
+    : VideoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline VideoResponse& operator=(const VideoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VideoResponse& operator=(VideoResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VideoResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VideoResponse* internal_default_instance() {
+    return reinterpret_cast<const VideoResponse*>(
+               &_VideoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(VideoResponse& a, VideoResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VideoResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VideoResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VideoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VideoResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VideoResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VideoResponse& from) {
+    VideoResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VideoResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.VideoResponse";
+  }
+  protected:
+  explicit VideoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOutputPathFieldNumber = 1,
+  };
+  // string outputPath = 1;
+  void clear_outputpath();
+  const std::string& outputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_outputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_outputpath();
+  PROTOBUF_NODISCARD std::string* release_outputpath();
+  void set_allocated_outputpath(std::string* outputpath);
+  private:
+  const std::string& _internal_outputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_outputpath(const std::string& value);
+  std::string* _internal_mutable_outputpath();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.VideoResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpath_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ThumbnailResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ThumbnailResponse) */ {
  public:
@@ -579,7 +1016,7 @@ class ThumbnailResponse final :
                &_ThumbnailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    6;
 
   friend void swap(ThumbnailResponse& a, ThumbnailResponse& b) {
     a.Swap(&b);
@@ -684,24 +1121,24 @@ class ThumbnailResponse final :
 };
 // -------------------------------------------------------------------
 
-class VideoResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoResponse) */ {
+class AudioResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AudioResponse) */ {
  public:
-  inline VideoResponse() : VideoResponse(nullptr) {}
-  ~VideoResponse() override;
-  explicit PROTOBUF_CONSTEXPR VideoResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline AudioResponse() : AudioResponse(nullptr) {}
+  ~AudioResponse() override;
+  explicit PROTOBUF_CONSTEXPR AudioResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  VideoResponse(const VideoResponse& from);
-  VideoResponse(VideoResponse&& from) noexcept
-    : VideoResponse() {
+  AudioResponse(const AudioResponse& from);
+  AudioResponse(AudioResponse&& from) noexcept
+    : AudioResponse() {
     *this = ::std::move(from);
   }
 
-  inline VideoResponse& operator=(const VideoResponse& from) {
+  inline AudioResponse& operator=(const AudioResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VideoResponse& operator=(VideoResponse&& from) noexcept {
+  inline AudioResponse& operator=(AudioResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -724,20 +1161,20 @@ class VideoResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const VideoResponse& default_instance() {
+  static const AudioResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const VideoResponse* internal_default_instance() {
-    return reinterpret_cast<const VideoResponse*>(
-               &_VideoResponse_default_instance_);
+  static inline const AudioResponse* internal_default_instance() {
+    return reinterpret_cast<const AudioResponse*>(
+               &_AudioResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
-  friend void swap(VideoResponse& a, VideoResponse& b) {
+  friend void swap(AudioResponse& a, AudioResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(VideoResponse* other) {
+  inline void Swap(AudioResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -750,7 +1187,7 @@ class VideoResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VideoResponse* other) {
+  void UnsafeArenaSwap(AudioResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -758,14 +1195,14 @@ class VideoResponse final :
 
   // implements Message ----------------------------------------------
 
-  VideoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<VideoResponse>(arena);
+  AudioResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AudioResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const VideoResponse& from);
+  void CopyFrom(const AudioResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const VideoResponse& from) {
-    VideoResponse::MergeImpl(*this, from);
+  void MergeFrom( const AudioResponse& from) {
+    AudioResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -783,15 +1220,15 @@ class VideoResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VideoResponse* other);
+  void InternalSwap(AudioResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "media.VideoResponse";
+    return "media.AudioResponse";
   }
   protected:
-  explicit VideoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit AudioResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -805,23 +1242,23 @@ class VideoResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOutputPathFieldNumber = 1,
+    kAudioPathFieldNumber = 1,
   };
-  // string outputPath = 1;
-  void clear_outputpath();
-  const std::string& outputpath() const;
+  // string audioPath = 1;
+  void clear_audiopath();
+  const std::string& audiopath() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_outputpath(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_outputpath();
-  PROTOBUF_NODISCARD std::string* release_outputpath();
-  void set_allocated_outputpath(std::string* outputpath);
+  void set_audiopath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_audiopath();
+  PROTOBUF_NODISCARD std::string* release_audiopath();
+  void set_allocated_audiopath(std::string* audiopath);
   private:
-  const std::string& _internal_outputpath() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_outputpath(const std::string& value);
-  std::string* _internal_mutable_outputpath();
+  const std::string& _internal_audiopath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_audiopath(const std::string& value);
+  std::string* _internal_mutable_audiopath();
   public:
 
-  // @@protoc_insertion_point(class_scope:media.VideoResponse)
+  // @@protoc_insertion_point(class_scope:media.AudioResponse)
  private:
   class _Internal;
 
@@ -829,7 +1266,7 @@ class VideoResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr audiopath_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -844,6 +1281,64 @@ class VideoResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// HealthRequest
+
+// -------------------------------------------------------------------
+
+// HealthResponse
+
+// string status = 1;
+inline void HealthResponse::clear_status() {
+  _impl_.status_.ClearToEmpty();
+}
+inline const std::string& HealthResponse::status() const {
+  // @@protoc_insertion_point(field_get:media.HealthResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void HealthResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.HealthResponse.status)
+}
+inline std::string* HealthResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:media.HealthResponse.status)
+  return _s;
+}
+inline const std::string& HealthResponse::_internal_status() const {
+  return _impl_.status_.Get();
+}
+inline void HealthResponse::_internal_set_status(const std::string& value) {
+  
+  _impl_.status_.Set(value, GetArenaForAllocation());
+}
+inline std::string* HealthResponse::_internal_mutable_status() {
+  
+  return _impl_.status_.Mutable(GetArenaForAllocation());
+}
+inline std::string* HealthResponse::release_status() {
+  // @@protoc_insertion_point(field_release:media.HealthResponse.status)
+  return _impl_.status_.Release();
+}
+inline void HealthResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.HealthResponse.status)
+}
+
+// -------------------------------------------------------------------
+
 // ImageRequest
 
 // string imagePath = 1;
@@ -1006,6 +1501,60 @@ inline void VideoRequest::set_allocated_videopath(std::string* videopath) {
 
 // -------------------------------------------------------------------
 
+// VideoResponse
+
+// string outputPath = 1;
+inline void VideoResponse::clear_outputpath() {
+  _impl_.outputpath_.ClearToEmpty();
+}
+inline const std::string& VideoResponse::outputpath() const {
+  // @@protoc_insertion_point(field_get:media.VideoResponse.outputPath)
+  return _internal_outputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoResponse::set_outputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.outputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoResponse.outputPath)
+}
+inline std::string* VideoResponse::mutable_outputpath() {
+  std::string* _s = _internal_mutable_outputpath();
+  // @@protoc_insertion_point(field_mutable:media.VideoResponse.outputPath)
+  return _s;
+}
+inline const std::string& VideoResponse::_internal_outputpath() const {
+  return _impl_.outputpath_.Get();
+}
+inline void VideoResponse::_internal_set_outputpath(const std::string& value) {
+  
+  _impl_.outputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoResponse::_internal_mutable_outputpath() {
+  
+  return _impl_.outputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoResponse::release_outputpath() {
+  // @@protoc_insertion_point(field_release:media.VideoResponse.outputPath)
+  return _impl_.outputpath_.Release();
+}
+inline void VideoResponse::set_allocated_outputpath(std::string* outputpath) {
+  if (outputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.outputpath_.SetAllocated(outputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.outputpath_.IsDefault()) {
+    _impl_.outputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoResponse.outputPath)
+}
+
+// -------------------------------------------------------------------
+
 // ThumbnailResponse
 
 // string thumbnailPath = 1;
@@ -1060,61 +1609,67 @@ inline void ThumbnailResponse::set_allocated_thumbnailpath(std::string* thumbnai
 
 // -------------------------------------------------------------------
 
-// VideoResponse
+// AudioResponse
 
-// string outputPath = 1;
-inline void VideoResponse::clear_outputpath() {
-  _impl_.outputpath_.ClearToEmpty();
+// string audioPath = 1;
+inline void AudioResponse::clear_audiopath() {
+  _impl_.audiopath_.ClearToEmpty();
 }
-inline const std::string& VideoResponse::outputpath() const {
-  // @@protoc_insertion_point(field_get:media.VideoResponse.outputPath)
-  return _internal_outputpath();
+inline const std::string& AudioResponse::audiopath() const {
+  // @@protoc_insertion_point(field_get:media.AudioResponse.audioPath)
+  return _internal_audiopath();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void VideoResponse::set_outputpath(ArgT0&& arg0, ArgT... args) {
+void AudioResponse::set_audiopath(ArgT0&& arg0, ArgT... args) {
  
- _impl_.outputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:media.VideoResponse.outputPath)
+ _impl_.audiopath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioResponse.audioPath)
 }
-inline std::string* VideoResponse::mutable_outputpath() {
-  std::string* _s = _internal_mutable_outputpath();
-  // @@protoc_insertion_point(field_mutable:media.VideoResponse.outputPath)
+inline std::string* AudioResponse::mutable_audiopath() {
+  std::string* _s = _internal_mutable_audiopath();
+  // @@protoc_insertion_point(field_mutable:media.AudioResponse.audioPath)
   return _s;
 }
-inline const std::string& VideoResponse::_internal_outputpath() const {
-  return _impl_.outputpath_.Get();
+inline const std::string& AudioResponse::_internal_audiopath() const {
+  return _impl_.audiopath_.Get();
 }
-inline void VideoResponse::_internal_set_outputpath(const std::string& value) {
+inline void AudioResponse::_internal_set_audiopath(const std::string& value) {
   
-  _impl_.outputpath_.Set(value, GetArenaForAllocation());
+  _impl_.audiopath_.Set(value, GetArenaForAllocation());
 }
-inline std::string* VideoResponse::_internal_mutable_outputpath() {
+inline std::string* AudioResponse::_internal_mutable_audiopath() {
   
-  return _impl_.outputpath_.Mutable(GetArenaForAllocation());
+  return _impl_.audiopath_.Mutable(GetArenaForAllocation());
 }
-inline std::string* VideoResponse::release_outputpath() {
-  // @@protoc_insertion_point(field_release:media.VideoResponse.outputPath)
-  return _impl_.outputpath_.Release();
+inline std::string* AudioResponse::release_audiopath() {
+  // @@protoc_insertion_point(field_release:media.AudioResponse.audioPath)
+  return _impl_.audiopath_.Release();
 }
-inline void VideoResponse::set_allocated_outputpath(std::string* outputpath) {
-  if (outputpath != nullptr) {
+inline void AudioResponse::set_allocated_audiopath(std::string* audiopath) {
+  if (audiopath != nullptr) {
     
   } else {
     
   }
-  _impl_.outputpath_.SetAllocated(outputpath, GetArenaForAllocation());
+  _impl_.audiopath_.SetAllocated(audiopath, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.outputpath_.IsDefault()) {
-    _impl_.outputpath_.Set("", GetArenaForAllocation());
+  if (_impl_.audiopath_.IsDefault()) {
+    _impl_.audiopath_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:media.VideoResponse.outputPath)
+  // @@protoc_insertion_point(field_set_allocated:media.AudioResponse.audioPath)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
