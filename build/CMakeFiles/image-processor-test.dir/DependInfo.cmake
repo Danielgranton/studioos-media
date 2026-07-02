@@ -9,6 +9,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/linux/Documents/studioos-media/src/config/config.cpp" "CMakeFiles/image-processor-test.dir/src/config/config.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/config/config.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp" "CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp" "CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/utils/FileUtils.cpp" "CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/utils/Logger.cpp" "CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.o" "gcc" "CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.o.d"

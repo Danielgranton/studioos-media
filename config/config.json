@@ -5,7 +5,12 @@
 
     "storage": {
         "temp": "temp",
-        "assets": "assets"
+        "assets": "assets",
+        "s3Bucket": "",
+        "s3Region": "",
+        "s3EndpointUrl": "",
+        "s3Prefix": "",
+        "s3UsePathStyle": false
     },
 
     "image": {

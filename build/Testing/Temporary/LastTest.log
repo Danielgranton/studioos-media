@@ -1,47 +1,195 @@
-Start testing: Jul 01 18:34 EAT
+Start testing: Jul 02 13:23 EAT
 ----------------------------------------------------------
-1/2 Testing: video-processor-test
-1/2 Test: video-processor-test
+1/9 Testing: video-processor-test
+1/9 Test: video-processor-test
 Command: "/home/linux/Documents/studioos-media/build/video-processor-test"
 Directory: /home/linux/Documents/studioos-media/build
-"video-processor-test" start time: Jul 01 18:34 EAT
+"video-processor-test" start time: Jul 02 13:23 EAT
 Output:
 ----------------------------------------------------------
-2026-07-01 18:34:09[INFO]Compressing video: temp/tests/sample.mp4
-2026-07-01 18:34:09[INFO]Video compression completed in 0 ms
-2026-07-01 18:34:09[INFO]Generating thumbnail: temp/tests/sample.mp4
-2026-07-01 18:34:09[INFO]Thumbnail generation completed in 0 ms
-2026-07-01 18:34:09[INFO]Extracting audio: temp/tests/sample.mp4
-2026-07-01 18:34:09[INFO]Audio extraction completed in 0 ms
+2026-07-02 13:23:35[INFO]Compressing video: temp/tests/sample.mp4
+2026-07-02 13:23:36[INFO]Video compression completed in 211 ms
+2026-07-02 13:23:36[INFO]Generating thumbnail: temp/tests/sample.mp4
+2026-07-02 13:23:36[INFO]Thumbnail generation completed in 135 ms
+2026-07-02 13:23:36[INFO]Extracting audio: temp/tests/sample.mp4
+2026-07-02 13:23:36[INFO]Audio extraction completed in 157 ms
+2026-07-02 13:23:36[INFO]Converting video: temp/tests/sample.mp4 to mov
+2026-07-02 13:23:36[INFO]Video conversion completed in 187 ms
+2026-07-02 13:23:36[INFO]Trimming video: temp/tests/sample.mp4
+2026-07-02 13:23:36[INFO]Video trim completed in 156 ms
+2026-07-02 13:23:36[INFO]Merging videos
+2026-07-02 13:23:36[INFO]Video merge completed in 148 ms
 video processor smoke test passed
+<end of output>
+Test time =   1.12 sec
+----------------------------------------------------------
+Test Passed.
+"video-processor-test" end time: Jul 02 13:23 EAT
+"video-processor-test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/9 Testing: image-processor-test
+2/9 Test: image-processor-test
+Command: "/home/linux/Documents/studioos-media/build/image-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"image-processor-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+2026-07-02 13:23:36[INFO]Compressing image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Compression completed in 0 ms
+2026-07-02 13:23:36[INFO]Resizing image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Resize completed in 0 ms
+2026-07-02 13:23:36[INFO]Resizing image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Resize completed in 0 ms
+2026-07-02 13:23:36[INFO]Cropping image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Crop completed in 0 ms
+2026-07-02 13:23:36[INFO]Rotating image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Rotate completed in 0 ms
+2026-07-02 13:23:36[INFO]Blurring image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Blur completed in 2 ms
+2026-07-02 13:23:36[INFO]Applying watermark: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Watermark completed in 0 ms
+2026-07-02 13:23:36[INFO]Sharpening image: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Sharpen completed in 0 ms
+2026-07-02 13:23:36[INFO]Removing metadata: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]Metadata removal completed in 0 ms
+2026-07-02 13:23:36[INFO]Saving image as WebP: temp/tests/sample.jpg
+2026-07-02 13:23:36[INFO]WebP save completed in 0 ms
+2026-07-02 13:23:36[INFO]Saving image as AVIF: temp/tests/sample.jpg
+2026-07-02 13:23:37[INFO]AVIF save completed in 112 ms
+2026-07-02 13:23:37[INFO]Optimizing PNG: temp/tests/sample.jpg
+2026-07-02 13:23:37[INFO]PNG optimization completed in 0 ms
+image processor smoke test passed
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Passed.
+"image-processor-test" end time: Jul 02 13:23 EAT
+"image-processor-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/9 Testing: audio-processor-test
+3/9 Test: audio-processor-test
+Command: "/home/linux/Documents/studioos-media/build/audio-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"audio-processor-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+2026-07-02 13:23:37[INFO]Encoding audio: temp/tests/sample.wav -> mp3
+2026-07-02 13:23:37[INFO]Audio encode completed in 138 ms
+2026-07-02 13:23:37[INFO]Normalizing audio: temp/tests/sample.wav
+2026-07-02 13:23:37[INFO]Audio normalize completed in 187 ms
+2026-07-02 13:23:37[INFO]Reducing noise in audio: temp/tests/sample.wav
+2026-07-02 13:23:37[INFO]Audio denoise completed in 165 ms
+2026-07-02 13:23:37[INFO]Merging audio inputs
+2026-07-02 13:23:37[INFO]Audio merge completed in 179 ms
+2026-07-02 13:23:37[INFO]Trimming audio: temp/tests/sample.wav
+2026-07-02 13:23:37[INFO]Audio trim completed in 174 ms
+2026-07-02 13:23:37[INFO]Converting audio: temp/tests/sample.wav -> aac
+2026-07-02 13:23:38[INFO]Audio convert completed in 212 ms
+audio processor smoke test passed
+<end of output>
+Test time =   1.13 sec
+----------------------------------------------------------
+Test Passed.
+"audio-processor-test" end time: Jul 02 13:23 EAT
+"audio-processor-test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+4/9 Testing: streaming-service-test
+4/9 Test: streaming-service-test
+Command: "/home/linux/Documents/studioos-media/build/streaming-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"streaming-service-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+streaming service smoke test passed
+<end of output>
+Test time =   1.05 sec
+----------------------------------------------------------
+Test Passed.
+"streaming-service-test" end time: Jul 02 13:23 EAT
+"streaming-service-test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+5/9 Testing: ad-service-test
+5/9 Test: ad-service-test
+Command: "/home/linux/Documents/studioos-media/build/ad-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"ad-service-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+ad service smoke test passed
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"video-processor-test" end time: Jul 01 18:34 EAT
-"video-processor-test" time elapsed: 00:00:00
+"ad-service-test" end time: Jul 02 13:23 EAT
+"ad-service-test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/2 Testing: image-processor-test
-2/2 Test: image-processor-test
-Command: "/home/linux/Documents/studioos-media/build/image-processor-test"
+6/9 Testing: grpc-ad-service-test
+6/9 Test: grpc-ad-service-test
+Command: "/home/linux/Documents/studioos-media/build/grpc-ad-service-test"
 Directory: /home/linux/Documents/studioos-media/build
-"image-processor-test" start time: Jul 01 18:34 EAT
+"grpc-ad-service-test" start time: Jul 02 13:23 EAT
 Output:
 ----------------------------------------------------------
-2026-07-01 18:34:09[INFO]Compressing image: temp/tests/sample.jpg
-2026-07-01 18:34:09[INFO]Compression completed in 0 ms
-2026-07-01 18:34:09[INFO]Resizing image: temp/tests/sample.jpg
-2026-07-01 18:34:09[INFO]Resize completed in 0 ms
-2026-07-01 18:34:09[INFO]Resizing image: temp/tests/sample.jpg
-2026-07-01 18:34:09[INFO]Resize completed in 8 ms
-image processor smoke test passed
+grpc ad service smoke test passed
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"grpc-ad-service-test" end time: Jul 02 13:23 EAT
+"grpc-ad-service-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: media-job-service-test
+7/9 Test: media-job-service-test
+Command: "/home/linux/Documents/studioos-media/build/media-job-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"media-job-service-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+media job service smoke test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"media-job-service-test" end time: Jul 02 13:23 EAT
+"media-job-service-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: grpc-media-job-test
+8/9 Test: grpc-media-job-test
+Command: "/home/linux/Documents/studioos-media/build/grpc-media-job-test"
+Directory: /home/linux/Documents/studioos-media/build
+"grpc-media-job-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+grpc media job smoke test passed
 <end of output>
 Test time =   0.14 sec
 ----------------------------------------------------------
 Test Passed.
-"image-processor-test" end time: Jul 01 18:34 EAT
-"image-processor-test" time elapsed: 00:00:00
+"grpc-media-job-test" end time: Jul 02 13:23 EAT
+"grpc-media-job-test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jul 01 18:34 EAT
+9/9 Testing: s3-storage-test
+9/9 Test: s3-storage-test
+Command: "/home/linux/Documents/studioos-media/build/s3-storage-test"
+Directory: /home/linux/Documents/studioos-media/build
+"s3-storage-test" start time: Jul 02 13:23 EAT
+Output:
+----------------------------------------------------------
+s3 storage smoke test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"s3-storage-test" end time: Jul 02 13:23 EAT
+"s3-storage-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 02 13:23 EAT

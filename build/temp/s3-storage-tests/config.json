@@ -1,0 +1,11 @@
+{
+  "grpc": { "port": 50051 },
+  "storage": {
+    "temp": "temp",
+    "assets": "assets",
+    "s3Bucket": "studioos-media",
+    "s3Region": "us-east-1",
+    "s3Prefix": "processed"
+  },
+  "image": { "quality": 85 }
+}

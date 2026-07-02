@@ -46,9 +46,36 @@ struct TableStruct_media_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_media_2eproto;
 namespace media {
+class AdCreateRequest;
+struct AdCreateRequestDefaultTypeInternal;
+extern AdCreateRequestDefaultTypeInternal _AdCreateRequest_default_instance_;
+class AdIdRequest;
+struct AdIdRequestDefaultTypeInternal;
+extern AdIdRequestDefaultTypeInternal _AdIdRequest_default_instance_;
+class AdReportResponse;
+struct AdReportResponseDefaultTypeInternal;
+extern AdReportResponseDefaultTypeInternal _AdReportResponse_default_instance_;
+class AdResponse;
+struct AdResponseDefaultTypeInternal;
+extern AdResponseDefaultTypeInternal _AdResponse_default_instance_;
+class AdScheduleRequest;
+struct AdScheduleRequestDefaultTypeInternal;
+extern AdScheduleRequestDefaultTypeInternal _AdScheduleRequest_default_instance_;
+class AudioFormatRequest;
+struct AudioFormatRequestDefaultTypeInternal;
+extern AudioFormatRequestDefaultTypeInternal _AudioFormatRequest_default_instance_;
+class AudioMergeRequest;
+struct AudioMergeRequestDefaultTypeInternal;
+extern AudioMergeRequestDefaultTypeInternal _AudioMergeRequest_default_instance_;
+class AudioRequest;
+struct AudioRequestDefaultTypeInternal;
+extern AudioRequestDefaultTypeInternal _AudioRequest_default_instance_;
 class AudioResponse;
 struct AudioResponseDefaultTypeInternal;
 extern AudioResponseDefaultTypeInternal _AudioResponse_default_instance_;
+class AudioTrimRequest;
+struct AudioTrimRequestDefaultTypeInternal;
+extern AudioTrimRequestDefaultTypeInternal _AudioTrimRequest_default_instance_;
 class HealthRequest;
 struct HealthRequestDefaultTypeInternal;
 extern HealthRequestDefaultTypeInternal _HealthRequest_default_instance_;
@@ -58,28 +85,73 @@ extern HealthResponseDefaultTypeInternal _HealthResponse_default_instance_;
 class ImageRequest;
 struct ImageRequestDefaultTypeInternal;
 extern ImageRequestDefaultTypeInternal _ImageRequest_default_instance_;
+class ImageResizeRequest;
+struct ImageResizeRequestDefaultTypeInternal;
+extern ImageResizeRequestDefaultTypeInternal _ImageResizeRequest_default_instance_;
 class ImageResponse;
 struct ImageResponseDefaultTypeInternal;
 extern ImageResponseDefaultTypeInternal _ImageResponse_default_instance_;
+class MediaJobLookupRequest;
+struct MediaJobLookupRequestDefaultTypeInternal;
+extern MediaJobLookupRequestDefaultTypeInternal _MediaJobLookupRequest_default_instance_;
+class MediaJobRequest;
+struct MediaJobRequestDefaultTypeInternal;
+extern MediaJobRequestDefaultTypeInternal _MediaJobRequest_default_instance_;
+class MediaJobResponse;
+struct MediaJobResponseDefaultTypeInternal;
+extern MediaJobResponseDefaultTypeInternal _MediaJobResponse_default_instance_;
+class MediaUploadChunk;
+struct MediaUploadChunkDefaultTypeInternal;
+extern MediaUploadChunkDefaultTypeInternal _MediaUploadChunk_default_instance_;
+class MediaUploadMetadata;
+struct MediaUploadMetadataDefaultTypeInternal;
+extern MediaUploadMetadataDefaultTypeInternal _MediaUploadMetadata_default_instance_;
 class ThumbnailResponse;
 struct ThumbnailResponseDefaultTypeInternal;
 extern ThumbnailResponseDefaultTypeInternal _ThumbnailResponse_default_instance_;
+class VideoConvertRequest;
+struct VideoConvertRequestDefaultTypeInternal;
+extern VideoConvertRequestDefaultTypeInternal _VideoConvertRequest_default_instance_;
+class VideoMergeRequest;
+struct VideoMergeRequestDefaultTypeInternal;
+extern VideoMergeRequestDefaultTypeInternal _VideoMergeRequest_default_instance_;
 class VideoRequest;
 struct VideoRequestDefaultTypeInternal;
 extern VideoRequestDefaultTypeInternal _VideoRequest_default_instance_;
 class VideoResponse;
 struct VideoResponseDefaultTypeInternal;
 extern VideoResponseDefaultTypeInternal _VideoResponse_default_instance_;
+class VideoTrimRequest;
+struct VideoTrimRequestDefaultTypeInternal;
+extern VideoTrimRequestDefaultTypeInternal _VideoTrimRequest_default_instance_;
 }  // namespace media
 PROTOBUF_NAMESPACE_OPEN
+template<> ::media::AdCreateRequest* Arena::CreateMaybeMessage<::media::AdCreateRequest>(Arena*);
+template<> ::media::AdIdRequest* Arena::CreateMaybeMessage<::media::AdIdRequest>(Arena*);
+template<> ::media::AdReportResponse* Arena::CreateMaybeMessage<::media::AdReportResponse>(Arena*);
+template<> ::media::AdResponse* Arena::CreateMaybeMessage<::media::AdResponse>(Arena*);
+template<> ::media::AdScheduleRequest* Arena::CreateMaybeMessage<::media::AdScheduleRequest>(Arena*);
+template<> ::media::AudioFormatRequest* Arena::CreateMaybeMessage<::media::AudioFormatRequest>(Arena*);
+template<> ::media::AudioMergeRequest* Arena::CreateMaybeMessage<::media::AudioMergeRequest>(Arena*);
+template<> ::media::AudioRequest* Arena::CreateMaybeMessage<::media::AudioRequest>(Arena*);
 template<> ::media::AudioResponse* Arena::CreateMaybeMessage<::media::AudioResponse>(Arena*);
+template<> ::media::AudioTrimRequest* Arena::CreateMaybeMessage<::media::AudioTrimRequest>(Arena*);
 template<> ::media::HealthRequest* Arena::CreateMaybeMessage<::media::HealthRequest>(Arena*);
 template<> ::media::HealthResponse* Arena::CreateMaybeMessage<::media::HealthResponse>(Arena*);
 template<> ::media::ImageRequest* Arena::CreateMaybeMessage<::media::ImageRequest>(Arena*);
+template<> ::media::ImageResizeRequest* Arena::CreateMaybeMessage<::media::ImageResizeRequest>(Arena*);
 template<> ::media::ImageResponse* Arena::CreateMaybeMessage<::media::ImageResponse>(Arena*);
+template<> ::media::MediaJobLookupRequest* Arena::CreateMaybeMessage<::media::MediaJobLookupRequest>(Arena*);
+template<> ::media::MediaJobRequest* Arena::CreateMaybeMessage<::media::MediaJobRequest>(Arena*);
+template<> ::media::MediaJobResponse* Arena::CreateMaybeMessage<::media::MediaJobResponse>(Arena*);
+template<> ::media::MediaUploadChunk* Arena::CreateMaybeMessage<::media::MediaUploadChunk>(Arena*);
+template<> ::media::MediaUploadMetadata* Arena::CreateMaybeMessage<::media::MediaUploadMetadata>(Arena*);
 template<> ::media::ThumbnailResponse* Arena::CreateMaybeMessage<::media::ThumbnailResponse>(Arena*);
+template<> ::media::VideoConvertRequest* Arena::CreateMaybeMessage<::media::VideoConvertRequest>(Arena*);
+template<> ::media::VideoMergeRequest* Arena::CreateMaybeMessage<::media::VideoMergeRequest>(Arena*);
 template<> ::media::VideoRequest* Arena::CreateMaybeMessage<::media::VideoRequest>(Arena*);
 template<> ::media::VideoResponse* Arena::CreateMaybeMessage<::media::VideoResponse>(Arena*);
+template<> ::media::VideoTrimRequest* Arena::CreateMaybeMessage<::media::VideoTrimRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace media {
 
@@ -1272,6 +1344,3343 @@ class AudioResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_media_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ImageResizeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ImageResizeRequest) */ {
+ public:
+  inline ImageResizeRequest() : ImageResizeRequest(nullptr) {}
+  ~ImageResizeRequest() override;
+  explicit PROTOBUF_CONSTEXPR ImageResizeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ImageResizeRequest(const ImageResizeRequest& from);
+  ImageResizeRequest(ImageResizeRequest&& from) noexcept
+    : ImageResizeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ImageResizeRequest& operator=(const ImageResizeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ImageResizeRequest& operator=(ImageResizeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ImageResizeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ImageResizeRequest* internal_default_instance() {
+    return reinterpret_cast<const ImageResizeRequest*>(
+               &_ImageResizeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(ImageResizeRequest& a, ImageResizeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ImageResizeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ImageResizeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ImageResizeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ImageResizeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ImageResizeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ImageResizeRequest& from) {
+    ImageResizeRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ImageResizeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.ImageResizeRequest";
+  }
+  protected:
+  explicit ImageResizeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kImagePathFieldNumber = 1,
+    kWidthFieldNumber = 2,
+    kHeightFieldNumber = 3,
+  };
+  // string imagePath = 1;
+  void clear_imagepath();
+  const std::string& imagepath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_imagepath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_imagepath();
+  PROTOBUF_NODISCARD std::string* release_imagepath();
+  void set_allocated_imagepath(std::string* imagepath);
+  private:
+  const std::string& _internal_imagepath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_imagepath(const std::string& value);
+  std::string* _internal_mutable_imagepath();
+  public:
+
+  // int32 width = 2;
+  void clear_width();
+  int32_t width() const;
+  void set_width(int32_t value);
+  private:
+  int32_t _internal_width() const;
+  void _internal_set_width(int32_t value);
+  public:
+
+  // int32 height = 3;
+  void clear_height();
+  int32_t height() const;
+  void set_height(int32_t value);
+  private:
+  int32_t _internal_height() const;
+  void _internal_set_height(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.ImageResizeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepath_;
+    int32_t width_;
+    int32_t height_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class VideoConvertRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoConvertRequest) */ {
+ public:
+  inline VideoConvertRequest() : VideoConvertRequest(nullptr) {}
+  ~VideoConvertRequest() override;
+  explicit PROTOBUF_CONSTEXPR VideoConvertRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VideoConvertRequest(const VideoConvertRequest& from);
+  VideoConvertRequest(VideoConvertRequest&& from) noexcept
+    : VideoConvertRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline VideoConvertRequest& operator=(const VideoConvertRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VideoConvertRequest& operator=(VideoConvertRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VideoConvertRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VideoConvertRequest* internal_default_instance() {
+    return reinterpret_cast<const VideoConvertRequest*>(
+               &_VideoConvertRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(VideoConvertRequest& a, VideoConvertRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VideoConvertRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VideoConvertRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VideoConvertRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VideoConvertRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VideoConvertRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VideoConvertRequest& from) {
+    VideoConvertRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VideoConvertRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.VideoConvertRequest";
+  }
+  protected:
+  explicit VideoConvertRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVideoPathFieldNumber = 1,
+    kFormatFieldNumber = 2,
+  };
+  // string videoPath = 1;
+  void clear_videopath();
+  const std::string& videopath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_videopath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_videopath();
+  PROTOBUF_NODISCARD std::string* release_videopath();
+  void set_allocated_videopath(std::string* videopath);
+  private:
+  const std::string& _internal_videopath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_videopath(const std::string& value);
+  std::string* _internal_mutable_videopath();
+  public:
+
+  // string format = 2;
+  void clear_format();
+  const std::string& format() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_format(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_format();
+  PROTOBUF_NODISCARD std::string* release_format();
+  void set_allocated_format(std::string* format);
+  private:
+  const std::string& _internal_format() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_format(const std::string& value);
+  std::string* _internal_mutable_format();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.VideoConvertRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr videopath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr format_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class VideoTrimRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoTrimRequest) */ {
+ public:
+  inline VideoTrimRequest() : VideoTrimRequest(nullptr) {}
+  ~VideoTrimRequest() override;
+  explicit PROTOBUF_CONSTEXPR VideoTrimRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VideoTrimRequest(const VideoTrimRequest& from);
+  VideoTrimRequest(VideoTrimRequest&& from) noexcept
+    : VideoTrimRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline VideoTrimRequest& operator=(const VideoTrimRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VideoTrimRequest& operator=(VideoTrimRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VideoTrimRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VideoTrimRequest* internal_default_instance() {
+    return reinterpret_cast<const VideoTrimRequest*>(
+               &_VideoTrimRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(VideoTrimRequest& a, VideoTrimRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VideoTrimRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VideoTrimRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VideoTrimRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VideoTrimRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VideoTrimRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VideoTrimRequest& from) {
+    VideoTrimRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VideoTrimRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.VideoTrimRequest";
+  }
+  protected:
+  explicit VideoTrimRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVideoPathFieldNumber = 1,
+    kStartFieldNumber = 2,
+    kEndFieldNumber = 3,
+  };
+  // string videoPath = 1;
+  void clear_videopath();
+  const std::string& videopath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_videopath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_videopath();
+  PROTOBUF_NODISCARD std::string* release_videopath();
+  void set_allocated_videopath(std::string* videopath);
+  private:
+  const std::string& _internal_videopath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_videopath(const std::string& value);
+  std::string* _internal_mutable_videopath();
+  public:
+
+  // string start = 2;
+  void clear_start();
+  const std::string& start() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_start(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_start();
+  PROTOBUF_NODISCARD std::string* release_start();
+  void set_allocated_start(std::string* start);
+  private:
+  const std::string& _internal_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_start(const std::string& value);
+  std::string* _internal_mutable_start();
+  public:
+
+  // string end = 3;
+  void clear_end();
+  const std::string& end() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_end(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_end();
+  PROTOBUF_NODISCARD std::string* release_end();
+  void set_allocated_end(std::string* end);
+  private:
+  const std::string& _internal_end() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_end(const std::string& value);
+  std::string* _internal_mutable_end();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.VideoTrimRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr videopath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class VideoMergeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoMergeRequest) */ {
+ public:
+  inline VideoMergeRequest() : VideoMergeRequest(nullptr) {}
+  ~VideoMergeRequest() override;
+  explicit PROTOBUF_CONSTEXPR VideoMergeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VideoMergeRequest(const VideoMergeRequest& from);
+  VideoMergeRequest(VideoMergeRequest&& from) noexcept
+    : VideoMergeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline VideoMergeRequest& operator=(const VideoMergeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VideoMergeRequest& operator=(VideoMergeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VideoMergeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VideoMergeRequest* internal_default_instance() {
+    return reinterpret_cast<const VideoMergeRequest*>(
+               &_VideoMergeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(VideoMergeRequest& a, VideoMergeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VideoMergeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VideoMergeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VideoMergeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VideoMergeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VideoMergeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VideoMergeRequest& from) {
+    VideoMergeRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VideoMergeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.VideoMergeRequest";
+  }
+  protected:
+  explicit VideoMergeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVideoPathsFieldNumber = 1,
+    kOutputPathFieldNumber = 2,
+  };
+  // repeated string videoPaths = 1;
+  int videopaths_size() const;
+  private:
+  int _internal_videopaths_size() const;
+  public:
+  void clear_videopaths();
+  const std::string& videopaths(int index) const;
+  std::string* mutable_videopaths(int index);
+  void set_videopaths(int index, const std::string& value);
+  void set_videopaths(int index, std::string&& value);
+  void set_videopaths(int index, const char* value);
+  void set_videopaths(int index, const char* value, size_t size);
+  std::string* add_videopaths();
+  void add_videopaths(const std::string& value);
+  void add_videopaths(std::string&& value);
+  void add_videopaths(const char* value);
+  void add_videopaths(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& videopaths() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_videopaths();
+  private:
+  const std::string& _internal_videopaths(int index) const;
+  std::string* _internal_add_videopaths();
+  public:
+
+  // string outputPath = 2;
+  void clear_outputpath();
+  const std::string& outputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_outputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_outputpath();
+  PROTOBUF_NODISCARD std::string* release_outputpath();
+  void set_allocated_outputpath(std::string* outputpath);
+  private:
+  const std::string& _internal_outputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_outputpath(const std::string& value);
+  std::string* _internal_mutable_outputpath();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.VideoMergeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> videopaths_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpath_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AudioRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AudioRequest) */ {
+ public:
+  inline AudioRequest() : AudioRequest(nullptr) {}
+  ~AudioRequest() override;
+  explicit PROTOBUF_CONSTEXPR AudioRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AudioRequest(const AudioRequest& from);
+  AudioRequest(AudioRequest&& from) noexcept
+    : AudioRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AudioRequest& operator=(const AudioRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AudioRequest& operator=(AudioRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AudioRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AudioRequest* internal_default_instance() {
+    return reinterpret_cast<const AudioRequest*>(
+               &_AudioRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(AudioRequest& a, AudioRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AudioRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AudioRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AudioRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AudioRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AudioRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AudioRequest& from) {
+    AudioRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AudioRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AudioRequest";
+  }
+  protected:
+  explicit AudioRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInputPathFieldNumber = 1,
+  };
+  // string inputPath = 1;
+  void clear_inputpath();
+  const std::string& inputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_inputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_inputpath();
+  PROTOBUF_NODISCARD std::string* release_inputpath();
+  void set_allocated_inputpath(std::string* inputpath);
+  private:
+  const std::string& _internal_inputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_inputpath(const std::string& value);
+  std::string* _internal_mutable_inputpath();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AudioRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpath_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AudioFormatRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AudioFormatRequest) */ {
+ public:
+  inline AudioFormatRequest() : AudioFormatRequest(nullptr) {}
+  ~AudioFormatRequest() override;
+  explicit PROTOBUF_CONSTEXPR AudioFormatRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AudioFormatRequest(const AudioFormatRequest& from);
+  AudioFormatRequest(AudioFormatRequest&& from) noexcept
+    : AudioFormatRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AudioFormatRequest& operator=(const AudioFormatRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AudioFormatRequest& operator=(AudioFormatRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AudioFormatRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AudioFormatRequest* internal_default_instance() {
+    return reinterpret_cast<const AudioFormatRequest*>(
+               &_AudioFormatRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(AudioFormatRequest& a, AudioFormatRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AudioFormatRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AudioFormatRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AudioFormatRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AudioFormatRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AudioFormatRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AudioFormatRequest& from) {
+    AudioFormatRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AudioFormatRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AudioFormatRequest";
+  }
+  protected:
+  explicit AudioFormatRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInputPathFieldNumber = 1,
+    kFormatFieldNumber = 2,
+  };
+  // string inputPath = 1;
+  void clear_inputpath();
+  const std::string& inputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_inputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_inputpath();
+  PROTOBUF_NODISCARD std::string* release_inputpath();
+  void set_allocated_inputpath(std::string* inputpath);
+  private:
+  const std::string& _internal_inputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_inputpath(const std::string& value);
+  std::string* _internal_mutable_inputpath();
+  public:
+
+  // string format = 2;
+  void clear_format();
+  const std::string& format() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_format(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_format();
+  PROTOBUF_NODISCARD std::string* release_format();
+  void set_allocated_format(std::string* format);
+  private:
+  const std::string& _internal_format() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_format(const std::string& value);
+  std::string* _internal_mutable_format();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AudioFormatRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr format_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AudioTrimRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AudioTrimRequest) */ {
+ public:
+  inline AudioTrimRequest() : AudioTrimRequest(nullptr) {}
+  ~AudioTrimRequest() override;
+  explicit PROTOBUF_CONSTEXPR AudioTrimRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AudioTrimRequest(const AudioTrimRequest& from);
+  AudioTrimRequest(AudioTrimRequest&& from) noexcept
+    : AudioTrimRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AudioTrimRequest& operator=(const AudioTrimRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AudioTrimRequest& operator=(AudioTrimRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AudioTrimRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AudioTrimRequest* internal_default_instance() {
+    return reinterpret_cast<const AudioTrimRequest*>(
+               &_AudioTrimRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(AudioTrimRequest& a, AudioTrimRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AudioTrimRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AudioTrimRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AudioTrimRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AudioTrimRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AudioTrimRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AudioTrimRequest& from) {
+    AudioTrimRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AudioTrimRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AudioTrimRequest";
+  }
+  protected:
+  explicit AudioTrimRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInputPathFieldNumber = 1,
+    kStartFieldNumber = 2,
+    kEndFieldNumber = 3,
+  };
+  // string inputPath = 1;
+  void clear_inputpath();
+  const std::string& inputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_inputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_inputpath();
+  PROTOBUF_NODISCARD std::string* release_inputpath();
+  void set_allocated_inputpath(std::string* inputpath);
+  private:
+  const std::string& _internal_inputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_inputpath(const std::string& value);
+  std::string* _internal_mutable_inputpath();
+  public:
+
+  // string start = 2;
+  void clear_start();
+  const std::string& start() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_start(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_start();
+  PROTOBUF_NODISCARD std::string* release_start();
+  void set_allocated_start(std::string* start);
+  private:
+  const std::string& _internal_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_start(const std::string& value);
+  std::string* _internal_mutable_start();
+  public:
+
+  // string end = 3;
+  void clear_end();
+  const std::string& end() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_end(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_end();
+  PROTOBUF_NODISCARD std::string* release_end();
+  void set_allocated_end(std::string* end);
+  private:
+  const std::string& _internal_end() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_end(const std::string& value);
+  std::string* _internal_mutable_end();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AudioTrimRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr end_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AudioMergeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AudioMergeRequest) */ {
+ public:
+  inline AudioMergeRequest() : AudioMergeRequest(nullptr) {}
+  ~AudioMergeRequest() override;
+  explicit PROTOBUF_CONSTEXPR AudioMergeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AudioMergeRequest(const AudioMergeRequest& from);
+  AudioMergeRequest(AudioMergeRequest&& from) noexcept
+    : AudioMergeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AudioMergeRequest& operator=(const AudioMergeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AudioMergeRequest& operator=(AudioMergeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AudioMergeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AudioMergeRequest* internal_default_instance() {
+    return reinterpret_cast<const AudioMergeRequest*>(
+               &_AudioMergeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(AudioMergeRequest& a, AudioMergeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AudioMergeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AudioMergeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AudioMergeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AudioMergeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AudioMergeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AudioMergeRequest& from) {
+    AudioMergeRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AudioMergeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AudioMergeRequest";
+  }
+  protected:
+  explicit AudioMergeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInputPathsFieldNumber = 1,
+    kOutputPathFieldNumber = 2,
+  };
+  // repeated string inputPaths = 1;
+  int inputpaths_size() const;
+  private:
+  int _internal_inputpaths_size() const;
+  public:
+  void clear_inputpaths();
+  const std::string& inputpaths(int index) const;
+  std::string* mutable_inputpaths(int index);
+  void set_inputpaths(int index, const std::string& value);
+  void set_inputpaths(int index, std::string&& value);
+  void set_inputpaths(int index, const char* value);
+  void set_inputpaths(int index, const char* value, size_t size);
+  std::string* add_inputpaths();
+  void add_inputpaths(const std::string& value);
+  void add_inputpaths(std::string&& value);
+  void add_inputpaths(const char* value);
+  void add_inputpaths(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& inputpaths() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_inputpaths();
+  private:
+  const std::string& _internal_inputpaths(int index) const;
+  std::string* _internal_add_inputpaths();
+  public:
+
+  // string outputPath = 2;
+  void clear_outputpath();
+  const std::string& outputpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_outputpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_outputpath();
+  PROTOBUF_NODISCARD std::string* release_outputpath();
+  void set_allocated_outputpath(std::string* outputpath);
+  private:
+  const std::string& _internal_outputpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_outputpath(const std::string& value);
+  std::string* _internal_mutable_outputpath();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AudioMergeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> inputpaths_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpath_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaJobRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaJobRequest) */ {
+ public:
+  inline MediaJobRequest() : MediaJobRequest(nullptr) {}
+  ~MediaJobRequest() override;
+  explicit PROTOBUF_CONSTEXPR MediaJobRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaJobRequest(const MediaJobRequest& from);
+  MediaJobRequest(MediaJobRequest&& from) noexcept
+    : MediaJobRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaJobRequest& operator=(const MediaJobRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaJobRequest& operator=(MediaJobRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaJobRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaJobRequest* internal_default_instance() {
+    return reinterpret_cast<const MediaJobRequest*>(
+               &_MediaJobRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(MediaJobRequest& a, MediaJobRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaJobRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaJobRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaJobRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaJobRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaJobRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaJobRequest& from) {
+    MediaJobRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaJobRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaJobRequest";
+  }
+  protected:
+  explicit MediaJobRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAssetReferenceFieldNumber = 1,
+    kOperationFieldNumber = 2,
+    kParametersJsonFieldNumber = 3,
+  };
+  // string assetReference = 1;
+  void clear_assetreference();
+  const std::string& assetreference() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_assetreference(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_assetreference();
+  PROTOBUF_NODISCARD std::string* release_assetreference();
+  void set_allocated_assetreference(std::string* assetreference);
+  private:
+  const std::string& _internal_assetreference() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_assetreference(const std::string& value);
+  std::string* _internal_mutable_assetreference();
+  public:
+
+  // string operation = 2;
+  void clear_operation();
+  const std::string& operation() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_operation(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_operation();
+  PROTOBUF_NODISCARD std::string* release_operation();
+  void set_allocated_operation(std::string* operation);
+  private:
+  const std::string& _internal_operation() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation(const std::string& value);
+  std::string* _internal_mutable_operation();
+  public:
+
+  // string parametersJson = 3;
+  void clear_parametersjson();
+  const std::string& parametersjson() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parametersjson(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parametersjson();
+  PROTOBUF_NODISCARD std::string* release_parametersjson();
+  void set_allocated_parametersjson(std::string* parametersjson);
+  private:
+  const std::string& _internal_parametersjson() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parametersjson(const std::string& value);
+  std::string* _internal_mutable_parametersjson();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaJobRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr assetreference_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parametersjson_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaJobLookupRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaJobLookupRequest) */ {
+ public:
+  inline MediaJobLookupRequest() : MediaJobLookupRequest(nullptr) {}
+  ~MediaJobLookupRequest() override;
+  explicit PROTOBUF_CONSTEXPR MediaJobLookupRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaJobLookupRequest(const MediaJobLookupRequest& from);
+  MediaJobLookupRequest(MediaJobLookupRequest&& from) noexcept
+    : MediaJobLookupRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaJobLookupRequest& operator=(const MediaJobLookupRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaJobLookupRequest& operator=(MediaJobLookupRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaJobLookupRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaJobLookupRequest* internal_default_instance() {
+    return reinterpret_cast<const MediaJobLookupRequest*>(
+               &_MediaJobLookupRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(MediaJobLookupRequest& a, MediaJobLookupRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaJobLookupRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaJobLookupRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaJobLookupRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaJobLookupRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaJobLookupRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaJobLookupRequest& from) {
+    MediaJobLookupRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaJobLookupRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaJobLookupRequest";
+  }
+  protected:
+  explicit MediaJobLookupRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kJobIdFieldNumber = 1,
+  };
+  // string jobId = 1;
+  void clear_jobid();
+  const std::string& jobid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_jobid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_jobid();
+  PROTOBUF_NODISCARD std::string* release_jobid();
+  void set_allocated_jobid(std::string* jobid);
+  private:
+  const std::string& _internal_jobid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jobid(const std::string& value);
+  std::string* _internal_mutable_jobid();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaJobLookupRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jobid_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaJobResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaJobResponse) */ {
+ public:
+  inline MediaJobResponse() : MediaJobResponse(nullptr) {}
+  ~MediaJobResponse() override;
+  explicit PROTOBUF_CONSTEXPR MediaJobResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaJobResponse(const MediaJobResponse& from);
+  MediaJobResponse(MediaJobResponse&& from) noexcept
+    : MediaJobResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaJobResponse& operator=(const MediaJobResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaJobResponse& operator=(MediaJobResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaJobResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaJobResponse* internal_default_instance() {
+    return reinterpret_cast<const MediaJobResponse*>(
+               &_MediaJobResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(MediaJobResponse& a, MediaJobResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaJobResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaJobResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaJobResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaJobResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaJobResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaJobResponse& from) {
+    MediaJobResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaJobResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaJobResponse";
+  }
+  protected:
+  explicit MediaJobResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kJobIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kAssetReferenceFieldNumber = 3,
+    kOperationFieldNumber = 4,
+    kParametersJsonFieldNumber = 5,
+    kResultReferenceFieldNumber = 6,
+    kErrorMessageFieldNumber = 7,
+    kCreatedAtUnixMsFieldNumber = 8,
+    kUpdatedAtUnixMsFieldNumber = 9,
+  };
+  // string jobId = 1;
+  void clear_jobid();
+  const std::string& jobid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_jobid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_jobid();
+  PROTOBUF_NODISCARD std::string* release_jobid();
+  void set_allocated_jobid(std::string* jobid);
+  private:
+  const std::string& _internal_jobid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jobid(const std::string& value);
+  std::string* _internal_mutable_jobid();
+  public:
+
+  // string status = 2;
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_NODISCARD std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string assetReference = 3;
+  void clear_assetreference();
+  const std::string& assetreference() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_assetreference(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_assetreference();
+  PROTOBUF_NODISCARD std::string* release_assetreference();
+  void set_allocated_assetreference(std::string* assetreference);
+  private:
+  const std::string& _internal_assetreference() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_assetreference(const std::string& value);
+  std::string* _internal_mutable_assetreference();
+  public:
+
+  // string operation = 4;
+  void clear_operation();
+  const std::string& operation() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_operation(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_operation();
+  PROTOBUF_NODISCARD std::string* release_operation();
+  void set_allocated_operation(std::string* operation);
+  private:
+  const std::string& _internal_operation() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation(const std::string& value);
+  std::string* _internal_mutable_operation();
+  public:
+
+  // string parametersJson = 5;
+  void clear_parametersjson();
+  const std::string& parametersjson() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parametersjson(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parametersjson();
+  PROTOBUF_NODISCARD std::string* release_parametersjson();
+  void set_allocated_parametersjson(std::string* parametersjson);
+  private:
+  const std::string& _internal_parametersjson() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parametersjson(const std::string& value);
+  std::string* _internal_mutable_parametersjson();
+  public:
+
+  // string resultReference = 6;
+  void clear_resultreference();
+  const std::string& resultreference() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_resultreference(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_resultreference();
+  PROTOBUF_NODISCARD std::string* release_resultreference();
+  void set_allocated_resultreference(std::string* resultreference);
+  private:
+  const std::string& _internal_resultreference() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_resultreference(const std::string& value);
+  std::string* _internal_mutable_resultreference();
+  public:
+
+  // string errorMessage = 7;
+  void clear_errormessage();
+  const std::string& errormessage() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_errormessage(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_errormessage();
+  PROTOBUF_NODISCARD std::string* release_errormessage();
+  void set_allocated_errormessage(std::string* errormessage);
+  private:
+  const std::string& _internal_errormessage() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_errormessage(const std::string& value);
+  std::string* _internal_mutable_errormessage();
+  public:
+
+  // int64 createdAtUnixMs = 8;
+  void clear_createdatunixms();
+  int64_t createdatunixms() const;
+  void set_createdatunixms(int64_t value);
+  private:
+  int64_t _internal_createdatunixms() const;
+  void _internal_set_createdatunixms(int64_t value);
+  public:
+
+  // int64 updatedAtUnixMs = 9;
+  void clear_updatedatunixms();
+  int64_t updatedatunixms() const;
+  void set_updatedatunixms(int64_t value);
+  private:
+  int64_t _internal_updatedatunixms() const;
+  void _internal_set_updatedatunixms(int64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaJobResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jobid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr assetreference_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parametersjson_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resultreference_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
+    int64_t createdatunixms_;
+    int64_t updatedatunixms_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaUploadMetadata final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaUploadMetadata) */ {
+ public:
+  inline MediaUploadMetadata() : MediaUploadMetadata(nullptr) {}
+  ~MediaUploadMetadata() override;
+  explicit PROTOBUF_CONSTEXPR MediaUploadMetadata(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaUploadMetadata(const MediaUploadMetadata& from);
+  MediaUploadMetadata(MediaUploadMetadata&& from) noexcept
+    : MediaUploadMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaUploadMetadata& operator=(const MediaUploadMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaUploadMetadata& operator=(MediaUploadMetadata&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaUploadMetadata& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaUploadMetadata* internal_default_instance() {
+    return reinterpret_cast<const MediaUploadMetadata*>(
+               &_MediaUploadMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(MediaUploadMetadata& a, MediaUploadMetadata& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaUploadMetadata* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaUploadMetadata* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaUploadMetadata* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaUploadMetadata>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaUploadMetadata& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaUploadMetadata& from) {
+    MediaUploadMetadata::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaUploadMetadata* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaUploadMetadata";
+  }
+  protected:
+  explicit MediaUploadMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMediaIdFieldNumber = 1,
+    kOwnerIdFieldNumber = 2,
+    kMediaTypeFieldNumber = 3,
+    kFilenameFieldNumber = 4,
+    kContentTypeFieldNumber = 5,
+    kOperationFieldNumber = 6,
+    kParametersJsonFieldNumber = 7,
+    kUploadTokenFieldNumber = 8,
+  };
+  // string mediaId = 1;
+  void clear_mediaid();
+  const std::string& mediaid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mediaid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mediaid();
+  PROTOBUF_NODISCARD std::string* release_mediaid();
+  void set_allocated_mediaid(std::string* mediaid);
+  private:
+  const std::string& _internal_mediaid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mediaid(const std::string& value);
+  std::string* _internal_mutable_mediaid();
+  public:
+
+  // string ownerId = 2;
+  void clear_ownerid();
+  const std::string& ownerid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ownerid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ownerid();
+  PROTOBUF_NODISCARD std::string* release_ownerid();
+  void set_allocated_ownerid(std::string* ownerid);
+  private:
+  const std::string& _internal_ownerid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ownerid(const std::string& value);
+  std::string* _internal_mutable_ownerid();
+  public:
+
+  // string mediaType = 3;
+  void clear_mediatype();
+  const std::string& mediatype() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mediatype(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mediatype();
+  PROTOBUF_NODISCARD std::string* release_mediatype();
+  void set_allocated_mediatype(std::string* mediatype);
+  private:
+  const std::string& _internal_mediatype() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mediatype(const std::string& value);
+  std::string* _internal_mutable_mediatype();
+  public:
+
+  // string filename = 4;
+  void clear_filename();
+  const std::string& filename() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_filename(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_filename();
+  PROTOBUF_NODISCARD std::string* release_filename();
+  void set_allocated_filename(std::string* filename);
+  private:
+  const std::string& _internal_filename() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_filename(const std::string& value);
+  std::string* _internal_mutable_filename();
+  public:
+
+  // string contentType = 5;
+  void clear_contenttype();
+  const std::string& contenttype() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_contenttype(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_contenttype();
+  PROTOBUF_NODISCARD std::string* release_contenttype();
+  void set_allocated_contenttype(std::string* contenttype);
+  private:
+  const std::string& _internal_contenttype() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_contenttype(const std::string& value);
+  std::string* _internal_mutable_contenttype();
+  public:
+
+  // string operation = 6;
+  void clear_operation();
+  const std::string& operation() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_operation(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_operation();
+  PROTOBUF_NODISCARD std::string* release_operation();
+  void set_allocated_operation(std::string* operation);
+  private:
+  const std::string& _internal_operation() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation(const std::string& value);
+  std::string* _internal_mutable_operation();
+  public:
+
+  // string parametersJson = 7;
+  void clear_parametersjson();
+  const std::string& parametersjson() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parametersjson(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parametersjson();
+  PROTOBUF_NODISCARD std::string* release_parametersjson();
+  void set_allocated_parametersjson(std::string* parametersjson);
+  private:
+  const std::string& _internal_parametersjson() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parametersjson(const std::string& value);
+  std::string* _internal_mutable_parametersjson();
+  public:
+
+  // string uploadToken = 8;
+  void clear_uploadtoken();
+  const std::string& uploadtoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uploadtoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uploadtoken();
+  PROTOBUF_NODISCARD std::string* release_uploadtoken();
+  void set_allocated_uploadtoken(std::string* uploadtoken);
+  private:
+  const std::string& _internal_uploadtoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uploadtoken(const std::string& value);
+  std::string* _internal_mutable_uploadtoken();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaUploadMetadata)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mediaid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ownerid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mediatype_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filename_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contenttype_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parametersjson_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uploadtoken_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaUploadChunk final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaUploadChunk) */ {
+ public:
+  inline MediaUploadChunk() : MediaUploadChunk(nullptr) {}
+  ~MediaUploadChunk() override;
+  explicit PROTOBUF_CONSTEXPR MediaUploadChunk(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaUploadChunk(const MediaUploadChunk& from);
+  MediaUploadChunk(MediaUploadChunk&& from) noexcept
+    : MediaUploadChunk() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaUploadChunk& operator=(const MediaUploadChunk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaUploadChunk& operator=(MediaUploadChunk&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaUploadChunk& default_instance() {
+    return *internal_default_instance();
+  }
+  enum PayloadCase {
+    kMetadata = 1,
+    kData = 2,
+    PAYLOAD_NOT_SET = 0,
+  };
+
+  static inline const MediaUploadChunk* internal_default_instance() {
+    return reinterpret_cast<const MediaUploadChunk*>(
+               &_MediaUploadChunk_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(MediaUploadChunk& a, MediaUploadChunk& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaUploadChunk* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaUploadChunk* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaUploadChunk* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaUploadChunk>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaUploadChunk& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaUploadChunk& from) {
+    MediaUploadChunk::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaUploadChunk* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaUploadChunk";
+  }
+  protected:
+  explicit MediaUploadChunk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMetadataFieldNumber = 1,
+    kDataFieldNumber = 2,
+  };
+  // .media.MediaUploadMetadata metadata = 1;
+  bool has_metadata() const;
+  private:
+  bool _internal_has_metadata() const;
+  public:
+  void clear_metadata();
+  const ::media::MediaUploadMetadata& metadata() const;
+  PROTOBUF_NODISCARD ::media::MediaUploadMetadata* release_metadata();
+  ::media::MediaUploadMetadata* mutable_metadata();
+  void set_allocated_metadata(::media::MediaUploadMetadata* metadata);
+  private:
+  const ::media::MediaUploadMetadata& _internal_metadata() const;
+  ::media::MediaUploadMetadata* _internal_mutable_metadata();
+  public:
+  void unsafe_arena_set_allocated_metadata(
+      ::media::MediaUploadMetadata* metadata);
+  ::media::MediaUploadMetadata* unsafe_arena_release_metadata();
+
+  // bytes data = 2;
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const std::string& data() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_data(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_data();
+  PROTOBUF_NODISCARD std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
+  public:
+
+  void clear_payload();
+  PayloadCase payload_case() const;
+  // @@protoc_insertion_point(class_scope:media.MediaUploadChunk)
+ private:
+  class _Internal;
+  void set_has_metadata();
+  void set_has_data();
+
+  inline bool has_payload() const;
+  inline void clear_has_payload();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    union PayloadUnion {
+      constexpr PayloadUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::media::MediaUploadMetadata* metadata_;
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
+    } payload_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t _oneof_case_[1];
+
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AdCreateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AdCreateRequest) */ {
+ public:
+  inline AdCreateRequest() : AdCreateRequest(nullptr) {}
+  ~AdCreateRequest() override;
+  explicit PROTOBUF_CONSTEXPR AdCreateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AdCreateRequest(const AdCreateRequest& from);
+  AdCreateRequest(AdCreateRequest&& from) noexcept
+    : AdCreateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AdCreateRequest& operator=(const AdCreateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AdCreateRequest& operator=(AdCreateRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AdCreateRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AdCreateRequest* internal_default_instance() {
+    return reinterpret_cast<const AdCreateRequest*>(
+               &_AdCreateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(AdCreateRequest& a, AdCreateRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AdCreateRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AdCreateRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AdCreateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AdCreateRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AdCreateRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AdCreateRequest& from) {
+    AdCreateRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdCreateRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AdCreateRequest";
+  }
+  protected:
+  explicit AdCreateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAssetPathFieldNumber = 1,
+    kTitleFieldNumber = 2,
+    kClickUrlFieldNumber = 4,
+    kDurationSecondsFieldNumber = 3,
+  };
+  // string assetPath = 1;
+  void clear_assetpath();
+  const std::string& assetpath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_assetpath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_assetpath();
+  PROTOBUF_NODISCARD std::string* release_assetpath();
+  void set_allocated_assetpath(std::string* assetpath);
+  private:
+  const std::string& _internal_assetpath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_assetpath(const std::string& value);
+  std::string* _internal_mutable_assetpath();
+  public:
+
+  // string title = 2;
+  void clear_title();
+  const std::string& title() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_title(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_title();
+  PROTOBUF_NODISCARD std::string* release_title();
+  void set_allocated_title(std::string* title);
+  private:
+  const std::string& _internal_title() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_title(const std::string& value);
+  std::string* _internal_mutable_title();
+  public:
+
+  // string clickUrl = 4;
+  void clear_clickurl();
+  const std::string& clickurl() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_clickurl(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clickurl();
+  PROTOBUF_NODISCARD std::string* release_clickurl();
+  void set_allocated_clickurl(std::string* clickurl);
+  private:
+  const std::string& _internal_clickurl() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clickurl(const std::string& value);
+  std::string* _internal_mutable_clickurl();
+  public:
+
+  // int32 durationSeconds = 3;
+  void clear_durationseconds();
+  int32_t durationseconds() const;
+  void set_durationseconds(int32_t value);
+  private:
+  int32_t _internal_durationseconds() const;
+  void _internal_set_durationseconds(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AdCreateRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr assetpath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr title_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clickurl_;
+    int32_t durationseconds_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AdScheduleRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AdScheduleRequest) */ {
+ public:
+  inline AdScheduleRequest() : AdScheduleRequest(nullptr) {}
+  ~AdScheduleRequest() override;
+  explicit PROTOBUF_CONSTEXPR AdScheduleRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AdScheduleRequest(const AdScheduleRequest& from);
+  AdScheduleRequest(AdScheduleRequest&& from) noexcept
+    : AdScheduleRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AdScheduleRequest& operator=(const AdScheduleRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AdScheduleRequest& operator=(AdScheduleRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AdScheduleRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AdScheduleRequest* internal_default_instance() {
+    return reinterpret_cast<const AdScheduleRequest*>(
+               &_AdScheduleRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(AdScheduleRequest& a, AdScheduleRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AdScheduleRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AdScheduleRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AdScheduleRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AdScheduleRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AdScheduleRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AdScheduleRequest& from) {
+    AdScheduleRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdScheduleRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AdScheduleRequest";
+  }
+  protected:
+  explicit AdScheduleRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdIdFieldNumber = 1,
+    kStartsAtUnixMsFieldNumber = 2,
+    kEndsAtUnixMsFieldNumber = 3,
+    kPriorityFieldNumber = 4,
+  };
+  // string adId = 1;
+  void clear_adid();
+  const std::string& adid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_adid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_adid();
+  PROTOBUF_NODISCARD std::string* release_adid();
+  void set_allocated_adid(std::string* adid);
+  private:
+  const std::string& _internal_adid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_adid(const std::string& value);
+  std::string* _internal_mutable_adid();
+  public:
+
+  // int64 startsAtUnixMs = 2;
+  void clear_startsatunixms();
+  int64_t startsatunixms() const;
+  void set_startsatunixms(int64_t value);
+  private:
+  int64_t _internal_startsatunixms() const;
+  void _internal_set_startsatunixms(int64_t value);
+  public:
+
+  // int64 endsAtUnixMs = 3;
+  void clear_endsatunixms();
+  int64_t endsatunixms() const;
+  void set_endsatunixms(int64_t value);
+  private:
+  int64_t _internal_endsatunixms() const;
+  void _internal_set_endsatunixms(int64_t value);
+  public:
+
+  // int32 priority = 4;
+  void clear_priority();
+  int32_t priority() const;
+  void set_priority(int32_t value);
+  private:
+  int32_t _internal_priority() const;
+  void _internal_set_priority(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AdScheduleRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr adid_;
+    int64_t startsatunixms_;
+    int64_t endsatunixms_;
+    int32_t priority_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AdIdRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AdIdRequest) */ {
+ public:
+  inline AdIdRequest() : AdIdRequest(nullptr) {}
+  ~AdIdRequest() override;
+  explicit PROTOBUF_CONSTEXPR AdIdRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AdIdRequest(const AdIdRequest& from);
+  AdIdRequest(AdIdRequest&& from) noexcept
+    : AdIdRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AdIdRequest& operator=(const AdIdRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AdIdRequest& operator=(AdIdRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AdIdRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AdIdRequest* internal_default_instance() {
+    return reinterpret_cast<const AdIdRequest*>(
+               &_AdIdRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(AdIdRequest& a, AdIdRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AdIdRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AdIdRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AdIdRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AdIdRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AdIdRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AdIdRequest& from) {
+    AdIdRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdIdRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AdIdRequest";
+  }
+  protected:
+  explicit AdIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdIdFieldNumber = 1,
+  };
+  // string adId = 1;
+  void clear_adid();
+  const std::string& adid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_adid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_adid();
+  PROTOBUF_NODISCARD std::string* release_adid();
+  void set_allocated_adid(std::string* adid);
+  private:
+  const std::string& _internal_adid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_adid(const std::string& value);
+  std::string* _internal_mutable_adid();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AdIdRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr adid_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AdResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AdResponse) */ {
+ public:
+  inline AdResponse() : AdResponse(nullptr) {}
+  ~AdResponse() override;
+  explicit PROTOBUF_CONSTEXPR AdResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AdResponse(const AdResponse& from);
+  AdResponse(AdResponse&& from) noexcept
+    : AdResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AdResponse& operator=(const AdResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AdResponse& operator=(AdResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AdResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AdResponse* internal_default_instance() {
+    return reinterpret_cast<const AdResponse*>(
+               &_AdResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(AdResponse& a, AdResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AdResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AdResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AdResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AdResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AdResponse& from) {
+    AdResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AdResponse";
+  }
+  protected:
+  explicit AdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string adId = 1;
+  void clear_adid();
+  const std::string& adid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_adid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_adid();
+  PROTOBUF_NODISCARD std::string* release_adid();
+  void set_allocated_adid(std::string* adid);
+  private:
+  const std::string& _internal_adid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_adid(const std::string& value);
+  std::string* _internal_mutable_adid();
+  public:
+
+  // string status = 2;
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_NODISCARD std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AdResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr adid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AdReportResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.AdReportResponse) */ {
+ public:
+  inline AdReportResponse() : AdReportResponse(nullptr) {}
+  ~AdReportResponse() override;
+  explicit PROTOBUF_CONSTEXPR AdReportResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AdReportResponse(const AdReportResponse& from);
+  AdReportResponse(AdReportResponse&& from) noexcept
+    : AdReportResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AdReportResponse& operator=(const AdReportResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AdReportResponse& operator=(AdReportResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AdReportResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AdReportResponse* internal_default_instance() {
+    return reinterpret_cast<const AdReportResponse*>(
+               &_AdReportResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(AdReportResponse& a, AdReportResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AdReportResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AdReportResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AdReportResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AdReportResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AdReportResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AdReportResponse& from) {
+    AdReportResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AdReportResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.AdReportResponse";
+  }
+  protected:
+  explicit AdReportResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAdIdFieldNumber = 1,
+    kReportJsonFieldNumber = 2,
+  };
+  // string adId = 1;
+  void clear_adid();
+  const std::string& adid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_adid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_adid();
+  PROTOBUF_NODISCARD std::string* release_adid();
+  void set_allocated_adid(std::string* adid);
+  private:
+  const std::string& _internal_adid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_adid(const std::string& value);
+  std::string* _internal_mutable_adid();
+  public:
+
+  // string reportJson = 2;
+  void clear_reportjson();
+  const std::string& reportjson() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reportjson(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reportjson();
+  PROTOBUF_NODISCARD std::string* release_reportjson();
+  void set_allocated_reportjson(std::string* reportjson);
+  private:
+  const std::string& _internal_reportjson() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reportjson(const std::string& value);
+  std::string* _internal_mutable_reportjson();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.AdReportResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr adid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reportjson_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
 // ===================================================================
 
 
@@ -1661,9 +5070,2687 @@ inline void AudioResponse::set_allocated_audiopath(std::string* audiopath) {
   // @@protoc_insertion_point(field_set_allocated:media.AudioResponse.audioPath)
 }
 
+// -------------------------------------------------------------------
+
+// ImageResizeRequest
+
+// string imagePath = 1;
+inline void ImageResizeRequest::clear_imagepath() {
+  _impl_.imagepath_.ClearToEmpty();
+}
+inline const std::string& ImageResizeRequest::imagepath() const {
+  // @@protoc_insertion_point(field_get:media.ImageResizeRequest.imagePath)
+  return _internal_imagepath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ImageResizeRequest::set_imagepath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.imagepath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.ImageResizeRequest.imagePath)
+}
+inline std::string* ImageResizeRequest::mutable_imagepath() {
+  std::string* _s = _internal_mutable_imagepath();
+  // @@protoc_insertion_point(field_mutable:media.ImageResizeRequest.imagePath)
+  return _s;
+}
+inline const std::string& ImageResizeRequest::_internal_imagepath() const {
+  return _impl_.imagepath_.Get();
+}
+inline void ImageResizeRequest::_internal_set_imagepath(const std::string& value) {
+  
+  _impl_.imagepath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ImageResizeRequest::_internal_mutable_imagepath() {
+  
+  return _impl_.imagepath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ImageResizeRequest::release_imagepath() {
+  // @@protoc_insertion_point(field_release:media.ImageResizeRequest.imagePath)
+  return _impl_.imagepath_.Release();
+}
+inline void ImageResizeRequest::set_allocated_imagepath(std::string* imagepath) {
+  if (imagepath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.imagepath_.SetAllocated(imagepath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.imagepath_.IsDefault()) {
+    _impl_.imagepath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.ImageResizeRequest.imagePath)
+}
+
+// int32 width = 2;
+inline void ImageResizeRequest::clear_width() {
+  _impl_.width_ = 0;
+}
+inline int32_t ImageResizeRequest::_internal_width() const {
+  return _impl_.width_;
+}
+inline int32_t ImageResizeRequest::width() const {
+  // @@protoc_insertion_point(field_get:media.ImageResizeRequest.width)
+  return _internal_width();
+}
+inline void ImageResizeRequest::_internal_set_width(int32_t value) {
+  
+  _impl_.width_ = value;
+}
+inline void ImageResizeRequest::set_width(int32_t value) {
+  _internal_set_width(value);
+  // @@protoc_insertion_point(field_set:media.ImageResizeRequest.width)
+}
+
+// int32 height = 3;
+inline void ImageResizeRequest::clear_height() {
+  _impl_.height_ = 0;
+}
+inline int32_t ImageResizeRequest::_internal_height() const {
+  return _impl_.height_;
+}
+inline int32_t ImageResizeRequest::height() const {
+  // @@protoc_insertion_point(field_get:media.ImageResizeRequest.height)
+  return _internal_height();
+}
+inline void ImageResizeRequest::_internal_set_height(int32_t value) {
+  
+  _impl_.height_ = value;
+}
+inline void ImageResizeRequest::set_height(int32_t value) {
+  _internal_set_height(value);
+  // @@protoc_insertion_point(field_set:media.ImageResizeRequest.height)
+}
+
+// -------------------------------------------------------------------
+
+// VideoConvertRequest
+
+// string videoPath = 1;
+inline void VideoConvertRequest::clear_videopath() {
+  _impl_.videopath_.ClearToEmpty();
+}
+inline const std::string& VideoConvertRequest::videopath() const {
+  // @@protoc_insertion_point(field_get:media.VideoConvertRequest.videoPath)
+  return _internal_videopath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoConvertRequest::set_videopath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.videopath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoConvertRequest.videoPath)
+}
+inline std::string* VideoConvertRequest::mutable_videopath() {
+  std::string* _s = _internal_mutable_videopath();
+  // @@protoc_insertion_point(field_mutable:media.VideoConvertRequest.videoPath)
+  return _s;
+}
+inline const std::string& VideoConvertRequest::_internal_videopath() const {
+  return _impl_.videopath_.Get();
+}
+inline void VideoConvertRequest::_internal_set_videopath(const std::string& value) {
+  
+  _impl_.videopath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoConvertRequest::_internal_mutable_videopath() {
+  
+  return _impl_.videopath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoConvertRequest::release_videopath() {
+  // @@protoc_insertion_point(field_release:media.VideoConvertRequest.videoPath)
+  return _impl_.videopath_.Release();
+}
+inline void VideoConvertRequest::set_allocated_videopath(std::string* videopath) {
+  if (videopath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.videopath_.SetAllocated(videopath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.videopath_.IsDefault()) {
+    _impl_.videopath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoConvertRequest.videoPath)
+}
+
+// string format = 2;
+inline void VideoConvertRequest::clear_format() {
+  _impl_.format_.ClearToEmpty();
+}
+inline const std::string& VideoConvertRequest::format() const {
+  // @@protoc_insertion_point(field_get:media.VideoConvertRequest.format)
+  return _internal_format();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoConvertRequest::set_format(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.format_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoConvertRequest.format)
+}
+inline std::string* VideoConvertRequest::mutable_format() {
+  std::string* _s = _internal_mutable_format();
+  // @@protoc_insertion_point(field_mutable:media.VideoConvertRequest.format)
+  return _s;
+}
+inline const std::string& VideoConvertRequest::_internal_format() const {
+  return _impl_.format_.Get();
+}
+inline void VideoConvertRequest::_internal_set_format(const std::string& value) {
+  
+  _impl_.format_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoConvertRequest::_internal_mutable_format() {
+  
+  return _impl_.format_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoConvertRequest::release_format() {
+  // @@protoc_insertion_point(field_release:media.VideoConvertRequest.format)
+  return _impl_.format_.Release();
+}
+inline void VideoConvertRequest::set_allocated_format(std::string* format) {
+  if (format != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.format_.SetAllocated(format, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.format_.IsDefault()) {
+    _impl_.format_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoConvertRequest.format)
+}
+
+// -------------------------------------------------------------------
+
+// VideoTrimRequest
+
+// string videoPath = 1;
+inline void VideoTrimRequest::clear_videopath() {
+  _impl_.videopath_.ClearToEmpty();
+}
+inline const std::string& VideoTrimRequest::videopath() const {
+  // @@protoc_insertion_point(field_get:media.VideoTrimRequest.videoPath)
+  return _internal_videopath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoTrimRequest::set_videopath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.videopath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoTrimRequest.videoPath)
+}
+inline std::string* VideoTrimRequest::mutable_videopath() {
+  std::string* _s = _internal_mutable_videopath();
+  // @@protoc_insertion_point(field_mutable:media.VideoTrimRequest.videoPath)
+  return _s;
+}
+inline const std::string& VideoTrimRequest::_internal_videopath() const {
+  return _impl_.videopath_.Get();
+}
+inline void VideoTrimRequest::_internal_set_videopath(const std::string& value) {
+  
+  _impl_.videopath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::_internal_mutable_videopath() {
+  
+  return _impl_.videopath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::release_videopath() {
+  // @@protoc_insertion_point(field_release:media.VideoTrimRequest.videoPath)
+  return _impl_.videopath_.Release();
+}
+inline void VideoTrimRequest::set_allocated_videopath(std::string* videopath) {
+  if (videopath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.videopath_.SetAllocated(videopath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.videopath_.IsDefault()) {
+    _impl_.videopath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoTrimRequest.videoPath)
+}
+
+// string start = 2;
+inline void VideoTrimRequest::clear_start() {
+  _impl_.start_.ClearToEmpty();
+}
+inline const std::string& VideoTrimRequest::start() const {
+  // @@protoc_insertion_point(field_get:media.VideoTrimRequest.start)
+  return _internal_start();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoTrimRequest::set_start(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.start_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoTrimRequest.start)
+}
+inline std::string* VideoTrimRequest::mutable_start() {
+  std::string* _s = _internal_mutable_start();
+  // @@protoc_insertion_point(field_mutable:media.VideoTrimRequest.start)
+  return _s;
+}
+inline const std::string& VideoTrimRequest::_internal_start() const {
+  return _impl_.start_.Get();
+}
+inline void VideoTrimRequest::_internal_set_start(const std::string& value) {
+  
+  _impl_.start_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::_internal_mutable_start() {
+  
+  return _impl_.start_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::release_start() {
+  // @@protoc_insertion_point(field_release:media.VideoTrimRequest.start)
+  return _impl_.start_.Release();
+}
+inline void VideoTrimRequest::set_allocated_start(std::string* start) {
+  if (start != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.start_.SetAllocated(start, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.start_.IsDefault()) {
+    _impl_.start_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoTrimRequest.start)
+}
+
+// string end = 3;
+inline void VideoTrimRequest::clear_end() {
+  _impl_.end_.ClearToEmpty();
+}
+inline const std::string& VideoTrimRequest::end() const {
+  // @@protoc_insertion_point(field_get:media.VideoTrimRequest.end)
+  return _internal_end();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoTrimRequest::set_end(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.end_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoTrimRequest.end)
+}
+inline std::string* VideoTrimRequest::mutable_end() {
+  std::string* _s = _internal_mutable_end();
+  // @@protoc_insertion_point(field_mutable:media.VideoTrimRequest.end)
+  return _s;
+}
+inline const std::string& VideoTrimRequest::_internal_end() const {
+  return _impl_.end_.Get();
+}
+inline void VideoTrimRequest::_internal_set_end(const std::string& value) {
+  
+  _impl_.end_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::_internal_mutable_end() {
+  
+  return _impl_.end_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoTrimRequest::release_end() {
+  // @@protoc_insertion_point(field_release:media.VideoTrimRequest.end)
+  return _impl_.end_.Release();
+}
+inline void VideoTrimRequest::set_allocated_end(std::string* end) {
+  if (end != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.end_.SetAllocated(end, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.end_.IsDefault()) {
+    _impl_.end_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoTrimRequest.end)
+}
+
+// -------------------------------------------------------------------
+
+// VideoMergeRequest
+
+// repeated string videoPaths = 1;
+inline int VideoMergeRequest::_internal_videopaths_size() const {
+  return _impl_.videopaths_.size();
+}
+inline int VideoMergeRequest::videopaths_size() const {
+  return _internal_videopaths_size();
+}
+inline void VideoMergeRequest::clear_videopaths() {
+  _impl_.videopaths_.Clear();
+}
+inline std::string* VideoMergeRequest::add_videopaths() {
+  std::string* _s = _internal_add_videopaths();
+  // @@protoc_insertion_point(field_add_mutable:media.VideoMergeRequest.videoPaths)
+  return _s;
+}
+inline const std::string& VideoMergeRequest::_internal_videopaths(int index) const {
+  return _impl_.videopaths_.Get(index);
+}
+inline const std::string& VideoMergeRequest::videopaths(int index) const {
+  // @@protoc_insertion_point(field_get:media.VideoMergeRequest.videoPaths)
+  return _internal_videopaths(index);
+}
+inline std::string* VideoMergeRequest::mutable_videopaths(int index) {
+  // @@protoc_insertion_point(field_mutable:media.VideoMergeRequest.videoPaths)
+  return _impl_.videopaths_.Mutable(index);
+}
+inline void VideoMergeRequest::set_videopaths(int index, const std::string& value) {
+  _impl_.videopaths_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::set_videopaths(int index, std::string&& value) {
+  _impl_.videopaths_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::set_videopaths(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.videopaths_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::set_videopaths(int index, const char* value, size_t size) {
+  _impl_.videopaths_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:media.VideoMergeRequest.videoPaths)
+}
+inline std::string* VideoMergeRequest::_internal_add_videopaths() {
+  return _impl_.videopaths_.Add();
+}
+inline void VideoMergeRequest::add_videopaths(const std::string& value) {
+  _impl_.videopaths_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::add_videopaths(std::string&& value) {
+  _impl_.videopaths_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::add_videopaths(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.videopaths_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:media.VideoMergeRequest.videoPaths)
+}
+inline void VideoMergeRequest::add_videopaths(const char* value, size_t size) {
+  _impl_.videopaths_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:media.VideoMergeRequest.videoPaths)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+VideoMergeRequest::videopaths() const {
+  // @@protoc_insertion_point(field_list:media.VideoMergeRequest.videoPaths)
+  return _impl_.videopaths_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+VideoMergeRequest::mutable_videopaths() {
+  // @@protoc_insertion_point(field_mutable_list:media.VideoMergeRequest.videoPaths)
+  return &_impl_.videopaths_;
+}
+
+// string outputPath = 2;
+inline void VideoMergeRequest::clear_outputpath() {
+  _impl_.outputpath_.ClearToEmpty();
+}
+inline const std::string& VideoMergeRequest::outputpath() const {
+  // @@protoc_insertion_point(field_get:media.VideoMergeRequest.outputPath)
+  return _internal_outputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void VideoMergeRequest::set_outputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.outputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.VideoMergeRequest.outputPath)
+}
+inline std::string* VideoMergeRequest::mutable_outputpath() {
+  std::string* _s = _internal_mutable_outputpath();
+  // @@protoc_insertion_point(field_mutable:media.VideoMergeRequest.outputPath)
+  return _s;
+}
+inline const std::string& VideoMergeRequest::_internal_outputpath() const {
+  return _impl_.outputpath_.Get();
+}
+inline void VideoMergeRequest::_internal_set_outputpath(const std::string& value) {
+  
+  _impl_.outputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* VideoMergeRequest::_internal_mutable_outputpath() {
+  
+  return _impl_.outputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* VideoMergeRequest::release_outputpath() {
+  // @@protoc_insertion_point(field_release:media.VideoMergeRequest.outputPath)
+  return _impl_.outputpath_.Release();
+}
+inline void VideoMergeRequest::set_allocated_outputpath(std::string* outputpath) {
+  if (outputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.outputpath_.SetAllocated(outputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.outputpath_.IsDefault()) {
+    _impl_.outputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.VideoMergeRequest.outputPath)
+}
+
+// -------------------------------------------------------------------
+
+// AudioRequest
+
+// string inputPath = 1;
+inline void AudioRequest::clear_inputpath() {
+  _impl_.inputpath_.ClearToEmpty();
+}
+inline const std::string& AudioRequest::inputpath() const {
+  // @@protoc_insertion_point(field_get:media.AudioRequest.inputPath)
+  return _internal_inputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioRequest::set_inputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.inputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioRequest.inputPath)
+}
+inline std::string* AudioRequest::mutable_inputpath() {
+  std::string* _s = _internal_mutable_inputpath();
+  // @@protoc_insertion_point(field_mutable:media.AudioRequest.inputPath)
+  return _s;
+}
+inline const std::string& AudioRequest::_internal_inputpath() const {
+  return _impl_.inputpath_.Get();
+}
+inline void AudioRequest::_internal_set_inputpath(const std::string& value) {
+  
+  _impl_.inputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioRequest::_internal_mutable_inputpath() {
+  
+  return _impl_.inputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioRequest::release_inputpath() {
+  // @@protoc_insertion_point(field_release:media.AudioRequest.inputPath)
+  return _impl_.inputpath_.Release();
+}
+inline void AudioRequest::set_allocated_inputpath(std::string* inputpath) {
+  if (inputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.inputpath_.SetAllocated(inputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.inputpath_.IsDefault()) {
+    _impl_.inputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioRequest.inputPath)
+}
+
+// -------------------------------------------------------------------
+
+// AudioFormatRequest
+
+// string inputPath = 1;
+inline void AudioFormatRequest::clear_inputpath() {
+  _impl_.inputpath_.ClearToEmpty();
+}
+inline const std::string& AudioFormatRequest::inputpath() const {
+  // @@protoc_insertion_point(field_get:media.AudioFormatRequest.inputPath)
+  return _internal_inputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioFormatRequest::set_inputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.inputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioFormatRequest.inputPath)
+}
+inline std::string* AudioFormatRequest::mutable_inputpath() {
+  std::string* _s = _internal_mutable_inputpath();
+  // @@protoc_insertion_point(field_mutable:media.AudioFormatRequest.inputPath)
+  return _s;
+}
+inline const std::string& AudioFormatRequest::_internal_inputpath() const {
+  return _impl_.inputpath_.Get();
+}
+inline void AudioFormatRequest::_internal_set_inputpath(const std::string& value) {
+  
+  _impl_.inputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioFormatRequest::_internal_mutable_inputpath() {
+  
+  return _impl_.inputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioFormatRequest::release_inputpath() {
+  // @@protoc_insertion_point(field_release:media.AudioFormatRequest.inputPath)
+  return _impl_.inputpath_.Release();
+}
+inline void AudioFormatRequest::set_allocated_inputpath(std::string* inputpath) {
+  if (inputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.inputpath_.SetAllocated(inputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.inputpath_.IsDefault()) {
+    _impl_.inputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioFormatRequest.inputPath)
+}
+
+// string format = 2;
+inline void AudioFormatRequest::clear_format() {
+  _impl_.format_.ClearToEmpty();
+}
+inline const std::string& AudioFormatRequest::format() const {
+  // @@protoc_insertion_point(field_get:media.AudioFormatRequest.format)
+  return _internal_format();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioFormatRequest::set_format(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.format_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioFormatRequest.format)
+}
+inline std::string* AudioFormatRequest::mutable_format() {
+  std::string* _s = _internal_mutable_format();
+  // @@protoc_insertion_point(field_mutable:media.AudioFormatRequest.format)
+  return _s;
+}
+inline const std::string& AudioFormatRequest::_internal_format() const {
+  return _impl_.format_.Get();
+}
+inline void AudioFormatRequest::_internal_set_format(const std::string& value) {
+  
+  _impl_.format_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioFormatRequest::_internal_mutable_format() {
+  
+  return _impl_.format_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioFormatRequest::release_format() {
+  // @@protoc_insertion_point(field_release:media.AudioFormatRequest.format)
+  return _impl_.format_.Release();
+}
+inline void AudioFormatRequest::set_allocated_format(std::string* format) {
+  if (format != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.format_.SetAllocated(format, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.format_.IsDefault()) {
+    _impl_.format_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioFormatRequest.format)
+}
+
+// -------------------------------------------------------------------
+
+// AudioTrimRequest
+
+// string inputPath = 1;
+inline void AudioTrimRequest::clear_inputpath() {
+  _impl_.inputpath_.ClearToEmpty();
+}
+inline const std::string& AudioTrimRequest::inputpath() const {
+  // @@protoc_insertion_point(field_get:media.AudioTrimRequest.inputPath)
+  return _internal_inputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioTrimRequest::set_inputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.inputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioTrimRequest.inputPath)
+}
+inline std::string* AudioTrimRequest::mutable_inputpath() {
+  std::string* _s = _internal_mutable_inputpath();
+  // @@protoc_insertion_point(field_mutable:media.AudioTrimRequest.inputPath)
+  return _s;
+}
+inline const std::string& AudioTrimRequest::_internal_inputpath() const {
+  return _impl_.inputpath_.Get();
+}
+inline void AudioTrimRequest::_internal_set_inputpath(const std::string& value) {
+  
+  _impl_.inputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::_internal_mutable_inputpath() {
+  
+  return _impl_.inputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::release_inputpath() {
+  // @@protoc_insertion_point(field_release:media.AudioTrimRequest.inputPath)
+  return _impl_.inputpath_.Release();
+}
+inline void AudioTrimRequest::set_allocated_inputpath(std::string* inputpath) {
+  if (inputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.inputpath_.SetAllocated(inputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.inputpath_.IsDefault()) {
+    _impl_.inputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioTrimRequest.inputPath)
+}
+
+// string start = 2;
+inline void AudioTrimRequest::clear_start() {
+  _impl_.start_.ClearToEmpty();
+}
+inline const std::string& AudioTrimRequest::start() const {
+  // @@protoc_insertion_point(field_get:media.AudioTrimRequest.start)
+  return _internal_start();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioTrimRequest::set_start(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.start_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioTrimRequest.start)
+}
+inline std::string* AudioTrimRequest::mutable_start() {
+  std::string* _s = _internal_mutable_start();
+  // @@protoc_insertion_point(field_mutable:media.AudioTrimRequest.start)
+  return _s;
+}
+inline const std::string& AudioTrimRequest::_internal_start() const {
+  return _impl_.start_.Get();
+}
+inline void AudioTrimRequest::_internal_set_start(const std::string& value) {
+  
+  _impl_.start_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::_internal_mutable_start() {
+  
+  return _impl_.start_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::release_start() {
+  // @@protoc_insertion_point(field_release:media.AudioTrimRequest.start)
+  return _impl_.start_.Release();
+}
+inline void AudioTrimRequest::set_allocated_start(std::string* start) {
+  if (start != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.start_.SetAllocated(start, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.start_.IsDefault()) {
+    _impl_.start_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioTrimRequest.start)
+}
+
+// string end = 3;
+inline void AudioTrimRequest::clear_end() {
+  _impl_.end_.ClearToEmpty();
+}
+inline const std::string& AudioTrimRequest::end() const {
+  // @@protoc_insertion_point(field_get:media.AudioTrimRequest.end)
+  return _internal_end();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioTrimRequest::set_end(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.end_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioTrimRequest.end)
+}
+inline std::string* AudioTrimRequest::mutable_end() {
+  std::string* _s = _internal_mutable_end();
+  // @@protoc_insertion_point(field_mutable:media.AudioTrimRequest.end)
+  return _s;
+}
+inline const std::string& AudioTrimRequest::_internal_end() const {
+  return _impl_.end_.Get();
+}
+inline void AudioTrimRequest::_internal_set_end(const std::string& value) {
+  
+  _impl_.end_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::_internal_mutable_end() {
+  
+  return _impl_.end_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioTrimRequest::release_end() {
+  // @@protoc_insertion_point(field_release:media.AudioTrimRequest.end)
+  return _impl_.end_.Release();
+}
+inline void AudioTrimRequest::set_allocated_end(std::string* end) {
+  if (end != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.end_.SetAllocated(end, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.end_.IsDefault()) {
+    _impl_.end_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioTrimRequest.end)
+}
+
+// -------------------------------------------------------------------
+
+// AudioMergeRequest
+
+// repeated string inputPaths = 1;
+inline int AudioMergeRequest::_internal_inputpaths_size() const {
+  return _impl_.inputpaths_.size();
+}
+inline int AudioMergeRequest::inputpaths_size() const {
+  return _internal_inputpaths_size();
+}
+inline void AudioMergeRequest::clear_inputpaths() {
+  _impl_.inputpaths_.Clear();
+}
+inline std::string* AudioMergeRequest::add_inputpaths() {
+  std::string* _s = _internal_add_inputpaths();
+  // @@protoc_insertion_point(field_add_mutable:media.AudioMergeRequest.inputPaths)
+  return _s;
+}
+inline const std::string& AudioMergeRequest::_internal_inputpaths(int index) const {
+  return _impl_.inputpaths_.Get(index);
+}
+inline const std::string& AudioMergeRequest::inputpaths(int index) const {
+  // @@protoc_insertion_point(field_get:media.AudioMergeRequest.inputPaths)
+  return _internal_inputpaths(index);
+}
+inline std::string* AudioMergeRequest::mutable_inputpaths(int index) {
+  // @@protoc_insertion_point(field_mutable:media.AudioMergeRequest.inputPaths)
+  return _impl_.inputpaths_.Mutable(index);
+}
+inline void AudioMergeRequest::set_inputpaths(int index, const std::string& value) {
+  _impl_.inputpaths_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::set_inputpaths(int index, std::string&& value) {
+  _impl_.inputpaths_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::set_inputpaths(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.inputpaths_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::set_inputpaths(int index, const char* value, size_t size) {
+  _impl_.inputpaths_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:media.AudioMergeRequest.inputPaths)
+}
+inline std::string* AudioMergeRequest::_internal_add_inputpaths() {
+  return _impl_.inputpaths_.Add();
+}
+inline void AudioMergeRequest::add_inputpaths(const std::string& value) {
+  _impl_.inputpaths_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::add_inputpaths(std::string&& value) {
+  _impl_.inputpaths_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::add_inputpaths(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _impl_.inputpaths_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:media.AudioMergeRequest.inputPaths)
+}
+inline void AudioMergeRequest::add_inputpaths(const char* value, size_t size) {
+  _impl_.inputpaths_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:media.AudioMergeRequest.inputPaths)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+AudioMergeRequest::inputpaths() const {
+  // @@protoc_insertion_point(field_list:media.AudioMergeRequest.inputPaths)
+  return _impl_.inputpaths_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+AudioMergeRequest::mutable_inputpaths() {
+  // @@protoc_insertion_point(field_mutable_list:media.AudioMergeRequest.inputPaths)
+  return &_impl_.inputpaths_;
+}
+
+// string outputPath = 2;
+inline void AudioMergeRequest::clear_outputpath() {
+  _impl_.outputpath_.ClearToEmpty();
+}
+inline const std::string& AudioMergeRequest::outputpath() const {
+  // @@protoc_insertion_point(field_get:media.AudioMergeRequest.outputPath)
+  return _internal_outputpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AudioMergeRequest::set_outputpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.outputpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AudioMergeRequest.outputPath)
+}
+inline std::string* AudioMergeRequest::mutable_outputpath() {
+  std::string* _s = _internal_mutable_outputpath();
+  // @@protoc_insertion_point(field_mutable:media.AudioMergeRequest.outputPath)
+  return _s;
+}
+inline const std::string& AudioMergeRequest::_internal_outputpath() const {
+  return _impl_.outputpath_.Get();
+}
+inline void AudioMergeRequest::_internal_set_outputpath(const std::string& value) {
+  
+  _impl_.outputpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AudioMergeRequest::_internal_mutable_outputpath() {
+  
+  return _impl_.outputpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AudioMergeRequest::release_outputpath() {
+  // @@protoc_insertion_point(field_release:media.AudioMergeRequest.outputPath)
+  return _impl_.outputpath_.Release();
+}
+inline void AudioMergeRequest::set_allocated_outputpath(std::string* outputpath) {
+  if (outputpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.outputpath_.SetAllocated(outputpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.outputpath_.IsDefault()) {
+    _impl_.outputpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AudioMergeRequest.outputPath)
+}
+
+// -------------------------------------------------------------------
+
+// MediaJobRequest
+
+// string assetReference = 1;
+inline void MediaJobRequest::clear_assetreference() {
+  _impl_.assetreference_.ClearToEmpty();
+}
+inline const std::string& MediaJobRequest::assetreference() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobRequest.assetReference)
+  return _internal_assetreference();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobRequest::set_assetreference(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.assetreference_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobRequest.assetReference)
+}
+inline std::string* MediaJobRequest::mutable_assetreference() {
+  std::string* _s = _internal_mutable_assetreference();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobRequest.assetReference)
+  return _s;
+}
+inline const std::string& MediaJobRequest::_internal_assetreference() const {
+  return _impl_.assetreference_.Get();
+}
+inline void MediaJobRequest::_internal_set_assetreference(const std::string& value) {
+  
+  _impl_.assetreference_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::_internal_mutable_assetreference() {
+  
+  return _impl_.assetreference_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::release_assetreference() {
+  // @@protoc_insertion_point(field_release:media.MediaJobRequest.assetReference)
+  return _impl_.assetreference_.Release();
+}
+inline void MediaJobRequest::set_allocated_assetreference(std::string* assetreference) {
+  if (assetreference != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.assetreference_.SetAllocated(assetreference, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.assetreference_.IsDefault()) {
+    _impl_.assetreference_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobRequest.assetReference)
+}
+
+// string operation = 2;
+inline void MediaJobRequest::clear_operation() {
+  _impl_.operation_.ClearToEmpty();
+}
+inline const std::string& MediaJobRequest::operation() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobRequest.operation)
+  return _internal_operation();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobRequest::set_operation(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.operation_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobRequest.operation)
+}
+inline std::string* MediaJobRequest::mutable_operation() {
+  std::string* _s = _internal_mutable_operation();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobRequest.operation)
+  return _s;
+}
+inline const std::string& MediaJobRequest::_internal_operation() const {
+  return _impl_.operation_.Get();
+}
+inline void MediaJobRequest::_internal_set_operation(const std::string& value) {
+  
+  _impl_.operation_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::_internal_mutable_operation() {
+  
+  return _impl_.operation_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::release_operation() {
+  // @@protoc_insertion_point(field_release:media.MediaJobRequest.operation)
+  return _impl_.operation_.Release();
+}
+inline void MediaJobRequest::set_allocated_operation(std::string* operation) {
+  if (operation != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.operation_.SetAllocated(operation, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.operation_.IsDefault()) {
+    _impl_.operation_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobRequest.operation)
+}
+
+// string parametersJson = 3;
+inline void MediaJobRequest::clear_parametersjson() {
+  _impl_.parametersjson_.ClearToEmpty();
+}
+inline const std::string& MediaJobRequest::parametersjson() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobRequest.parametersJson)
+  return _internal_parametersjson();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobRequest::set_parametersjson(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.parametersjson_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobRequest.parametersJson)
+}
+inline std::string* MediaJobRequest::mutable_parametersjson() {
+  std::string* _s = _internal_mutable_parametersjson();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobRequest.parametersJson)
+  return _s;
+}
+inline const std::string& MediaJobRequest::_internal_parametersjson() const {
+  return _impl_.parametersjson_.Get();
+}
+inline void MediaJobRequest::_internal_set_parametersjson(const std::string& value) {
+  
+  _impl_.parametersjson_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::_internal_mutable_parametersjson() {
+  
+  return _impl_.parametersjson_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobRequest::release_parametersjson() {
+  // @@protoc_insertion_point(field_release:media.MediaJobRequest.parametersJson)
+  return _impl_.parametersjson_.Release();
+}
+inline void MediaJobRequest::set_allocated_parametersjson(std::string* parametersjson) {
+  if (parametersjson != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.parametersjson_.SetAllocated(parametersjson, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.parametersjson_.IsDefault()) {
+    _impl_.parametersjson_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobRequest.parametersJson)
+}
+
+// -------------------------------------------------------------------
+
+// MediaJobLookupRequest
+
+// string jobId = 1;
+inline void MediaJobLookupRequest::clear_jobid() {
+  _impl_.jobid_.ClearToEmpty();
+}
+inline const std::string& MediaJobLookupRequest::jobid() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobLookupRequest.jobId)
+  return _internal_jobid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobLookupRequest::set_jobid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.jobid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobLookupRequest.jobId)
+}
+inline std::string* MediaJobLookupRequest::mutable_jobid() {
+  std::string* _s = _internal_mutable_jobid();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobLookupRequest.jobId)
+  return _s;
+}
+inline const std::string& MediaJobLookupRequest::_internal_jobid() const {
+  return _impl_.jobid_.Get();
+}
+inline void MediaJobLookupRequest::_internal_set_jobid(const std::string& value) {
+  
+  _impl_.jobid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobLookupRequest::_internal_mutable_jobid() {
+  
+  return _impl_.jobid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobLookupRequest::release_jobid() {
+  // @@protoc_insertion_point(field_release:media.MediaJobLookupRequest.jobId)
+  return _impl_.jobid_.Release();
+}
+inline void MediaJobLookupRequest::set_allocated_jobid(std::string* jobid) {
+  if (jobid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.jobid_.SetAllocated(jobid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.jobid_.IsDefault()) {
+    _impl_.jobid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobLookupRequest.jobId)
+}
+
+// -------------------------------------------------------------------
+
+// MediaJobResponse
+
+// string jobId = 1;
+inline void MediaJobResponse::clear_jobid() {
+  _impl_.jobid_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::jobid() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.jobId)
+  return _internal_jobid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_jobid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.jobid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.jobId)
+}
+inline std::string* MediaJobResponse::mutable_jobid() {
+  std::string* _s = _internal_mutable_jobid();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.jobId)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_jobid() const {
+  return _impl_.jobid_.Get();
+}
+inline void MediaJobResponse::_internal_set_jobid(const std::string& value) {
+  
+  _impl_.jobid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_jobid() {
+  
+  return _impl_.jobid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_jobid() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.jobId)
+  return _impl_.jobid_.Release();
+}
+inline void MediaJobResponse::set_allocated_jobid(std::string* jobid) {
+  if (jobid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.jobid_.SetAllocated(jobid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.jobid_.IsDefault()) {
+    _impl_.jobid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.jobId)
+}
+
+// string status = 2;
+inline void MediaJobResponse::clear_status() {
+  _impl_.status_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::status() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.status)
+}
+inline std::string* MediaJobResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.status)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_status() const {
+  return _impl_.status_.Get();
+}
+inline void MediaJobResponse::_internal_set_status(const std::string& value) {
+  
+  _impl_.status_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_status() {
+  
+  return _impl_.status_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_status() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.status)
+  return _impl_.status_.Release();
+}
+inline void MediaJobResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.status)
+}
+
+// string assetReference = 3;
+inline void MediaJobResponse::clear_assetreference() {
+  _impl_.assetreference_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::assetreference() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.assetReference)
+  return _internal_assetreference();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_assetreference(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.assetreference_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.assetReference)
+}
+inline std::string* MediaJobResponse::mutable_assetreference() {
+  std::string* _s = _internal_mutable_assetreference();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.assetReference)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_assetreference() const {
+  return _impl_.assetreference_.Get();
+}
+inline void MediaJobResponse::_internal_set_assetreference(const std::string& value) {
+  
+  _impl_.assetreference_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_assetreference() {
+  
+  return _impl_.assetreference_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_assetreference() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.assetReference)
+  return _impl_.assetreference_.Release();
+}
+inline void MediaJobResponse::set_allocated_assetreference(std::string* assetreference) {
+  if (assetreference != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.assetreference_.SetAllocated(assetreference, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.assetreference_.IsDefault()) {
+    _impl_.assetreference_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.assetReference)
+}
+
+// string operation = 4;
+inline void MediaJobResponse::clear_operation() {
+  _impl_.operation_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::operation() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.operation)
+  return _internal_operation();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_operation(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.operation_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.operation)
+}
+inline std::string* MediaJobResponse::mutable_operation() {
+  std::string* _s = _internal_mutable_operation();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.operation)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_operation() const {
+  return _impl_.operation_.Get();
+}
+inline void MediaJobResponse::_internal_set_operation(const std::string& value) {
+  
+  _impl_.operation_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_operation() {
+  
+  return _impl_.operation_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_operation() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.operation)
+  return _impl_.operation_.Release();
+}
+inline void MediaJobResponse::set_allocated_operation(std::string* operation) {
+  if (operation != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.operation_.SetAllocated(operation, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.operation_.IsDefault()) {
+    _impl_.operation_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.operation)
+}
+
+// string parametersJson = 5;
+inline void MediaJobResponse::clear_parametersjson() {
+  _impl_.parametersjson_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::parametersjson() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.parametersJson)
+  return _internal_parametersjson();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_parametersjson(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.parametersjson_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.parametersJson)
+}
+inline std::string* MediaJobResponse::mutable_parametersjson() {
+  std::string* _s = _internal_mutable_parametersjson();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.parametersJson)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_parametersjson() const {
+  return _impl_.parametersjson_.Get();
+}
+inline void MediaJobResponse::_internal_set_parametersjson(const std::string& value) {
+  
+  _impl_.parametersjson_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_parametersjson() {
+  
+  return _impl_.parametersjson_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_parametersjson() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.parametersJson)
+  return _impl_.parametersjson_.Release();
+}
+inline void MediaJobResponse::set_allocated_parametersjson(std::string* parametersjson) {
+  if (parametersjson != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.parametersjson_.SetAllocated(parametersjson, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.parametersjson_.IsDefault()) {
+    _impl_.parametersjson_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.parametersJson)
+}
+
+// string resultReference = 6;
+inline void MediaJobResponse::clear_resultreference() {
+  _impl_.resultreference_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::resultreference() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.resultReference)
+  return _internal_resultreference();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_resultreference(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.resultreference_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.resultReference)
+}
+inline std::string* MediaJobResponse::mutable_resultreference() {
+  std::string* _s = _internal_mutable_resultreference();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.resultReference)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_resultreference() const {
+  return _impl_.resultreference_.Get();
+}
+inline void MediaJobResponse::_internal_set_resultreference(const std::string& value) {
+  
+  _impl_.resultreference_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_resultreference() {
+  
+  return _impl_.resultreference_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_resultreference() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.resultReference)
+  return _impl_.resultreference_.Release();
+}
+inline void MediaJobResponse::set_allocated_resultreference(std::string* resultreference) {
+  if (resultreference != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.resultreference_.SetAllocated(resultreference, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.resultreference_.IsDefault()) {
+    _impl_.resultreference_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.resultReference)
+}
+
+// string errorMessage = 7;
+inline void MediaJobResponse::clear_errormessage() {
+  _impl_.errormessage_.ClearToEmpty();
+}
+inline const std::string& MediaJobResponse::errormessage() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.errorMessage)
+  return _internal_errormessage();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobResponse::set_errormessage(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.errormessage_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.errorMessage)
+}
+inline std::string* MediaJobResponse::mutable_errormessage() {
+  std::string* _s = _internal_mutable_errormessage();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobResponse.errorMessage)
+  return _s;
+}
+inline const std::string& MediaJobResponse::_internal_errormessage() const {
+  return _impl_.errormessage_.Get();
+}
+inline void MediaJobResponse::_internal_set_errormessage(const std::string& value) {
+  
+  _impl_.errormessage_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::_internal_mutable_errormessage() {
+  
+  return _impl_.errormessage_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobResponse::release_errormessage() {
+  // @@protoc_insertion_point(field_release:media.MediaJobResponse.errorMessage)
+  return _impl_.errormessage_.Release();
+}
+inline void MediaJobResponse::set_allocated_errormessage(std::string* errormessage) {
+  if (errormessage != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.errormessage_.SetAllocated(errormessage, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.errormessage_.IsDefault()) {
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobResponse.errorMessage)
+}
+
+// int64 createdAtUnixMs = 8;
+inline void MediaJobResponse::clear_createdatunixms() {
+  _impl_.createdatunixms_ = int64_t{0};
+}
+inline int64_t MediaJobResponse::_internal_createdatunixms() const {
+  return _impl_.createdatunixms_;
+}
+inline int64_t MediaJobResponse::createdatunixms() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.createdAtUnixMs)
+  return _internal_createdatunixms();
+}
+inline void MediaJobResponse::_internal_set_createdatunixms(int64_t value) {
+  
+  _impl_.createdatunixms_ = value;
+}
+inline void MediaJobResponse::set_createdatunixms(int64_t value) {
+  _internal_set_createdatunixms(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.createdAtUnixMs)
+}
+
+// int64 updatedAtUnixMs = 9;
+inline void MediaJobResponse::clear_updatedatunixms() {
+  _impl_.updatedatunixms_ = int64_t{0};
+}
+inline int64_t MediaJobResponse::_internal_updatedatunixms() const {
+  return _impl_.updatedatunixms_;
+}
+inline int64_t MediaJobResponse::updatedatunixms() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.updatedAtUnixMs)
+  return _internal_updatedatunixms();
+}
+inline void MediaJobResponse::_internal_set_updatedatunixms(int64_t value) {
+  
+  _impl_.updatedatunixms_ = value;
+}
+inline void MediaJobResponse::set_updatedatunixms(int64_t value) {
+  _internal_set_updatedatunixms(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.updatedAtUnixMs)
+}
+
+// -------------------------------------------------------------------
+
+// MediaUploadMetadata
+
+// string mediaId = 1;
+inline void MediaUploadMetadata::clear_mediaid() {
+  _impl_.mediaid_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::mediaid() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.mediaId)
+  return _internal_mediaid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_mediaid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mediaid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.mediaId)
+}
+inline std::string* MediaUploadMetadata::mutable_mediaid() {
+  std::string* _s = _internal_mutable_mediaid();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.mediaId)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_mediaid() const {
+  return _impl_.mediaid_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_mediaid(const std::string& value) {
+  
+  _impl_.mediaid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_mediaid() {
+  
+  return _impl_.mediaid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_mediaid() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.mediaId)
+  return _impl_.mediaid_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_mediaid(std::string* mediaid) {
+  if (mediaid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mediaid_.SetAllocated(mediaid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mediaid_.IsDefault()) {
+    _impl_.mediaid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.mediaId)
+}
+
+// string ownerId = 2;
+inline void MediaUploadMetadata::clear_ownerid() {
+  _impl_.ownerid_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::ownerid() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.ownerId)
+  return _internal_ownerid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_ownerid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.ownerid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.ownerId)
+}
+inline std::string* MediaUploadMetadata::mutable_ownerid() {
+  std::string* _s = _internal_mutable_ownerid();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.ownerId)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_ownerid() const {
+  return _impl_.ownerid_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_ownerid(const std::string& value) {
+  
+  _impl_.ownerid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_ownerid() {
+  
+  return _impl_.ownerid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_ownerid() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.ownerId)
+  return _impl_.ownerid_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_ownerid(std::string* ownerid) {
+  if (ownerid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.ownerid_.SetAllocated(ownerid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.ownerid_.IsDefault()) {
+    _impl_.ownerid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.ownerId)
+}
+
+// string mediaType = 3;
+inline void MediaUploadMetadata::clear_mediatype() {
+  _impl_.mediatype_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::mediatype() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.mediaType)
+  return _internal_mediatype();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_mediatype(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mediatype_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.mediaType)
+}
+inline std::string* MediaUploadMetadata::mutable_mediatype() {
+  std::string* _s = _internal_mutable_mediatype();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.mediaType)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_mediatype() const {
+  return _impl_.mediatype_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_mediatype(const std::string& value) {
+  
+  _impl_.mediatype_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_mediatype() {
+  
+  return _impl_.mediatype_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_mediatype() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.mediaType)
+  return _impl_.mediatype_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_mediatype(std::string* mediatype) {
+  if (mediatype != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mediatype_.SetAllocated(mediatype, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mediatype_.IsDefault()) {
+    _impl_.mediatype_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.mediaType)
+}
+
+// string filename = 4;
+inline void MediaUploadMetadata::clear_filename() {
+  _impl_.filename_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::filename() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.filename)
+  return _internal_filename();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_filename(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.filename_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.filename)
+}
+inline std::string* MediaUploadMetadata::mutable_filename() {
+  std::string* _s = _internal_mutable_filename();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.filename)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_filename() const {
+  return _impl_.filename_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_filename(const std::string& value) {
+  
+  _impl_.filename_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_filename() {
+  
+  return _impl_.filename_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_filename() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.filename)
+  return _impl_.filename_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_filename(std::string* filename) {
+  if (filename != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.filename_.SetAllocated(filename, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.filename_.IsDefault()) {
+    _impl_.filename_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.filename)
+}
+
+// string contentType = 5;
+inline void MediaUploadMetadata::clear_contenttype() {
+  _impl_.contenttype_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::contenttype() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.contentType)
+  return _internal_contenttype();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_contenttype(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.contenttype_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.contentType)
+}
+inline std::string* MediaUploadMetadata::mutable_contenttype() {
+  std::string* _s = _internal_mutable_contenttype();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.contentType)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_contenttype() const {
+  return _impl_.contenttype_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_contenttype(const std::string& value) {
+  
+  _impl_.contenttype_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_contenttype() {
+  
+  return _impl_.contenttype_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_contenttype() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.contentType)
+  return _impl_.contenttype_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_contenttype(std::string* contenttype) {
+  if (contenttype != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.contenttype_.SetAllocated(contenttype, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.contenttype_.IsDefault()) {
+    _impl_.contenttype_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.contentType)
+}
+
+// string operation = 6;
+inline void MediaUploadMetadata::clear_operation() {
+  _impl_.operation_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::operation() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.operation)
+  return _internal_operation();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_operation(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.operation_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.operation)
+}
+inline std::string* MediaUploadMetadata::mutable_operation() {
+  std::string* _s = _internal_mutable_operation();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.operation)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_operation() const {
+  return _impl_.operation_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_operation(const std::string& value) {
+  
+  _impl_.operation_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_operation() {
+  
+  return _impl_.operation_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_operation() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.operation)
+  return _impl_.operation_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_operation(std::string* operation) {
+  if (operation != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.operation_.SetAllocated(operation, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.operation_.IsDefault()) {
+    _impl_.operation_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.operation)
+}
+
+// string parametersJson = 7;
+inline void MediaUploadMetadata::clear_parametersjson() {
+  _impl_.parametersjson_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::parametersjson() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.parametersJson)
+  return _internal_parametersjson();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_parametersjson(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.parametersjson_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.parametersJson)
+}
+inline std::string* MediaUploadMetadata::mutable_parametersjson() {
+  std::string* _s = _internal_mutable_parametersjson();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.parametersJson)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_parametersjson() const {
+  return _impl_.parametersjson_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_parametersjson(const std::string& value) {
+  
+  _impl_.parametersjson_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_parametersjson() {
+  
+  return _impl_.parametersjson_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_parametersjson() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.parametersJson)
+  return _impl_.parametersjson_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_parametersjson(std::string* parametersjson) {
+  if (parametersjson != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.parametersjson_.SetAllocated(parametersjson, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.parametersjson_.IsDefault()) {
+    _impl_.parametersjson_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.parametersJson)
+}
+
+// string uploadToken = 8;
+inline void MediaUploadMetadata::clear_uploadtoken() {
+  _impl_.uploadtoken_.ClearToEmpty();
+}
+inline const std::string& MediaUploadMetadata::uploadtoken() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadMetadata.uploadToken)
+  return _internal_uploadtoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaUploadMetadata::set_uploadtoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.uploadtoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadMetadata.uploadToken)
+}
+inline std::string* MediaUploadMetadata::mutable_uploadtoken() {
+  std::string* _s = _internal_mutable_uploadtoken();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadMetadata.uploadToken)
+  return _s;
+}
+inline const std::string& MediaUploadMetadata::_internal_uploadtoken() const {
+  return _impl_.uploadtoken_.Get();
+}
+inline void MediaUploadMetadata::_internal_set_uploadtoken(const std::string& value) {
+  
+  _impl_.uploadtoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::_internal_mutable_uploadtoken() {
+  
+  return _impl_.uploadtoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaUploadMetadata::release_uploadtoken() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadMetadata.uploadToken)
+  return _impl_.uploadtoken_.Release();
+}
+inline void MediaUploadMetadata::set_allocated_uploadtoken(std::string* uploadtoken) {
+  if (uploadtoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.uploadtoken_.SetAllocated(uploadtoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.uploadtoken_.IsDefault()) {
+    _impl_.uploadtoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadMetadata.uploadToken)
+}
+
+// -------------------------------------------------------------------
+
+// MediaUploadChunk
+
+// .media.MediaUploadMetadata metadata = 1;
+inline bool MediaUploadChunk::_internal_has_metadata() const {
+  return payload_case() == kMetadata;
+}
+inline bool MediaUploadChunk::has_metadata() const {
+  return _internal_has_metadata();
+}
+inline void MediaUploadChunk::set_has_metadata() {
+  _impl_._oneof_case_[0] = kMetadata;
+}
+inline void MediaUploadChunk::clear_metadata() {
+  if (_internal_has_metadata()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.payload_.metadata_;
+    }
+    clear_has_payload();
+  }
+}
+inline ::media::MediaUploadMetadata* MediaUploadChunk::release_metadata() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadChunk.metadata)
+  if (_internal_has_metadata()) {
+    clear_has_payload();
+    ::media::MediaUploadMetadata* temp = _impl_.payload_.metadata_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.payload_.metadata_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::media::MediaUploadMetadata& MediaUploadChunk::_internal_metadata() const {
+  return _internal_has_metadata()
+      ? *_impl_.payload_.metadata_
+      : reinterpret_cast< ::media::MediaUploadMetadata&>(::media::_MediaUploadMetadata_default_instance_);
+}
+inline const ::media::MediaUploadMetadata& MediaUploadChunk::metadata() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadChunk.metadata)
+  return _internal_metadata();
+}
+inline ::media::MediaUploadMetadata* MediaUploadChunk::unsafe_arena_release_metadata() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:media.MediaUploadChunk.metadata)
+  if (_internal_has_metadata()) {
+    clear_has_payload();
+    ::media::MediaUploadMetadata* temp = _impl_.payload_.metadata_;
+    _impl_.payload_.metadata_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void MediaUploadChunk::unsafe_arena_set_allocated_metadata(::media::MediaUploadMetadata* metadata) {
+  clear_payload();
+  if (metadata) {
+    set_has_metadata();
+    _impl_.payload_.metadata_ = metadata;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:media.MediaUploadChunk.metadata)
+}
+inline ::media::MediaUploadMetadata* MediaUploadChunk::_internal_mutable_metadata() {
+  if (!_internal_has_metadata()) {
+    clear_payload();
+    set_has_metadata();
+    _impl_.payload_.metadata_ = CreateMaybeMessage< ::media::MediaUploadMetadata >(GetArenaForAllocation());
+  }
+  return _impl_.payload_.metadata_;
+}
+inline ::media::MediaUploadMetadata* MediaUploadChunk::mutable_metadata() {
+  ::media::MediaUploadMetadata* _msg = _internal_mutable_metadata();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadChunk.metadata)
+  return _msg;
+}
+
+// bytes data = 2;
+inline bool MediaUploadChunk::_internal_has_data() const {
+  return payload_case() == kData;
+}
+inline bool MediaUploadChunk::has_data() const {
+  return _internal_has_data();
+}
+inline void MediaUploadChunk::set_has_data() {
+  _impl_._oneof_case_[0] = kData;
+}
+inline void MediaUploadChunk::clear_data() {
+  if (_internal_has_data()) {
+    _impl_.payload_.data_.Destroy();
+    clear_has_payload();
+  }
+}
+inline const std::string& MediaUploadChunk::data() const {
+  // @@protoc_insertion_point(field_get:media.MediaUploadChunk.data)
+  return _internal_data();
+}
+template <typename ArgT0, typename... ArgT>
+inline void MediaUploadChunk::set_data(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_data()) {
+    clear_payload();
+    set_has_data();
+    _impl_.payload_.data_.InitDefault();
+  }
+  _impl_.payload_.data_.SetBytes( static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaUploadChunk.data)
+}
+inline std::string* MediaUploadChunk::mutable_data() {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:media.MediaUploadChunk.data)
+  return _s;
+}
+inline const std::string& MediaUploadChunk::_internal_data() const {
+  if (_internal_has_data()) {
+    return _impl_.payload_.data_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void MediaUploadChunk::_internal_set_data(const std::string& value) {
+  if (!_internal_has_data()) {
+    clear_payload();
+    set_has_data();
+    _impl_.payload_.data_.InitDefault();
+  }
+  _impl_.payload_.data_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaUploadChunk::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_payload();
+    set_has_data();
+    _impl_.payload_.data_.InitDefault();
+  }
+  return _impl_.payload_.data_.Mutable(      GetArenaForAllocation());
+}
+inline std::string* MediaUploadChunk::release_data() {
+  // @@protoc_insertion_point(field_release:media.MediaUploadChunk.data)
+  if (_internal_has_data()) {
+    clear_has_payload();
+    return _impl_.payload_.data_.Release();
+  } else {
+    return nullptr;
+  }
+}
+inline void MediaUploadChunk::set_allocated_data(std::string* data) {
+  if (has_payload()) {
+    clear_payload();
+  }
+  if (data != nullptr) {
+    set_has_data();
+    _impl_.payload_.data_.InitAllocated(data, GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(field_set_allocated:media.MediaUploadChunk.data)
+}
+
+inline bool MediaUploadChunk::has_payload() const {
+  return payload_case() != PAYLOAD_NOT_SET;
+}
+inline void MediaUploadChunk::clear_has_payload() {
+  _impl_._oneof_case_[0] = PAYLOAD_NOT_SET;
+}
+inline MediaUploadChunk::PayloadCase MediaUploadChunk::payload_case() const {
+  return MediaUploadChunk::PayloadCase(_impl_._oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// AdCreateRequest
+
+// string assetPath = 1;
+inline void AdCreateRequest::clear_assetpath() {
+  _impl_.assetpath_.ClearToEmpty();
+}
+inline const std::string& AdCreateRequest::assetpath() const {
+  // @@protoc_insertion_point(field_get:media.AdCreateRequest.assetPath)
+  return _internal_assetpath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdCreateRequest::set_assetpath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.assetpath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdCreateRequest.assetPath)
+}
+inline std::string* AdCreateRequest::mutable_assetpath() {
+  std::string* _s = _internal_mutable_assetpath();
+  // @@protoc_insertion_point(field_mutable:media.AdCreateRequest.assetPath)
+  return _s;
+}
+inline const std::string& AdCreateRequest::_internal_assetpath() const {
+  return _impl_.assetpath_.Get();
+}
+inline void AdCreateRequest::_internal_set_assetpath(const std::string& value) {
+  
+  _impl_.assetpath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::_internal_mutable_assetpath() {
+  
+  return _impl_.assetpath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::release_assetpath() {
+  // @@protoc_insertion_point(field_release:media.AdCreateRequest.assetPath)
+  return _impl_.assetpath_.Release();
+}
+inline void AdCreateRequest::set_allocated_assetpath(std::string* assetpath) {
+  if (assetpath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.assetpath_.SetAllocated(assetpath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.assetpath_.IsDefault()) {
+    _impl_.assetpath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdCreateRequest.assetPath)
+}
+
+// string title = 2;
+inline void AdCreateRequest::clear_title() {
+  _impl_.title_.ClearToEmpty();
+}
+inline const std::string& AdCreateRequest::title() const {
+  // @@protoc_insertion_point(field_get:media.AdCreateRequest.title)
+  return _internal_title();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdCreateRequest::set_title(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.title_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdCreateRequest.title)
+}
+inline std::string* AdCreateRequest::mutable_title() {
+  std::string* _s = _internal_mutable_title();
+  // @@protoc_insertion_point(field_mutable:media.AdCreateRequest.title)
+  return _s;
+}
+inline const std::string& AdCreateRequest::_internal_title() const {
+  return _impl_.title_.Get();
+}
+inline void AdCreateRequest::_internal_set_title(const std::string& value) {
+  
+  _impl_.title_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::_internal_mutable_title() {
+  
+  return _impl_.title_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::release_title() {
+  // @@protoc_insertion_point(field_release:media.AdCreateRequest.title)
+  return _impl_.title_.Release();
+}
+inline void AdCreateRequest::set_allocated_title(std::string* title) {
+  if (title != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.title_.SetAllocated(title, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.title_.IsDefault()) {
+    _impl_.title_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdCreateRequest.title)
+}
+
+// int32 durationSeconds = 3;
+inline void AdCreateRequest::clear_durationseconds() {
+  _impl_.durationseconds_ = 0;
+}
+inline int32_t AdCreateRequest::_internal_durationseconds() const {
+  return _impl_.durationseconds_;
+}
+inline int32_t AdCreateRequest::durationseconds() const {
+  // @@protoc_insertion_point(field_get:media.AdCreateRequest.durationSeconds)
+  return _internal_durationseconds();
+}
+inline void AdCreateRequest::_internal_set_durationseconds(int32_t value) {
+  
+  _impl_.durationseconds_ = value;
+}
+inline void AdCreateRequest::set_durationseconds(int32_t value) {
+  _internal_set_durationseconds(value);
+  // @@protoc_insertion_point(field_set:media.AdCreateRequest.durationSeconds)
+}
+
+// string clickUrl = 4;
+inline void AdCreateRequest::clear_clickurl() {
+  _impl_.clickurl_.ClearToEmpty();
+}
+inline const std::string& AdCreateRequest::clickurl() const {
+  // @@protoc_insertion_point(field_get:media.AdCreateRequest.clickUrl)
+  return _internal_clickurl();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdCreateRequest::set_clickurl(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.clickurl_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdCreateRequest.clickUrl)
+}
+inline std::string* AdCreateRequest::mutable_clickurl() {
+  std::string* _s = _internal_mutable_clickurl();
+  // @@protoc_insertion_point(field_mutable:media.AdCreateRequest.clickUrl)
+  return _s;
+}
+inline const std::string& AdCreateRequest::_internal_clickurl() const {
+  return _impl_.clickurl_.Get();
+}
+inline void AdCreateRequest::_internal_set_clickurl(const std::string& value) {
+  
+  _impl_.clickurl_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::_internal_mutable_clickurl() {
+  
+  return _impl_.clickurl_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdCreateRequest::release_clickurl() {
+  // @@protoc_insertion_point(field_release:media.AdCreateRequest.clickUrl)
+  return _impl_.clickurl_.Release();
+}
+inline void AdCreateRequest::set_allocated_clickurl(std::string* clickurl) {
+  if (clickurl != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.clickurl_.SetAllocated(clickurl, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.clickurl_.IsDefault()) {
+    _impl_.clickurl_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdCreateRequest.clickUrl)
+}
+
+// -------------------------------------------------------------------
+
+// AdScheduleRequest
+
+// string adId = 1;
+inline void AdScheduleRequest::clear_adid() {
+  _impl_.adid_.ClearToEmpty();
+}
+inline const std::string& AdScheduleRequest::adid() const {
+  // @@protoc_insertion_point(field_get:media.AdScheduleRequest.adId)
+  return _internal_adid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdScheduleRequest::set_adid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.adid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdScheduleRequest.adId)
+}
+inline std::string* AdScheduleRequest::mutable_adid() {
+  std::string* _s = _internal_mutable_adid();
+  // @@protoc_insertion_point(field_mutable:media.AdScheduleRequest.adId)
+  return _s;
+}
+inline const std::string& AdScheduleRequest::_internal_adid() const {
+  return _impl_.adid_.Get();
+}
+inline void AdScheduleRequest::_internal_set_adid(const std::string& value) {
+  
+  _impl_.adid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdScheduleRequest::_internal_mutable_adid() {
+  
+  return _impl_.adid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdScheduleRequest::release_adid() {
+  // @@protoc_insertion_point(field_release:media.AdScheduleRequest.adId)
+  return _impl_.adid_.Release();
+}
+inline void AdScheduleRequest::set_allocated_adid(std::string* adid) {
+  if (adid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.adid_.SetAllocated(adid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.adid_.IsDefault()) {
+    _impl_.adid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdScheduleRequest.adId)
+}
+
+// int64 startsAtUnixMs = 2;
+inline void AdScheduleRequest::clear_startsatunixms() {
+  _impl_.startsatunixms_ = int64_t{0};
+}
+inline int64_t AdScheduleRequest::_internal_startsatunixms() const {
+  return _impl_.startsatunixms_;
+}
+inline int64_t AdScheduleRequest::startsatunixms() const {
+  // @@protoc_insertion_point(field_get:media.AdScheduleRequest.startsAtUnixMs)
+  return _internal_startsatunixms();
+}
+inline void AdScheduleRequest::_internal_set_startsatunixms(int64_t value) {
+  
+  _impl_.startsatunixms_ = value;
+}
+inline void AdScheduleRequest::set_startsatunixms(int64_t value) {
+  _internal_set_startsatunixms(value);
+  // @@protoc_insertion_point(field_set:media.AdScheduleRequest.startsAtUnixMs)
+}
+
+// int64 endsAtUnixMs = 3;
+inline void AdScheduleRequest::clear_endsatunixms() {
+  _impl_.endsatunixms_ = int64_t{0};
+}
+inline int64_t AdScheduleRequest::_internal_endsatunixms() const {
+  return _impl_.endsatunixms_;
+}
+inline int64_t AdScheduleRequest::endsatunixms() const {
+  // @@protoc_insertion_point(field_get:media.AdScheduleRequest.endsAtUnixMs)
+  return _internal_endsatunixms();
+}
+inline void AdScheduleRequest::_internal_set_endsatunixms(int64_t value) {
+  
+  _impl_.endsatunixms_ = value;
+}
+inline void AdScheduleRequest::set_endsatunixms(int64_t value) {
+  _internal_set_endsatunixms(value);
+  // @@protoc_insertion_point(field_set:media.AdScheduleRequest.endsAtUnixMs)
+}
+
+// int32 priority = 4;
+inline void AdScheduleRequest::clear_priority() {
+  _impl_.priority_ = 0;
+}
+inline int32_t AdScheduleRequest::_internal_priority() const {
+  return _impl_.priority_;
+}
+inline int32_t AdScheduleRequest::priority() const {
+  // @@protoc_insertion_point(field_get:media.AdScheduleRequest.priority)
+  return _internal_priority();
+}
+inline void AdScheduleRequest::_internal_set_priority(int32_t value) {
+  
+  _impl_.priority_ = value;
+}
+inline void AdScheduleRequest::set_priority(int32_t value) {
+  _internal_set_priority(value);
+  // @@protoc_insertion_point(field_set:media.AdScheduleRequest.priority)
+}
+
+// -------------------------------------------------------------------
+
+// AdIdRequest
+
+// string adId = 1;
+inline void AdIdRequest::clear_adid() {
+  _impl_.adid_.ClearToEmpty();
+}
+inline const std::string& AdIdRequest::adid() const {
+  // @@protoc_insertion_point(field_get:media.AdIdRequest.adId)
+  return _internal_adid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdIdRequest::set_adid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.adid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdIdRequest.adId)
+}
+inline std::string* AdIdRequest::mutable_adid() {
+  std::string* _s = _internal_mutable_adid();
+  // @@protoc_insertion_point(field_mutable:media.AdIdRequest.adId)
+  return _s;
+}
+inline const std::string& AdIdRequest::_internal_adid() const {
+  return _impl_.adid_.Get();
+}
+inline void AdIdRequest::_internal_set_adid(const std::string& value) {
+  
+  _impl_.adid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdIdRequest::_internal_mutable_adid() {
+  
+  return _impl_.adid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdIdRequest::release_adid() {
+  // @@protoc_insertion_point(field_release:media.AdIdRequest.adId)
+  return _impl_.adid_.Release();
+}
+inline void AdIdRequest::set_allocated_adid(std::string* adid) {
+  if (adid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.adid_.SetAllocated(adid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.adid_.IsDefault()) {
+    _impl_.adid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdIdRequest.adId)
+}
+
+// -------------------------------------------------------------------
+
+// AdResponse
+
+// string adId = 1;
+inline void AdResponse::clear_adid() {
+  _impl_.adid_.ClearToEmpty();
+}
+inline const std::string& AdResponse::adid() const {
+  // @@protoc_insertion_point(field_get:media.AdResponse.adId)
+  return _internal_adid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdResponse::set_adid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.adid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdResponse.adId)
+}
+inline std::string* AdResponse::mutable_adid() {
+  std::string* _s = _internal_mutable_adid();
+  // @@protoc_insertion_point(field_mutable:media.AdResponse.adId)
+  return _s;
+}
+inline const std::string& AdResponse::_internal_adid() const {
+  return _impl_.adid_.Get();
+}
+inline void AdResponse::_internal_set_adid(const std::string& value) {
+  
+  _impl_.adid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdResponse::_internal_mutable_adid() {
+  
+  return _impl_.adid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdResponse::release_adid() {
+  // @@protoc_insertion_point(field_release:media.AdResponse.adId)
+  return _impl_.adid_.Release();
+}
+inline void AdResponse::set_allocated_adid(std::string* adid) {
+  if (adid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.adid_.SetAllocated(adid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.adid_.IsDefault()) {
+    _impl_.adid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdResponse.adId)
+}
+
+// string status = 2;
+inline void AdResponse::clear_status() {
+  _impl_.status_.ClearToEmpty();
+}
+inline const std::string& AdResponse::status() const {
+  // @@protoc_insertion_point(field_get:media.AdResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdResponse.status)
+}
+inline std::string* AdResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:media.AdResponse.status)
+  return _s;
+}
+inline const std::string& AdResponse::_internal_status() const {
+  return _impl_.status_.Get();
+}
+inline void AdResponse::_internal_set_status(const std::string& value) {
+  
+  _impl_.status_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdResponse::_internal_mutable_status() {
+  
+  return _impl_.status_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdResponse::release_status() {
+  // @@protoc_insertion_point(field_release:media.AdResponse.status)
+  return _impl_.status_.Release();
+}
+inline void AdResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// AdReportResponse
+
+// string adId = 1;
+inline void AdReportResponse::clear_adid() {
+  _impl_.adid_.ClearToEmpty();
+}
+inline const std::string& AdReportResponse::adid() const {
+  // @@protoc_insertion_point(field_get:media.AdReportResponse.adId)
+  return _internal_adid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdReportResponse::set_adid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.adid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdReportResponse.adId)
+}
+inline std::string* AdReportResponse::mutable_adid() {
+  std::string* _s = _internal_mutable_adid();
+  // @@protoc_insertion_point(field_mutable:media.AdReportResponse.adId)
+  return _s;
+}
+inline const std::string& AdReportResponse::_internal_adid() const {
+  return _impl_.adid_.Get();
+}
+inline void AdReportResponse::_internal_set_adid(const std::string& value) {
+  
+  _impl_.adid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdReportResponse::_internal_mutable_adid() {
+  
+  return _impl_.adid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdReportResponse::release_adid() {
+  // @@protoc_insertion_point(field_release:media.AdReportResponse.adId)
+  return _impl_.adid_.Release();
+}
+inline void AdReportResponse::set_allocated_adid(std::string* adid) {
+  if (adid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.adid_.SetAllocated(adid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.adid_.IsDefault()) {
+    _impl_.adid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdReportResponse.adId)
+}
+
+// string reportJson = 2;
+inline void AdReportResponse::clear_reportjson() {
+  _impl_.reportjson_.ClearToEmpty();
+}
+inline const std::string& AdReportResponse::reportjson() const {
+  // @@protoc_insertion_point(field_get:media.AdReportResponse.reportJson)
+  return _internal_reportjson();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AdReportResponse::set_reportjson(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.reportjson_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.AdReportResponse.reportJson)
+}
+inline std::string* AdReportResponse::mutable_reportjson() {
+  std::string* _s = _internal_mutable_reportjson();
+  // @@protoc_insertion_point(field_mutable:media.AdReportResponse.reportJson)
+  return _s;
+}
+inline const std::string& AdReportResponse::_internal_reportjson() const {
+  return _impl_.reportjson_.Get();
+}
+inline void AdReportResponse::_internal_set_reportjson(const std::string& value) {
+  
+  _impl_.reportjson_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AdReportResponse::_internal_mutable_reportjson() {
+  
+  return _impl_.reportjson_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AdReportResponse::release_reportjson() {
+  // @@protoc_insertion_point(field_release:media.AdReportResponse.reportJson)
+  return _impl_.reportjson_.Release();
+}
+inline void AdReportResponse::set_allocated_reportjson(std::string* reportjson) {
+  if (reportjson != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.reportjson_.SetAllocated(reportjson, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.reportjson_.IsDefault()) {
+    _impl_.reportjson_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.AdReportResponse.reportJson)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

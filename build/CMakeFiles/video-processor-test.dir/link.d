@@ -6,6 +6,12 @@ video-processor-test: \
   CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o \
   CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o \
   CMakeFiles/video-processor-test.dir/src/config/config.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o \
+  CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o \
   CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o \
   CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o \
   CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o \
@@ -106,6 +112,18 @@ CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o:
 CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o:
 
 CMakeFiles/video-processor-test.dir/src/config/config.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o:
+
+CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o:
 
 CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o:
 

@@ -8,11 +8,20 @@ studioos-media: \
   CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o \
   CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o \
   CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/CommandRunner.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/FFmpeg.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.o \
+  CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o \
+  CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o \
+  CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o \
+  CMakeFiles/studioos-media.dir/src/storage/S3Storage.cpp.o \
   CMakeFiles/studioos-media.dir/src/config/config.cpp.o \
   CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o \
   CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o \
@@ -463,15 +472,33 @@ CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o:
 
+CMakeFiles/studioos-media.dir/src/ffmpeg/CommandRunner.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/ffmpeg/FFmpeg.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.o:
+
 CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o:
 
+CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o:
+
 CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/storage/S3Storage.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/config/config.cpp.o:
 

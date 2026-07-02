@@ -165,12 +165,105 @@ image-processor-test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/build
 .PHONY : image-processor-test/fast
 
+#=============================================================================
+# Target rules for targets named audio-processor-test
+
+# Build rule for target.
+audio-processor-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 audio-processor-test
+.PHONY : audio-processor-test
+
+# fast build rule for target.
+audio-processor-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/build
+.PHONY : audio-processor-test/fast
+
+#=============================================================================
+# Target rules for targets named streaming-service-test
+
+# Build rule for target.
+streaming-service-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 streaming-service-test
+.PHONY : streaming-service-test
+
+# fast build rule for target.
+streaming-service-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/build
+.PHONY : streaming-service-test/fast
+
+#=============================================================================
+# Target rules for targets named ad-service-test
+
+# Build rule for target.
+ad-service-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ad-service-test
+.PHONY : ad-service-test
+
+# fast build rule for target.
+ad-service-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/build
+.PHONY : ad-service-test/fast
+
+#=============================================================================
+# Target rules for targets named media-job-service-test
+
+# Build rule for target.
+media-job-service-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 media-job-service-test
+.PHONY : media-job-service-test
+
+# fast build rule for target.
+media-job-service-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/build
+.PHONY : media-job-service-test/fast
+
+#=============================================================================
+# Target rules for targets named s3-storage-test
+
+# Build rule for target.
+s3-storage-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 s3-storage-test
+.PHONY : s3-storage-test
+
+# fast build rule for target.
+s3-storage-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/build
+.PHONY : s3-storage-test/fast
+
+#=============================================================================
+# Target rules for targets named grpc-ad-service-test
+
+# Build rule for target.
+grpc-ad-service-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 grpc-ad-service-test
+.PHONY : grpc-ad-service-test
+
+# fast build rule for target.
+grpc-ad-service-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/build
+.PHONY : grpc-ad-service-test/fast
+
+#=============================================================================
+# Target rules for targets named grpc-media-job-test
+
+# Build rule for target.
+grpc-media-job-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 grpc-media-job-test
+.PHONY : grpc-media-job-test
+
+# fast build rule for target.
+grpc-media-job-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/build
+.PHONY : grpc-media-job-test/fast
+
 generated/media.grpc.pb.o: generated/media.grpc.pb.cc.o
 .PHONY : generated/media.grpc.pb.o
 
 # target to build an object file
 generated/media.grpc.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o
 .PHONY : generated/media.grpc.pb.cc.o
 
 generated/media.grpc.pb.i: generated/media.grpc.pb.cc.i
@@ -179,6 +272,8 @@ generated/media.grpc.pb.i: generated/media.grpc.pb.cc.i
 # target to preprocess a source file
 generated/media.grpc.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.i
 .PHONY : generated/media.grpc.pb.cc.i
 
 generated/media.grpc.pb.s: generated/media.grpc.pb.cc.s
@@ -187,6 +282,8 @@ generated/media.grpc.pb.s: generated/media.grpc.pb.cc.s
 # target to generate assembly for a file
 generated/media.grpc.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.s
 .PHONY : generated/media.grpc.pb.cc.s
 
 generated/media.pb.o: generated/media.pb.cc.o
@@ -195,6 +292,8 @@ generated/media.pb.o: generated/media.pb.cc.o
 # target to build an object file
 generated/media.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o
 .PHONY : generated/media.pb.cc.o
 
 generated/media.pb.i: generated/media.pb.cc.i
@@ -203,6 +302,8 @@ generated/media.pb.i: generated/media.pb.cc.i
 # target to preprocess a source file
 generated/media.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.i
 .PHONY : generated/media.pb.cc.i
 
 generated/media.pb.s: generated/media.pb.cc.s
@@ -211,6 +312,8 @@ generated/media.pb.s: generated/media.pb.cc.s
 # target to generate assembly for a file
 generated/media.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/generated/media.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/generated/media.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.s
 .PHONY : generated/media.pb.cc.s
 
 src/config/config.o: src/config/config.cpp.o
@@ -221,6 +324,11 @@ src/config/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o
 .PHONY : src/config/config.cpp.o
 
 src/config/config.i: src/config/config.cpp.i
@@ -231,6 +339,11 @@ src/config/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.i
 .PHONY : src/config/config.cpp.i
 
 src/config/config.s: src/config/config.cpp.s
@@ -241,7 +354,243 @@ src/config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.s
 .PHONY : src/config/config.cpp.s
+
+src/ffmpeg/AudioEncoder.o: src/ffmpeg/AudioEncoder.cpp.o
+.PHONY : src/ffmpeg/AudioEncoder.o
+
+# target to build an object file
+src/ffmpeg/AudioEncoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+.PHONY : src/ffmpeg/AudioEncoder.cpp.o
+
+src/ffmpeg/AudioEncoder.i: src/ffmpeg/AudioEncoder.cpp.i
+.PHONY : src/ffmpeg/AudioEncoder.i
+
+# target to preprocess a source file
+src/ffmpeg/AudioEncoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+.PHONY : src/ffmpeg/AudioEncoder.cpp.i
+
+src/ffmpeg/AudioEncoder.s: src/ffmpeg/AudioEncoder.cpp.s
+.PHONY : src/ffmpeg/AudioEncoder.s
+
+# target to generate assembly for a file
+src/ffmpeg/AudioEncoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+.PHONY : src/ffmpeg/AudioEncoder.cpp.s
+
+src/ffmpeg/CommandRunner.o: src/ffmpeg/CommandRunner.cpp.o
+.PHONY : src/ffmpeg/CommandRunner.o
+
+# target to build an object file
+src/ffmpeg/CommandRunner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o
+.PHONY : src/ffmpeg/CommandRunner.cpp.o
+
+src/ffmpeg/CommandRunner.i: src/ffmpeg/CommandRunner.cpp.i
+.PHONY : src/ffmpeg/CommandRunner.i
+
+# target to preprocess a source file
+src/ffmpeg/CommandRunner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.i
+.PHONY : src/ffmpeg/CommandRunner.cpp.i
+
+src/ffmpeg/CommandRunner.s: src/ffmpeg/CommandRunner.cpp.s
+.PHONY : src/ffmpeg/CommandRunner.s
+
+# target to generate assembly for a file
+src/ffmpeg/CommandRunner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.s
+.PHONY : src/ffmpeg/CommandRunner.cpp.s
+
+src/ffmpeg/FFmpeg.o: src/ffmpeg/FFmpeg.cpp.o
+.PHONY : src/ffmpeg/FFmpeg.o
+
+# target to build an object file
+src/ffmpeg/FFmpeg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o
+.PHONY : src/ffmpeg/FFmpeg.cpp.o
+
+src/ffmpeg/FFmpeg.i: src/ffmpeg/FFmpeg.cpp.i
+.PHONY : src/ffmpeg/FFmpeg.i
+
+# target to preprocess a source file
+src/ffmpeg/FFmpeg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.i
+.PHONY : src/ffmpeg/FFmpeg.cpp.i
+
+src/ffmpeg/FFmpeg.s: src/ffmpeg/FFmpeg.cpp.s
+.PHONY : src/ffmpeg/FFmpeg.s
+
+# target to generate assembly for a file
+src/ffmpeg/FFmpeg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.s
+.PHONY : src/ffmpeg/FFmpeg.cpp.s
+
+src/ffmpeg/ThumbnailGenerator.o: src/ffmpeg/ThumbnailGenerator.cpp.o
+.PHONY : src/ffmpeg/ThumbnailGenerator.o
+
+# target to build an object file
+src/ffmpeg/ThumbnailGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+.PHONY : src/ffmpeg/ThumbnailGenerator.cpp.o
+
+src/ffmpeg/ThumbnailGenerator.i: src/ffmpeg/ThumbnailGenerator.cpp.i
+.PHONY : src/ffmpeg/ThumbnailGenerator.i
+
+# target to preprocess a source file
+src/ffmpeg/ThumbnailGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+.PHONY : src/ffmpeg/ThumbnailGenerator.cpp.i
+
+src/ffmpeg/ThumbnailGenerator.s: src/ffmpeg/ThumbnailGenerator.cpp.s
+.PHONY : src/ffmpeg/ThumbnailGenerator.s
+
+# target to generate assembly for a file
+src/ffmpeg/ThumbnailGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+.PHONY : src/ffmpeg/ThumbnailGenerator.cpp.s
+
+src/ffmpeg/VideoConverter.o: src/ffmpeg/VideoConverter.cpp.o
+.PHONY : src/ffmpeg/VideoConverter.o
+
+# target to build an object file
+src/ffmpeg/VideoConverter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o
+.PHONY : src/ffmpeg/VideoConverter.cpp.o
+
+src/ffmpeg/VideoConverter.i: src/ffmpeg/VideoConverter.cpp.i
+.PHONY : src/ffmpeg/VideoConverter.i
+
+# target to preprocess a source file
+src/ffmpeg/VideoConverter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.i
+.PHONY : src/ffmpeg/VideoConverter.cpp.i
+
+src/ffmpeg/VideoConverter.s: src/ffmpeg/VideoConverter.cpp.s
+.PHONY : src/ffmpeg/VideoConverter.s
+
+# target to generate assembly for a file
+src/ffmpeg/VideoConverter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.s
+.PHONY : src/ffmpeg/VideoConverter.cpp.s
+
+src/ffmpeg/VideoEncoder.o: src/ffmpeg/VideoEncoder.cpp.o
+.PHONY : src/ffmpeg/VideoEncoder.o
+
+# target to build an object file
+src/ffmpeg/VideoEncoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+.PHONY : src/ffmpeg/VideoEncoder.cpp.o
+
+src/ffmpeg/VideoEncoder.i: src/ffmpeg/VideoEncoder.cpp.i
+.PHONY : src/ffmpeg/VideoEncoder.i
+
+# target to preprocess a source file
+src/ffmpeg/VideoEncoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+.PHONY : src/ffmpeg/VideoEncoder.cpp.i
+
+src/ffmpeg/VideoEncoder.s: src/ffmpeg/VideoEncoder.cpp.s
+.PHONY : src/ffmpeg/VideoEncoder.s
+
+# target to generate assembly for a file
+src/ffmpeg/VideoEncoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+.PHONY : src/ffmpeg/VideoEncoder.cpp.s
 
 src/grpc/MediaServer.o: src/grpc/MediaServer.cpp.o
 .PHONY : src/grpc/MediaServer.o
@@ -249,6 +598,8 @@ src/grpc/MediaServer.o: src/grpc/MediaServer.cpp.o
 # target to build an object file
 src/grpc/MediaServer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/grpc/MediaServer.cpp.o
 .PHONY : src/grpc/MediaServer.cpp.o
 
 src/grpc/MediaServer.i: src/grpc/MediaServer.cpp.i
@@ -257,6 +608,8 @@ src/grpc/MediaServer.i: src/grpc/MediaServer.cpp.i
 # target to preprocess a source file
 src/grpc/MediaServer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/grpc/MediaServer.cpp.i
 .PHONY : src/grpc/MediaServer.cpp.i
 
 src/grpc/MediaServer.s: src/grpc/MediaServer.cpp.s
@@ -265,6 +618,8 @@ src/grpc/MediaServer.s: src/grpc/MediaServer.cpp.s
 # target to generate assembly for a file
 src/grpc/MediaServer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/grpc/MediaServer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/grpc/MediaServer.cpp.s
 .PHONY : src/grpc/MediaServer.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -291,6 +646,39 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/media/AudioProcessor.o: src/media/AudioProcessor.cpp.o
+.PHONY : src/media/AudioProcessor.o
+
+# target to build an object file
+src/media/AudioProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/media/AudioProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/AudioProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o
+.PHONY : src/media/AudioProcessor.cpp.o
+
+src/media/AudioProcessor.i: src/media/AudioProcessor.cpp.i
+.PHONY : src/media/AudioProcessor.i
+
+# target to preprocess a source file
+src/media/AudioProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/media/AudioProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/AudioProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.i
+.PHONY : src/media/AudioProcessor.cpp.i
+
+src/media/AudioProcessor.s: src/media/AudioProcessor.cpp.s
+.PHONY : src/media/AudioProcessor.s
+
+# target to generate assembly for a file
+src/media/AudioProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/media/AudioProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/AudioProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.s
+.PHONY : src/media/AudioProcessor.cpp.s
+
 src/media/ImageProcessor.o: src/media/ImageProcessor.cpp.o
 .PHONY : src/media/ImageProcessor.o
 
@@ -298,6 +686,8 @@ src/media/ImageProcessor.o: src/media/ImageProcessor.cpp.o
 src/media/ImageProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o
 .PHONY : src/media/ImageProcessor.cpp.o
 
 src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
@@ -307,6 +697,8 @@ src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
 src/media/ImageProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.i
 .PHONY : src/media/ImageProcessor.cpp.i
 
 src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
@@ -316,6 +708,8 @@ src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
 src/media/ImageProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.s
 .PHONY : src/media/ImageProcessor.cpp.s
 
 src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
@@ -325,6 +719,8 @@ src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
 src/media/VideoProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o
 .PHONY : src/media/VideoProcessor.cpp.o
 
 src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
@@ -334,6 +730,8 @@ src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
 src/media/VideoProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.i
 .PHONY : src/media/VideoProcessor.cpp.i
 
 src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
@@ -343,6 +741,8 @@ src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
 src/media/VideoProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.s
 .PHONY : src/media/VideoProcessor.cpp.s
 
 src/services/AdService.o: src/services/AdService.cpp.o
@@ -351,6 +751,9 @@ src/services/AdService.o: src/services/AdService.cpp.o
 # target to build an object file
 src/services/AdService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AdService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AdService.cpp.o
 .PHONY : src/services/AdService.cpp.o
 
 src/services/AdService.i: src/services/AdService.cpp.i
@@ -359,6 +762,9 @@ src/services/AdService.i: src/services/AdService.cpp.i
 # target to preprocess a source file
 src/services/AdService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AdService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AdService.cpp.i
 .PHONY : src/services/AdService.cpp.i
 
 src/services/AdService.s: src/services/AdService.cpp.s
@@ -367,6 +773,9 @@ src/services/AdService.s: src/services/AdService.cpp.s
 # target to generate assembly for a file
 src/services/AdService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AdService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AdService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AdService.cpp.s
 .PHONY : src/services/AdService.cpp.s
 
 src/services/AudioService.o: src/services/AudioService.cpp.o
@@ -375,6 +784,8 @@ src/services/AudioService.o: src/services/AudioService.cpp.o
 # target to build an object file
 src/services/AudioService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o
 .PHONY : src/services/AudioService.cpp.o
 
 src/services/AudioService.i: src/services/AudioService.cpp.i
@@ -383,6 +794,8 @@ src/services/AudioService.i: src/services/AudioService.cpp.i
 # target to preprocess a source file
 src/services/AudioService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.i
 .PHONY : src/services/AudioService.cpp.i
 
 src/services/AudioService.s: src/services/AudioService.cpp.s
@@ -391,6 +804,8 @@ src/services/AudioService.s: src/services/AudioService.cpp.s
 # target to generate assembly for a file
 src/services/AudioService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.s
 .PHONY : src/services/AudioService.cpp.s
 
 src/services/ImageService.o: src/services/ImageService.cpp.o
@@ -399,6 +814,8 @@ src/services/ImageService.o: src/services/ImageService.cpp.o
 # target to build an object file
 src/services/ImageService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o
 .PHONY : src/services/ImageService.cpp.o
 
 src/services/ImageService.i: src/services/ImageService.cpp.i
@@ -407,6 +824,8 @@ src/services/ImageService.i: src/services/ImageService.cpp.i
 # target to preprocess a source file
 src/services/ImageService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.i
 .PHONY : src/services/ImageService.cpp.i
 
 src/services/ImageService.s: src/services/ImageService.cpp.s
@@ -415,7 +834,42 @@ src/services/ImageService.s: src/services/ImageService.cpp.s
 # target to generate assembly for a file
 src/services/ImageService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.s
 .PHONY : src/services/ImageService.cpp.s
+
+src/services/MediaJobService.o: src/services/MediaJobService.cpp.o
+.PHONY : src/services/MediaJobService.o
+
+# target to build an object file
+src/services/MediaJobService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/src/services/MediaJobService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.o
+.PHONY : src/services/MediaJobService.cpp.o
+
+src/services/MediaJobService.i: src/services/MediaJobService.cpp.i
+.PHONY : src/services/MediaJobService.i
+
+# target to preprocess a source file
+src/services/MediaJobService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/src/services/MediaJobService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.i
+.PHONY : src/services/MediaJobService.cpp.i
+
+src/services/MediaJobService.s: src/services/MediaJobService.cpp.s
+.PHONY : src/services/MediaJobService.s
+
+# target to generate assembly for a file
+src/services/MediaJobService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/src/services/MediaJobService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.s
+.PHONY : src/services/MediaJobService.cpp.s
 
 src/services/StreamingService.o: src/services/StreamingService.cpp.o
 .PHONY : src/services/StreamingService.o
@@ -423,6 +877,7 @@ src/services/StreamingService.o: src/services/StreamingService.cpp.o
 # target to build an object file
 src/services/StreamingService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.o
 .PHONY : src/services/StreamingService.cpp.o
 
 src/services/StreamingService.i: src/services/StreamingService.cpp.i
@@ -431,6 +886,7 @@ src/services/StreamingService.i: src/services/StreamingService.cpp.i
 # target to preprocess a source file
 src/services/StreamingService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.i
 .PHONY : src/services/StreamingService.cpp.i
 
 src/services/StreamingService.s: src/services/StreamingService.cpp.s
@@ -439,6 +895,7 @@ src/services/StreamingService.s: src/services/StreamingService.cpp.s
 # target to generate assembly for a file
 src/services/StreamingService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.s
 .PHONY : src/services/StreamingService.cpp.s
 
 src/services/VideoService.o: src/services/VideoService.cpp.o
@@ -448,6 +905,8 @@ src/services/VideoService.o: src/services/VideoService.cpp.o
 src/services/VideoService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o
 .PHONY : src/services/VideoService.cpp.o
 
 src/services/VideoService.i: src/services/VideoService.cpp.i
@@ -457,6 +916,8 @@ src/services/VideoService.i: src/services/VideoService.cpp.i
 src/services/VideoService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.i
 .PHONY : src/services/VideoService.cpp.i
 
 src/services/VideoService.s: src/services/VideoService.cpp.s
@@ -466,7 +927,36 @@ src/services/VideoService.s: src/services/VideoService.cpp.s
 src/services/VideoService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.s
 .PHONY : src/services/VideoService.cpp.s
+
+src/storage/S3Storage.o: src/storage/S3Storage.cpp.o
+.PHONY : src/storage/S3Storage.o
+
+# target to build an object file
+src/storage/S3Storage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/storage/S3Storage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/storage/S3Storage.cpp.o
+.PHONY : src/storage/S3Storage.cpp.o
+
+src/storage/S3Storage.i: src/storage/S3Storage.cpp.i
+.PHONY : src/storage/S3Storage.i
+
+# target to preprocess a source file
+src/storage/S3Storage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/storage/S3Storage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/storage/S3Storage.cpp.i
+.PHONY : src/storage/S3Storage.cpp.i
+
+src/storage/S3Storage.s: src/storage/S3Storage.cpp.s
+.PHONY : src/storage/S3Storage.s
+
+# target to generate assembly for a file
+src/storage/S3Storage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/storage/S3Storage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/storage/S3Storage.cpp.s
+.PHONY : src/storage/S3Storage.cpp.s
 
 src/utils/FileUtils.o: src/utils/FileUtils.cpp.o
 .PHONY : src/utils/FileUtils.o
@@ -476,6 +966,12 @@ src/utils/FileUtils.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/FileUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o
 .PHONY : src/utils/FileUtils.cpp.o
 
 src/utils/FileUtils.i: src/utils/FileUtils.cpp.i
@@ -486,6 +982,12 @@ src/utils/FileUtils.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/FileUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.i
 .PHONY : src/utils/FileUtils.cpp.i
 
 src/utils/FileUtils.s: src/utils/FileUtils.cpp.s
@@ -496,6 +998,12 @@ src/utils/FileUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/FileUtils.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/FileUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.s
 .PHONY : src/utils/FileUtils.cpp.s
 
 src/utils/Logger.o: src/utils/Logger.cpp.o
@@ -506,6 +1014,10 @@ src/utils/Logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o
 .PHONY : src/utils/Logger.cpp.o
 
 src/utils/Logger.i: src/utils/Logger.cpp.i
@@ -516,6 +1028,10 @@ src/utils/Logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.i
 .PHONY : src/utils/Logger.cpp.i
 
 src/utils/Logger.s: src/utils/Logger.cpp.s
@@ -526,6 +1042,10 @@ src/utils/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.s
 .PHONY : src/utils/Logger.cpp.s
 
 src/utils/Timer.o: src/utils/Timer.cpp.o
@@ -536,6 +1056,10 @@ src/utils/Timer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o
 .PHONY : src/utils/Timer.cpp.o
 
 src/utils/Timer.i: src/utils/Timer.cpp.i
@@ -546,6 +1070,10 @@ src/utils/Timer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.i
 .PHONY : src/utils/Timer.cpp.i
 
 src/utils/Timer.s: src/utils/Timer.cpp.s
@@ -556,7 +1084,107 @@ src/utils/Timer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.s
 .PHONY : src/utils/Timer.cpp.s
+
+tests/ad_service_test.o: tests/ad_service_test.cpp.o
+.PHONY : tests/ad_service_test.o
+
+# target to build an object file
+tests/ad_service_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.o
+.PHONY : tests/ad_service_test.cpp.o
+
+tests/ad_service_test.i: tests/ad_service_test.cpp.i
+.PHONY : tests/ad_service_test.i
+
+# target to preprocess a source file
+tests/ad_service_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.i
+.PHONY : tests/ad_service_test.cpp.i
+
+tests/ad_service_test.s: tests/ad_service_test.cpp.s
+.PHONY : tests/ad_service_test.s
+
+# target to generate assembly for a file
+tests/ad_service_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.s
+.PHONY : tests/ad_service_test.cpp.s
+
+tests/audio_processor_test.o: tests/audio_processor_test.cpp.o
+.PHONY : tests/audio_processor_test.o
+
+# target to build an object file
+tests/audio_processor_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/tests/audio_processor_test.cpp.o
+.PHONY : tests/audio_processor_test.cpp.o
+
+tests/audio_processor_test.i: tests/audio_processor_test.cpp.i
+.PHONY : tests/audio_processor_test.i
+
+# target to preprocess a source file
+tests/audio_processor_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/tests/audio_processor_test.cpp.i
+.PHONY : tests/audio_processor_test.cpp.i
+
+tests/audio_processor_test.s: tests/audio_processor_test.cpp.s
+.PHONY : tests/audio_processor_test.s
+
+# target to generate assembly for a file
+tests/audio_processor_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/tests/audio_processor_test.cpp.s
+.PHONY : tests/audio_processor_test.cpp.s
+
+tests/grpc_ad_service_test.o: tests/grpc_ad_service_test.cpp.o
+.PHONY : tests/grpc_ad_service_test.o
+
+# target to build an object file
+tests/grpc_ad_service_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/tests/grpc_ad_service_test.cpp.o
+.PHONY : tests/grpc_ad_service_test.cpp.o
+
+tests/grpc_ad_service_test.i: tests/grpc_ad_service_test.cpp.i
+.PHONY : tests/grpc_ad_service_test.i
+
+# target to preprocess a source file
+tests/grpc_ad_service_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/tests/grpc_ad_service_test.cpp.i
+.PHONY : tests/grpc_ad_service_test.cpp.i
+
+tests/grpc_ad_service_test.s: tests/grpc_ad_service_test.cpp.s
+.PHONY : tests/grpc_ad_service_test.s
+
+# target to generate assembly for a file
+tests/grpc_ad_service_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/tests/grpc_ad_service_test.cpp.s
+.PHONY : tests/grpc_ad_service_test.cpp.s
+
+tests/grpc_media_job_test.o: tests/grpc_media_job_test.cpp.o
+.PHONY : tests/grpc_media_job_test.o
+
+# target to build an object file
+tests/grpc_media_job_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/tests/grpc_media_job_test.cpp.o
+.PHONY : tests/grpc_media_job_test.cpp.o
+
+tests/grpc_media_job_test.i: tests/grpc_media_job_test.cpp.i
+.PHONY : tests/grpc_media_job_test.i
+
+# target to preprocess a source file
+tests/grpc_media_job_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/tests/grpc_media_job_test.cpp.i
+.PHONY : tests/grpc_media_job_test.cpp.i
+
+tests/grpc_media_job_test.s: tests/grpc_media_job_test.cpp.s
+.PHONY : tests/grpc_media_job_test.s
+
+# target to generate assembly for a file
+tests/grpc_media_job_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/tests/grpc_media_job_test.cpp.s
+.PHONY : tests/grpc_media_job_test.cpp.s
 
 tests/image_processor_test.o: tests/image_processor_test.cpp.o
 .PHONY : tests/image_processor_test.o
@@ -581,6 +1209,78 @@ tests/image_processor_test.s: tests/image_processor_test.cpp.s
 tests/image_processor_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/tests/image_processor_test.cpp.s
 .PHONY : tests/image_processor_test.cpp.s
+
+tests/media_job_service_test.o: tests/media_job_service_test.cpp.o
+.PHONY : tests/media_job_service_test.o
+
+# target to build an object file
+tests/media_job_service_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/tests/media_job_service_test.cpp.o
+.PHONY : tests/media_job_service_test.cpp.o
+
+tests/media_job_service_test.i: tests/media_job_service_test.cpp.i
+.PHONY : tests/media_job_service_test.i
+
+# target to preprocess a source file
+tests/media_job_service_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/tests/media_job_service_test.cpp.i
+.PHONY : tests/media_job_service_test.cpp.i
+
+tests/media_job_service_test.s: tests/media_job_service_test.cpp.s
+.PHONY : tests/media_job_service_test.s
+
+# target to generate assembly for a file
+tests/media_job_service_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/media-job-service-test.dir/build.make CMakeFiles/media-job-service-test.dir/tests/media_job_service_test.cpp.s
+.PHONY : tests/media_job_service_test.cpp.s
+
+tests/s3_storage_test.o: tests/s3_storage_test.cpp.o
+.PHONY : tests/s3_storage_test.o
+
+# target to build an object file
+tests/s3_storage_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/tests/s3_storage_test.cpp.o
+.PHONY : tests/s3_storage_test.cpp.o
+
+tests/s3_storage_test.i: tests/s3_storage_test.cpp.i
+.PHONY : tests/s3_storage_test.i
+
+# target to preprocess a source file
+tests/s3_storage_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/tests/s3_storage_test.cpp.i
+.PHONY : tests/s3_storage_test.cpp.i
+
+tests/s3_storage_test.s: tests/s3_storage_test.cpp.s
+.PHONY : tests/s3_storage_test.s
+
+# target to generate assembly for a file
+tests/s3_storage_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/tests/s3_storage_test.cpp.s
+.PHONY : tests/s3_storage_test.cpp.s
+
+tests/streaming_service_test.o: tests/streaming_service_test.cpp.o
+.PHONY : tests/streaming_service_test.o
+
+# target to build an object file
+tests/streaming_service_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/tests/streaming_service_test.cpp.o
+.PHONY : tests/streaming_service_test.cpp.o
+
+tests/streaming_service_test.i: tests/streaming_service_test.cpp.i
+.PHONY : tests/streaming_service_test.i
+
+# target to preprocess a source file
+tests/streaming_service_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/tests/streaming_service_test.cpp.i
+.PHONY : tests/streaming_service_test.cpp.i
+
+tests/streaming_service_test.s: tests/streaming_service_test.cpp.s
+.PHONY : tests/streaming_service_test.s
+
+# target to generate assembly for a file
+tests/streaming_service_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/tests/streaming_service_test.cpp.s
+.PHONY : tests/streaming_service_test.cpp.s
 
 tests/video_processor_test.o: tests/video_processor_test.cpp.o
 .PHONY : tests/video_processor_test.o
@@ -615,7 +1315,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... ad-service-test"
+	@echo "... audio-processor-test"
+	@echo "... grpc-ad-service-test"
+	@echo "... grpc-media-job-test"
 	@echo "... image-processor-test"
+	@echo "... media-job-service-test"
+	@echo "... s3-storage-test"
+	@echo "... streaming-service-test"
 	@echo "... studioos-media"
 	@echo "... video-processor-test"
 	@echo "... generated/media.grpc.pb.o"
@@ -627,12 +1334,33 @@ help:
 	@echo "... src/config/config.o"
 	@echo "... src/config/config.i"
 	@echo "... src/config/config.s"
+	@echo "... src/ffmpeg/AudioEncoder.o"
+	@echo "... src/ffmpeg/AudioEncoder.i"
+	@echo "... src/ffmpeg/AudioEncoder.s"
+	@echo "... src/ffmpeg/CommandRunner.o"
+	@echo "... src/ffmpeg/CommandRunner.i"
+	@echo "... src/ffmpeg/CommandRunner.s"
+	@echo "... src/ffmpeg/FFmpeg.o"
+	@echo "... src/ffmpeg/FFmpeg.i"
+	@echo "... src/ffmpeg/FFmpeg.s"
+	@echo "... src/ffmpeg/ThumbnailGenerator.o"
+	@echo "... src/ffmpeg/ThumbnailGenerator.i"
+	@echo "... src/ffmpeg/ThumbnailGenerator.s"
+	@echo "... src/ffmpeg/VideoConverter.o"
+	@echo "... src/ffmpeg/VideoConverter.i"
+	@echo "... src/ffmpeg/VideoConverter.s"
+	@echo "... src/ffmpeg/VideoEncoder.o"
+	@echo "... src/ffmpeg/VideoEncoder.i"
+	@echo "... src/ffmpeg/VideoEncoder.s"
 	@echo "... src/grpc/MediaServer.o"
 	@echo "... src/grpc/MediaServer.i"
 	@echo "... src/grpc/MediaServer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/media/AudioProcessor.o"
+	@echo "... src/media/AudioProcessor.i"
+	@echo "... src/media/AudioProcessor.s"
 	@echo "... src/media/ImageProcessor.o"
 	@echo "... src/media/ImageProcessor.i"
 	@echo "... src/media/ImageProcessor.s"
@@ -648,12 +1376,18 @@ help:
 	@echo "... src/services/ImageService.o"
 	@echo "... src/services/ImageService.i"
 	@echo "... src/services/ImageService.s"
+	@echo "... src/services/MediaJobService.o"
+	@echo "... src/services/MediaJobService.i"
+	@echo "... src/services/MediaJobService.s"
 	@echo "... src/services/StreamingService.o"
 	@echo "... src/services/StreamingService.i"
 	@echo "... src/services/StreamingService.s"
 	@echo "... src/services/VideoService.o"
 	@echo "... src/services/VideoService.i"
 	@echo "... src/services/VideoService.s"
+	@echo "... src/storage/S3Storage.o"
+	@echo "... src/storage/S3Storage.i"
+	@echo "... src/storage/S3Storage.s"
 	@echo "... src/utils/FileUtils.o"
 	@echo "... src/utils/FileUtils.i"
 	@echo "... src/utils/FileUtils.s"
@@ -663,9 +1397,30 @@ help:
 	@echo "... src/utils/Timer.o"
 	@echo "... src/utils/Timer.i"
 	@echo "... src/utils/Timer.s"
+	@echo "... tests/ad_service_test.o"
+	@echo "... tests/ad_service_test.i"
+	@echo "... tests/ad_service_test.s"
+	@echo "... tests/audio_processor_test.o"
+	@echo "... tests/audio_processor_test.i"
+	@echo "... tests/audio_processor_test.s"
+	@echo "... tests/grpc_ad_service_test.o"
+	@echo "... tests/grpc_ad_service_test.i"
+	@echo "... tests/grpc_ad_service_test.s"
+	@echo "... tests/grpc_media_job_test.o"
+	@echo "... tests/grpc_media_job_test.i"
+	@echo "... tests/grpc_media_job_test.s"
 	@echo "... tests/image_processor_test.o"
 	@echo "... tests/image_processor_test.i"
 	@echo "... tests/image_processor_test.s"
+	@echo "... tests/media_job_service_test.o"
+	@echo "... tests/media_job_service_test.i"
+	@echo "... tests/media_job_service_test.s"
+	@echo "... tests/s3_storage_test.o"
+	@echo "... tests/s3_storage_test.i"
+	@echo "... tests/s3_storage_test.s"
+	@echo "... tests/streaming_service_test.o"
+	@echo "... tests/streaming_service_test.i"
+	@echo "... tests/streaming_service_test.s"
 	@echo "... tests/video_processor_test.o"
 	@echo "... tests/video_processor_test.i"
 	@echo "... tests/video_processor_test.s"

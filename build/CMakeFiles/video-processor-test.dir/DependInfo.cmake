@@ -9,6 +9,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/linux/Documents/studioos-media/src/config/config.cpp" "CMakeFiles/video-processor-test.dir/src/config/config.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/config/config.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp" "CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp" "CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/VideoService.cpp" "CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/utils/FileUtils.cpp" "CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o" "gcc" "CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o.d"

@@ -91,4 +91,11 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/studioos-media.dir/DependInfo.cmake"
   "CMakeFiles/video-processor-test.dir/DependInfo.cmake"
   "CMakeFiles/image-processor-test.dir/DependInfo.cmake"
+  "CMakeFiles/audio-processor-test.dir/DependInfo.cmake"
+  "CMakeFiles/streaming-service-test.dir/DependInfo.cmake"
+  "CMakeFiles/ad-service-test.dir/DependInfo.cmake"
+  "CMakeFiles/media-job-service-test.dir/DependInfo.cmake"
+  "CMakeFiles/s3-storage-test.dir/DependInfo.cmake"
+  "CMakeFiles/grpc-ad-service-test.dir/DependInfo.cmake"
+  "CMakeFiles/grpc-media-job-test.dir/DependInfo.cmake"
   )

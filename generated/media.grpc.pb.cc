@@ -27,6 +27,27 @@ static const char* MediaService_method_names[] = {
   "/media.MediaService/CompressVideo",
   "/media.MediaService/GenerateThumbnail",
   "/media.MediaService/ExtractAudio",
+  "/media.MediaService/ConvertVideo",
+  "/media.MediaService/TrimVideo",
+  "/media.MediaService/MergeVideos",
+  "/media.MediaService/ResizeImage",
+  "/media.MediaService/ThumbnailImage",
+  "/media.MediaService/EncodeAudio",
+  "/media.MediaService/NormalizeAudio",
+  "/media.MediaService/DenoiseAudio",
+  "/media.MediaService/MergeAudio",
+  "/media.MediaService/TrimAudio",
+  "/media.MediaService/ConvertAudio",
+  "/media.MediaService/SubmitMediaJob",
+  "/media.MediaService/GetMediaJob",
+  "/media.MediaService/UploadMedia",
+  "/media.MediaService/CreateVideoAd",
+  "/media.MediaService/CreateImageAd",
+  "/media.MediaService/CreateAudioAd",
+  "/media.MediaService/ScheduleAd",
+  "/media.MediaService/RecordImpression",
+  "/media.MediaService/RecordClick",
+  "/media.MediaService/GetAdReport",
 };
 
 std::unique_ptr< MediaService::Stub> MediaService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -41,6 +62,27 @@ MediaService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_CompressVideo_(MediaService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GenerateThumbnail_(MediaService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ExtractAudio_(MediaService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ConvertVideo_(MediaService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TrimVideo_(MediaService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MergeVideos_(MediaService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ResizeImage_(MediaService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ThumbnailImage_(MediaService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EncodeAudio_(MediaService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_NormalizeAudio_(MediaService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DenoiseAudio_(MediaService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MergeAudio_(MediaService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TrimAudio_(MediaService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ConvertAudio_(MediaService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SubmitMediaJob_(MediaService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMediaJob_(MediaService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UploadMedia_(MediaService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
+  , rpcmethod_CreateVideoAd_(MediaService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateImageAd_(MediaService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateAudioAd_(MediaService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ScheduleAd_(MediaService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RecordImpression_(MediaService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RecordClick_(MediaService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAdReport_(MediaService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MediaService::Stub::Health(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::media::HealthResponse* response) {
@@ -158,6 +200,482 @@ void MediaService::Stub::async::ExtractAudio(::grpc::ClientContext* context, con
   return result;
 }
 
+::grpc::Status MediaService::Stub::ConvertVideo(::grpc::ClientContext* context, const ::media::VideoConvertRequest& request, ::media::VideoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::VideoConvertRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ConvertVideo_, context, request, response);
+}
+
+void MediaService::Stub::async::ConvertVideo(::grpc::ClientContext* context, const ::media::VideoConvertRequest* request, ::media::VideoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::VideoConvertRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ConvertVideo_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ConvertVideo(::grpc::ClientContext* context, const ::media::VideoConvertRequest* request, ::media::VideoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ConvertVideo_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::PrepareAsyncConvertVideoRaw(::grpc::ClientContext* context, const ::media::VideoConvertRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::VideoResponse, ::media::VideoConvertRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ConvertVideo_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::AsyncConvertVideoRaw(::grpc::ClientContext* context, const ::media::VideoConvertRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncConvertVideoRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::TrimVideo(::grpc::ClientContext* context, const ::media::VideoTrimRequest& request, ::media::VideoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::VideoTrimRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TrimVideo_, context, request, response);
+}
+
+void MediaService::Stub::async::TrimVideo(::grpc::ClientContext* context, const ::media::VideoTrimRequest* request, ::media::VideoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::VideoTrimRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TrimVideo_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::TrimVideo(::grpc::ClientContext* context, const ::media::VideoTrimRequest* request, ::media::VideoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TrimVideo_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::PrepareAsyncTrimVideoRaw(::grpc::ClientContext* context, const ::media::VideoTrimRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::VideoResponse, ::media::VideoTrimRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TrimVideo_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::AsyncTrimVideoRaw(::grpc::ClientContext* context, const ::media::VideoTrimRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncTrimVideoRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::MergeVideos(::grpc::ClientContext* context, const ::media::VideoMergeRequest& request, ::media::VideoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::VideoMergeRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MergeVideos_, context, request, response);
+}
+
+void MediaService::Stub::async::MergeVideos(::grpc::ClientContext* context, const ::media::VideoMergeRequest* request, ::media::VideoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::VideoMergeRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MergeVideos_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::MergeVideos(::grpc::ClientContext* context, const ::media::VideoMergeRequest* request, ::media::VideoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MergeVideos_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::PrepareAsyncMergeVideosRaw(::grpc::ClientContext* context, const ::media::VideoMergeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::VideoResponse, ::media::VideoMergeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MergeVideos_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::VideoResponse>* MediaService::Stub::AsyncMergeVideosRaw(::grpc::ClientContext* context, const ::media::VideoMergeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMergeVideosRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ResizeImage(::grpc::ClientContext* context, const ::media::ImageResizeRequest& request, ::media::ImageResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::ImageResizeRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ResizeImage_, context, request, response);
+}
+
+void MediaService::Stub::async::ResizeImage(::grpc::ClientContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::ImageResizeRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ResizeImage_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ResizeImage(::grpc::ClientContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ResizeImage_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::PrepareAsyncResizeImageRaw(::grpc::ClientContext* context, const ::media::ImageResizeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::ImageResponse, ::media::ImageResizeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ResizeImage_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::AsyncResizeImageRaw(::grpc::ClientContext* context, const ::media::ImageResizeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncResizeImageRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::media::ImageResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::ImageRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ThumbnailImage_, context, request, response);
+}
+
+void MediaService::Stub::async::ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::ImageRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ThumbnailImage_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ThumbnailImage_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::PrepareAsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::ImageResponse, ::media::ImageRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ThumbnailImage_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::AsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncThumbnailImageRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EncodeAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EncodeAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EncodeAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EncodeAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncEncodeAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::NormalizeAudio(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NormalizeAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::NormalizeAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NormalizeAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::NormalizeAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NormalizeAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncNormalizeAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NormalizeAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncNormalizeAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncNormalizeAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::DenoiseAudio(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DenoiseAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::DenoiseAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DenoiseAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::DenoiseAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DenoiseAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncDenoiseAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DenoiseAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncDenoiseAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDenoiseAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::MergeAudio(::grpc::ClientContext* context, const ::media::AudioMergeRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioMergeRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MergeAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::MergeAudio(::grpc::ClientContext* context, const ::media::AudioMergeRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioMergeRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MergeAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::MergeAudio(::grpc::ClientContext* context, const ::media::AudioMergeRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MergeAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncMergeAudioRaw(::grpc::ClientContext* context, const ::media::AudioMergeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioMergeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MergeAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncMergeAudioRaw(::grpc::ClientContext* context, const ::media::AudioMergeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMergeAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::TrimAudio(::grpc::ClientContext* context, const ::media::AudioTrimRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioTrimRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TrimAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::TrimAudio(::grpc::ClientContext* context, const ::media::AudioTrimRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioTrimRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TrimAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::TrimAudio(::grpc::ClientContext* context, const ::media::AudioTrimRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TrimAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncTrimAudioRaw(::grpc::ClientContext* context, const ::media::AudioTrimRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioTrimRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TrimAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncTrimAudioRaw(::grpc::ClientContext* context, const ::media::AudioTrimRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncTrimAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ConvertAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::media::AudioResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ConvertAudio_, context, request, response);
+}
+
+void MediaService::Stub::async::ConvertAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ConvertAudio_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ConvertAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ConvertAudio_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::PrepareAsyncConvertAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AudioResponse, ::media::AudioFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ConvertAudio_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* MediaService::Stub::AsyncConvertAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncConvertAudioRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::SubmitMediaJob(::grpc::ClientContext* context, const ::media::MediaJobRequest& request, ::media::MediaJobResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::MediaJobRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SubmitMediaJob_, context, request, response);
+}
+
+void MediaService::Stub::async::SubmitMediaJob(::grpc::ClientContext* context, const ::media::MediaJobRequest* request, ::media::MediaJobResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::MediaJobRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitMediaJob_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::SubmitMediaJob(::grpc::ClientContext* context, const ::media::MediaJobRequest* request, ::media::MediaJobResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitMediaJob_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobResponse>* MediaService::Stub::PrepareAsyncSubmitMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::MediaJobResponse, ::media::MediaJobRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SubmitMediaJob_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobResponse>* MediaService::Stub::AsyncSubmitMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSubmitMediaJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::GetMediaJob(::grpc::ClientContext* context, const ::media::MediaJobLookupRequest& request, ::media::MediaJobResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::MediaJobLookupRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetMediaJob_, context, request, response);
+}
+
+void MediaService::Stub::async::GetMediaJob(::grpc::ClientContext* context, const ::media::MediaJobLookupRequest* request, ::media::MediaJobResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::MediaJobLookupRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetMediaJob_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::GetMediaJob(::grpc::ClientContext* context, const ::media::MediaJobLookupRequest* request, ::media::MediaJobResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetMediaJob_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobResponse>* MediaService::Stub::PrepareAsyncGetMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobLookupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::MediaJobResponse, ::media::MediaJobLookupRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetMediaJob_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobResponse>* MediaService::Stub::AsyncGetMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobLookupRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetMediaJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::ClientWriter< ::media::MediaUploadChunk>* MediaService::Stub::UploadMediaRaw(::grpc::ClientContext* context, ::media::MediaJobResponse* response) {
+  return ::grpc::internal::ClientWriterFactory< ::media::MediaUploadChunk>::Create(channel_.get(), rpcmethod_UploadMedia_, context, response);
+}
+
+void MediaService::Stub::async::UploadMedia(::grpc::ClientContext* context, ::media::MediaJobResponse* response, ::grpc::ClientWriteReactor< ::media::MediaUploadChunk>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::media::MediaUploadChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_UploadMedia_, context, response, reactor);
+}
+
+::grpc::ClientAsyncWriter< ::media::MediaUploadChunk>* MediaService::Stub::AsyncUploadMediaRaw(::grpc::ClientContext* context, ::media::MediaJobResponse* response, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::media::MediaUploadChunk>::Create(channel_.get(), cq, rpcmethod_UploadMedia_, context, response, true, tag);
+}
+
+::grpc::ClientAsyncWriter< ::media::MediaUploadChunk>* MediaService::Stub::PrepareAsyncUploadMediaRaw(::grpc::ClientContext* context, ::media::MediaJobResponse* response, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::media::MediaUploadChunk>::Create(channel_.get(), cq, rpcmethod_UploadMedia_, context, response, false, nullptr);
+}
+
+::grpc::Status MediaService::Stub::CreateVideoAd(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateVideoAd_, context, request, response);
+}
+
+void MediaService::Stub::async::CreateVideoAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateVideoAd_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::CreateVideoAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateVideoAd_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncCreateVideoAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdCreateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateVideoAd_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncCreateVideoAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateVideoAdRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::CreateImageAd(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateImageAd_, context, request, response);
+}
+
+void MediaService::Stub::async::CreateImageAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateImageAd_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::CreateImageAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateImageAd_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncCreateImageAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdCreateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateImageAd_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncCreateImageAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateImageAdRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::CreateAudioAd(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateAudioAd_, context, request, response);
+}
+
+void MediaService::Stub::async::CreateAudioAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAudioAd_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::CreateAudioAd(::grpc::ClientContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateAudioAd_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncCreateAudioAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdCreateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateAudioAd_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncCreateAudioAdRaw(::grpc::ClientContext* context, const ::media::AdCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateAudioAdRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ScheduleAd(::grpc::ClientContext* context, const ::media::AdScheduleRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdScheduleRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ScheduleAd_, context, request, response);
+}
+
+void MediaService::Stub::async::ScheduleAd(::grpc::ClientContext* context, const ::media::AdScheduleRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdScheduleRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ScheduleAd_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ScheduleAd(::grpc::ClientContext* context, const ::media::AdScheduleRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ScheduleAd_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncScheduleAdRaw(::grpc::ClientContext* context, const ::media::AdScheduleRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdScheduleRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ScheduleAd_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncScheduleAdRaw(::grpc::ClientContext* context, const ::media::AdScheduleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncScheduleAdRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::RecordImpression(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RecordImpression_, context, request, response);
+}
+
+void MediaService::Stub::async::RecordImpression(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RecordImpression_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::RecordImpression(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RecordImpression_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncRecordImpressionRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RecordImpression_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncRecordImpressionRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRecordImpressionRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::RecordClick(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::media::AdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RecordClick_, context, request, response);
+}
+
+void MediaService::Stub::async::RecordClick(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RecordClick_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::RecordClick(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RecordClick_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::PrepareAsyncRecordClickRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdResponse, ::media::AdIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RecordClick_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdResponse>* MediaService::Stub::AsyncRecordClickRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRecordClickRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::GetAdReport(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::media::AdReportResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::AdIdRequest, ::media::AdReportResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAdReport_, context, request, response);
+}
+
+void MediaService::Stub::async::GetAdReport(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdReportResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::AdIdRequest, ::media::AdReportResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAdReport_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::GetAdReport(::grpc::ClientContext* context, const ::media::AdIdRequest* request, ::media::AdReportResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAdReport_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdReportResponse>* MediaService::Stub::PrepareAsyncGetAdReportRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::AdReportResponse, ::media::AdIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAdReport_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::AdReportResponse>* MediaService::Stub::AsyncGetAdReportRaw(::grpc::ClientContext* context, const ::media::AdIdRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetAdReportRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 MediaService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[0],
@@ -209,6 +727,216 @@ MediaService::Service::Service() {
              ::media::AudioResponse* resp) {
                return service->ExtractAudio(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoConvertRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::VideoConvertRequest* req,
+             ::media::VideoResponse* resp) {
+               return service->ConvertVideo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoTrimRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::VideoTrimRequest* req,
+             ::media::VideoResponse* resp) {
+               return service->TrimVideo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::VideoMergeRequest, ::media::VideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::VideoMergeRequest* req,
+             ::media::VideoResponse* resp) {
+               return service->MergeVideos(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::ImageResizeRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::ImageResizeRequest* req,
+             ::media::ImageResponse* resp) {
+               return service->ResizeImage(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::ImageRequest, ::media::ImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::ImageRequest* req,
+             ::media::ImageResponse* resp) {
+               return service->ThumbnailImage(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioFormatRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->EncodeAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->NormalizeAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->DenoiseAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioMergeRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioMergeRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->MergeAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioTrimRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioTrimRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->TrimAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioFormatRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->ConvertAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::MediaJobRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::MediaJobRequest* req,
+             ::media::MediaJobResponse* resp) {
+               return service->SubmitMediaJob(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::MediaJobLookupRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::MediaJobLookupRequest* req,
+             ::media::MediaJobResponse* resp) {
+               return service->GetMediaJob(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[18],
+      ::grpc::internal::RpcMethod::CLIENT_STREAMING,
+      new ::grpc::internal::ClientStreamingHandler< MediaService::Service, ::media::MediaUploadChunk, ::media::MediaJobResponse>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             ::grpc::ServerReader<::media::MediaUploadChunk>* reader,
+             ::media::MediaJobResponse* resp) {
+               return service->UploadMedia(ctx, reader, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdCreateRequest* req,
+             ::media::AdResponse* resp) {
+               return service->CreateVideoAd(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[20],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdCreateRequest* req,
+             ::media::AdResponse* resp) {
+               return service->CreateImageAd(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[21],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdCreateRequest* req,
+             ::media::AdResponse* resp) {
+               return service->CreateAudioAd(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[22],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdScheduleRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdScheduleRequest* req,
+             ::media::AdResponse* resp) {
+               return service->ScheduleAd(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[23],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdIdRequest* req,
+             ::media::AdResponse* resp) {
+               return service->RecordImpression(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[24],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdIdRequest* req,
+             ::media::AdResponse* resp) {
+               return service->RecordClick(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[25],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdReportResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AdIdRequest* req,
+             ::media::AdReportResponse* resp) {
+               return service->GetAdReport(ctx, req, resp);
+             }, this)));
 }
 
 MediaService::Service::~Service() {
@@ -243,6 +971,153 @@ MediaService::Service::~Service() {
 }
 
 ::grpc::Status MediaService::Service::ExtractAudio(::grpc::ServerContext* context, const ::media::VideoRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ConvertVideo(::grpc::ServerContext* context, const ::media::VideoConvertRequest* request, ::media::VideoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::TrimVideo(::grpc::ServerContext* context, const ::media::VideoTrimRequest* request, ::media::VideoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::MergeVideos(::grpc::ServerContext* context, const ::media::VideoMergeRequest* request, ::media::VideoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ResizeImage(::grpc::ServerContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ThumbnailImage(::grpc::ServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::EncodeAudio(::grpc::ServerContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::NormalizeAudio(::grpc::ServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::DenoiseAudio(::grpc::ServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::MergeAudio(::grpc::ServerContext* context, const ::media::AudioMergeRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::TrimAudio(::grpc::ServerContext* context, const ::media::AudioTrimRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ConvertAudio(::grpc::ServerContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::SubmitMediaJob(::grpc::ServerContext* context, const ::media::MediaJobRequest* request, ::media::MediaJobResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::GetMediaJob(::grpc::ServerContext* context, const ::media::MediaJobLookupRequest* request, ::media::MediaJobResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::UploadMedia(::grpc::ServerContext* context, ::grpc::ServerReader< ::media::MediaUploadChunk>* reader, ::media::MediaJobResponse* response) {
+  (void) context;
+  (void) reader;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::CreateVideoAd(::grpc::ServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::CreateImageAd(::grpc::ServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::CreateAudioAd(::grpc::ServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ScheduleAd(::grpc::ServerContext* context, const ::media::AdScheduleRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::RecordImpression(::grpc::ServerContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::RecordClick(::grpc::ServerContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::GetAdReport(::grpc::ServerContext* context, const ::media::AdIdRequest* request, ::media::AdReportResponse* response) {
   (void) context;
   (void) request;
   (void) response;

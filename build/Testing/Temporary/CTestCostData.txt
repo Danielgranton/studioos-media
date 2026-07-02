@@ -1,3 +1,10 @@
-video-processor-test 10 0.000252642
-image-processor-test 7 0.0194065
+video-processor-test 26 0.0432366
+image-processor-test 27 0.00882681
+audio-processor-test 11 0.102948
+streaming-service-test 9 0.116494
+ad-service-test 8 0.000271779
+grpc-ad-service-test 5 0.031561
+media-job-service-test 4 0.000512331
+grpc-media-job-test 4 0.0345097
+s3-storage-test 3 0.000737252
 ---

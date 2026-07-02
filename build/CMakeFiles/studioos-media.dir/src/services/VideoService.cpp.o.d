@@ -124,4 +124,8 @@ CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o: \
  /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
  /home/linux/Documents/studioos-media/src/core/Result.hpp \
  /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
- /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp
+ /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
+ /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/bits/formatfwd.h

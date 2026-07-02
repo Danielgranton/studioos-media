@@ -468,9 +468,13 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
  /usr/include/grpcpp/support/stub_options.h \
- /home/linux/Documents/studioos-media/src/grpc/../services/ImageService.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/../services/AudioService.hpp \
  /home/linux/Documents/studioos-media/src/core/Result.hpp \
  /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
+ /home/linux/Documents/studioos-media/src/media/AudioProcessor.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/../services/AdService.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/../services/MediaJobService.hpp \
+ /home/linux/Documents/studioos-media/src/grpc/../services/ImageService.hpp \
  /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
  /home/linux/Documents/studioos-media/src/grpc/../services/VideoService.hpp \
  /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \

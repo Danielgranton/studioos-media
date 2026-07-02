@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/ad-service-test.dir/link.d "CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.o" "CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.o" "CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o" -o ad-service-test

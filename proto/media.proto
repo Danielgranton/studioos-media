@@ -19,11 +19,68 @@ service MediaService {
     rpc ExtractAudio(VideoRequest)
         returns (AudioResponse);
 
+    rpc ConvertVideo(VideoConvertRequest)
+        returns (VideoResponse);
+
+    rpc TrimVideo(VideoTrimRequest)
+        returns (VideoResponse);
+
+    rpc MergeVideos(VideoMergeRequest)
+        returns (VideoResponse);
+
     rpc ResizeImage(ImageResizeRequest)
         returns (ImageResponse);
 
     rpc ThumbnailImage(ImageRequest)
         returns (ImageResponse);
+
+    rpc EncodeAudio(AudioFormatRequest)
+        returns (AudioResponse);
+
+    rpc NormalizeAudio(AudioRequest)
+        returns (AudioResponse);
+
+    rpc DenoiseAudio(AudioRequest)
+        returns (AudioResponse);
+
+    rpc MergeAudio(AudioMergeRequest)
+        returns (AudioResponse);
+
+    rpc TrimAudio(AudioTrimRequest)
+        returns (AudioResponse);
+
+    rpc ConvertAudio(AudioFormatRequest)
+        returns (AudioResponse);
+
+    rpc SubmitMediaJob(MediaJobRequest)
+        returns (MediaJobResponse);
+
+    rpc GetMediaJob(MediaJobLookupRequest)
+        returns (MediaJobResponse);
+
+    rpc UploadMedia(stream MediaUploadChunk)
+        returns (MediaJobResponse);
+
+    rpc CreateVideoAd(AdCreateRequest)
+        returns (AdResponse);
+
+    rpc CreateImageAd(AdCreateRequest)
+        returns (AdResponse);
+
+    rpc CreateAudioAd(AdCreateRequest)
+        returns (AdResponse);
+
+    rpc ScheduleAd(AdScheduleRequest)
+        returns (AdResponse);
+
+    rpc RecordImpression(AdIdRequest)
+        returns (AdResponse);
+
+    rpc RecordClick(AdIdRequest)
+        returns (AdResponse);
+
+    rpc GetAdReport(AdIdRequest)
+        returns (AdReportResponse);
 }
 
 message HealthRequest {}
@@ -60,4 +117,108 @@ message ImageResizeRequest {
     string imagePath = 1;
     int32 width = 2;
     int32 height = 3;
+}
+
+message VideoConvertRequest {
+    string videoPath = 1;
+    string format = 2;
+}
+
+message VideoTrimRequest {
+    string videoPath = 1;
+    string start = 2;
+    string end = 3;
+}
+
+message VideoMergeRequest {
+    repeated string videoPaths = 1;
+    string outputPath = 2;
+}
+
+message AudioRequest {
+    string inputPath = 1;
+}
+
+message AudioFormatRequest {
+    string inputPath = 1;
+    string format = 2;
+}
+
+message AudioTrimRequest {
+    string inputPath = 1;
+    string start = 2;
+    string end = 3;
+}
+
+message AudioMergeRequest {
+    repeated string inputPaths = 1;
+    string outputPath = 2;
+}
+
+message MediaJobRequest {
+    string assetReference = 1;
+    string operation = 2;
+    string parametersJson = 3;
+}
+
+message MediaJobLookupRequest {
+    string jobId = 1;
+}
+
+message MediaJobResponse {
+    string jobId = 1;
+    string status = 2;
+    string assetReference = 3;
+    string operation = 4;
+    string parametersJson = 5;
+    string resultReference = 6;
+    string errorMessage = 7;
+    int64 createdAtUnixMs = 8;
+    int64 updatedAtUnixMs = 9;
+}
+
+message MediaUploadMetadata {
+    string mediaId = 1;
+    string ownerId = 2;
+    string mediaType = 3;
+    string filename = 4;
+    string contentType = 5;
+    string operation = 6;
+    string parametersJson = 7;
+    string uploadToken = 8;
+}
+
+message MediaUploadChunk {
+    oneof payload {
+        MediaUploadMetadata metadata = 1;
+        bytes data = 2;
+    }
+}
+
+message AdCreateRequest {
+    string assetPath = 1;
+    string title = 2;
+    int32 durationSeconds = 3;
+    string clickUrl = 4;
+}
+
+message AdScheduleRequest {
+    string adId = 1;
+    int64 startsAtUnixMs = 2;
+    int64 endsAtUnixMs = 3;
+    int32 priority = 4;
+}
+
+message AdIdRequest {
+    string adId = 1;
+}
+
+message AdResponse {
+    string adId = 1;
+    string status = 2;
+}
+
+message AdReportResponse {
+    string adId = 1;
+    string reportJson = 2;
 }

@@ -1,0 +1,2 @@
+file '/home/linux/Documents/studioos-media/temp/a1.wav'
+file '/home/linux/Documents/studioos-media/temp/a2.wav'
