@@ -34,6 +34,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o.d"
   "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o"
   "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o.d"
+  "CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o"
+  "CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o.d"
   "CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o"
   "CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o.d"
   "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o"

@@ -286,6 +286,36 @@ struct MediaJobResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MediaJobResponseDefaultTypeInternal _MediaJobResponse_default_instance_;
+PROTOBUF_CONSTEXPR MediaJobCallbackRequest::MediaJobCallbackRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.jobid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.externaljobid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.resultreference_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct MediaJobCallbackRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MediaJobCallbackRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MediaJobCallbackRequestDefaultTypeInternal() {}
+  union {
+    MediaJobCallbackRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MediaJobCallbackRequestDefaultTypeInternal _MediaJobCallbackRequest_default_instance_;
+PROTOBUF_CONSTEXPR MediaJobCallbackResponse::MediaJobCallbackResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.accepted_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct MediaJobCallbackResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MediaJobCallbackResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MediaJobCallbackResponseDefaultTypeInternal() {}
+  union {
+    MediaJobCallbackResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MediaJobCallbackResponseDefaultTypeInternal _MediaJobCallbackResponse_default_instance_;
 PROTOBUF_CONSTEXPR MediaUploadMetadata::MediaUploadMetadata(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.mediaid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -394,7 +424,7 @@ struct AdReportResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AdReportResponseDefaultTypeInternal _AdReportResponse_default_instance_;
 }  // namespace media
-static ::_pb::Metadata file_level_metadata_media_2eproto[26];
+static ::_pb::Metadata file_level_metadata_media_2eproto[28];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_media_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_media_2eproto = nullptr;
 
@@ -552,6 +582,24 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.createdatunixms_),
   PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.updatedatunixms_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.jobid_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.externaljobid_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.status_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.resultreference_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.errormessage_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackResponse, _impl_.accepted_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::MediaUploadMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -638,13 +686,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 121, -1, -1, sizeof(::media::MediaJobRequest)},
   { 130, -1, -1, sizeof(::media::MediaJobLookupRequest)},
   { 137, -1, -1, sizeof(::media::MediaJobResponse)},
-  { 152, -1, -1, sizeof(::media::MediaUploadMetadata)},
-  { 166, -1, -1, sizeof(::media::MediaUploadChunk)},
-  { 175, -1, -1, sizeof(::media::AdCreateRequest)},
-  { 185, -1, -1, sizeof(::media::AdScheduleRequest)},
-  { 195, -1, -1, sizeof(::media::AdIdRequest)},
-  { 202, -1, -1, sizeof(::media::AdResponse)},
-  { 210, -1, -1, sizeof(::media::AdReportResponse)},
+  { 152, -1, -1, sizeof(::media::MediaJobCallbackRequest)},
+  { 163, -1, -1, sizeof(::media::MediaJobCallbackResponse)},
+  { 170, -1, -1, sizeof(::media::MediaUploadMetadata)},
+  { 184, -1, -1, sizeof(::media::MediaUploadChunk)},
+  { 193, -1, -1, sizeof(::media::AdCreateRequest)},
+  { 203, -1, -1, sizeof(::media::AdScheduleRequest)},
+  { 213, -1, -1, sizeof(::media::AdIdRequest)},
+  { 220, -1, -1, sizeof(::media::AdResponse)},
+  { 228, -1, -1, sizeof(::media::AdReportResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -667,6 +717,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::media::_MediaJobRequest_default_instance_._instance,
   &::media::_MediaJobLookupRequest_default_instance_._instance,
   &::media::_MediaJobResponse_default_instance_._instance,
+  &::media::_MediaJobCallbackRequest_default_instance_._instance,
+  &::media::_MediaJobCallbackResponse_default_instance_._instance,
   &::media::_MediaUploadMetadata_default_instance_._instance,
   &::media::_MediaUploadChunk_default_instance_._instance,
   &::media::_AdCreateRequest_default_instance_._instance,
@@ -704,69 +756,76 @@ const char descriptor_table_protodef_media_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "Reference\030\003 \001(\t\022\021\n\toperation\030\004 \001(\t\022\026\n\016pa"
   "rametersJson\030\005 \001(\t\022\027\n\017resultReference\030\006 "
   "\001(\t\022\024\n\014errorMessage\030\007 \001(\t\022\027\n\017createdAtUn"
-  "ixMs\030\010 \001(\003\022\027\n\017updatedAtUnixMs\030\t \001(\003\"\261\001\n\023"
-  "MediaUploadMetadata\022\017\n\007mediaId\030\001 \001(\t\022\017\n\007"
-  "ownerId\030\002 \001(\t\022\021\n\tmediaType\030\003 \001(\t\022\020\n\010file"
-  "name\030\004 \001(\t\022\023\n\013contentType\030\005 \001(\t\022\021\n\topera"
-  "tion\030\006 \001(\t\022\026\n\016parametersJson\030\007 \001(\t\022\023\n\013up"
-  "loadToken\030\010 \001(\t\"]\n\020MediaUploadChunk\022.\n\010m"
-  "etadata\030\001 \001(\0132\032.media.MediaUploadMetadat"
-  "aH\000\022\016\n\004data\030\002 \001(\014H\000B\t\n\007payload\"^\n\017AdCrea"
-  "teRequest\022\021\n\tassetPath\030\001 \001(\t\022\r\n\005title\030\002 "
-  "\001(\t\022\027\n\017durationSeconds\030\003 \001(\005\022\020\n\010clickUrl"
-  "\030\004 \001(\t\"a\n\021AdScheduleRequest\022\014\n\004adId\030\001 \001("
-  "\t\022\026\n\016startsAtUnixMs\030\002 \001(\003\022\024\n\014endsAtUnixM"
-  "s\030\003 \001(\003\022\020\n\010priority\030\004 \001(\005\"\033\n\013AdIdRequest"
-  "\022\014\n\004adId\030\001 \001(\t\"*\n\nAdResponse\022\014\n\004adId\030\001 \001"
-  "(\t\022\016\n\006status\030\002 \001(\t\"4\n\020AdReportResponse\022\014"
-  "\n\004adId\030\001 \001(\t\022\022\n\nreportJson\030\002 \001(\t2\321\014\n\014Med"
-  "iaService\0225\n\006Health\022\024.media.HealthReques"
-  "t\032\025.media.HealthResponse\022:\n\rCompressImag"
-  "e\022\023.media.ImageRequest\032\024.media.ImageResp"
-  "onse\022:\n\rCompressVideo\022\023.media.VideoReque"
-  "st\032\024.media.VideoResponse\022B\n\021GenerateThum"
-  "bnail\022\023.media.VideoRequest\032\030.media.Thumb"
-  "nailResponse\0229\n\014ExtractAudio\022\023.media.Vid"
-  "eoRequest\032\024.media.AudioResponse\022@\n\014Conve"
-  "rtVideo\022\032.media.VideoConvertRequest\032\024.me"
-  "dia.VideoResponse\022:\n\tTrimVideo\022\027.media.V"
-  "ideoTrimRequest\032\024.media.VideoResponse\022=\n"
-  "\013MergeVideos\022\030.media.VideoMergeRequest\032\024"
-  ".media.VideoResponse\022>\n\013ResizeImage\022\031.me"
-  "dia.ImageResizeRequest\032\024.media.ImageResp"
-  "onse\022;\n\016ThumbnailImage\022\023.media.ImageRequ"
-  "est\032\024.media.ImageResponse\022>\n\013EncodeAudio"
-  "\022\031.media.AudioFormatRequest\032\024.media.Audi"
-  "oResponse\022;\n\016NormalizeAudio\022\023.media.Audi"
-  "oRequest\032\024.media.AudioResponse\0229\n\014Denois"
-  "eAudio\022\023.media.AudioRequest\032\024.media.Audi"
-  "oResponse\022<\n\nMergeAudio\022\030.media.AudioMer"
-  "geRequest\032\024.media.AudioResponse\022:\n\tTrimA"
-  "udio\022\027.media.AudioTrimRequest\032\024.media.Au"
-  "dioResponse\022\?\n\014ConvertAudio\022\031.media.Audi"
-  "oFormatRequest\032\024.media.AudioResponse\022A\n\016"
-  "SubmitMediaJob\022\026.media.MediaJobRequest\032\027"
-  ".media.MediaJobResponse\022D\n\013GetMediaJob\022\034"
-  ".media.MediaJobLookupRequest\032\027.media.Med"
-  "iaJobResponse\022A\n\013UploadMedia\022\027.media.Med"
-  "iaUploadChunk\032\027.media.MediaJobResponse(\001"
-  "\022:\n\rCreateVideoAd\022\026.media.AdCreateReques"
-  "t\032\021.media.AdResponse\022:\n\rCreateImageAd\022\026."
-  "media.AdCreateRequest\032\021.media.AdResponse"
-  "\022:\n\rCreateAudioAd\022\026.media.AdCreateReques"
-  "t\032\021.media.AdResponse\0229\n\nScheduleAd\022\030.med"
-  "ia.AdScheduleRequest\032\021.media.AdResponse\022"
-  "9\n\020RecordImpression\022\022.media.AdIdRequest\032"
-  "\021.media.AdResponse\0224\n\013RecordClick\022\022.medi"
-  "a.AdIdRequest\032\021.media.AdResponse\022:\n\013GetA"
-  "dReport\022\022.media.AdIdRequest\032\027.media.AdRe"
-  "portResponseb\006proto3"
+  "ixMs\030\010 \001(\003\022\027\n\017updatedAtUnixMs\030\t \001(\003\"~\n\027M"
+  "ediaJobCallbackRequest\022\r\n\005jobId\030\001 \001(\t\022\025\n"
+  "\rexternalJobId\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\027\n\017"
+  "resultReference\030\004 \001(\t\022\024\n\014errorMessage\030\005 "
+  "\001(\t\",\n\030MediaJobCallbackResponse\022\020\n\010accep"
+  "ted\030\001 \001(\010\"\261\001\n\023MediaUploadMetadata\022\017\n\007med"
+  "iaId\030\001 \001(\t\022\017\n\007ownerId\030\002 \001(\t\022\021\n\tmediaType"
+  "\030\003 \001(\t\022\020\n\010filename\030\004 \001(\t\022\023\n\013contentType\030"
+  "\005 \001(\t\022\021\n\toperation\030\006 \001(\t\022\026\n\016parametersJs"
+  "on\030\007 \001(\t\022\023\n\013uploadToken\030\010 \001(\t\"]\n\020MediaUp"
+  "loadChunk\022.\n\010metadata\030\001 \001(\0132\032.media.Medi"
+  "aUploadMetadataH\000\022\016\n\004data\030\002 \001(\014H\000B\t\n\007pay"
+  "load\"^\n\017AdCreateRequest\022\021\n\tassetPath\030\001 \001"
+  "(\t\022\r\n\005title\030\002 \001(\t\022\027\n\017durationSeconds\030\003 \001"
+  "(\005\022\020\n\010clickUrl\030\004 \001(\t\"a\n\021AdScheduleReques"
+  "t\022\014\n\004adId\030\001 \001(\t\022\026\n\016startsAtUnixMs\030\002 \001(\003\022"
+  "\024\n\014endsAtUnixMs\030\003 \001(\003\022\020\n\010priority\030\004 \001(\005\""
+  "\033\n\013AdIdRequest\022\014\n\004adId\030\001 \001(\t\"*\n\nAdRespon"
+  "se\022\014\n\004adId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"4\n\020AdRe"
+  "portResponse\022\014\n\004adId\030\001 \001(\t\022\022\n\nreportJson"
+  "\030\002 \001(\t2\321\014\n\014MediaService\0225\n\006Health\022\024.medi"
+  "a.HealthRequest\032\025.media.HealthResponse\022:"
+  "\n\rCompressImage\022\023.media.ImageRequest\032\024.m"
+  "edia.ImageResponse\022:\n\rCompressVideo\022\023.me"
+  "dia.VideoRequest\032\024.media.VideoResponse\022B"
+  "\n\021GenerateThumbnail\022\023.media.VideoRequest"
+  "\032\030.media.ThumbnailResponse\0229\n\014ExtractAud"
+  "io\022\023.media.VideoRequest\032\024.media.AudioRes"
+  "ponse\022@\n\014ConvertVideo\022\032.media.VideoConve"
+  "rtRequest\032\024.media.VideoResponse\022:\n\tTrimV"
+  "ideo\022\027.media.VideoTrimRequest\032\024.media.Vi"
+  "deoResponse\022=\n\013MergeVideos\022\030.media.Video"
+  "MergeRequest\032\024.media.VideoResponse\022>\n\013Re"
+  "sizeImage\022\031.media.ImageResizeRequest\032\024.m"
+  "edia.ImageResponse\022;\n\016ThumbnailImage\022\023.m"
+  "edia.ImageRequest\032\024.media.ImageResponse\022"
+  ">\n\013EncodeAudio\022\031.media.AudioFormatReques"
+  "t\032\024.media.AudioResponse\022;\n\016NormalizeAudi"
+  "o\022\023.media.AudioRequest\032\024.media.AudioResp"
+  "onse\0229\n\014DenoiseAudio\022\023.media.AudioReques"
+  "t\032\024.media.AudioResponse\022<\n\nMergeAudio\022\030."
+  "media.AudioMergeRequest\032\024.media.AudioRes"
+  "ponse\022:\n\tTrimAudio\022\027.media.AudioTrimRequ"
+  "est\032\024.media.AudioResponse\022\?\n\014ConvertAudi"
+  "o\022\031.media.AudioFormatRequest\032\024.media.Aud"
+  "ioResponse\022A\n\016SubmitMediaJob\022\026.media.Med"
+  "iaJobRequest\032\027.media.MediaJobResponse\022D\n"
+  "\013GetMediaJob\022\034.media.MediaJobLookupReque"
+  "st\032\027.media.MediaJobResponse\022A\n\013UploadMed"
+  "ia\022\027.media.MediaUploadChunk\032\027.media.Medi"
+  "aJobResponse(\001\022:\n\rCreateVideoAd\022\026.media."
+  "AdCreateRequest\032\021.media.AdResponse\022:\n\rCr"
+  "eateImageAd\022\026.media.AdCreateRequest\032\021.me"
+  "dia.AdResponse\022:\n\rCreateAudioAd\022\026.media."
+  "AdCreateRequest\032\021.media.AdResponse\0229\n\nSc"
+  "heduleAd\022\030.media.AdScheduleRequest\032\021.med"
+  "ia.AdResponse\0229\n\020RecordImpression\022\022.medi"
+  "a.AdIdRequest\032\021.media.AdResponse\0224\n\013Reco"
+  "rdClick\022\022.media.AdIdRequest\032\021.media.AdRe"
+  "sponse\022:\n\013GetAdReport\022\022.media.AdIdReques"
+  "t\032\027.media.AdReportResponse2i\n\024MediaCallb"
+  "ackService\022Q\n\016ReportMediaJob\022\036.media.Med"
+  "iaJobCallbackRequest\032\037.media.MediaJobCal"
+  "lbackResponseb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_media_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_media_2eproto = {
-    false, false, 3340, descriptor_table_protodef_media_2eproto,
+    false, false, 3621, descriptor_table_protodef_media_2eproto,
     "media.proto",
-    &descriptor_table_media_2eproto_once, nullptr, 0, 26,
+    &descriptor_table_media_2eproto_once, nullptr, 0, 28,
     schemas, file_default_instances, TableStruct_media_2eproto::offsets,
     file_level_metadata_media_2eproto, file_level_enum_descriptors_media_2eproto,
     file_level_service_descriptors_media_2eproto,
@@ -5373,6 +5432,587 @@ void MediaJobResponse::InternalSwap(MediaJobResponse* other) {
 
 // ===================================================================
 
+class MediaJobCallbackRequest::_Internal {
+ public:
+};
+
+MediaJobCallbackRequest::MediaJobCallbackRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.MediaJobCallbackRequest)
+}
+MediaJobCallbackRequest::MediaJobCallbackRequest(const MediaJobCallbackRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  MediaJobCallbackRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.jobid_){}
+    , decltype(_impl_.externaljobid_){}
+    , decltype(_impl_.status_){}
+    , decltype(_impl_.resultreference_){}
+    , decltype(_impl_.errormessage_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.jobid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.jobid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_jobid().empty()) {
+    _this->_impl_.jobid_.Set(from._internal_jobid(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.externaljobid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.externaljobid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_externaljobid().empty()) {
+    _this->_impl_.externaljobid_.Set(from._internal_externaljobid(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_status().empty()) {
+    _this->_impl_.status_.Set(from._internal_status(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.resultreference_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.resultreference_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_resultreference().empty()) {
+    _this->_impl_.resultreference_.Set(from._internal_resultreference(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.errormessage_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_errormessage().empty()) {
+    _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:media.MediaJobCallbackRequest)
+}
+
+inline void MediaJobCallbackRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.jobid_){}
+    , decltype(_impl_.externaljobid_){}
+    , decltype(_impl_.status_){}
+    , decltype(_impl_.resultreference_){}
+    , decltype(_impl_.errormessage_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.jobid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.jobid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.externaljobid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.externaljobid_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.status_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.status_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.resultreference_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.resultreference_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.errormessage_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+MediaJobCallbackRequest::~MediaJobCallbackRequest() {
+  // @@protoc_insertion_point(destructor:media.MediaJobCallbackRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void MediaJobCallbackRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.jobid_.Destroy();
+  _impl_.externaljobid_.Destroy();
+  _impl_.status_.Destroy();
+  _impl_.resultreference_.Destroy();
+  _impl_.errormessage_.Destroy();
+}
+
+void MediaJobCallbackRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void MediaJobCallbackRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.MediaJobCallbackRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.jobid_.ClearToEmpty();
+  _impl_.externaljobid_.ClearToEmpty();
+  _impl_.status_.ClearToEmpty();
+  _impl_.resultreference_.ClearToEmpty();
+  _impl_.errormessage_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MediaJobCallbackRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string jobId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_jobid();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.MediaJobCallbackRequest.jobId"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string externalJobId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_externaljobid();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.MediaJobCallbackRequest.externalJobId"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_status();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.MediaJobCallbackRequest.status"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string resultReference = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_resultreference();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.MediaJobCallbackRequest.resultReference"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string errorMessage = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_errormessage();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.MediaJobCallbackRequest.errorMessage"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* MediaJobCallbackRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.MediaJobCallbackRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string jobId = 1;
+  if (!this->_internal_jobid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_jobid().data(), static_cast<int>(this->_internal_jobid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.MediaJobCallbackRequest.jobId");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_jobid(), target);
+  }
+
+  // string externalJobId = 2;
+  if (!this->_internal_externaljobid().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_externaljobid().data(), static_cast<int>(this->_internal_externaljobid().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.MediaJobCallbackRequest.externalJobId");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_externaljobid(), target);
+  }
+
+  // string status = 3;
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.MediaJobCallbackRequest.status");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_status(), target);
+  }
+
+  // string resultReference = 4;
+  if (!this->_internal_resultreference().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_resultreference().data(), static_cast<int>(this->_internal_resultreference().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.MediaJobCallbackRequest.resultReference");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_resultreference(), target);
+  }
+
+  // string errorMessage = 5;
+  if (!this->_internal_errormessage().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_errormessage().data(), static_cast<int>(this->_internal_errormessage().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.MediaJobCallbackRequest.errorMessage");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_errormessage(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.MediaJobCallbackRequest)
+  return target;
+}
+
+size_t MediaJobCallbackRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.MediaJobCallbackRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string jobId = 1;
+  if (!this->_internal_jobid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_jobid());
+  }
+
+  // string externalJobId = 2;
+  if (!this->_internal_externaljobid().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_externaljobid());
+  }
+
+  // string status = 3;
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // string resultReference = 4;
+  if (!this->_internal_resultreference().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_resultreference());
+  }
+
+  // string errorMessage = 5;
+  if (!this->_internal_errormessage().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_errormessage());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData MediaJobCallbackRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    MediaJobCallbackRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*MediaJobCallbackRequest::GetClassData() const { return &_class_data_; }
+
+
+void MediaJobCallbackRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<MediaJobCallbackRequest*>(&to_msg);
+  auto& from = static_cast<const MediaJobCallbackRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.MediaJobCallbackRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_jobid().empty()) {
+    _this->_internal_set_jobid(from._internal_jobid());
+  }
+  if (!from._internal_externaljobid().empty()) {
+    _this->_internal_set_externaljobid(from._internal_externaljobid());
+  }
+  if (!from._internal_status().empty()) {
+    _this->_internal_set_status(from._internal_status());
+  }
+  if (!from._internal_resultreference().empty()) {
+    _this->_internal_set_resultreference(from._internal_resultreference());
+  }
+  if (!from._internal_errormessage().empty()) {
+    _this->_internal_set_errormessage(from._internal_errormessage());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void MediaJobCallbackRequest::CopyFrom(const MediaJobCallbackRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.MediaJobCallbackRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MediaJobCallbackRequest::IsInitialized() const {
+  return true;
+}
+
+void MediaJobCallbackRequest::InternalSwap(MediaJobCallbackRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.jobid_, lhs_arena,
+      &other->_impl_.jobid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.externaljobid_, lhs_arena,
+      &other->_impl_.externaljobid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.status_, lhs_arena,
+      &other->_impl_.status_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.resultreference_, lhs_arena,
+      &other->_impl_.resultreference_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.errormessage_, lhs_arena,
+      &other->_impl_.errormessage_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MediaJobCallbackRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[19]);
+}
+
+// ===================================================================
+
+class MediaJobCallbackResponse::_Internal {
+ public:
+};
+
+MediaJobCallbackResponse::MediaJobCallbackResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.MediaJobCallbackResponse)
+}
+MediaJobCallbackResponse::MediaJobCallbackResponse(const MediaJobCallbackResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  MediaJobCallbackResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.accepted_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.accepted_ = from._impl_.accepted_;
+  // @@protoc_insertion_point(copy_constructor:media.MediaJobCallbackResponse)
+}
+
+inline void MediaJobCallbackResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.accepted_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+MediaJobCallbackResponse::~MediaJobCallbackResponse() {
+  // @@protoc_insertion_point(destructor:media.MediaJobCallbackResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void MediaJobCallbackResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void MediaJobCallbackResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void MediaJobCallbackResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.MediaJobCallbackResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.accepted_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MediaJobCallbackResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool accepted = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.accepted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* MediaJobCallbackResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.MediaJobCallbackResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool accepted = 1;
+  if (this->_internal_accepted() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_accepted(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.MediaJobCallbackResponse)
+  return target;
+}
+
+size_t MediaJobCallbackResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.MediaJobCallbackResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool accepted = 1;
+  if (this->_internal_accepted() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData MediaJobCallbackResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    MediaJobCallbackResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*MediaJobCallbackResponse::GetClassData() const { return &_class_data_; }
+
+
+void MediaJobCallbackResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<MediaJobCallbackResponse*>(&to_msg);
+  auto& from = static_cast<const MediaJobCallbackResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.MediaJobCallbackResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_accepted() != 0) {
+    _this->_internal_set_accepted(from._internal_accepted());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void MediaJobCallbackResponse::CopyFrom(const MediaJobCallbackResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.MediaJobCallbackResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MediaJobCallbackResponse::IsInitialized() const {
+  return true;
+}
+
+void MediaJobCallbackResponse::InternalSwap(MediaJobCallbackResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.accepted_, other->_impl_.accepted_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MediaJobCallbackResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[20]);
+}
+
+// ===================================================================
+
 class MediaUploadMetadata::_Internal {
  public:
 };
@@ -5921,7 +6561,7 @@ void MediaUploadMetadata::InternalSwap(MediaUploadMetadata* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaUploadMetadata::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[19]);
+      file_level_metadata_media_2eproto[21]);
 }
 
 // ===================================================================
@@ -6202,7 +6842,7 @@ void MediaUploadChunk::InternalSwap(MediaUploadChunk* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaUploadChunk::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[20]);
+      file_level_metadata_media_2eproto[22]);
 }
 
 // ===================================================================
@@ -6532,7 +7172,7 @@ void AdCreateRequest::InternalSwap(AdCreateRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdCreateRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[21]);
+      file_level_metadata_media_2eproto[23]);
 }
 
 // ===================================================================
@@ -6819,7 +7459,7 @@ void AdScheduleRequest::InternalSwap(AdScheduleRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdScheduleRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[22]);
+      file_level_metadata_media_2eproto[24]);
 }
 
 // ===================================================================
@@ -7022,7 +7662,7 @@ void AdIdRequest::InternalSwap(AdIdRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdIdRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[23]);
+      file_level_metadata_media_2eproto[25]);
 }
 
 // ===================================================================
@@ -7275,7 +7915,7 @@ void AdResponse::InternalSwap(AdResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[24]);
+      file_level_metadata_media_2eproto[26]);
 }
 
 // ===================================================================
@@ -7528,7 +8168,7 @@ void AdReportResponse::InternalSwap(AdReportResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdReportResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[25]);
+      file_level_metadata_media_2eproto[27]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7609,6 +8249,14 @@ Arena::CreateMaybeMessage< ::media::MediaJobLookupRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::media::MediaJobResponse*
 Arena::CreateMaybeMessage< ::media::MediaJobResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::media::MediaJobResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::MediaJobCallbackRequest*
+Arena::CreateMaybeMessage< ::media::MediaJobCallbackRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::MediaJobCallbackRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::MediaJobCallbackResponse*
+Arena::CreateMaybeMessage< ::media::MediaJobCallbackResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::MediaJobCallbackResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::media::MediaUploadMetadata*
 Arena::CreateMaybeMessage< ::media::MediaUploadMetadata >(Arena* arena) {

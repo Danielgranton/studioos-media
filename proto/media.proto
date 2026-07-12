@@ -83,6 +83,11 @@ service MediaService {
         returns (AdReportResponse);
 }
 
+service MediaCallbackService {
+    rpc ReportMediaJob(MediaJobCallbackRequest)
+        returns (MediaJobCallbackResponse);
+}
+
 message HealthRequest {}
 
 message HealthResponse{
@@ -175,6 +180,18 @@ message MediaJobResponse {
     string errorMessage = 7;
     int64 createdAtUnixMs = 8;
     int64 updatedAtUnixMs = 9;
+}
+
+message MediaJobCallbackRequest {
+    string jobId = 1;
+    string externalJobId = 2;
+    string status = 3;
+    string resultReference = 4;
+    string errorMessage = 5;
+}
+
+message MediaJobCallbackResponse {
+    bool accepted = 1;
 }
 
 message MediaUploadMetadata {

@@ -91,6 +91,12 @@ extern ImageResizeRequestDefaultTypeInternal _ImageResizeRequest_default_instanc
 class ImageResponse;
 struct ImageResponseDefaultTypeInternal;
 extern ImageResponseDefaultTypeInternal _ImageResponse_default_instance_;
+class MediaJobCallbackRequest;
+struct MediaJobCallbackRequestDefaultTypeInternal;
+extern MediaJobCallbackRequestDefaultTypeInternal _MediaJobCallbackRequest_default_instance_;
+class MediaJobCallbackResponse;
+struct MediaJobCallbackResponseDefaultTypeInternal;
+extern MediaJobCallbackResponseDefaultTypeInternal _MediaJobCallbackResponse_default_instance_;
 class MediaJobLookupRequest;
 struct MediaJobLookupRequestDefaultTypeInternal;
 extern MediaJobLookupRequestDefaultTypeInternal _MediaJobLookupRequest_default_instance_;
@@ -141,6 +147,8 @@ template<> ::media::HealthResponse* Arena::CreateMaybeMessage<::media::HealthRes
 template<> ::media::ImageRequest* Arena::CreateMaybeMessage<::media::ImageRequest>(Arena*);
 template<> ::media::ImageResizeRequest* Arena::CreateMaybeMessage<::media::ImageResizeRequest>(Arena*);
 template<> ::media::ImageResponse* Arena::CreateMaybeMessage<::media::ImageResponse>(Arena*);
+template<> ::media::MediaJobCallbackRequest* Arena::CreateMaybeMessage<::media::MediaJobCallbackRequest>(Arena*);
+template<> ::media::MediaJobCallbackResponse* Arena::CreateMaybeMessage<::media::MediaJobCallbackResponse>(Arena*);
 template<> ::media::MediaJobLookupRequest* Arena::CreateMaybeMessage<::media::MediaJobLookupRequest>(Arena*);
 template<> ::media::MediaJobRequest* Arena::CreateMaybeMessage<::media::MediaJobRequest>(Arena*);
 template<> ::media::MediaJobResponse* Arena::CreateMaybeMessage<::media::MediaJobResponse>(Arena*);
@@ -3349,6 +3357,371 @@ class MediaJobResponse final :
 };
 // -------------------------------------------------------------------
 
+class MediaJobCallbackRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaJobCallbackRequest) */ {
+ public:
+  inline MediaJobCallbackRequest() : MediaJobCallbackRequest(nullptr) {}
+  ~MediaJobCallbackRequest() override;
+  explicit PROTOBUF_CONSTEXPR MediaJobCallbackRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaJobCallbackRequest(const MediaJobCallbackRequest& from);
+  MediaJobCallbackRequest(MediaJobCallbackRequest&& from) noexcept
+    : MediaJobCallbackRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaJobCallbackRequest& operator=(const MediaJobCallbackRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaJobCallbackRequest& operator=(MediaJobCallbackRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaJobCallbackRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaJobCallbackRequest* internal_default_instance() {
+    return reinterpret_cast<const MediaJobCallbackRequest*>(
+               &_MediaJobCallbackRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(MediaJobCallbackRequest& a, MediaJobCallbackRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaJobCallbackRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaJobCallbackRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaJobCallbackRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaJobCallbackRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaJobCallbackRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaJobCallbackRequest& from) {
+    MediaJobCallbackRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaJobCallbackRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaJobCallbackRequest";
+  }
+  protected:
+  explicit MediaJobCallbackRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kJobIdFieldNumber = 1,
+    kExternalJobIdFieldNumber = 2,
+    kStatusFieldNumber = 3,
+    kResultReferenceFieldNumber = 4,
+    kErrorMessageFieldNumber = 5,
+  };
+  // string jobId = 1;
+  void clear_jobid();
+  const std::string& jobid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_jobid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_jobid();
+  PROTOBUF_NODISCARD std::string* release_jobid();
+  void set_allocated_jobid(std::string* jobid);
+  private:
+  const std::string& _internal_jobid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jobid(const std::string& value);
+  std::string* _internal_mutable_jobid();
+  public:
+
+  // string externalJobId = 2;
+  void clear_externaljobid();
+  const std::string& externaljobid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_externaljobid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_externaljobid();
+  PROTOBUF_NODISCARD std::string* release_externaljobid();
+  void set_allocated_externaljobid(std::string* externaljobid);
+  private:
+  const std::string& _internal_externaljobid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_externaljobid(const std::string& value);
+  std::string* _internal_mutable_externaljobid();
+  public:
+
+  // string status = 3;
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_NODISCARD std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string resultReference = 4;
+  void clear_resultreference();
+  const std::string& resultreference() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_resultreference(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_resultreference();
+  PROTOBUF_NODISCARD std::string* release_resultreference();
+  void set_allocated_resultreference(std::string* resultreference);
+  private:
+  const std::string& _internal_resultreference() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_resultreference(const std::string& value);
+  std::string* _internal_mutable_resultreference();
+  public:
+
+  // string errorMessage = 5;
+  void clear_errormessage();
+  const std::string& errormessage() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_errormessage(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_errormessage();
+  PROTOBUF_NODISCARD std::string* release_errormessage();
+  void set_allocated_errormessage(std::string* errormessage);
+  private:
+  const std::string& _internal_errormessage() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_errormessage(const std::string& value);
+  std::string* _internal_mutable_errormessage();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaJobCallbackRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jobid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr externaljobid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resultreference_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MediaJobCallbackResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaJobCallbackResponse) */ {
+ public:
+  inline MediaJobCallbackResponse() : MediaJobCallbackResponse(nullptr) {}
+  ~MediaJobCallbackResponse() override;
+  explicit PROTOBUF_CONSTEXPR MediaJobCallbackResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  MediaJobCallbackResponse(const MediaJobCallbackResponse& from);
+  MediaJobCallbackResponse(MediaJobCallbackResponse&& from) noexcept
+    : MediaJobCallbackResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline MediaJobCallbackResponse& operator=(const MediaJobCallbackResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MediaJobCallbackResponse& operator=(MediaJobCallbackResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const MediaJobCallbackResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const MediaJobCallbackResponse* internal_default_instance() {
+    return reinterpret_cast<const MediaJobCallbackResponse*>(
+               &_MediaJobCallbackResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(MediaJobCallbackResponse& a, MediaJobCallbackResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MediaJobCallbackResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(MediaJobCallbackResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  MediaJobCallbackResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<MediaJobCallbackResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const MediaJobCallbackResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const MediaJobCallbackResponse& from) {
+    MediaJobCallbackResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MediaJobCallbackResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.MediaJobCallbackResponse";
+  }
+  protected:
+  explicit MediaJobCallbackResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAcceptedFieldNumber = 1,
+  };
+  // bool accepted = 1;
+  void clear_accepted();
+  bool accepted() const;
+  void set_accepted(bool value);
+  private:
+  bool _internal_accepted() const;
+  void _internal_set_accepted(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.MediaJobCallbackResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool accepted_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
 class MediaUploadMetadata final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.MediaUploadMetadata) */ {
  public:
@@ -3397,7 +3770,7 @@ class MediaUploadMetadata final :
                &_MediaUploadMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(MediaUploadMetadata& a, MediaUploadMetadata& b) {
     a.Swap(&b);
@@ -3668,7 +4041,7 @@ class MediaUploadChunk final :
                &_MediaUploadChunk_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(MediaUploadChunk& a, MediaUploadChunk& b) {
     a.Swap(&b);
@@ -3858,7 +4231,7 @@ class AdCreateRequest final :
                &_AdCreateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(AdCreateRequest& a, AdCreateRequest& b) {
     a.Swap(&b);
@@ -4054,7 +4427,7 @@ class AdScheduleRequest final :
                &_AdScheduleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(AdScheduleRequest& a, AdScheduleRequest& b) {
     a.Swap(&b);
@@ -4240,7 +4613,7 @@ class AdIdRequest final :
                &_AdIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(AdIdRequest& a, AdIdRequest& b) {
     a.Swap(&b);
@@ -4393,7 +4766,7 @@ class AdResponse final :
                &_AdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(AdResponse& a, AdResponse& b) {
     a.Swap(&b);
@@ -4562,7 +4935,7 @@ class AdReportResponse final :
                &_AdReportResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(AdReportResponse& a, AdReportResponse& b) {
     a.Swap(&b);
@@ -6596,6 +6969,284 @@ inline void MediaJobResponse::set_updatedatunixms(int64_t value) {
 
 // -------------------------------------------------------------------
 
+// MediaJobCallbackRequest
+
+// string jobId = 1;
+inline void MediaJobCallbackRequest::clear_jobid() {
+  _impl_.jobid_.ClearToEmpty();
+}
+inline const std::string& MediaJobCallbackRequest::jobid() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.jobId)
+  return _internal_jobid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobCallbackRequest::set_jobid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.jobid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.jobId)
+}
+inline std::string* MediaJobCallbackRequest::mutable_jobid() {
+  std::string* _s = _internal_mutable_jobid();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobCallbackRequest.jobId)
+  return _s;
+}
+inline const std::string& MediaJobCallbackRequest::_internal_jobid() const {
+  return _impl_.jobid_.Get();
+}
+inline void MediaJobCallbackRequest::_internal_set_jobid(const std::string& value) {
+  
+  _impl_.jobid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::_internal_mutable_jobid() {
+  
+  return _impl_.jobid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::release_jobid() {
+  // @@protoc_insertion_point(field_release:media.MediaJobCallbackRequest.jobId)
+  return _impl_.jobid_.Release();
+}
+inline void MediaJobCallbackRequest::set_allocated_jobid(std::string* jobid) {
+  if (jobid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.jobid_.SetAllocated(jobid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.jobid_.IsDefault()) {
+    _impl_.jobid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.jobId)
+}
+
+// string externalJobId = 2;
+inline void MediaJobCallbackRequest::clear_externaljobid() {
+  _impl_.externaljobid_.ClearToEmpty();
+}
+inline const std::string& MediaJobCallbackRequest::externaljobid() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.externalJobId)
+  return _internal_externaljobid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobCallbackRequest::set_externaljobid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.externaljobid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.externalJobId)
+}
+inline std::string* MediaJobCallbackRequest::mutable_externaljobid() {
+  std::string* _s = _internal_mutable_externaljobid();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobCallbackRequest.externalJobId)
+  return _s;
+}
+inline const std::string& MediaJobCallbackRequest::_internal_externaljobid() const {
+  return _impl_.externaljobid_.Get();
+}
+inline void MediaJobCallbackRequest::_internal_set_externaljobid(const std::string& value) {
+  
+  _impl_.externaljobid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::_internal_mutable_externaljobid() {
+  
+  return _impl_.externaljobid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::release_externaljobid() {
+  // @@protoc_insertion_point(field_release:media.MediaJobCallbackRequest.externalJobId)
+  return _impl_.externaljobid_.Release();
+}
+inline void MediaJobCallbackRequest::set_allocated_externaljobid(std::string* externaljobid) {
+  if (externaljobid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.externaljobid_.SetAllocated(externaljobid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.externaljobid_.IsDefault()) {
+    _impl_.externaljobid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.externalJobId)
+}
+
+// string status = 3;
+inline void MediaJobCallbackRequest::clear_status() {
+  _impl_.status_.ClearToEmpty();
+}
+inline const std::string& MediaJobCallbackRequest::status() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobCallbackRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.status_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.status)
+}
+inline std::string* MediaJobCallbackRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobCallbackRequest.status)
+  return _s;
+}
+inline const std::string& MediaJobCallbackRequest::_internal_status() const {
+  return _impl_.status_.Get();
+}
+inline void MediaJobCallbackRequest::_internal_set_status(const std::string& value) {
+  
+  _impl_.status_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::_internal_mutable_status() {
+  
+  return _impl_.status_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::release_status() {
+  // @@protoc_insertion_point(field_release:media.MediaJobCallbackRequest.status)
+  return _impl_.status_.Release();
+}
+inline void MediaJobCallbackRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.status)
+}
+
+// string resultReference = 4;
+inline void MediaJobCallbackRequest::clear_resultreference() {
+  _impl_.resultreference_.ClearToEmpty();
+}
+inline const std::string& MediaJobCallbackRequest::resultreference() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.resultReference)
+  return _internal_resultreference();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobCallbackRequest::set_resultreference(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.resultreference_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.resultReference)
+}
+inline std::string* MediaJobCallbackRequest::mutable_resultreference() {
+  std::string* _s = _internal_mutable_resultreference();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobCallbackRequest.resultReference)
+  return _s;
+}
+inline const std::string& MediaJobCallbackRequest::_internal_resultreference() const {
+  return _impl_.resultreference_.Get();
+}
+inline void MediaJobCallbackRequest::_internal_set_resultreference(const std::string& value) {
+  
+  _impl_.resultreference_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::_internal_mutable_resultreference() {
+  
+  return _impl_.resultreference_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::release_resultreference() {
+  // @@protoc_insertion_point(field_release:media.MediaJobCallbackRequest.resultReference)
+  return _impl_.resultreference_.Release();
+}
+inline void MediaJobCallbackRequest::set_allocated_resultreference(std::string* resultreference) {
+  if (resultreference != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.resultreference_.SetAllocated(resultreference, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.resultreference_.IsDefault()) {
+    _impl_.resultreference_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.resultReference)
+}
+
+// string errorMessage = 5;
+inline void MediaJobCallbackRequest::clear_errormessage() {
+  _impl_.errormessage_.ClearToEmpty();
+}
+inline const std::string& MediaJobCallbackRequest::errormessage() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.errorMessage)
+  return _internal_errormessage();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MediaJobCallbackRequest::set_errormessage(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.errormessage_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.errorMessage)
+}
+inline std::string* MediaJobCallbackRequest::mutable_errormessage() {
+  std::string* _s = _internal_mutable_errormessage();
+  // @@protoc_insertion_point(field_mutable:media.MediaJobCallbackRequest.errorMessage)
+  return _s;
+}
+inline const std::string& MediaJobCallbackRequest::_internal_errormessage() const {
+  return _impl_.errormessage_.Get();
+}
+inline void MediaJobCallbackRequest::_internal_set_errormessage(const std::string& value) {
+  
+  _impl_.errormessage_.Set(value, GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::_internal_mutable_errormessage() {
+  
+  return _impl_.errormessage_.Mutable(GetArenaForAllocation());
+}
+inline std::string* MediaJobCallbackRequest::release_errormessage() {
+  // @@protoc_insertion_point(field_release:media.MediaJobCallbackRequest.errorMessage)
+  return _impl_.errormessage_.Release();
+}
+inline void MediaJobCallbackRequest::set_allocated_errormessage(std::string* errormessage) {
+  if (errormessage != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.errormessage_.SetAllocated(errormessage, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.errormessage_.IsDefault()) {
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.errorMessage)
+}
+
+// -------------------------------------------------------------------
+
+// MediaJobCallbackResponse
+
+// bool accepted = 1;
+inline void MediaJobCallbackResponse::clear_accepted() {
+  _impl_.accepted_ = false;
+}
+inline bool MediaJobCallbackResponse::_internal_accepted() const {
+  return _impl_.accepted_;
+}
+inline bool MediaJobCallbackResponse::accepted() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackResponse.accepted)
+  return _internal_accepted();
+}
+inline void MediaJobCallbackResponse::_internal_set_accepted(bool value) {
+  
+  _impl_.accepted_ = value;
+}
+inline void MediaJobCallbackResponse::set_accepted(bool value) {
+  _internal_set_accepted(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackResponse.accepted)
+}
+
+// -------------------------------------------------------------------
+
 // MediaUploadMetadata
 
 // string mediaId = 1;
@@ -7715,6 +8366,10 @@ inline void AdReportResponse::set_allocated_reportjson(std::string* reportjson) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

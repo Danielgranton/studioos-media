@@ -1,0 +1,26 @@
+{
+  "jobs": [
+    {
+      "assetReference": "/tmp/studioos-missing-input.wav",
+      "createdAtUnixMs": 1783807560300,
+      "errorMessage": "Asset reference not found",
+      "jobId": "job-2",
+      "operation": "audio.normalize",
+      "parametersJson": "{}",
+      "resultReference": "",
+      "status": "FAILED",
+      "updatedAtUnixMs": 1783807560352
+    },
+    {
+      "assetReference": "s3://studioos-media/channels/song.mp3",
+      "createdAtUnixMs": 1783807551962,
+      "errorMessage": "fatal error: Could not connect to the endpoint URL: \"https://studioos-media.s3.eu-north-1.amazonaws.com/channels/song.mp3\"\n",
+      "jobId": "job-1",
+      "operation": "compress_audio",
+      "parametersJson": "{\"format\":\"mp3\"}",
+      "resultReference": "",
+      "status": "FAILED",
+      "updatedAtUnixMs": 1783807555089
+    }
+  ]
+}

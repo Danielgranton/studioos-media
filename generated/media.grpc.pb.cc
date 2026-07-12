@@ -1125,5 +1125,66 @@ MediaService::Service::~Service() {
 }
 
 
+static const char* MediaCallbackService_method_names[] = {
+  "/media.MediaCallbackService/ReportMediaJob",
+};
+
+std::unique_ptr< MediaCallbackService::Stub> MediaCallbackService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< MediaCallbackService::Stub> stub(new MediaCallbackService::Stub(channel, options));
+  return stub;
+}
+
+MediaCallbackService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_ReportMediaJob_(MediaCallbackService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status MediaCallbackService::Stub::ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::media::MediaJobCallbackResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ReportMediaJob_, context, request, response);
+}
+
+void MediaCallbackService::Stub::async::ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ReportMediaJob_, context, request, response, std::move(f));
+}
+
+void MediaCallbackService::Stub::async::ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ReportMediaJob_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>* MediaCallbackService::Stub::PrepareAsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::MediaJobCallbackResponse, ::media::MediaJobCallbackRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ReportMediaJob_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>* MediaCallbackService::Stub::AsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncReportMediaJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+MediaCallbackService::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaCallbackService_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaCallbackService::Service, ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaCallbackService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::MediaJobCallbackRequest* req,
+             ::media::MediaJobCallbackResponse* resp) {
+               return service->ReportMediaJob(ctx, req, resp);
+             }, this)));
+}
+
+MediaCallbackService::Service::~Service() {
+}
+
+::grpc::Status MediaCallbackService::Service::ReportMediaJob(::grpc::ServerContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 }  // namespace media
 

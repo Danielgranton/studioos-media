@@ -128,10 +128,24 @@ CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/MediaJobService.cpp -o CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.s
 
+CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
+CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o: /home/linux/Documents/studioos-media/src/services/MediaJobDispatcher.cpp
+CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o -c /home/linux/Documents/studioos-media/src/services/MediaJobDispatcher.cpp
+
+CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/MediaJobDispatcher.cpp > CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.i
+
+CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/MediaJobDispatcher.cpp -o CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.s
+
 CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o: /home/linux/Documents/studioos-media/src/services/AudioService.cpp
 CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o -c /home/linux/Documents/studioos-media/src/services/AudioService.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o: /home/linux/Documents/studioos-media/src/services/ImageService.cpp
 CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o -c /home/linux/Documents/studioos-media/src/services/ImageService.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o: /home/linux/Documents/studioos-media/src/services/VideoService.cpp
 CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o -c /home/linux/Documents/studioos-media/src/services/VideoService.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/AudioProcessor.cpp
 CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/AudioProcessor.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/grpc-media-job-test.dir/src/media/AudioProcessor.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
 CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
 CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i: cmake_force
@@ -285,7 +299,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s: cmake_fo
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.i: cmake_force
@@ -299,7 +313,7 @@ CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o: /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.o -c /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.i: cmake_force
@@ -313,7 +327,7 @@ CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o: /home/linux/Documents/studioos-media/src/utils/Logger.cpp
 CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Logger.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.i: cmake_force
@@ -327,7 +341,7 @@ CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o: /home/linux/Documents/studioos-media/src/utils/Timer.cpp
 CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Timer.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.i: cmake_force
@@ -341,7 +355,7 @@ CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o: /home/linux/Documents/studioos-media/src/config/config.cpp
 CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o -c /home/linux/Documents/studioos-media/src/config/config.cpp
 
 CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.i: cmake_force
@@ -352,10 +366,24 @@ CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/config/config.cpp -o CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.s
 
+CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o: CMakeFiles/grpc-media-job-test.dir/flags.make
+CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o: /home/linux/Documents/studioos-media/src/storage/S3Storage.cpp
+CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o -MF CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o.d -o CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o -c /home/linux/Documents/studioos-media/src/storage/S3Storage.cpp
+
+CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/storage/S3Storage.cpp > CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.i
+
+CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/storage/S3Storage.cpp -o CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.s
+
 CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o: /home/linux/Documents/studioos-media/generated/media.pb.cc
 CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o -MF CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o.d -o CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o -c /home/linux/Documents/studioos-media/generated/media.pb.cc
 
 CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.i: cmake_force
@@ -369,7 +397,7 @@ CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.s: cmake_force
 CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o: CMakeFiles/grpc-media-job-test.dir/flags.make
 CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o: /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc
 CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o: CMakeFiles/grpc-media-job-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o -MF CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o.d -o CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o -c /home/linux/Documents/studioos-media/generated/media.grpc.pb.cc
 
 CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.i: cmake_force
@@ -386,6 +414,7 @@ grpc__media__job__test_OBJECTS = \
 "CMakeFiles/grpc-media-job-test.dir/src/grpc/MediaServer.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/services/AdService.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.o" \
+"CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o" \
@@ -402,6 +431,7 @@ grpc__media__job__test_OBJECTS = \
 "CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o" \
+"CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o" \
 "CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o" \
 "CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o"
 
@@ -412,6 +442,7 @@ grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/tests/grpc_media_job_tes
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/grpc/MediaServer.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/AdService.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobService.cpp.o
+grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/MediaJobDispatcher.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/AudioService.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/ImageService.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/services/VideoService.cpp.o
@@ -428,6 +459,7 @@ grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/utils/FileUtils.cpp.
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o
+grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/src/storage/S3Storage.cpp.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/generated/media.pb.cc.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/generated/media.grpc.pb.cc.o
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/build.make
@@ -552,7 +584,7 @@ grpc-media-job-test: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.10.0
 grpc-media-job-test: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.10.0
 grpc-media-job-test: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.10.0
 grpc-media-job-test: CMakeFiles/grpc-media-job-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable grpc-media-job-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable grpc-media-job-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/grpc-media-job-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

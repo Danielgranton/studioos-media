@@ -8,6 +8,7 @@
 /home/linux/Documents/studioos-media/build/CMakeFiles/s3-storage-test.dir
 /home/linux/Documents/studioos-media/build/CMakeFiles/grpc-ad-service-test.dir
 /home/linux/Documents/studioos-media/build/CMakeFiles/grpc-media-job-test.dir
+/home/linux/Documents/studioos-media/build/CMakeFiles/grpc-media-callback-test.dir
 /home/linux/Documents/studioos-media/build/CMakeFiles/test.dir
 /home/linux/Documents/studioos-media/build/CMakeFiles/edit_cache.dir
 /home/linux/Documents/studioos-media/build/CMakeFiles/rebuild_cache.dir

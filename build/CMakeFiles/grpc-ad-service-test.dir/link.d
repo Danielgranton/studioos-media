@@ -6,6 +6,7 @@ grpc-ad-service-test: \
   CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/AdService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.o \
+  CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobDispatcher.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o \
@@ -22,6 +23,7 @@ grpc-ad-service-test: \
   CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.o \
+  CMakeFiles/grpc-ad-service-test.dir/src/storage/S3Storage.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/generated/media.pb.cc.o \
   CMakeFiles/grpc-ad-service-test.dir/generated/media.grpc.pb.cc.o \
   /usr/lib/x86_64-linux-gnu/libprotobuf.so \
@@ -466,6 +468,8 @@ CMakeFiles/grpc-ad-service-test.dir/src/services/AdService.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.o:
 
+CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobDispatcher.cpp.o:
+
 CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.o:
@@ -497,6 +501,8 @@ CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.o:
 CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.o:
+
+CMakeFiles/grpc-ad-service-test.dir/src/storage/S3Storage.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/generated/media.pb.cc.o:
 

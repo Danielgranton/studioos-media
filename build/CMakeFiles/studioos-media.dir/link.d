@@ -18,6 +18,7 @@ studioos-media: \
   CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o \
+  CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o \
   CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o \
   CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o \
@@ -491,6 +492,8 @@ CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o:
 CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o:
+
+CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o:
 
 CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o:
 

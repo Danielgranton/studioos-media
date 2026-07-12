@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/linux/Documents/studioos-media/src/services/AdService.cpp" "CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/AdService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/AudioService.cpp" "CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/AudioService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/ImageService.cpp" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o.d"
+  "/home/linux/Documents/studioos-media/src/services/MediaJobDispatcher.cpp" "CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/MediaJobService.cpp" "CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/MediaJobService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/StreamingService.cpp" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o.d"
   "/home/linux/Documents/studioos-media/src/services/VideoService.cpp" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o" "gcc" "CMakeFiles/studioos-media.dir/src/services/VideoService.cpp.o.d"

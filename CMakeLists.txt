@@ -32,6 +32,7 @@ add_executable(
     src/services/VideoService.cpp
     src/services/AudioService.cpp
     src/services/MediaJobService.cpp
+    src/services/MediaJobDispatcher.cpp
     src/media/AudioProcessor.cpp
     src/services/StreamingService.cpp
     src/services/AdService.cpp
@@ -252,6 +253,7 @@ add_executable(
     src/grpc/MediaServer.cpp
     src/services/AdService.cpp
     src/services/MediaJobService.cpp
+    src/services/MediaJobDispatcher.cpp
     src/services/AudioService.cpp
     src/services/ImageService.cpp
     src/services/VideoService.cpp
@@ -268,6 +270,7 @@ add_executable(
     src/utils/Logger.cpp
     src/utils/Timer.cpp
     src/config/config.cpp
+    src/storage/S3Storage.cpp
     generated/media.pb.cc
     generated/media.grpc.pb.cc
 )
@@ -296,6 +299,7 @@ add_executable(
     src/grpc/MediaServer.cpp
     src/services/AdService.cpp
     src/services/MediaJobService.cpp
+    src/services/MediaJobDispatcher.cpp
     src/services/AudioService.cpp
     src/services/ImageService.cpp
     src/services/VideoService.cpp
@@ -312,6 +316,7 @@ add_executable(
     src/utils/Logger.cpp
     src/utils/Timer.cpp
     src/config/config.cpp
+    src/storage/S3Storage.cpp
     generated/media.pb.cc
     generated/media.grpc.pb.cc
 )
@@ -334,6 +339,52 @@ target_include_directories(
         ${OpenCV_INCLUDE_DIRS}
 )
 
+add_executable(
+    grpc-media-callback-test
+    tests/grpc_media_callback_test.cpp
+    src/grpc/MediaServer.cpp
+    src/services/AdService.cpp
+    src/services/MediaJobService.cpp
+    src/services/MediaJobDispatcher.cpp
+    src/services/AudioService.cpp
+    src/services/ImageService.cpp
+    src/services/VideoService.cpp
+    src/media/AudioProcessor.cpp
+    src/media/ImageProcessor.cpp
+    src/media/VideoProcessor.cpp
+    src/ffmpeg/CommandRunner.cpp
+    src/ffmpeg/FFmpeg.cpp
+    src/ffmpeg/VideoEncoder.cpp
+    src/ffmpeg/AudioEncoder.cpp
+    src/ffmpeg/ThumbnailGenerator.cpp
+    src/ffmpeg/VideoConverter.cpp
+    src/utils/FileUtils.cpp
+    src/utils/Logger.cpp
+    src/utils/Timer.cpp
+    src/config/config.cpp
+    src/storage/S3Storage.cpp
+    generated/media.pb.cc
+    generated/media.grpc.pb.cc
+)
+
+target_link_libraries(
+    grpc-media-callback-test
+    PRIVATE
+        protobuf::libprotobuf
+        gRPC::grpc++
+        ${OpenCV_LIBS}
+        nlohmann_json::nlohmann_json
+)
+
+target_include_directories(
+    grpc-media-callback-test
+    PRIVATE
+        generated
+        src
+        config
+        ${OpenCV_INCLUDE_DIRS}
+)
+
 enable_testing()
 add_test(NAME video-processor-test COMMAND video-processor-test)
 add_test(NAME image-processor-test COMMAND image-processor-test)
@@ -343,4 +394,5 @@ add_test(NAME ad-service-test COMMAND ad-service-test)
 add_test(NAME grpc-ad-service-test COMMAND grpc-ad-service-test)
 add_test(NAME media-job-service-test COMMAND media-job-service-test)
 add_test(NAME grpc-media-job-test COMMAND grpc-media-job-test)
+add_test(NAME grpc-media-callback-test COMMAND grpc-media-callback-test)
 add_test(NAME s3-storage-test COMMAND s3-storage-test)

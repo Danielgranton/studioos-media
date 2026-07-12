@@ -1,6 +1,9 @@
-#include <chrono>
-
 #include "MediaServer.hpp"
+
+#include <chrono>
+#include <vector>
+
+#include "core/Result.hpp"
 
 namespace
 {
@@ -33,6 +36,15 @@ std::chrono::system_clock::time_point fromUnixMs(long long value)
 {
     return std::chrono::system_clock::time_point(std::chrono::milliseconds(value));
 }
+}
+
+MediaServer::MediaServer()
+    : jobDispatcher(jobService, imageService, videoService, audioService)
+{
+    for (const auto& job : jobService.recoverPendingJobs())
+    {
+        jobDispatcher.enqueue(job);
+    }
 }
 
 grpc::Status MediaServer::Health(
@@ -309,6 +321,7 @@ grpc::Status MediaServer::SubmitMediaJob(
     }
 
     const auto& job = result.value;
+    jobDispatcher.enqueue(job);
     response->set_jobid(job.jobId);
     response->set_status(job.status);
     response->set_assetreference(job.assetReference);

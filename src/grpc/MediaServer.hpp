@@ -6,6 +6,7 @@
 
 #include "../services/AudioService.hpp"
 #include "../services/AdService.hpp"
+#include "../services/MediaJobDispatcher.hpp"
 #include "../services/MediaJobService.hpp"
 #include "../services/ImageService.hpp"
 #include "../services/VideoService.hpp"
@@ -18,8 +19,11 @@ private:
     AudioService audioService;
     AdService adService;
     MediaJobService jobService;
+    MediaJobDispatcher jobDispatcher;
 
 public:
+    MediaServer();
+
     grpc::Status Health(
         grpc::ServerContext*,
         const media::HealthRequest*,

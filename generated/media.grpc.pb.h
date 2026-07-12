@@ -4131,6 +4131,213 @@ class MediaService final {
   typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<WithStreamedUnaryMethod_ConvertVideo<WithStreamedUnaryMethod_TrimVideo<WithStreamedUnaryMethod_MergeVideos<WithStreamedUnaryMethod_ResizeImage<WithStreamedUnaryMethod_ThumbnailImage<WithStreamedUnaryMethod_EncodeAudio<WithStreamedUnaryMethod_NormalizeAudio<WithStreamedUnaryMethod_DenoiseAudio<WithStreamedUnaryMethod_MergeAudio<WithStreamedUnaryMethod_TrimAudio<WithStreamedUnaryMethod_ConvertAudio<WithStreamedUnaryMethod_SubmitMediaJob<WithStreamedUnaryMethod_GetMediaJob<WithStreamedUnaryMethod_CreateVideoAd<WithStreamedUnaryMethod_CreateImageAd<WithStreamedUnaryMethod_CreateAudioAd<WithStreamedUnaryMethod_ScheduleAd<WithStreamedUnaryMethod_RecordImpression<WithStreamedUnaryMethod_RecordClick<WithStreamedUnaryMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
+class MediaCallbackService final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "media.MediaCallbackService";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    virtual ::grpc::Status ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::media::MediaJobCallbackResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>> AsyncReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>>(AsyncReportMediaJobRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>> PrepareAsyncReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>>(PrepareAsyncReportMediaJobRaw(context, request, cq));
+    }
+    class async_interface {
+     public:
+      virtual ~async_interface() {}
+      virtual void ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+    };
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>* AsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::MediaJobCallbackResponse>* PrepareAsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    ::grpc::Status ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::media::MediaJobCallbackResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>> AsyncReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>>(AsyncReportMediaJobRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>> PrepareAsyncReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>>(PrepareAsyncReportMediaJobRaw(context, request, cq));
+    }
+    class async final :
+      public StubInterface::async_interface {
+     public:
+      void ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, std::function<void(::grpc::Status)>) override;
+      void ReportMediaJob(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+     private:
+      friend class Stub;
+      explicit async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class async* async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>* AsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::MediaJobCallbackResponse>* PrepareAsyncReportMediaJobRaw(::grpc::ClientContext* context, const ::media::MediaJobCallbackRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_ReportMediaJob_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    virtual ::grpc::Status ReportMediaJob(::grpc::ServerContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReportMediaJob(::grpc::ServerContext* context, ::media::MediaJobCallbackRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::MediaJobCallbackResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ReportMediaJob<Service > AsyncService;
+  template <class BaseClass>
+  class WithCallbackMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::media::MediaJobCallbackRequest* request, ::media::MediaJobCallbackResponse* response) { return this->ReportMediaJob(context, request, response); }));}
+    void SetMessageAllocatorFor_ReportMediaJob(
+        ::grpc::MessageAllocator< ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ReportMediaJob(
+      ::grpc::CallbackServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_ReportMediaJob<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReportMediaJob(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ReportMediaJob(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ReportMediaJob(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ReportMediaJob : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ReportMediaJob() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::media::MediaJobCallbackRequest, ::media::MediaJobCallbackResponse>* streamer) {
+                       return this->StreamedReportMediaJob(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ReportMediaJob() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ReportMediaJob(::grpc::ServerContext* /*context*/, const ::media::MediaJobCallbackRequest* /*request*/, ::media::MediaJobCallbackResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedReportMediaJob(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::MediaJobCallbackRequest,::media::MediaJobCallbackResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ReportMediaJob<Service > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_ReportMediaJob<Service > StreamedService;
+};
+
 }  // namespace media
 
 
