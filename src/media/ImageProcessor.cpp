@@ -1,5 +1,6 @@
 #include "ImageProcessor.hpp"
 
+#include <algorithm>
 #include <opencv2/opencv.hpp>
 #include <vector>
 
@@ -86,6 +87,37 @@ Result<std::string> ImageProcessor::resize(const std::string& inputPath, int wid
 Result<std::string> ImageProcessor::thumbnail(const std::string& inputPath, int size)
 {
     return resize(inputPath, size, size);
+}
+
+Result<std::string> ImageProcessor::squareThumbnail(const std::string& inputPath, int size)
+{
+    Timer timer;
+    Logger::info("Generating square thumbnail: " + inputPath);
+
+    cv::Mat image = loadImage(inputPath);
+    if (image.empty())
+    {
+        return Result<std::string>::fail("Unable to load image", StatusCode::FILE_NOT_FOUND);
+    }
+
+    const int cropSize = std::min(image.cols, image.rows);
+    const int x = std::max(0, (image.cols - cropSize) / 2);
+    const int y = std::max(0, (image.rows - cropSize) / 2);
+
+    cv::Rect region(x, y, cropSize, cropSize);
+    cv::Mat cropped = image(region).clone();
+
+    cv::Mat resized;
+    cv::resize(cropped, resized, cv::Size(size, size));
+
+    const std::string output = outputPath(inputPath, "square_");
+    if (!writeImage(output, resized))
+    {
+        return Result<std::string>::fail("Failed to save square thumbnail");
+    }
+
+    Logger::info("Square thumbnail completed in " + std::to_string(timer.elapsedMilliseconds()) + " ms");
+    return Result<std::string>::ok(output);
 }
 
 Result<std::string> ImageProcessor::crop(const std::string& inputPath, int x, int y, int width, int height)

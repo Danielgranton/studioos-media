@@ -66,6 +66,7 @@ add_executable(
     tests/video_processor_test.cpp
     src/media/VideoProcessor.cpp
     src/services/VideoService.cpp
+    src/services/StreamingService.cpp
     src/config/config.cpp
     src/ffmpeg/CommandRunner.cpp
     src/ffmpeg/FFmpeg.cpp
@@ -184,12 +185,25 @@ add_executable(
     ad-service-test
     tests/ad_service_test.cpp
     src/services/AdService.cpp
+    src/services/StreamingService.cpp
+    src/media/ImageProcessor.cpp
+    src/media/VideoProcessor.cpp
+    src/ffmpeg/CommandRunner.cpp
+    src/ffmpeg/FFmpeg.cpp
+    src/ffmpeg/VideoEncoder.cpp
+    src/ffmpeg/AudioEncoder.cpp
+    src/ffmpeg/ThumbnailGenerator.cpp
+    src/ffmpeg/VideoConverter.cpp
+    src/config/config.cpp
     src/utils/FileUtils.cpp
+    src/utils/Logger.cpp
+    src/utils/Timer.cpp
 )
 
 target_link_libraries(
     ad-service-test
     PRIVATE
+        ${OpenCV_LIBS}
         nlohmann_json::nlohmann_json
 )
 
@@ -257,6 +271,7 @@ add_executable(
     src/services/AudioService.cpp
     src/services/ImageService.cpp
     src/services/VideoService.cpp
+    src/services/StreamingService.cpp
     src/media/AudioProcessor.cpp
     src/media/ImageProcessor.cpp
     src/media/VideoProcessor.cpp
@@ -303,6 +318,7 @@ add_executable(
     src/services/AudioService.cpp
     src/services/ImageService.cpp
     src/services/VideoService.cpp
+    src/services/StreamingService.cpp
     src/media/AudioProcessor.cpp
     src/media/ImageProcessor.cpp
     src/media/VideoProcessor.cpp
@@ -349,6 +365,7 @@ add_executable(
     src/services/AudioService.cpp
     src/services/ImageService.cpp
     src/services/VideoService.cpp
+    src/services/StreamingService.cpp
     src/media/AudioProcessor.cpp
     src/media/ImageProcessor.cpp
     src/media/VideoProcessor.cpp

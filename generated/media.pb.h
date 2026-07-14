@@ -112,6 +112,15 @@ extern MediaUploadChunkDefaultTypeInternal _MediaUploadChunk_default_instance_;
 class MediaUploadMetadata;
 struct MediaUploadMetadataDefaultTypeInternal;
 extern MediaUploadMetadataDefaultTypeInternal _MediaUploadMetadata_default_instance_;
+class ResponsiveImageRequest;
+struct ResponsiveImageRequestDefaultTypeInternal;
+extern ResponsiveImageRequestDefaultTypeInternal _ResponsiveImageRequest_default_instance_;
+class ResponsiveImageResponse;
+struct ResponsiveImageResponseDefaultTypeInternal;
+extern ResponsiveImageResponseDefaultTypeInternal _ResponsiveImageResponse_default_instance_;
+class ResponsiveImageVariant;
+struct ResponsiveImageVariantDefaultTypeInternal;
+extern ResponsiveImageVariantDefaultTypeInternal _ResponsiveImageVariant_default_instance_;
 class ThumbnailResponse;
 struct ThumbnailResponseDefaultTypeInternal;
 extern ThumbnailResponseDefaultTypeInternal _ThumbnailResponse_default_instance_;
@@ -154,6 +163,9 @@ template<> ::media::MediaJobRequest* Arena::CreateMaybeMessage<::media::MediaJob
 template<> ::media::MediaJobResponse* Arena::CreateMaybeMessage<::media::MediaJobResponse>(Arena*);
 template<> ::media::MediaUploadChunk* Arena::CreateMaybeMessage<::media::MediaUploadChunk>(Arena*);
 template<> ::media::MediaUploadMetadata* Arena::CreateMaybeMessage<::media::MediaUploadMetadata>(Arena*);
+template<> ::media::ResponsiveImageRequest* Arena::CreateMaybeMessage<::media::ResponsiveImageRequest>(Arena*);
+template<> ::media::ResponsiveImageResponse* Arena::CreateMaybeMessage<::media::ResponsiveImageResponse>(Arena*);
+template<> ::media::ResponsiveImageVariant* Arena::CreateMaybeMessage<::media::ResponsiveImageVariant>(Arena*);
 template<> ::media::ThumbnailResponse* Arena::CreateMaybeMessage<::media::ThumbnailResponse>(Arena*);
 template<> ::media::VideoConvertRequest* Arena::CreateMaybeMessage<::media::VideoConvertRequest>(Arena*);
 template<> ::media::VideoMergeRequest* Arena::CreateMaybeMessage<::media::VideoMergeRequest>(Arena*);
@@ -742,6 +754,523 @@ class ImageResponse final :
 };
 // -------------------------------------------------------------------
 
+class ResponsiveImageRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ResponsiveImageRequest) */ {
+ public:
+  inline ResponsiveImageRequest() : ResponsiveImageRequest(nullptr) {}
+  ~ResponsiveImageRequest() override;
+  explicit PROTOBUF_CONSTEXPR ResponsiveImageRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResponsiveImageRequest(const ResponsiveImageRequest& from);
+  ResponsiveImageRequest(ResponsiveImageRequest&& from) noexcept
+    : ResponsiveImageRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ResponsiveImageRequest& operator=(const ResponsiveImageRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResponsiveImageRequest& operator=(ResponsiveImageRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResponsiveImageRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResponsiveImageRequest* internal_default_instance() {
+    return reinterpret_cast<const ResponsiveImageRequest*>(
+               &_ResponsiveImageRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ResponsiveImageRequest& a, ResponsiveImageRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResponsiveImageRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResponsiveImageRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ResponsiveImageRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResponsiveImageRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResponsiveImageRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ResponsiveImageRequest& from) {
+    ResponsiveImageRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResponsiveImageRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.ResponsiveImageRequest";
+  }
+  protected:
+  explicit ResponsiveImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kImagePathFieldNumber = 1,
+    kObjectKeyPrefixFieldNumber = 2,
+    kQualityFieldNumber = 3,
+  };
+  // string imagePath = 1;
+  void clear_imagepath();
+  const std::string& imagepath() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_imagepath(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_imagepath();
+  PROTOBUF_NODISCARD std::string* release_imagepath();
+  void set_allocated_imagepath(std::string* imagepath);
+  private:
+  const std::string& _internal_imagepath() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_imagepath(const std::string& value);
+  std::string* _internal_mutable_imagepath();
+  public:
+
+  // string objectKeyPrefix = 2;
+  void clear_objectkeyprefix();
+  const std::string& objectkeyprefix() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_objectkeyprefix(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_objectkeyprefix();
+  PROTOBUF_NODISCARD std::string* release_objectkeyprefix();
+  void set_allocated_objectkeyprefix(std::string* objectkeyprefix);
+  private:
+  const std::string& _internal_objectkeyprefix() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_objectkeyprefix(const std::string& value);
+  std::string* _internal_mutable_objectkeyprefix();
+  public:
+
+  // int32 quality = 3;
+  void clear_quality();
+  int32_t quality() const;
+  void set_quality(int32_t value);
+  private:
+  int32_t _internal_quality() const;
+  void _internal_set_quality(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.ResponsiveImageRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepath_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr objectkeyprefix_;
+    int32_t quality_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResponsiveImageVariant final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ResponsiveImageVariant) */ {
+ public:
+  inline ResponsiveImageVariant() : ResponsiveImageVariant(nullptr) {}
+  ~ResponsiveImageVariant() override;
+  explicit PROTOBUF_CONSTEXPR ResponsiveImageVariant(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResponsiveImageVariant(const ResponsiveImageVariant& from);
+  ResponsiveImageVariant(ResponsiveImageVariant&& from) noexcept
+    : ResponsiveImageVariant() {
+    *this = ::std::move(from);
+  }
+
+  inline ResponsiveImageVariant& operator=(const ResponsiveImageVariant& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResponsiveImageVariant& operator=(ResponsiveImageVariant&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResponsiveImageVariant& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResponsiveImageVariant* internal_default_instance() {
+    return reinterpret_cast<const ResponsiveImageVariant*>(
+               &_ResponsiveImageVariant_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(ResponsiveImageVariant& a, ResponsiveImageVariant& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResponsiveImageVariant* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResponsiveImageVariant* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ResponsiveImageVariant* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResponsiveImageVariant>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResponsiveImageVariant& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ResponsiveImageVariant& from) {
+    ResponsiveImageVariant::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResponsiveImageVariant* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.ResponsiveImageVariant";
+  }
+  protected:
+  explicit ResponsiveImageVariant(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUrlFieldNumber = 2,
+    kSizeFieldNumber = 1,
+  };
+  // string url = 2;
+  void clear_url();
+  const std::string& url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_url();
+  PROTOBUF_NODISCARD std::string* release_url();
+  void set_allocated_url(std::string* url);
+  private:
+  const std::string& _internal_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_url(const std::string& value);
+  std::string* _internal_mutable_url();
+  public:
+
+  // int32 size = 1;
+  void clear_size();
+  int32_t size() const;
+  void set_size(int32_t value);
+  private:
+  int32_t _internal_size() const;
+  void _internal_set_size(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.ResponsiveImageVariant)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
+    int32_t size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResponsiveImageResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.ResponsiveImageResponse) */ {
+ public:
+  inline ResponsiveImageResponse() : ResponsiveImageResponse(nullptr) {}
+  ~ResponsiveImageResponse() override;
+  explicit PROTOBUF_CONSTEXPR ResponsiveImageResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResponsiveImageResponse(const ResponsiveImageResponse& from);
+  ResponsiveImageResponse(ResponsiveImageResponse&& from) noexcept
+    : ResponsiveImageResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ResponsiveImageResponse& operator=(const ResponsiveImageResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResponsiveImageResponse& operator=(ResponsiveImageResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResponsiveImageResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResponsiveImageResponse* internal_default_instance() {
+    return reinterpret_cast<const ResponsiveImageResponse*>(
+               &_ResponsiveImageResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(ResponsiveImageResponse& a, ResponsiveImageResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResponsiveImageResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResponsiveImageResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ResponsiveImageResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResponsiveImageResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResponsiveImageResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ResponsiveImageResponse& from) {
+    ResponsiveImageResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResponsiveImageResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "media.ResponsiveImageResponse";
+  }
+  protected:
+  explicit ResponsiveImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVariantsFieldNumber = 2,
+    kOriginalUrlFieldNumber = 1,
+  };
+  // repeated .media.ResponsiveImageVariant variants = 2;
+  int variants_size() const;
+  private:
+  int _internal_variants_size() const;
+  public:
+  void clear_variants();
+  ::media::ResponsiveImageVariant* mutable_variants(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::media::ResponsiveImageVariant >*
+      mutable_variants();
+  private:
+  const ::media::ResponsiveImageVariant& _internal_variants(int index) const;
+  ::media::ResponsiveImageVariant* _internal_add_variants();
+  public:
+  const ::media::ResponsiveImageVariant& variants(int index) const;
+  ::media::ResponsiveImageVariant* add_variants();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::media::ResponsiveImageVariant >&
+      variants() const;
+
+  // string originalUrl = 1;
+  void clear_originalurl();
+  const std::string& originalurl() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_originalurl(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_originalurl();
+  PROTOBUF_NODISCARD std::string* release_originalurl();
+  void set_allocated_originalurl(std::string* originalurl);
+  private:
+  const std::string& _internal_originalurl() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_originalurl(const std::string& value);
+  std::string* _internal_mutable_originalurl();
+  public:
+
+  // @@protoc_insertion_point(class_scope:media.ResponsiveImageResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::media::ResponsiveImageVariant > variants_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr originalurl_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_media_2eproto;
+};
+// -------------------------------------------------------------------
+
 class VideoRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:media.VideoRequest) */ {
  public:
@@ -790,7 +1319,7 @@ class VideoRequest final :
                &_VideoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
   friend void swap(VideoRequest& a, VideoRequest& b) {
     a.Swap(&b);
@@ -943,7 +1472,7 @@ class VideoResponse final :
                &_VideoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    8;
 
   friend void swap(VideoResponse& a, VideoResponse& b) {
     a.Swap(&b);
@@ -1096,7 +1625,7 @@ class ThumbnailResponse final :
                &_ThumbnailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    9;
 
   friend void swap(ThumbnailResponse& a, ThumbnailResponse& b) {
     a.Swap(&b);
@@ -1249,7 +1778,7 @@ class AudioResponse final :
                &_AudioResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    10;
 
   friend void swap(AudioResponse& a, AudioResponse& b) {
     a.Swap(&b);
@@ -1402,7 +1931,7 @@ class ImageResizeRequest final :
                &_ImageResizeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    11;
 
   friend void swap(ImageResizeRequest& a, ImageResizeRequest& b) {
     a.Swap(&b);
@@ -1577,7 +2106,7 @@ class VideoConvertRequest final :
                &_VideoConvertRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    12;
 
   friend void swap(VideoConvertRequest& a, VideoConvertRequest& b) {
     a.Swap(&b);
@@ -1746,7 +2275,7 @@ class VideoTrimRequest final :
                &_VideoTrimRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    13;
 
   friend void swap(VideoTrimRequest& a, VideoTrimRequest& b) {
     a.Swap(&b);
@@ -1931,7 +2460,7 @@ class VideoMergeRequest final :
                &_VideoMergeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    14;
 
   friend void swap(VideoMergeRequest& a, VideoMergeRequest& b) {
     a.Swap(&b);
@@ -2110,7 +2639,7 @@ class AudioRequest final :
                &_AudioRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    15;
 
   friend void swap(AudioRequest& a, AudioRequest& b) {
     a.Swap(&b);
@@ -2263,7 +2792,7 @@ class AudioFormatRequest final :
                &_AudioFormatRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    16;
 
   friend void swap(AudioFormatRequest& a, AudioFormatRequest& b) {
     a.Swap(&b);
@@ -2432,7 +2961,7 @@ class AudioTrimRequest final :
                &_AudioTrimRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    17;
 
   friend void swap(AudioTrimRequest& a, AudioTrimRequest& b) {
     a.Swap(&b);
@@ -2617,7 +3146,7 @@ class AudioMergeRequest final :
                &_AudioMergeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    18;
 
   friend void swap(AudioMergeRequest& a, AudioMergeRequest& b) {
     a.Swap(&b);
@@ -2796,7 +3325,7 @@ class MediaJobRequest final :
                &_MediaJobRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    19;
 
   friend void swap(MediaJobRequest& a, MediaJobRequest& b) {
     a.Swap(&b);
@@ -2981,7 +3510,7 @@ class MediaJobLookupRequest final :
                &_MediaJobLookupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    20;
 
   friend void swap(MediaJobLookupRequest& a, MediaJobLookupRequest& b) {
     a.Swap(&b);
@@ -3134,7 +3663,7 @@ class MediaJobResponse final :
                &_MediaJobResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    21;
 
   friend void swap(MediaJobResponse& a, MediaJobResponse& b) {
     a.Swap(&b);
@@ -3405,7 +3934,7 @@ class MediaJobCallbackRequest final :
                &_MediaJobCallbackRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    22;
 
   friend void swap(MediaJobCallbackRequest& a, MediaJobCallbackRequest& b) {
     a.Swap(&b);
@@ -3622,7 +4151,7 @@ class MediaJobCallbackResponse final :
                &_MediaJobCallbackResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    23;
 
   friend void swap(MediaJobCallbackResponse& a, MediaJobCallbackResponse& b) {
     a.Swap(&b);
@@ -3770,7 +4299,7 @@ class MediaUploadMetadata final :
                &_MediaUploadMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    24;
 
   friend void swap(MediaUploadMetadata& a, MediaUploadMetadata& b) {
     a.Swap(&b);
@@ -4041,7 +4570,7 @@ class MediaUploadChunk final :
                &_MediaUploadChunk_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    25;
 
   friend void swap(MediaUploadChunk& a, MediaUploadChunk& b) {
     a.Swap(&b);
@@ -4231,7 +4760,7 @@ class AdCreateRequest final :
                &_AdCreateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    26;
 
   friend void swap(AdCreateRequest& a, AdCreateRequest& b) {
     a.Swap(&b);
@@ -4427,7 +4956,7 @@ class AdScheduleRequest final :
                &_AdScheduleRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    27;
 
   friend void swap(AdScheduleRequest& a, AdScheduleRequest& b) {
     a.Swap(&b);
@@ -4613,7 +5142,7 @@ class AdIdRequest final :
                &_AdIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    28;
 
   friend void swap(AdIdRequest& a, AdIdRequest& b) {
     a.Swap(&b);
@@ -4766,7 +5295,7 @@ class AdResponse final :
                &_AdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    29;
 
   friend void swap(AdResponse& a, AdResponse& b) {
     a.Swap(&b);
@@ -4935,7 +5464,7 @@ class AdReportResponse final :
                &_AdReportResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    30;
 
   friend void swap(AdReportResponse& a, AdReportResponse& b) {
     a.Swap(&b);
@@ -5225,6 +5754,298 @@ inline void ImageResponse::set_allocated_outputpath(std::string* outputpath) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:media.ImageResponse.outputPath)
+}
+
+// -------------------------------------------------------------------
+
+// ResponsiveImageRequest
+
+// string imagePath = 1;
+inline void ResponsiveImageRequest::clear_imagepath() {
+  _impl_.imagepath_.ClearToEmpty();
+}
+inline const std::string& ResponsiveImageRequest::imagepath() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageRequest.imagePath)
+  return _internal_imagepath();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponsiveImageRequest::set_imagepath(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.imagepath_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageRequest.imagePath)
+}
+inline std::string* ResponsiveImageRequest::mutable_imagepath() {
+  std::string* _s = _internal_mutable_imagepath();
+  // @@protoc_insertion_point(field_mutable:media.ResponsiveImageRequest.imagePath)
+  return _s;
+}
+inline const std::string& ResponsiveImageRequest::_internal_imagepath() const {
+  return _impl_.imagepath_.Get();
+}
+inline void ResponsiveImageRequest::_internal_set_imagepath(const std::string& value) {
+  
+  _impl_.imagepath_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageRequest::_internal_mutable_imagepath() {
+  
+  return _impl_.imagepath_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageRequest::release_imagepath() {
+  // @@protoc_insertion_point(field_release:media.ResponsiveImageRequest.imagePath)
+  return _impl_.imagepath_.Release();
+}
+inline void ResponsiveImageRequest::set_allocated_imagepath(std::string* imagepath) {
+  if (imagepath != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.imagepath_.SetAllocated(imagepath, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.imagepath_.IsDefault()) {
+    _impl_.imagepath_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.ResponsiveImageRequest.imagePath)
+}
+
+// string objectKeyPrefix = 2;
+inline void ResponsiveImageRequest::clear_objectkeyprefix() {
+  _impl_.objectkeyprefix_.ClearToEmpty();
+}
+inline const std::string& ResponsiveImageRequest::objectkeyprefix() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageRequest.objectKeyPrefix)
+  return _internal_objectkeyprefix();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponsiveImageRequest::set_objectkeyprefix(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.objectkeyprefix_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageRequest.objectKeyPrefix)
+}
+inline std::string* ResponsiveImageRequest::mutable_objectkeyprefix() {
+  std::string* _s = _internal_mutable_objectkeyprefix();
+  // @@protoc_insertion_point(field_mutable:media.ResponsiveImageRequest.objectKeyPrefix)
+  return _s;
+}
+inline const std::string& ResponsiveImageRequest::_internal_objectkeyprefix() const {
+  return _impl_.objectkeyprefix_.Get();
+}
+inline void ResponsiveImageRequest::_internal_set_objectkeyprefix(const std::string& value) {
+  
+  _impl_.objectkeyprefix_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageRequest::_internal_mutable_objectkeyprefix() {
+  
+  return _impl_.objectkeyprefix_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageRequest::release_objectkeyprefix() {
+  // @@protoc_insertion_point(field_release:media.ResponsiveImageRequest.objectKeyPrefix)
+  return _impl_.objectkeyprefix_.Release();
+}
+inline void ResponsiveImageRequest::set_allocated_objectkeyprefix(std::string* objectkeyprefix) {
+  if (objectkeyprefix != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.objectkeyprefix_.SetAllocated(objectkeyprefix, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.objectkeyprefix_.IsDefault()) {
+    _impl_.objectkeyprefix_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.ResponsiveImageRequest.objectKeyPrefix)
+}
+
+// int32 quality = 3;
+inline void ResponsiveImageRequest::clear_quality() {
+  _impl_.quality_ = 0;
+}
+inline int32_t ResponsiveImageRequest::_internal_quality() const {
+  return _impl_.quality_;
+}
+inline int32_t ResponsiveImageRequest::quality() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageRequest.quality)
+  return _internal_quality();
+}
+inline void ResponsiveImageRequest::_internal_set_quality(int32_t value) {
+  
+  _impl_.quality_ = value;
+}
+inline void ResponsiveImageRequest::set_quality(int32_t value) {
+  _internal_set_quality(value);
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageRequest.quality)
+}
+
+// -------------------------------------------------------------------
+
+// ResponsiveImageVariant
+
+// int32 size = 1;
+inline void ResponsiveImageVariant::clear_size() {
+  _impl_.size_ = 0;
+}
+inline int32_t ResponsiveImageVariant::_internal_size() const {
+  return _impl_.size_;
+}
+inline int32_t ResponsiveImageVariant::size() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageVariant.size)
+  return _internal_size();
+}
+inline void ResponsiveImageVariant::_internal_set_size(int32_t value) {
+  
+  _impl_.size_ = value;
+}
+inline void ResponsiveImageVariant::set_size(int32_t value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageVariant.size)
+}
+
+// string url = 2;
+inline void ResponsiveImageVariant::clear_url() {
+  _impl_.url_.ClearToEmpty();
+}
+inline const std::string& ResponsiveImageVariant::url() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageVariant.url)
+  return _internal_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponsiveImageVariant::set_url(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.url_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageVariant.url)
+}
+inline std::string* ResponsiveImageVariant::mutable_url() {
+  std::string* _s = _internal_mutable_url();
+  // @@protoc_insertion_point(field_mutable:media.ResponsiveImageVariant.url)
+  return _s;
+}
+inline const std::string& ResponsiveImageVariant::_internal_url() const {
+  return _impl_.url_.Get();
+}
+inline void ResponsiveImageVariant::_internal_set_url(const std::string& value) {
+  
+  _impl_.url_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageVariant::_internal_mutable_url() {
+  
+  return _impl_.url_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageVariant::release_url() {
+  // @@protoc_insertion_point(field_release:media.ResponsiveImageVariant.url)
+  return _impl_.url_.Release();
+}
+inline void ResponsiveImageVariant::set_allocated_url(std::string* url) {
+  if (url != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.url_.SetAllocated(url, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.url_.IsDefault()) {
+    _impl_.url_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.ResponsiveImageVariant.url)
+}
+
+// -------------------------------------------------------------------
+
+// ResponsiveImageResponse
+
+// string originalUrl = 1;
+inline void ResponsiveImageResponse::clear_originalurl() {
+  _impl_.originalurl_.ClearToEmpty();
+}
+inline const std::string& ResponsiveImageResponse::originalurl() const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageResponse.originalUrl)
+  return _internal_originalurl();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ResponsiveImageResponse::set_originalurl(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.originalurl_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:media.ResponsiveImageResponse.originalUrl)
+}
+inline std::string* ResponsiveImageResponse::mutable_originalurl() {
+  std::string* _s = _internal_mutable_originalurl();
+  // @@protoc_insertion_point(field_mutable:media.ResponsiveImageResponse.originalUrl)
+  return _s;
+}
+inline const std::string& ResponsiveImageResponse::_internal_originalurl() const {
+  return _impl_.originalurl_.Get();
+}
+inline void ResponsiveImageResponse::_internal_set_originalurl(const std::string& value) {
+  
+  _impl_.originalurl_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageResponse::_internal_mutable_originalurl() {
+  
+  return _impl_.originalurl_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ResponsiveImageResponse::release_originalurl() {
+  // @@protoc_insertion_point(field_release:media.ResponsiveImageResponse.originalUrl)
+  return _impl_.originalurl_.Release();
+}
+inline void ResponsiveImageResponse::set_allocated_originalurl(std::string* originalurl) {
+  if (originalurl != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.originalurl_.SetAllocated(originalurl, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.originalurl_.IsDefault()) {
+    _impl_.originalurl_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:media.ResponsiveImageResponse.originalUrl)
+}
+
+// repeated .media.ResponsiveImageVariant variants = 2;
+inline int ResponsiveImageResponse::_internal_variants_size() const {
+  return _impl_.variants_.size();
+}
+inline int ResponsiveImageResponse::variants_size() const {
+  return _internal_variants_size();
+}
+inline void ResponsiveImageResponse::clear_variants() {
+  _impl_.variants_.Clear();
+}
+inline ::media::ResponsiveImageVariant* ResponsiveImageResponse::mutable_variants(int index) {
+  // @@protoc_insertion_point(field_mutable:media.ResponsiveImageResponse.variants)
+  return _impl_.variants_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::media::ResponsiveImageVariant >*
+ResponsiveImageResponse::mutable_variants() {
+  // @@protoc_insertion_point(field_mutable_list:media.ResponsiveImageResponse.variants)
+  return &_impl_.variants_;
+}
+inline const ::media::ResponsiveImageVariant& ResponsiveImageResponse::_internal_variants(int index) const {
+  return _impl_.variants_.Get(index);
+}
+inline const ::media::ResponsiveImageVariant& ResponsiveImageResponse::variants(int index) const {
+  // @@protoc_insertion_point(field_get:media.ResponsiveImageResponse.variants)
+  return _internal_variants(index);
+}
+inline ::media::ResponsiveImageVariant* ResponsiveImageResponse::_internal_add_variants() {
+  return _impl_.variants_.Add();
+}
+inline ::media::ResponsiveImageVariant* ResponsiveImageResponse::add_variants() {
+  ::media::ResponsiveImageVariant* _add = _internal_add_variants();
+  // @@protoc_insertion_point(field_add:media.ResponsiveImageResponse.variants)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::media::ResponsiveImageVariant >&
+ResponsiveImageResponse::variants() const {
+  // @@protoc_insertion_point(field_list:media.ResponsiveImageResponse.variants)
+  return _impl_.variants_;
 }
 
 // -------------------------------------------------------------------
@@ -8366,6 +9187,12 @@ inline void AdReportResponse::set_allocated_reportjson(std::string* reportjson) 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

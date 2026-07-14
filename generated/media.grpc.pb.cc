@@ -32,6 +32,7 @@ static const char* MediaService_method_names[] = {
   "/media.MediaService/MergeVideos",
   "/media.MediaService/ResizeImage",
   "/media.MediaService/ThumbnailImage",
+  "/media.MediaService/ProcessResponsiveImage",
   "/media.MediaService/EncodeAudio",
   "/media.MediaService/NormalizeAudio",
   "/media.MediaService/DenoiseAudio",
@@ -67,22 +68,23 @@ MediaService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_MergeVideos_(MediaService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ResizeImage_(MediaService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ThumbnailImage_(MediaService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EncodeAudio_(MediaService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_NormalizeAudio_(MediaService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DenoiseAudio_(MediaService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MergeAudio_(MediaService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TrimAudio_(MediaService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ConvertAudio_(MediaService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SubmitMediaJob_(MediaService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetMediaJob_(MediaService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UploadMedia_(MediaService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
-  , rpcmethod_CreateVideoAd_(MediaService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateImageAd_(MediaService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateAudioAd_(MediaService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ScheduleAd_(MediaService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RecordImpression_(MediaService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RecordClick_(MediaService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAdReport_(MediaService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ProcessResponsiveImage_(MediaService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EncodeAudio_(MediaService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_NormalizeAudio_(MediaService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DenoiseAudio_(MediaService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MergeAudio_(MediaService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TrimAudio_(MediaService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ConvertAudio_(MediaService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SubmitMediaJob_(MediaService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMediaJob_(MediaService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UploadMedia_(MediaService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
+  , rpcmethod_CreateVideoAd_(MediaService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateImageAd_(MediaService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateAudioAd_(MediaService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ScheduleAd_(MediaService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RecordImpression_(MediaService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RecordClick_(MediaService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAdReport_(MediaService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MediaService::Stub::Health(::grpc::ClientContext* context, const ::media::HealthRequest& request, ::media::HealthResponse* response) {
@@ -311,6 +313,29 @@ void MediaService::Stub::async::ThumbnailImage(::grpc::ClientContext* context, c
 ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* MediaService::Stub::AsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncThumbnailImageRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MediaService::Stub::ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::media::ResponsiveImageResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ProcessResponsiveImage_, context, request, response);
+}
+
+void MediaService::Stub::async::ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ProcessResponsiveImage_, context, request, response, std::move(f));
+}
+
+void MediaService::Stub::async::ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ProcessResponsiveImage_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>* MediaService::Stub::PrepareAsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::media::ResponsiveImageResponse, ::media::ResponsiveImageRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ProcessResponsiveImage_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>* MediaService::Stub::AsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncProcessResponsiveImageRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -780,22 +805,22 @@ MediaService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::ResponsiveImageRequest* req,
+             ::media::ResponsiveImageResponse* resp) {
+               return service->ProcessResponsiveImage(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::media::AudioFormatRequest* req,
              ::media::AudioResponse* resp) {
                return service->EncodeAudio(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[11],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](MediaService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::media::AudioRequest* req,
-             ::media::AudioResponse* resp) {
-               return service->NormalizeAudio(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[12],
@@ -805,10 +830,20 @@ MediaService::Service::Service() {
              ::grpc::ServerContext* ctx,
              const ::media::AudioRequest* req,
              ::media::AudioResponse* resp) {
-               return service->DenoiseAudio(ctx, req, resp);
+               return service->NormalizeAudio(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MediaService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MediaService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::media::AudioRequest* req,
+             ::media::AudioResponse* resp) {
+               return service->DenoiseAudio(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MediaService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioMergeRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -818,7 +853,7 @@ MediaService::Service::Service() {
                return service->MergeAudio(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[14],
+      MediaService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioTrimRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -828,7 +863,7 @@ MediaService::Service::Service() {
                return service->TrimAudio(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[15],
+      MediaService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AudioFormatRequest, ::media::AudioResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -838,7 +873,7 @@ MediaService::Service::Service() {
                return service->ConvertAudio(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[16],
+      MediaService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::MediaJobRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -848,7 +883,7 @@ MediaService::Service::Service() {
                return service->SubmitMediaJob(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[17],
+      MediaService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::MediaJobLookupRequest, ::media::MediaJobResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -858,7 +893,7 @@ MediaService::Service::Service() {
                return service->GetMediaJob(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[18],
+      MediaService_method_names[19],
       ::grpc::internal::RpcMethod::CLIENT_STREAMING,
       new ::grpc::internal::ClientStreamingHandler< MediaService::Service, ::media::MediaUploadChunk, ::media::MediaJobResponse>(
           [](MediaService::Service* service,
@@ -868,7 +903,7 @@ MediaService::Service::Service() {
                return service->UploadMedia(ctx, reader, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[19],
+      MediaService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -878,7 +913,7 @@ MediaService::Service::Service() {
                return service->CreateVideoAd(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[20],
+      MediaService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -888,7 +923,7 @@ MediaService::Service::Service() {
                return service->CreateImageAd(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[21],
+      MediaService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdCreateRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -898,7 +933,7 @@ MediaService::Service::Service() {
                return service->CreateAudioAd(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[22],
+      MediaService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdScheduleRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -908,7 +943,7 @@ MediaService::Service::Service() {
                return service->ScheduleAd(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[23],
+      MediaService_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -918,7 +953,7 @@ MediaService::Service::Service() {
                return service->RecordImpression(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[24],
+      MediaService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -928,7 +963,7 @@ MediaService::Service::Service() {
                return service->RecordClick(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MediaService_method_names[25],
+      MediaService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MediaService::Service, ::media::AdIdRequest, ::media::AdReportResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MediaService::Service* service,
@@ -1006,6 +1041,13 @@ MediaService::Service::~Service() {
 }
 
 ::grpc::Status MediaService::Service::ThumbnailImage(::grpc::ServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MediaService::Service::ProcessResponsiveImage(::grpc::ServerContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response) {
   (void) context;
   (void) request;
   (void) response;

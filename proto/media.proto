@@ -34,6 +34,9 @@ service MediaService {
     rpc ThumbnailImage(ImageRequest)
         returns (ImageResponse);
 
+    rpc ProcessResponsiveImage(ResponsiveImageRequest)
+        returns (ResponsiveImageResponse);
+
     rpc EncodeAudio(AudioFormatRequest)
         returns (AudioResponse);
 
@@ -100,6 +103,22 @@ message ImageRequest{
 
 message ImageResponse{
     string outputPath = 1;
+}
+
+message ResponsiveImageRequest {
+    string imagePath = 1;
+    string objectKeyPrefix = 2;
+    int32 quality = 3;
+}
+
+message ResponsiveImageVariant {
+    int32 size = 1;
+    string url = 2;
+}
+
+message ResponsiveImageResponse {
+    string originalUrl = 1;
+    repeated ResponsiveImageVariant variants = 2;
 }
 
 message VideoRequest{

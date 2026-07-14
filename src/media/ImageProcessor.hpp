@@ -12,6 +12,8 @@ public:
 
     Result<std::string> thumbnail(const std::string& inputPath, int size = 300);
 
+    Result<std::string> squareThumbnail(const std::string& inputPath, int size = 300);
+
     Result<std::string> crop(const std::string& inputPath, int x, int y, int width, int height);
 
     Result<std::string> rotate(const std::string& inputPath, double angle);

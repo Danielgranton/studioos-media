@@ -1,9 +1,22 @@
 #pragma once
 
+#include <vector>
 #include <string>
 
 #include "core/Result.hpp"
 #include "media/ImageProcessor.hpp"
+
+struct ResponsiveImageVariant
+{
+    int size = 0;
+    std::string url;
+};
+
+struct ResponsiveImageResult
+{
+    std::string originalUrl;
+    std::vector<ResponsiveImageVariant> variants;
+};
 
 class ImageService
 {
@@ -31,6 +44,11 @@ public:
     Result<std::string> saveAsAvif(const std::string& path, int quality = 80);
 
     Result<std::string> optimizePng(const std::string& path);
+
+    Result<ResponsiveImageResult> processResponsiveImage(
+        const std::string& path,
+        const std::string& objectKeyPrefix,
+        int quality = 80);
 
 private:
     ImageProcessor processor;

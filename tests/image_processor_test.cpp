@@ -47,6 +47,20 @@ int main()
         return 3;
     }
 
+    auto squareThumbnailResult = processor.squareThumbnail(inputPath.string(), 64);
+    if (!squareThumbnailResult.success || squareThumbnailResult.value.empty())
+    {
+        std::cerr << "square thumbnail failed: " << squareThumbnailResult.message << std::endl;
+        return 3;
+    }
+
+    cv::Mat squareThumbnail = cv::imread(squareThumbnailResult.value);
+    if (squareThumbnail.empty() || squareThumbnail.cols != 64 || squareThumbnail.rows != 64)
+    {
+        std::cerr << "square thumbnail dimensions are incorrect" << std::endl;
+        return 3;
+    }
+
     auto cropResult = processor.crop(inputPath.string(), 0, 0, 40, 40);
     if (!cropResult.success || cropResult.value.empty())
     {

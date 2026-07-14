@@ -34,6 +34,11 @@ public:
         const media::ImageRequest*,
         media::ImageResponse*) override;
 
+    grpc::Status ProcessResponsiveImage(
+        grpc::ServerContext*,
+        const media::ResponsiveImageRequest*,
+        media::ResponsiveImageResponse*) override;
+
     grpc::Status CompressVideo(
         grpc::ServerContext*,
         const media::VideoRequest*,

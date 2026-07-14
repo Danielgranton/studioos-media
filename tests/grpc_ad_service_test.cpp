@@ -2,6 +2,9 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
+
+#include <opencv2/opencv.hpp>
 
 #include <grpcpp/grpcpp.h>
 
@@ -16,6 +19,18 @@ void createAsset(const fs::path& path)
     std::ofstream stream(path, std::ios::binary | std::ios::trunc);
     stream << "asset";
 }
+
+void createVideoAsset(const fs::path& path)
+{
+    const std::string command =
+        "ffmpeg -y -f lavfi -i color=c=blue:s=1280x720:d=10 -f lavfi -i sine=frequency=1000:duration=10 -shortest -pix_fmt yuv420p -c:v libx264 -c:a aac \"" +
+        path.string() + "\" >/dev/null 2>&1";
+    if (std::system(command.c_str()) != 0)
+    {
+        std::cerr << "failed to create video asset" << std::endl;
+        std::exit(10);
+    }
+}
 }
 
 int main()
@@ -24,7 +39,7 @@ int main()
     fs::create_directories(tempDir);
 
     const fs::path assetPath = tempDir / "video.mp4";
-    createAsset(assetPath);
+    createVideoAsset(assetPath);
 
     MediaServer server;
     grpc::ServerContext context;

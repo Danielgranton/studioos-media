@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 
+#include <opencv2/opencv.hpp>
 #include <nlohmann/json.hpp>
 
 #include "services/AdService.hpp"
@@ -18,6 +19,29 @@ void createAsset(const fs::path& path)
     std::ofstream stream(path, std::ios::binary | std::ios::trunc);
     stream << "asset";
 }
+
+void createVideoAsset(const fs::path& path)
+{
+    const std::string command =
+        "ffmpeg -y -f lavfi -i color=c=blue:s=1280x720:d=10 -f lavfi -i sine=frequency=1000:duration=10 -shortest -pix_fmt yuv420p -c:v libx264 -c:a aac \"" +
+        path.string() + "\" >/dev/null 2>&1";
+    if (std::system(command.c_str()) != 0)
+    {
+        std::cerr << "failed to create video asset" << std::endl;
+        std::exit(10);
+    }
+}
+
+void createImageAsset(const fs::path& path)
+{
+    cv::Mat image(1080, 1920, CV_8UC3, cv::Scalar(20, 20, 220));
+    cv::putText(image, "StudioOS Ad", cv::Point(120, 540), cv::FONT_HERSHEY_SIMPLEX, 4.0, cv::Scalar(255, 255, 255), 8);
+    if (!cv::imwrite(path.string(), image))
+    {
+        std::cerr << "failed to create image asset" << std::endl;
+        std::exit(11);
+    }
+}
 }
 
 int main()
@@ -28,8 +52,8 @@ int main()
     const fs::path videoAsset = tempDir / "video.mp4";
     const fs::path imageAsset = tempDir / "image.jpg";
     const fs::path audioAsset = tempDir / "audio.mp3";
-    createAsset(videoAsset);
-    createAsset(imageAsset);
+    createVideoAsset(videoAsset);
+    createImageAsset(imageAsset);
     createAsset(audioAsset);
 
     AdService service;
@@ -41,11 +65,25 @@ int main()
         return 1;
     }
 
+    auto processedVideo = service.processVideoAd(videoAsset.string());
+    if (!processedVideo.success || !processedVideo.value.valid)
+    {
+        std::cerr << "video processing failed: " << processedVideo.message << std::endl;
+        return 11;
+    }
+
     auto imageResult = service.createImageAd(imageAsset.string(), "Banner", 8, "https://example.com/image");
     if (!imageResult.success || imageResult.value.empty())
     {
         std::cerr << "image ad creation failed: " << imageResult.message << std::endl;
         return 2;
+    }
+
+    auto processedImage = service.processImageAd(imageAsset.string());
+    if (!processedImage.success || !processedImage.value.valid)
+    {
+        std::cerr << "image processing failed: " << processedImage.message << std::endl;
+        return 12;
     }
 
     auto audioResult = service.createAudioAd(audioAsset.string(), "Spot", 20, "https://example.com/audio");

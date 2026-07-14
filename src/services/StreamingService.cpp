@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 #include "ffmpeg/FFmpeg.hpp"
 #include "utils/FileUtils.hpp"
@@ -30,6 +31,42 @@ bool writeTextFile(const std::string& path, const std::string& content)
     stream << content;
     stream.close();
     return true;
+}
+
+struct Rendition
+{
+    int width;
+    int height;
+    int videoBitrateKbps;
+    int audioBitrateKbps;
+    const char* name;
+};
+
+const std::vector<Rendition> kRenditions = {
+    {1920, 1080, 5000, 192, "1080p"},
+    {1280, 720, 3000, 128, "720p"},
+    {854, 480, 1600, 96, "480p"},
+    {640, 360, 800, 64, "360p"}
+};
+
+bool generateRendition(
+    const std::string& inputPath,
+    const std::string& directory,
+    const Rendition& rendition)
+{
+    const std::string playlist = directory + "/" + rendition.name + ".m3u8";
+    const std::string segmentPattern = directory + "/" + rendition.name + "_%03d.ts";
+    const std::string filter =
+        "scale=w=" + std::to_string(rendition.width) + ":h=" + std::to_string(rendition.height) +
+        ":force_original_aspect_ratio=decrease,pad=" + std::to_string(rendition.width) + ":" +
+        std::to_string(rendition.height) + ":(ow-iw)/2:(oh-ih)/2";
+    const std::string args =
+        "-y -i \"" + inputPath + "\" -vf \"" + filter +
+        "\" -c:v libx264 -preset veryfast -crf 23 -c:a aac -b:a " +
+        std::to_string(rendition.audioBitrateKbps) + "k -b:v " +
+        std::to_string(rendition.videoBitrateKbps) + "k -f hls -hls_time 4 -hls_playlist_type vod -hls_segment_filename \"" +
+        segmentPattern + "\" \"" + playlist + "\"";
+    return FFmpeg::run(args);
 }
 }
 
@@ -101,15 +138,23 @@ Result<std::string> StreamingService::generateAdaptiveBitrate(const std::string&
     FileUtils::createDirectory(directory);
 
     const std::string masterPlaylistPath = directory + "/master.m3u8";
-    const std::string args = "-y -i \"" + inputPath + "\" -vf scale=w=640:h=360 -c:v libx264 -preset veryfast -crf 26 -c:a aac -b:a 64k -f hls -hls_time 2 -hls_playlist_type vod -hls_segment_filename \"" + directory + "/360p_%03d.ts\" \"" + directory + "/360p.m3u8\" -vf scale=w=1280:h=720 -c:v libx264 -preset veryfast -crf 23 -c:a aac -b:a 128k -f hls -hls_time 2 -hls_playlist_type vod -hls_segment_filename \"" + directory + "/720p_%03d.ts\" \"" + directory + "/720p.m3u8\"";
+    std::ostringstream master;
+    master << "#EXTM3U\n#EXT-X-VERSION:3\n";
 
-    if (!FFmpeg::run(args))
+    for (const auto& rendition : kRenditions)
     {
-        return Result<std::string>::fail("Failed to generate adaptive bitrate stream", StatusCode::VIDEO_ERROR);
+        if (!generateRendition(inputPath, directory, rendition))
+        {
+            return Result<std::string>::fail("Failed to generate adaptive bitrate stream", StatusCode::VIDEO_ERROR);
+        }
+
+        const int bandwidth = (rendition.videoBitrateKbps + rendition.audioBitrateKbps) * 1000;
+        master << "#EXT-X-STREAM-INF:BANDWIDTH=" << bandwidth
+               << ",RESOLUTION=" << rendition.width << "x" << rendition.height << "\n"
+               << rendition.name << ".m3u8\n";
     }
 
-    const std::string masterContent = "#EXTM3U\n#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=640x360\n360p.m3u8\n#EXT-X-STREAM-INF:BANDWIDTH=2200000,RESOLUTION=1280x720\n720p.m3u8\n";
-    if (!writeTextFile(masterPlaylistPath, masterContent))
+    if (!writeTextFile(masterPlaylistPath, master.str()))
     {
         return Result<std::string>::fail("Failed to create adaptive bitrate playlist", StatusCode::INTERNAL_ERROR);
     }

@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <vector>
 
+#include <opencv2/opencv.hpp>
+
 #include "media/VideoProcessor.hpp"
 
 namespace fs = std::filesystem;
@@ -41,6 +43,86 @@ int main()
     {
         std::cerr << "compressed output was not created" << std::endl;
         return 4;
+    }
+
+    auto resizeResult = processor.resize(inputPath.string(), 128, 72);
+    if (!resizeResult.success || resizeResult.value.empty() || !fs::exists(resizeResult.value))
+    {
+        std::cerr << "resize failed: " << resizeResult.message << std::endl;
+        return 41;
+    }
+
+    const fs::path watermarkPath = tempDir / "watermark.png";
+    {
+        cv::Mat watermarkImage(24, 24, CV_8UC4, cv::Scalar(0, 255, 0, 120));
+        if (!cv::imwrite(watermarkPath.string(), watermarkImage))
+        {
+            std::cerr << "failed to create watermark image" << std::endl;
+            return 42;
+        }
+    }
+
+    auto watermarkResult = processor.watermark(inputPath.string(), watermarkPath.string(), 4, 4);
+    if (!watermarkResult.success || watermarkResult.value.empty() || !fs::exists(watermarkResult.value))
+    {
+        std::cerr << "watermark failed: " << watermarkResult.message << std::endl;
+        return 43;
+    }
+
+    auto rotateResult = processor.rotate(inputPath.string(), 90);
+    if (!rotateResult.success || rotateResult.value.empty() || !fs::exists(rotateResult.value))
+    {
+        std::cerr << "rotate failed: " << rotateResult.message << std::endl;
+        return 44;
+    }
+
+    auto normalizedResult = processor.normalizeAudio(inputPath.string());
+    if (!normalizedResult.success || normalizedResult.value.empty() || !fs::exists(normalizedResult.value))
+    {
+        std::cerr << "audio normalization failed: " << normalizedResult.message << std::endl;
+        return 45;
+    }
+
+    auto thumbnailsResult = processor.thumbnails(inputPath.string(), 4);
+    if (!thumbnailsResult.success || thumbnailsResult.value.empty() || !fs::exists(thumbnailsResult.value))
+    {
+        std::cerr << "thumbnail set failed: " << thumbnailsResult.message << std::endl;
+        return 46;
+    }
+
+    std::size_t thumbnailCount = 0;
+    for (const auto& entry : fs::directory_iterator(thumbnailsResult.value))
+    {
+        if (entry.is_regular_file())
+        {
+            ++thumbnailCount;
+        }
+    }
+    if (thumbnailCount < 4)
+    {
+        std::cerr << "expected multiple thumbnails" << std::endl;
+        return 47;
+    }
+
+    auto gifResult = processor.gifPreview(inputPath.string(), 1);
+    if (!gifResult.success || gifResult.value.empty() || !fs::exists(gifResult.value))
+    {
+        std::cerr << "gif preview failed: " << gifResult.message << std::endl;
+        return 48;
+    }
+
+    auto previewResult = processor.previewClip(inputPath.string(), 1);
+    if (!previewResult.success || previewResult.value.empty() || !fs::exists(previewResult.value))
+    {
+        std::cerr << "preview clip failed: " << previewResult.message << std::endl;
+        return 49;
+    }
+
+    auto metadataResult = processor.metadata(inputPath.string());
+    if (!metadataResult.success || metadataResult.value.width <= 0 || metadataResult.value.height <= 0)
+    {
+        std::cerr << "metadata extraction failed: " << metadataResult.message << std::endl;
+        return 50;
     }
 
     auto thumbnailResult = processor.thumbnail(inputPath.string());
@@ -108,6 +190,20 @@ int main()
     {
         std::cerr << "merged output was not created" << std::endl;
         return 14;
+    }
+
+    auto frameResult = processor.extractFrame(inputPath.string(), "0.2");
+    if (!frameResult.success || frameResult.value.empty() || !fs::exists(frameResult.value))
+    {
+        std::cerr << "frame extraction failed: " << frameResult.message << std::endl;
+        return 15;
+    }
+
+    auto adaptiveResult = processor.adaptiveStreaming(inputPath.string(), (tempDir / "abr").string());
+    if (!adaptiveResult.success || adaptiveResult.value.empty() || !fs::exists(adaptiveResult.value))
+    {
+        std::cerr << "adaptive streaming failed: " << adaptiveResult.message << std::endl;
+        return 16;
     }
 
     std::cout << "video processor smoke test passed" << std::endl;

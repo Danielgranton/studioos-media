@@ -105,6 +105,13 @@ class MediaService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>> PrepareAsyncThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>>(PrepareAsyncThumbnailImageRaw(context, request, cq));
     }
+    virtual ::grpc::Status ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::media::ResponsiveImageResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>> AsyncProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>>(AsyncProcessResponsiveImageRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>> PrepareAsyncProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>>(PrepareAsyncProcessResponsiveImageRaw(context, request, cq));
+    }
     virtual ::grpc::Status EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::media::AudioResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>> AsyncEncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>>(AsyncEncodeAudioRaw(context, request, cq));
@@ -242,6 +249,8 @@ class MediaService final {
       virtual void ResizeImage(::grpc::ClientContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void NormalizeAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -298,6 +307,8 @@ class MediaService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>* PrepareAsyncResizeImageRaw(::grpc::ClientContext* context, const ::media::ImageResizeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>* AsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ImageResponse>* PrepareAsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>* AsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::ResponsiveImageResponse>* PrepareAsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>* AsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>* PrepareAsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::media::AudioResponse>* AsyncNormalizeAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -404,6 +415,13 @@ class MediaService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>> PrepareAsyncThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>>(PrepareAsyncThumbnailImageRaw(context, request, cq));
+    }
+    ::grpc::Status ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::media::ResponsiveImageResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>> AsyncProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>>(AsyncProcessResponsiveImageRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>> PrepareAsyncProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>>(PrepareAsyncProcessResponsiveImageRaw(context, request, cq));
     }
     ::grpc::Status EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::media::AudioResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>> AsyncEncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) {
@@ -542,6 +560,8 @@ class MediaService final {
       void ResizeImage(::grpc::ClientContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, std::function<void(::grpc::Status)>) override;
       void ThumbnailImage(::grpc::ClientContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, std::function<void(::grpc::Status)>) override;
+      void ProcessResponsiveImage(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) override;
       void EncodeAudio(::grpc::ClientContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void NormalizeAudio(::grpc::ClientContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response, std::function<void(::grpc::Status)>) override;
@@ -604,6 +624,8 @@ class MediaService final {
     ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* PrepareAsyncResizeImageRaw(::grpc::ClientContext* context, const ::media::ImageResizeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* AsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::ImageResponse>* PrepareAsyncThumbnailImageRaw(::grpc::ClientContext* context, const ::media::ImageRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>* AsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::media::ResponsiveImageResponse>* PrepareAsyncProcessResponsiveImageRaw(::grpc::ClientContext* context, const ::media::ResponsiveImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* AsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* PrepareAsyncEncodeAudioRaw(::grpc::ClientContext* context, const ::media::AudioFormatRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::media::AudioResponse>* AsyncNormalizeAudioRaw(::grpc::ClientContext* context, const ::media::AudioRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -647,6 +669,7 @@ class MediaService final {
     const ::grpc::internal::RpcMethod rpcmethod_MergeVideos_;
     const ::grpc::internal::RpcMethod rpcmethod_ResizeImage_;
     const ::grpc::internal::RpcMethod rpcmethod_ThumbnailImage_;
+    const ::grpc::internal::RpcMethod rpcmethod_ProcessResponsiveImage_;
     const ::grpc::internal::RpcMethod rpcmethod_EncodeAudio_;
     const ::grpc::internal::RpcMethod rpcmethod_NormalizeAudio_;
     const ::grpc::internal::RpcMethod rpcmethod_DenoiseAudio_;
@@ -680,6 +703,7 @@ class MediaService final {
     virtual ::grpc::Status MergeVideos(::grpc::ServerContext* context, const ::media::VideoMergeRequest* request, ::media::VideoResponse* response);
     virtual ::grpc::Status ResizeImage(::grpc::ServerContext* context, const ::media::ImageResizeRequest* request, ::media::ImageResponse* response);
     virtual ::grpc::Status ThumbnailImage(::grpc::ServerContext* context, const ::media::ImageRequest* request, ::media::ImageResponse* response);
+    virtual ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response);
     virtual ::grpc::Status EncodeAudio(::grpc::ServerContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response);
     virtual ::grpc::Status NormalizeAudio(::grpc::ServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response);
     virtual ::grpc::Status DenoiseAudio(::grpc::ServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response);
@@ -898,12 +922,32 @@ class MediaService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestProcessResponsiveImage(::grpc::ServerContext* context, ::media::ResponsiveImageRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::ResponsiveImageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_EncodeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -914,7 +958,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEncodeAudio(::grpc::ServerContext* context, ::media::AudioFormatRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -923,7 +967,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_NormalizeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -934,7 +978,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestNormalizeAudio(::grpc::ServerContext* context, ::media::AudioRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -943,7 +987,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_DenoiseAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -954,7 +998,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDenoiseAudio(::grpc::ServerContext* context, ::media::AudioRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -963,7 +1007,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_MergeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -974,7 +1018,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMergeAudio(::grpc::ServerContext* context, ::media::AudioMergeRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -983,7 +1027,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_TrimAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -994,7 +1038,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTrimAudio(::grpc::ServerContext* context, ::media::AudioTrimRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1003,7 +1047,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_ConvertAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1014,7 +1058,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestConvertAudio(::grpc::ServerContext* context, ::media::AudioFormatRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AudioResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1023,7 +1067,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_SubmitMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1034,7 +1078,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSubmitMediaJob(::grpc::ServerContext* context, ::media::MediaJobRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::MediaJobResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1043,7 +1087,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_GetMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1054,7 +1098,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetMediaJob(::grpc::ServerContext* context, ::media::MediaJobLookupRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::MediaJobResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1063,7 +1107,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UploadMedia() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_UploadMedia() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1074,7 +1118,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUploadMedia(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::media::MediaJobResponse, ::media::MediaUploadChunk>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncClientStreaming(18, context, reader, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncClientStreaming(19, context, reader, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1083,7 +1127,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_CreateVideoAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1094,7 +1138,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateVideoAd(::grpc::ServerContext* context, ::media::AdCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1103,7 +1147,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_CreateImageAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1114,7 +1158,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateImageAd(::grpc::ServerContext* context, ::media::AdCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1123,7 +1167,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_CreateAudioAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1134,7 +1178,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateAudioAd(::grpc::ServerContext* context, ::media::AdCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1143,7 +1187,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_ScheduleAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1154,7 +1198,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestScheduleAd(::grpc::ServerContext* context, ::media::AdScheduleRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1163,7 +1207,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_RecordImpression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1174,7 +1218,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRecordImpression(::grpc::ServerContext* context, ::media::AdIdRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1183,7 +1227,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RecordClick() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_RecordClick() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1194,7 +1238,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRecordClick(::grpc::ServerContext* context, ::media::AdIdRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1203,7 +1247,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_GetAdReport() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1214,10 +1258,10 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAdReport(::grpc::ServerContext* context, ::media::AdIdRequest* request, ::grpc::ServerAsyncResponseWriter< ::media::AdReportResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Health<WithAsyncMethod_CompressImage<WithAsyncMethod_CompressVideo<WithAsyncMethod_GenerateThumbnail<WithAsyncMethod_ExtractAudio<WithAsyncMethod_ConvertVideo<WithAsyncMethod_TrimVideo<WithAsyncMethod_MergeVideos<WithAsyncMethod_ResizeImage<WithAsyncMethod_ThumbnailImage<WithAsyncMethod_EncodeAudio<WithAsyncMethod_NormalizeAudio<WithAsyncMethod_DenoiseAudio<WithAsyncMethod_MergeAudio<WithAsyncMethod_TrimAudio<WithAsyncMethod_ConvertAudio<WithAsyncMethod_SubmitMediaJob<WithAsyncMethod_GetMediaJob<WithAsyncMethod_UploadMedia<WithAsyncMethod_CreateVideoAd<WithAsyncMethod_CreateImageAd<WithAsyncMethod_CreateAudioAd<WithAsyncMethod_ScheduleAd<WithAsyncMethod_RecordImpression<WithAsyncMethod_RecordClick<WithAsyncMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_Health<WithAsyncMethod_CompressImage<WithAsyncMethod_CompressVideo<WithAsyncMethod_GenerateThumbnail<WithAsyncMethod_ExtractAudio<WithAsyncMethod_ConvertVideo<WithAsyncMethod_TrimVideo<WithAsyncMethod_MergeVideos<WithAsyncMethod_ResizeImage<WithAsyncMethod_ThumbnailImage<WithAsyncMethod_ProcessResponsiveImage<WithAsyncMethod_EncodeAudio<WithAsyncMethod_NormalizeAudio<WithAsyncMethod_DenoiseAudio<WithAsyncMethod_MergeAudio<WithAsyncMethod_TrimAudio<WithAsyncMethod_ConvertAudio<WithAsyncMethod_SubmitMediaJob<WithAsyncMethod_GetMediaJob<WithAsyncMethod_UploadMedia<WithAsyncMethod_CreateVideoAd<WithAsyncMethod_CreateImageAd<WithAsyncMethod_CreateAudioAd<WithAsyncMethod_ScheduleAd<WithAsyncMethod_RecordImpression<WithAsyncMethod_RecordClick<WithAsyncMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_Health : public BaseClass {
    private:
@@ -1489,18 +1533,45 @@ class MediaService final {
       ::grpc::CallbackServerContext* /*context*/, const ::media::ImageRequest* /*request*/, ::media::ImageResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::media::ResponsiveImageRequest* request, ::media::ResponsiveImageResponse* response) { return this->ProcessResponsiveImage(context, request, response); }));}
+    void SetMessageAllocatorFor_ProcessResponsiveImage(
+        ::grpc::MessageAllocator< ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ProcessResponsiveImage(
+      ::grpc::CallbackServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodCallback(10,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioFormatRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response) { return this->EncodeAudio(context, request, response); }));}
     void SetMessageAllocatorFor_EncodeAudio(
         ::grpc::MessageAllocator< ::media::AudioFormatRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioFormatRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1521,13 +1592,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response) { return this->NormalizeAudio(context, request, response); }));}
     void SetMessageAllocatorFor_NormalizeAudio(
         ::grpc::MessageAllocator< ::media::AudioRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1548,13 +1619,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodCallback(12,
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioRequest* request, ::media::AudioResponse* response) { return this->DenoiseAudio(context, request, response); }));}
     void SetMessageAllocatorFor_DenoiseAudio(
         ::grpc::MessageAllocator< ::media::AudioRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1575,13 +1646,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioMergeRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioMergeRequest* request, ::media::AudioResponse* response) { return this->MergeAudio(context, request, response); }));}
     void SetMessageAllocatorFor_MergeAudio(
         ::grpc::MessageAllocator< ::media::AudioMergeRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioMergeRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1602,13 +1673,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodCallback(14,
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioTrimRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioTrimRequest* request, ::media::AudioResponse* response) { return this->TrimAudio(context, request, response); }));}
     void SetMessageAllocatorFor_TrimAudio(
         ::grpc::MessageAllocator< ::media::AudioTrimRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioTrimRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1629,13 +1700,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AudioFormatRequest, ::media::AudioResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AudioFormatRequest* request, ::media::AudioResponse* response) { return this->ConvertAudio(context, request, response); }));}
     void SetMessageAllocatorFor_ConvertAudio(
         ::grpc::MessageAllocator< ::media::AudioFormatRequest, ::media::AudioResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AudioFormatRequest, ::media::AudioResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1656,13 +1727,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::media::MediaJobRequest, ::media::MediaJobResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::MediaJobRequest* request, ::media::MediaJobResponse* response) { return this->SubmitMediaJob(context, request, response); }));}
     void SetMessageAllocatorFor_SubmitMediaJob(
         ::grpc::MessageAllocator< ::media::MediaJobRequest, ::media::MediaJobResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::MediaJobRequest, ::media::MediaJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1683,13 +1754,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::media::MediaJobLookupRequest, ::media::MediaJobResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::MediaJobLookupRequest* request, ::media::MediaJobResponse* response) { return this->GetMediaJob(context, request, response); }));}
     void SetMessageAllocatorFor_GetMediaJob(
         ::grpc::MessageAllocator< ::media::MediaJobLookupRequest, ::media::MediaJobResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::MediaJobLookupRequest, ::media::MediaJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1710,7 +1781,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UploadMedia() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackClientStreamingHandler< ::media::MediaUploadChunk, ::media::MediaJobResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, ::media::MediaJobResponse* response) { return this->UploadMedia(context, response); }));
@@ -1732,13 +1803,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) { return this->CreateVideoAd(context, request, response); }));}
     void SetMessageAllocatorFor_CreateVideoAd(
         ::grpc::MessageAllocator< ::media::AdCreateRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1759,13 +1830,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) { return this->CreateImageAd(context, request, response); }));}
     void SetMessageAllocatorFor_CreateImageAd(
         ::grpc::MessageAllocator< ::media::AdCreateRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1786,13 +1857,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodCallback(21,
+      ::grpc::Service::MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdCreateRequest* request, ::media::AdResponse* response) { return this->CreateAudioAd(context, request, response); }));}
     void SetMessageAllocatorFor_CreateAudioAd(
         ::grpc::MessageAllocator< ::media::AdCreateRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdCreateRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1813,13 +1884,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodCallback(22,
+      ::grpc::Service::MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdScheduleRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdScheduleRequest* request, ::media::AdResponse* response) { return this->ScheduleAd(context, request, response); }));}
     void SetMessageAllocatorFor_ScheduleAd(
         ::grpc::MessageAllocator< ::media::AdScheduleRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdScheduleRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1840,13 +1911,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodCallback(23,
+      ::grpc::Service::MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response) { return this->RecordImpression(context, request, response); }));}
     void SetMessageAllocatorFor_RecordImpression(
         ::grpc::MessageAllocator< ::media::AdIdRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1867,13 +1938,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RecordClick() {
-      ::grpc::Service::MarkMethodCallback(24,
+      ::grpc::Service::MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdIdRequest* request, ::media::AdResponse* response) { return this->RecordClick(context, request, response); }));}
     void SetMessageAllocatorFor_RecordClick(
         ::grpc::MessageAllocator< ::media::AdIdRequest, ::media::AdResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1894,13 +1965,13 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdReportResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::media::AdIdRequest* request, ::media::AdReportResponse* response) { return this->GetAdReport(context, request, response); }));}
     void SetMessageAllocatorFor_GetAdReport(
         ::grpc::MessageAllocator< ::media::AdIdRequest, ::media::AdReportResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::media::AdIdRequest, ::media::AdReportResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1915,7 +1986,7 @@ class MediaService final {
     virtual ::grpc::ServerUnaryReactor* GetAdReport(
       ::grpc::CallbackServerContext* /*context*/, const ::media::AdIdRequest* /*request*/, ::media::AdReportResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_Health<WithCallbackMethod_CompressImage<WithCallbackMethod_CompressVideo<WithCallbackMethod_GenerateThumbnail<WithCallbackMethod_ExtractAudio<WithCallbackMethod_ConvertVideo<WithCallbackMethod_TrimVideo<WithCallbackMethod_MergeVideos<WithCallbackMethod_ResizeImage<WithCallbackMethod_ThumbnailImage<WithCallbackMethod_EncodeAudio<WithCallbackMethod_NormalizeAudio<WithCallbackMethod_DenoiseAudio<WithCallbackMethod_MergeAudio<WithCallbackMethod_TrimAudio<WithCallbackMethod_ConvertAudio<WithCallbackMethod_SubmitMediaJob<WithCallbackMethod_GetMediaJob<WithCallbackMethod_UploadMedia<WithCallbackMethod_CreateVideoAd<WithCallbackMethod_CreateImageAd<WithCallbackMethod_CreateAudioAd<WithCallbackMethod_ScheduleAd<WithCallbackMethod_RecordImpression<WithCallbackMethod_RecordClick<WithCallbackMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_Health<WithCallbackMethod_CompressImage<WithCallbackMethod_CompressVideo<WithCallbackMethod_GenerateThumbnail<WithCallbackMethod_ExtractAudio<WithCallbackMethod_ConvertVideo<WithCallbackMethod_TrimVideo<WithCallbackMethod_MergeVideos<WithCallbackMethod_ResizeImage<WithCallbackMethod_ThumbnailImage<WithCallbackMethod_ProcessResponsiveImage<WithCallbackMethod_EncodeAudio<WithCallbackMethod_NormalizeAudio<WithCallbackMethod_DenoiseAudio<WithCallbackMethod_MergeAudio<WithCallbackMethod_TrimAudio<WithCallbackMethod_ConvertAudio<WithCallbackMethod_SubmitMediaJob<WithCallbackMethod_GetMediaJob<WithCallbackMethod_UploadMedia<WithCallbackMethod_CreateVideoAd<WithCallbackMethod_CreateImageAd<WithCallbackMethod_CreateAudioAd<WithCallbackMethod_ScheduleAd<WithCallbackMethod_RecordImpression<WithCallbackMethod_RecordClick<WithCallbackMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_Health : public BaseClass {
@@ -2088,12 +2159,29 @@ class MediaService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_EncodeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2110,7 +2198,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_NormalizeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2127,7 +2215,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_DenoiseAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2144,7 +2232,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_MergeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2161,7 +2249,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_TrimAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2178,7 +2266,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_ConvertAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2195,7 +2283,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_SubmitMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2212,7 +2300,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_GetMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2229,7 +2317,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UploadMedia() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_UploadMedia() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2246,7 +2334,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_CreateVideoAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2263,7 +2351,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_CreateImageAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2280,7 +2368,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_CreateAudioAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2297,7 +2385,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_ScheduleAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2314,7 +2402,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_RecordImpression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2331,7 +2419,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RecordClick() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_RecordClick() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2348,7 +2436,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_GetAdReport() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2560,12 +2648,32 @@ class MediaService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestProcessResponsiveImage(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_EncodeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2576,7 +2684,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEncodeAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2585,7 +2693,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_NormalizeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2596,7 +2704,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestNormalizeAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2605,7 +2713,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_DenoiseAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2616,7 +2724,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDenoiseAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2625,7 +2733,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_MergeAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2636,7 +2744,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMergeAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2645,7 +2753,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_TrimAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2656,7 +2764,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTrimAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2665,7 +2773,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_ConvertAudio() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2676,7 +2784,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestConvertAudio(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2685,7 +2793,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_SubmitMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2696,7 +2804,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSubmitMediaJob(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2705,7 +2813,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_GetMediaJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2716,7 +2824,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetMediaJob(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2725,7 +2833,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UploadMedia() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_UploadMedia() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2736,7 +2844,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUploadMedia(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncClientStreaming(18, context, reader, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncClientStreaming(19, context, reader, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2745,7 +2853,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_CreateVideoAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2756,7 +2864,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateVideoAd(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2765,7 +2873,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_CreateImageAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2776,7 +2884,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateImageAd(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2785,7 +2893,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_CreateAudioAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2796,7 +2904,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateAudioAd(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2805,7 +2913,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_ScheduleAd() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2816,7 +2924,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestScheduleAd(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2825,7 +2933,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_RecordImpression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2836,7 +2944,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRecordImpression(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2845,7 +2953,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RecordClick() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_RecordClick() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2856,7 +2964,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRecordClick(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2865,7 +2973,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_GetAdReport() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2876,7 +2984,7 @@ class MediaService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAdReport(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3100,12 +3208,34 @@ class MediaService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodRawCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ProcessResponsiveImage(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ProcessResponsiveImage(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->EncodeAudio(context, request, response); }));
@@ -3127,7 +3257,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->NormalizeAudio(context, request, response); }));
@@ -3149,7 +3279,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DenoiseAudio(context, request, response); }));
@@ -3171,7 +3301,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->MergeAudio(context, request, response); }));
@@ -3193,7 +3323,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->TrimAudio(context, request, response); }));
@@ -3215,7 +3345,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ConvertAudio(context, request, response); }));
@@ -3237,7 +3367,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SubmitMediaJob(context, request, response); }));
@@ -3259,7 +3389,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetMediaJob(context, request, response); }));
@@ -3281,7 +3411,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UploadMedia() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackClientStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, ::grpc::ByteBuffer* response) { return this->UploadMedia(context, response); }));
@@ -3303,7 +3433,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateVideoAd(context, request, response); }));
@@ -3325,7 +3455,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateImageAd(context, request, response); }));
@@ -3347,7 +3477,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+      ::grpc::Service::MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateAudioAd(context, request, response); }));
@@ -3369,7 +3499,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+      ::grpc::Service::MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ScheduleAd(context, request, response); }));
@@ -3391,7 +3521,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+      ::grpc::Service::MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RecordImpression(context, request, response); }));
@@ -3413,7 +3543,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RecordClick() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+      ::grpc::Service::MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RecordClick(context, request, response); }));
@@ -3435,7 +3565,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAdReport(context, request, response); }));
@@ -3722,12 +3852,39 @@ class MediaService final {
     virtual ::grpc::Status StreamedThumbnailImage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::ImageRequest,::media::ImageResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_ProcessResponsiveImage : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ProcessResponsiveImage() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::media::ResponsiveImageRequest, ::media::ResponsiveImageResponse>* streamer) {
+                       return this->StreamedProcessResponsiveImage(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ProcessResponsiveImage() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ProcessResponsiveImage(::grpc::ServerContext* /*context*/, const ::media::ResponsiveImageRequest* /*request*/, ::media::ResponsiveImageResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedProcessResponsiveImage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::ResponsiveImageRequest,::media::ResponsiveImageResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_EncodeAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_EncodeAudio() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioFormatRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3754,7 +3911,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NormalizeAudio() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3781,7 +3938,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DenoiseAudio() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3808,7 +3965,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_MergeAudio() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioMergeRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3835,7 +3992,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_TrimAudio() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioTrimRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3862,7 +4019,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ConvertAudio() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AudioFormatRequest, ::media::AudioResponse>(
             [this](::grpc::ServerContext* context,
@@ -3889,7 +4046,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SubmitMediaJob() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::MediaJobRequest, ::media::MediaJobResponse>(
             [this](::grpc::ServerContext* context,
@@ -3916,7 +4073,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetMediaJob() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::MediaJobLookupRequest, ::media::MediaJobResponse>(
             [this](::grpc::ServerContext* context,
@@ -3943,7 +4100,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateVideoAd() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdCreateRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -3970,7 +4127,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateImageAd() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdCreateRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -3997,7 +4154,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateAudioAd() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdCreateRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -4024,7 +4181,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ScheduleAd() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdScheduleRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -4051,7 +4208,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RecordImpression() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdIdRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -4078,7 +4235,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RecordClick() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdIdRequest, ::media::AdResponse>(
             [this](::grpc::ServerContext* context,
@@ -4105,7 +4262,7 @@ class MediaService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetAdReport() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler<
           ::media::AdIdRequest, ::media::AdReportResponse>(
             [this](::grpc::ServerContext* context,
@@ -4126,9 +4283,9 @@ class MediaService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetAdReport(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::media::AdIdRequest,::media::AdReportResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<WithStreamedUnaryMethod_ConvertVideo<WithStreamedUnaryMethod_TrimVideo<WithStreamedUnaryMethod_MergeVideos<WithStreamedUnaryMethod_ResizeImage<WithStreamedUnaryMethod_ThumbnailImage<WithStreamedUnaryMethod_EncodeAudio<WithStreamedUnaryMethod_NormalizeAudio<WithStreamedUnaryMethod_DenoiseAudio<WithStreamedUnaryMethod_MergeAudio<WithStreamedUnaryMethod_TrimAudio<WithStreamedUnaryMethod_ConvertAudio<WithStreamedUnaryMethod_SubmitMediaJob<WithStreamedUnaryMethod_GetMediaJob<WithStreamedUnaryMethod_CreateVideoAd<WithStreamedUnaryMethod_CreateImageAd<WithStreamedUnaryMethod_CreateAudioAd<WithStreamedUnaryMethod_ScheduleAd<WithStreamedUnaryMethod_RecordImpression<WithStreamedUnaryMethod_RecordClick<WithStreamedUnaryMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<WithStreamedUnaryMethod_ConvertVideo<WithStreamedUnaryMethod_TrimVideo<WithStreamedUnaryMethod_MergeVideos<WithStreamedUnaryMethod_ResizeImage<WithStreamedUnaryMethod_ThumbnailImage<WithStreamedUnaryMethod_ProcessResponsiveImage<WithStreamedUnaryMethod_EncodeAudio<WithStreamedUnaryMethod_NormalizeAudio<WithStreamedUnaryMethod_DenoiseAudio<WithStreamedUnaryMethod_MergeAudio<WithStreamedUnaryMethod_TrimAudio<WithStreamedUnaryMethod_ConvertAudio<WithStreamedUnaryMethod_SubmitMediaJob<WithStreamedUnaryMethod_GetMediaJob<WithStreamedUnaryMethod_CreateVideoAd<WithStreamedUnaryMethod_CreateImageAd<WithStreamedUnaryMethod_CreateAudioAd<WithStreamedUnaryMethod_ScheduleAd<WithStreamedUnaryMethod_RecordImpression<WithStreamedUnaryMethod_RecordClick<WithStreamedUnaryMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<WithStreamedUnaryMethod_ConvertVideo<WithStreamedUnaryMethod_TrimVideo<WithStreamedUnaryMethod_MergeVideos<WithStreamedUnaryMethod_ResizeImage<WithStreamedUnaryMethod_ThumbnailImage<WithStreamedUnaryMethod_EncodeAudio<WithStreamedUnaryMethod_NormalizeAudio<WithStreamedUnaryMethod_DenoiseAudio<WithStreamedUnaryMethod_MergeAudio<WithStreamedUnaryMethod_TrimAudio<WithStreamedUnaryMethod_ConvertAudio<WithStreamedUnaryMethod_SubmitMediaJob<WithStreamedUnaryMethod_GetMediaJob<WithStreamedUnaryMethod_CreateVideoAd<WithStreamedUnaryMethod_CreateImageAd<WithStreamedUnaryMethod_CreateAudioAd<WithStreamedUnaryMethod_ScheduleAd<WithStreamedUnaryMethod_RecordImpression<WithStreamedUnaryMethod_RecordClick<WithStreamedUnaryMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_Health<WithStreamedUnaryMethod_CompressImage<WithStreamedUnaryMethod_CompressVideo<WithStreamedUnaryMethod_GenerateThumbnail<WithStreamedUnaryMethod_ExtractAudio<WithStreamedUnaryMethod_ConvertVideo<WithStreamedUnaryMethod_TrimVideo<WithStreamedUnaryMethod_MergeVideos<WithStreamedUnaryMethod_ResizeImage<WithStreamedUnaryMethod_ThumbnailImage<WithStreamedUnaryMethod_ProcessResponsiveImage<WithStreamedUnaryMethod_EncodeAudio<WithStreamedUnaryMethod_NormalizeAudio<WithStreamedUnaryMethod_DenoiseAudio<WithStreamedUnaryMethod_MergeAudio<WithStreamedUnaryMethod_TrimAudio<WithStreamedUnaryMethod_ConvertAudio<WithStreamedUnaryMethod_SubmitMediaJob<WithStreamedUnaryMethod_GetMediaJob<WithStreamedUnaryMethod_CreateVideoAd<WithStreamedUnaryMethod_CreateImageAd<WithStreamedUnaryMethod_CreateAudioAd<WithStreamedUnaryMethod_ScheduleAd<WithStreamedUnaryMethod_RecordImpression<WithStreamedUnaryMethod_RecordClick<WithStreamedUnaryMethod_GetAdReport<Service > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 class MediaCallbackService final {

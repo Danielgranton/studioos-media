@@ -3,9 +3,11 @@
 #include <chrono>
 #include <mutex>
 #include <string>
+#include <vector>
 #include <unordered_map>
 
 #include "core/Result.hpp"
+#include "media/VideoProcessor.hpp"
 
 class AdService
 {
@@ -21,6 +23,26 @@ public:
     {
         std::size_t impressions = 0;
         std::size_t clicks = 0;
+    };
+
+    struct ProcessedAd
+    {
+        std::string originalAsset;
+        std::string normalizedVideo;
+        std::string variant1080;
+        std::string variant720;
+        std::string variant480;
+        std::string variant360;
+        std::string hlsManifest;
+        std::string dashManifest;
+        std::string thumbnail;
+        std::string poster;
+        std::string preview;
+        std::string metadataJson;
+        std::string checksum;
+        double qualityScore = 0.0;
+        bool valid = false;
+        std::vector<std::string> warnings;
     };
 
     Result<std::string> createVideoAd(
@@ -57,6 +79,14 @@ public:
 
     Result<std::string> report(const std::string& adId) const;
 
+    Result<ProcessedAd> validateVideoAd(const std::string& assetPath);
+
+    Result<ProcessedAd> processVideoAd(const std::string& assetPath);
+
+    Result<ProcessedAd> validateImageAd(const std::string& assetPath);
+
+    Result<ProcessedAd> processImageAd(const std::string& assetPath);
+
 private:
     struct AdCreative
     {
@@ -66,6 +96,7 @@ private:
         std::string title;
         std::string clickUrl;
         int durationSeconds = 0;
+        ProcessedAd processed;
     };
 
     struct AdSchedule

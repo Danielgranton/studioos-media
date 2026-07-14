@@ -152,6 +152,57 @@ Result<std::string> processMediaJob(
     {
         processingResult = videoService.compress(localInputPath);
     }
+    else if (containsOperation(job.operation, "video.resize"))
+    {
+        const int width = params.value("width", 1920);
+        const int height = params.value("height", 1080);
+        processingResult = videoService.resize(localInputPath, width, height);
+    }
+    else if (containsOperation(job.operation, "video.watermark"))
+    {
+        const std::string watermarkPath = params.value("watermarkPath", std::string());
+        const int x = params.value("x", 24);
+        const int y = params.value("y", 24);
+        processingResult = videoService.watermark(localInputPath, watermarkPath, x, y);
+    }
+    else if (containsOperation(job.operation, "video.rotate"))
+    {
+        const int degrees = params.value("degrees", 0);
+        processingResult = videoService.rotate(localInputPath, degrees);
+    }
+    else if (containsOperation(job.operation, "video.normalizeaudio"))
+    {
+        processingResult = videoService.normalizeAudio(localInputPath);
+    }
+    else if (containsOperation(job.operation, "video.generatethumbnails"))
+    {
+        const int count = params.value("count", 4);
+        processingResult = videoService.thumbnails(localInputPath, count);
+    }
+    else if (containsOperation(job.operation, "video.gifpreview"))
+    {
+        const int durationSeconds = params.value("durationSeconds", 5);
+        processingResult = videoService.gifPreview(localInputPath, durationSeconds);
+    }
+    else if (containsOperation(job.operation, "video.previewclip"))
+    {
+        const int durationSeconds = params.value("durationSeconds", 10);
+        processingResult = videoService.previewClip(localInputPath, durationSeconds);
+    }
+    else if (containsOperation(job.operation, "video.adaptivestreaming"))
+    {
+        const std::string outputDirectory = params.value("outputDirectory", std::string());
+        processingResult = videoService.adaptiveStreaming(localInputPath, outputDirectory);
+    }
+    else if (containsOperation(job.operation, "video.metadata"))
+    {
+        processingResult = videoService.metadata(localInputPath);
+    }
+    else if (containsOperation(job.operation, "video.extractframe"))
+    {
+        const std::string timestamp = params.value("timestamp", std::string("00:00:00"));
+        processingResult = videoService.extractFrame(localInputPath, timestamp);
+    }
     else if (containsOperation(job.operation, "video.generatethumbnail") || containsOperation(job.operation, "video.thumbnail"))
     {
         processingResult = videoService.thumbnail(localInputPath);

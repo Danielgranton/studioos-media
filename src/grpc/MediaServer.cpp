@@ -75,6 +75,32 @@ grpc::Status MediaServer::CompressImage(
     return grpc::Status::OK;
 }
 
+grpc::Status MediaServer::ProcessResponsiveImage(
+    grpc::ServerContext*,
+    const media::ResponsiveImageRequest* request,
+    media::ResponsiveImageResponse* response)
+{
+    auto result = imageService.processResponsiveImage(
+        request->imagepath(),
+        request->objectkeyprefix(),
+        request->quality() > 0 ? request->quality() : 80);
+
+    if (!result.success)
+    {
+        return makeError(result, "Responsive image processing failed");
+    }
+
+    response->set_originalurl(result.value.originalUrl);
+    for (const auto& variant : result.value.variants)
+    {
+        auto* out = response->add_variants();
+        out->set_size(variant.size);
+        out->set_url(variant.url);
+    }
+
+    return grpc::Status::OK;
+}
+
 grpc::Status MediaServer::CompressVideo(
     grpc::ServerContext*,
     const media::VideoRequest* request,

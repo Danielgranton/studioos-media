@@ -71,6 +71,49 @@ struct ImageResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ImageResponseDefaultTypeInternal _ImageResponse_default_instance_;
+PROTOBUF_CONSTEXPR ResponsiveImageRequest::ResponsiveImageRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.imagepath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.objectkeyprefix_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.quality_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ResponsiveImageRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResponsiveImageRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResponsiveImageRequestDefaultTypeInternal() {}
+  union {
+    ResponsiveImageRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResponsiveImageRequestDefaultTypeInternal _ResponsiveImageRequest_default_instance_;
+PROTOBUF_CONSTEXPR ResponsiveImageVariant::ResponsiveImageVariant(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.url_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.size_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ResponsiveImageVariantDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResponsiveImageVariantDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResponsiveImageVariantDefaultTypeInternal() {}
+  union {
+    ResponsiveImageVariant _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResponsiveImageVariantDefaultTypeInternal _ResponsiveImageVariant_default_instance_;
+PROTOBUF_CONSTEXPR ResponsiveImageResponse::ResponsiveImageResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.variants_)*/{}
+  , /*decltype(_impl_.originalurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ResponsiveImageResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResponsiveImageResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResponsiveImageResponseDefaultTypeInternal() {}
+  union {
+    ResponsiveImageResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResponsiveImageResponseDefaultTypeInternal _ResponsiveImageResponse_default_instance_;
 PROTOBUF_CONSTEXPR VideoRequest::VideoRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.videopath_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -424,7 +467,7 @@ struct AdReportResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AdReportResponseDefaultTypeInternal _AdReportResponse_default_instance_;
 }  // namespace media
-static ::_pb::Metadata file_level_metadata_media_2eproto[28];
+static ::_pb::Metadata file_level_metadata_media_2eproto[31];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_media_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_media_2eproto = nullptr;
 
@@ -456,6 +499,31 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::media::ImageResponse, _impl_.outputpath_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageRequest, _impl_.imagepath_),
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageRequest, _impl_.objectkeyprefix_),
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageRequest, _impl_.quality_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageVariant, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageVariant, _impl_.size_),
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageVariant, _impl_.url_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageResponse, _impl_.originalurl_),
+  PROTOBUF_FIELD_OFFSET(::media::ResponsiveImageResponse, _impl_.variants_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::VideoRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -671,30 +739,33 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 6, -1, -1, sizeof(::media::HealthResponse)},
   { 13, -1, -1, sizeof(::media::ImageRequest)},
   { 20, -1, -1, sizeof(::media::ImageResponse)},
-  { 27, -1, -1, sizeof(::media::VideoRequest)},
-  { 34, -1, -1, sizeof(::media::VideoResponse)},
-  { 41, -1, -1, sizeof(::media::ThumbnailResponse)},
-  { 48, -1, -1, sizeof(::media::AudioResponse)},
-  { 55, -1, -1, sizeof(::media::ImageResizeRequest)},
-  { 64, -1, -1, sizeof(::media::VideoConvertRequest)},
-  { 72, -1, -1, sizeof(::media::VideoTrimRequest)},
-  { 81, -1, -1, sizeof(::media::VideoMergeRequest)},
-  { 89, -1, -1, sizeof(::media::AudioRequest)},
-  { 96, -1, -1, sizeof(::media::AudioFormatRequest)},
-  { 104, -1, -1, sizeof(::media::AudioTrimRequest)},
-  { 113, -1, -1, sizeof(::media::AudioMergeRequest)},
-  { 121, -1, -1, sizeof(::media::MediaJobRequest)},
-  { 130, -1, -1, sizeof(::media::MediaJobLookupRequest)},
-  { 137, -1, -1, sizeof(::media::MediaJobResponse)},
-  { 152, -1, -1, sizeof(::media::MediaJobCallbackRequest)},
-  { 163, -1, -1, sizeof(::media::MediaJobCallbackResponse)},
-  { 170, -1, -1, sizeof(::media::MediaUploadMetadata)},
-  { 184, -1, -1, sizeof(::media::MediaUploadChunk)},
-  { 193, -1, -1, sizeof(::media::AdCreateRequest)},
-  { 203, -1, -1, sizeof(::media::AdScheduleRequest)},
-  { 213, -1, -1, sizeof(::media::AdIdRequest)},
-  { 220, -1, -1, sizeof(::media::AdResponse)},
-  { 228, -1, -1, sizeof(::media::AdReportResponse)},
+  { 27, -1, -1, sizeof(::media::ResponsiveImageRequest)},
+  { 36, -1, -1, sizeof(::media::ResponsiveImageVariant)},
+  { 44, -1, -1, sizeof(::media::ResponsiveImageResponse)},
+  { 52, -1, -1, sizeof(::media::VideoRequest)},
+  { 59, -1, -1, sizeof(::media::VideoResponse)},
+  { 66, -1, -1, sizeof(::media::ThumbnailResponse)},
+  { 73, -1, -1, sizeof(::media::AudioResponse)},
+  { 80, -1, -1, sizeof(::media::ImageResizeRequest)},
+  { 89, -1, -1, sizeof(::media::VideoConvertRequest)},
+  { 97, -1, -1, sizeof(::media::VideoTrimRequest)},
+  { 106, -1, -1, sizeof(::media::VideoMergeRequest)},
+  { 114, -1, -1, sizeof(::media::AudioRequest)},
+  { 121, -1, -1, sizeof(::media::AudioFormatRequest)},
+  { 129, -1, -1, sizeof(::media::AudioTrimRequest)},
+  { 138, -1, -1, sizeof(::media::AudioMergeRequest)},
+  { 146, -1, -1, sizeof(::media::MediaJobRequest)},
+  { 155, -1, -1, sizeof(::media::MediaJobLookupRequest)},
+  { 162, -1, -1, sizeof(::media::MediaJobResponse)},
+  { 177, -1, -1, sizeof(::media::MediaJobCallbackRequest)},
+  { 188, -1, -1, sizeof(::media::MediaJobCallbackResponse)},
+  { 195, -1, -1, sizeof(::media::MediaUploadMetadata)},
+  { 209, -1, -1, sizeof(::media::MediaUploadChunk)},
+  { 218, -1, -1, sizeof(::media::AdCreateRequest)},
+  { 228, -1, -1, sizeof(::media::AdScheduleRequest)},
+  { 238, -1, -1, sizeof(::media::AdIdRequest)},
+  { 245, -1, -1, sizeof(::media::AdResponse)},
+  { 253, -1, -1, sizeof(::media::AdReportResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -702,6 +773,9 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::media::_HealthResponse_default_instance_._instance,
   &::media::_ImageRequest_default_instance_._instance,
   &::media::_ImageResponse_default_instance_._instance,
+  &::media::_ResponsiveImageRequest_default_instance_._instance,
+  &::media::_ResponsiveImageVariant_default_instance_._instance,
+  &::media::_ResponsiveImageResponse_default_instance_._instance,
   &::media::_VideoRequest_default_instance_._instance,
   &::media::_VideoResponse_default_instance_._instance,
   &::media::_ThumbnailResponse_default_instance_._instance,
@@ -732,100 +806,108 @@ const char descriptor_table_protodef_media_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\n\013media.proto\022\005media\"\017\n\rHealthRequest\" \n"
   "\016HealthResponse\022\016\n\006status\030\001 \001(\t\"!\n\014Image"
   "Request\022\021\n\timagePath\030\001 \001(\t\"#\n\rImageRespo"
-  "nse\022\022\n\noutputPath\030\001 \001(\t\"!\n\014VideoRequest\022"
-  "\021\n\tvideoPath\030\001 \001(\t\"#\n\rVideoResponse\022\022\n\no"
-  "utputPath\030\001 \001(\t\"*\n\021ThumbnailResponse\022\025\n\r"
-  "thumbnailPath\030\001 \001(\t\"\"\n\rAudioResponse\022\021\n\t"
-  "audioPath\030\001 \001(\t\"F\n\022ImageResizeRequest\022\021\n"
-  "\timagePath\030\001 \001(\t\022\r\n\005width\030\002 \001(\005\022\016\n\006heigh"
-  "t\030\003 \001(\005\"8\n\023VideoConvertRequest\022\021\n\tvideoP"
-  "ath\030\001 \001(\t\022\016\n\006format\030\002 \001(\t\"A\n\020VideoTrimRe"
-  "quest\022\021\n\tvideoPath\030\001 \001(\t\022\r\n\005start\030\002 \001(\t\022"
-  "\013\n\003end\030\003 \001(\t\";\n\021VideoMergeRequest\022\022\n\nvid"
-  "eoPaths\030\001 \003(\t\022\022\n\noutputPath\030\002 \001(\t\"!\n\014Aud"
-  "ioRequest\022\021\n\tinputPath\030\001 \001(\t\"7\n\022AudioFor"
-  "matRequest\022\021\n\tinputPath\030\001 \001(\t\022\016\n\006format\030"
-  "\002 \001(\t\"A\n\020AudioTrimRequest\022\021\n\tinputPath\030\001"
-  " \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003end\030\003 \001(\t\";\n\021Audi"
-  "oMergeRequest\022\022\n\ninputPaths\030\001 \003(\t\022\022\n\nout"
-  "putPath\030\002 \001(\t\"T\n\017MediaJobRequest\022\026\n\016asse"
-  "tReference\030\001 \001(\t\022\021\n\toperation\030\002 \001(\t\022\026\n\016p"
-  "arametersJson\030\003 \001(\t\"&\n\025MediaJobLookupReq"
-  "uest\022\r\n\005jobId\030\001 \001(\t\"\325\001\n\020MediaJobResponse"
-  "\022\r\n\005jobId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\026\n\016asset"
-  "Reference\030\003 \001(\t\022\021\n\toperation\030\004 \001(\t\022\026\n\016pa"
-  "rametersJson\030\005 \001(\t\022\027\n\017resultReference\030\006 "
-  "\001(\t\022\024\n\014errorMessage\030\007 \001(\t\022\027\n\017createdAtUn"
-  "ixMs\030\010 \001(\003\022\027\n\017updatedAtUnixMs\030\t \001(\003\"~\n\027M"
-  "ediaJobCallbackRequest\022\r\n\005jobId\030\001 \001(\t\022\025\n"
-  "\rexternalJobId\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\027\n\017"
-  "resultReference\030\004 \001(\t\022\024\n\014errorMessage\030\005 "
-  "\001(\t\",\n\030MediaJobCallbackResponse\022\020\n\010accep"
-  "ted\030\001 \001(\010\"\261\001\n\023MediaUploadMetadata\022\017\n\007med"
-  "iaId\030\001 \001(\t\022\017\n\007ownerId\030\002 \001(\t\022\021\n\tmediaType"
-  "\030\003 \001(\t\022\020\n\010filename\030\004 \001(\t\022\023\n\013contentType\030"
-  "\005 \001(\t\022\021\n\toperation\030\006 \001(\t\022\026\n\016parametersJs"
-  "on\030\007 \001(\t\022\023\n\013uploadToken\030\010 \001(\t\"]\n\020MediaUp"
-  "loadChunk\022.\n\010metadata\030\001 \001(\0132\032.media.Medi"
-  "aUploadMetadataH\000\022\016\n\004data\030\002 \001(\014H\000B\t\n\007pay"
-  "load\"^\n\017AdCreateRequest\022\021\n\tassetPath\030\001 \001"
-  "(\t\022\r\n\005title\030\002 \001(\t\022\027\n\017durationSeconds\030\003 \001"
-  "(\005\022\020\n\010clickUrl\030\004 \001(\t\"a\n\021AdScheduleReques"
-  "t\022\014\n\004adId\030\001 \001(\t\022\026\n\016startsAtUnixMs\030\002 \001(\003\022"
-  "\024\n\014endsAtUnixMs\030\003 \001(\003\022\020\n\010priority\030\004 \001(\005\""
-  "\033\n\013AdIdRequest\022\014\n\004adId\030\001 \001(\t\"*\n\nAdRespon"
-  "se\022\014\n\004adId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"4\n\020AdRe"
-  "portResponse\022\014\n\004adId\030\001 \001(\t\022\022\n\nreportJson"
-  "\030\002 \001(\t2\321\014\n\014MediaService\0225\n\006Health\022\024.medi"
-  "a.HealthRequest\032\025.media.HealthResponse\022:"
-  "\n\rCompressImage\022\023.media.ImageRequest\032\024.m"
-  "edia.ImageResponse\022:\n\rCompressVideo\022\023.me"
-  "dia.VideoRequest\032\024.media.VideoResponse\022B"
-  "\n\021GenerateThumbnail\022\023.media.VideoRequest"
-  "\032\030.media.ThumbnailResponse\0229\n\014ExtractAud"
-  "io\022\023.media.VideoRequest\032\024.media.AudioRes"
-  "ponse\022@\n\014ConvertVideo\022\032.media.VideoConve"
-  "rtRequest\032\024.media.VideoResponse\022:\n\tTrimV"
-  "ideo\022\027.media.VideoTrimRequest\032\024.media.Vi"
-  "deoResponse\022=\n\013MergeVideos\022\030.media.Video"
-  "MergeRequest\032\024.media.VideoResponse\022>\n\013Re"
-  "sizeImage\022\031.media.ImageResizeRequest\032\024.m"
-  "edia.ImageResponse\022;\n\016ThumbnailImage\022\023.m"
-  "edia.ImageRequest\032\024.media.ImageResponse\022"
-  ">\n\013EncodeAudio\022\031.media.AudioFormatReques"
-  "t\032\024.media.AudioResponse\022;\n\016NormalizeAudi"
-  "o\022\023.media.AudioRequest\032\024.media.AudioResp"
-  "onse\0229\n\014DenoiseAudio\022\023.media.AudioReques"
-  "t\032\024.media.AudioResponse\022<\n\nMergeAudio\022\030."
-  "media.AudioMergeRequest\032\024.media.AudioRes"
-  "ponse\022:\n\tTrimAudio\022\027.media.AudioTrimRequ"
-  "est\032\024.media.AudioResponse\022\?\n\014ConvertAudi"
-  "o\022\031.media.AudioFormatRequest\032\024.media.Aud"
-  "ioResponse\022A\n\016SubmitMediaJob\022\026.media.Med"
-  "iaJobRequest\032\027.media.MediaJobResponse\022D\n"
-  "\013GetMediaJob\022\034.media.MediaJobLookupReque"
-  "st\032\027.media.MediaJobResponse\022A\n\013UploadMed"
-  "ia\022\027.media.MediaUploadChunk\032\027.media.Medi"
-  "aJobResponse(\001\022:\n\rCreateVideoAd\022\026.media."
-  "AdCreateRequest\032\021.media.AdResponse\022:\n\rCr"
-  "eateImageAd\022\026.media.AdCreateRequest\032\021.me"
-  "dia.AdResponse\022:\n\rCreateAudioAd\022\026.media."
-  "AdCreateRequest\032\021.media.AdResponse\0229\n\nSc"
-  "heduleAd\022\030.media.AdScheduleRequest\032\021.med"
-  "ia.AdResponse\0229\n\020RecordImpression\022\022.medi"
-  "a.AdIdRequest\032\021.media.AdResponse\0224\n\013Reco"
-  "rdClick\022\022.media.AdIdRequest\032\021.media.AdRe"
-  "sponse\022:\n\013GetAdReport\022\022.media.AdIdReques"
-  "t\032\027.media.AdReportResponse2i\n\024MediaCallb"
-  "ackService\022Q\n\016ReportMediaJob\022\036.media.Med"
-  "iaJobCallbackRequest\032\037.media.MediaJobCal"
-  "lbackResponseb\006proto3"
+  "nse\022\022\n\noutputPath\030\001 \001(\t\"U\n\026ResponsiveIma"
+  "geRequest\022\021\n\timagePath\030\001 \001(\t\022\027\n\017objectKe"
+  "yPrefix\030\002 \001(\t\022\017\n\007quality\030\003 \001(\005\"3\n\026Respon"
+  "siveImageVariant\022\014\n\004size\030\001 \001(\005\022\013\n\003url\030\002 "
+  "\001(\t\"_\n\027ResponsiveImageResponse\022\023\n\013origin"
+  "alUrl\030\001 \001(\t\022/\n\010variants\030\002 \003(\0132\035.media.Re"
+  "sponsiveImageVariant\"!\n\014VideoRequest\022\021\n\t"
+  "videoPath\030\001 \001(\t\"#\n\rVideoResponse\022\022\n\noutp"
+  "utPath\030\001 \001(\t\"*\n\021ThumbnailResponse\022\025\n\rthu"
+  "mbnailPath\030\001 \001(\t\"\"\n\rAudioResponse\022\021\n\taud"
+  "ioPath\030\001 \001(\t\"F\n\022ImageResizeRequest\022\021\n\tim"
+  "agePath\030\001 \001(\t\022\r\n\005width\030\002 \001(\005\022\016\n\006height\030\003"
+  " \001(\005\"8\n\023VideoConvertRequest\022\021\n\tvideoPath"
+  "\030\001 \001(\t\022\016\n\006format\030\002 \001(\t\"A\n\020VideoTrimReque"
+  "st\022\021\n\tvideoPath\030\001 \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003"
+  "end\030\003 \001(\t\";\n\021VideoMergeRequest\022\022\n\nvideoP"
+  "aths\030\001 \003(\t\022\022\n\noutputPath\030\002 \001(\t\"!\n\014AudioR"
+  "equest\022\021\n\tinputPath\030\001 \001(\t\"7\n\022AudioFormat"
+  "Request\022\021\n\tinputPath\030\001 \001(\t\022\016\n\006format\030\002 \001"
+  "(\t\"A\n\020AudioTrimRequest\022\021\n\tinputPath\030\001 \001("
+  "\t\022\r\n\005start\030\002 \001(\t\022\013\n\003end\030\003 \001(\t\";\n\021AudioMe"
+  "rgeRequest\022\022\n\ninputPaths\030\001 \003(\t\022\022\n\noutput"
+  "Path\030\002 \001(\t\"T\n\017MediaJobRequest\022\026\n\016assetRe"
+  "ference\030\001 \001(\t\022\021\n\toperation\030\002 \001(\t\022\026\n\016para"
+  "metersJson\030\003 \001(\t\"&\n\025MediaJobLookupReques"
+  "t\022\r\n\005jobId\030\001 \001(\t\"\325\001\n\020MediaJobResponse\022\r\n"
+  "\005jobId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\026\n\016assetRef"
+  "erence\030\003 \001(\t\022\021\n\toperation\030\004 \001(\t\022\026\n\016param"
+  "etersJson\030\005 \001(\t\022\027\n\017resultReference\030\006 \001(\t"
+  "\022\024\n\014errorMessage\030\007 \001(\t\022\027\n\017createdAtUnixM"
+  "s\030\010 \001(\003\022\027\n\017updatedAtUnixMs\030\t \001(\003\"~\n\027Medi"
+  "aJobCallbackRequest\022\r\n\005jobId\030\001 \001(\t\022\025\n\rex"
+  "ternalJobId\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\027\n\017res"
+  "ultReference\030\004 \001(\t\022\024\n\014errorMessage\030\005 \001(\t"
+  "\",\n\030MediaJobCallbackResponse\022\020\n\010accepted"
+  "\030\001 \001(\010\"\261\001\n\023MediaUploadMetadata\022\017\n\007mediaI"
+  "d\030\001 \001(\t\022\017\n\007ownerId\030\002 \001(\t\022\021\n\tmediaType\030\003 "
+  "\001(\t\022\020\n\010filename\030\004 \001(\t\022\023\n\013contentType\030\005 \001"
+  "(\t\022\021\n\toperation\030\006 \001(\t\022\026\n\016parametersJson\030"
+  "\007 \001(\t\022\023\n\013uploadToken\030\010 \001(\t\"]\n\020MediaUploa"
+  "dChunk\022.\n\010metadata\030\001 \001(\0132\032.media.MediaUp"
+  "loadMetadataH\000\022\016\n\004data\030\002 \001(\014H\000B\t\n\007payloa"
+  "d\"^\n\017AdCreateRequest\022\021\n\tassetPath\030\001 \001(\t\022"
+  "\r\n\005title\030\002 \001(\t\022\027\n\017durationSeconds\030\003 \001(\005\022"
+  "\020\n\010clickUrl\030\004 \001(\t\"a\n\021AdScheduleRequest\022\014"
+  "\n\004adId\030\001 \001(\t\022\026\n\016startsAtUnixMs\030\002 \001(\003\022\024\n\014"
+  "endsAtUnixMs\030\003 \001(\003\022\020\n\010priority\030\004 \001(\005\"\033\n\013"
+  "AdIdRequest\022\014\n\004adId\030\001 \001(\t\"*\n\nAdResponse\022"
+  "\014\n\004adId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"4\n\020AdRepor"
+  "tResponse\022\014\n\004adId\030\001 \001(\t\022\022\n\nreportJson\030\002 "
+  "\001(\t2\252\r\n\014MediaService\0225\n\006Health\022\024.media.H"
+  "ealthRequest\032\025.media.HealthResponse\022:\n\rC"
+  "ompressImage\022\023.media.ImageRequest\032\024.medi"
+  "a.ImageResponse\022:\n\rCompressVideo\022\023.media"
+  ".VideoRequest\032\024.media.VideoResponse\022B\n\021G"
+  "enerateThumbnail\022\023.media.VideoRequest\032\030."
+  "media.ThumbnailResponse\0229\n\014ExtractAudio\022"
+  "\023.media.VideoRequest\032\024.media.AudioRespon"
+  "se\022@\n\014ConvertVideo\022\032.media.VideoConvertR"
+  "equest\032\024.media.VideoResponse\022:\n\tTrimVide"
+  "o\022\027.media.VideoTrimRequest\032\024.media.Video"
+  "Response\022=\n\013MergeVideos\022\030.media.VideoMer"
+  "geRequest\032\024.media.VideoResponse\022>\n\013Resiz"
+  "eImage\022\031.media.ImageResizeRequest\032\024.medi"
+  "a.ImageResponse\022;\n\016ThumbnailImage\022\023.medi"
+  "a.ImageRequest\032\024.media.ImageResponse\022W\n\026"
+  "ProcessResponsiveImage\022\035.media.Responsiv"
+  "eImageRequest\032\036.media.ResponsiveImageRes"
+  "ponse\022>\n\013EncodeAudio\022\031.media.AudioFormat"
+  "Request\032\024.media.AudioResponse\022;\n\016Normali"
+  "zeAudio\022\023.media.AudioRequest\032\024.media.Aud"
+  "ioResponse\0229\n\014DenoiseAudio\022\023.media.Audio"
+  "Request\032\024.media.AudioResponse\022<\n\nMergeAu"
+  "dio\022\030.media.AudioMergeRequest\032\024.media.Au"
+  "dioResponse\022:\n\tTrimAudio\022\027.media.AudioTr"
+  "imRequest\032\024.media.AudioResponse\022\?\n\014Conve"
+  "rtAudio\022\031.media.AudioFormatRequest\032\024.med"
+  "ia.AudioResponse\022A\n\016SubmitMediaJob\022\026.med"
+  "ia.MediaJobRequest\032\027.media.MediaJobRespo"
+  "nse\022D\n\013GetMediaJob\022\034.media.MediaJobLooku"
+  "pRequest\032\027.media.MediaJobResponse\022A\n\013Upl"
+  "oadMedia\022\027.media.MediaUploadChunk\032\027.medi"
+  "a.MediaJobResponse(\001\022:\n\rCreateVideoAd\022\026."
+  "media.AdCreateRequest\032\021.media.AdResponse"
+  "\022:\n\rCreateImageAd\022\026.media.AdCreateReques"
+  "t\032\021.media.AdResponse\022:\n\rCreateAudioAd\022\026."
+  "media.AdCreateRequest\032\021.media.AdResponse"
+  "\0229\n\nScheduleAd\022\030.media.AdScheduleRequest"
+  "\032\021.media.AdResponse\0229\n\020RecordImpression\022"
+  "\022.media.AdIdRequest\032\021.media.AdResponse\0224"
+  "\n\013RecordClick\022\022.media.AdIdRequest\032\021.medi"
+  "a.AdResponse\022:\n\013GetAdReport\022\022.media.AdId"
+  "Request\032\027.media.AdReportResponse2i\n\024Medi"
+  "aCallbackService\022Q\n\016ReportMediaJob\022\036.med"
+  "ia.MediaJobCallbackRequest\032\037.media.Media"
+  "JobCallbackResponseb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_media_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_media_2eproto = {
-    false, false, 3621, descriptor_table_protodef_media_2eproto,
+    false, false, 3947, descriptor_table_protodef_media_2eproto,
     "media.proto",
-    &descriptor_table_media_2eproto_once, nullptr, 0, 28,
+    &descriptor_table_media_2eproto_once, nullptr, 0, 31,
     schemas, file_default_instances, TableStruct_media_2eproto::offsets,
     file_level_metadata_media_2eproto, file_level_enum_descriptors_media_2eproto,
     file_level_service_descriptors_media_2eproto,
@@ -1489,6 +1571,753 @@ void ImageResponse::InternalSwap(ImageResponse* other) {
 
 // ===================================================================
 
+class ResponsiveImageRequest::_Internal {
+ public:
+};
+
+ResponsiveImageRequest::ResponsiveImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.ResponsiveImageRequest)
+}
+ResponsiveImageRequest::ResponsiveImageRequest(const ResponsiveImageRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ResponsiveImageRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.imagepath_){}
+    , decltype(_impl_.objectkeyprefix_){}
+    , decltype(_impl_.quality_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.imagepath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.imagepath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_imagepath().empty()) {
+    _this->_impl_.imagepath_.Set(from._internal_imagepath(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.objectkeyprefix_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.objectkeyprefix_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_objectkeyprefix().empty()) {
+    _this->_impl_.objectkeyprefix_.Set(from._internal_objectkeyprefix(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.quality_ = from._impl_.quality_;
+  // @@protoc_insertion_point(copy_constructor:media.ResponsiveImageRequest)
+}
+
+inline void ResponsiveImageRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.imagepath_){}
+    , decltype(_impl_.objectkeyprefix_){}
+    , decltype(_impl_.quality_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.imagepath_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.imagepath_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.objectkeyprefix_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.objectkeyprefix_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ResponsiveImageRequest::~ResponsiveImageRequest() {
+  // @@protoc_insertion_point(destructor:media.ResponsiveImageRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ResponsiveImageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.imagepath_.Destroy();
+  _impl_.objectkeyprefix_.Destroy();
+}
+
+void ResponsiveImageRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ResponsiveImageRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.ResponsiveImageRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.imagepath_.ClearToEmpty();
+  _impl_.objectkeyprefix_.ClearToEmpty();
+  _impl_.quality_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ResponsiveImageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string imagePath = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_imagepath();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.ResponsiveImageRequest.imagePath"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string objectKeyPrefix = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_objectkeyprefix();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.ResponsiveImageRequest.objectKeyPrefix"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 quality = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.quality_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ResponsiveImageRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.ResponsiveImageRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string imagePath = 1;
+  if (!this->_internal_imagepath().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_imagepath().data(), static_cast<int>(this->_internal_imagepath().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.ResponsiveImageRequest.imagePath");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_imagepath(), target);
+  }
+
+  // string objectKeyPrefix = 2;
+  if (!this->_internal_objectkeyprefix().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_objectkeyprefix().data(), static_cast<int>(this->_internal_objectkeyprefix().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.ResponsiveImageRequest.objectKeyPrefix");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_objectkeyprefix(), target);
+  }
+
+  // int32 quality = 3;
+  if (this->_internal_quality() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_quality(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.ResponsiveImageRequest)
+  return target;
+}
+
+size_t ResponsiveImageRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.ResponsiveImageRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string imagePath = 1;
+  if (!this->_internal_imagepath().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_imagepath());
+  }
+
+  // string objectKeyPrefix = 2;
+  if (!this->_internal_objectkeyprefix().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_objectkeyprefix());
+  }
+
+  // int32 quality = 3;
+  if (this->_internal_quality() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_quality());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResponsiveImageRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ResponsiveImageRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResponsiveImageRequest::GetClassData() const { return &_class_data_; }
+
+
+void ResponsiveImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ResponsiveImageRequest*>(&to_msg);
+  auto& from = static_cast<const ResponsiveImageRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.ResponsiveImageRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_imagepath().empty()) {
+    _this->_internal_set_imagepath(from._internal_imagepath());
+  }
+  if (!from._internal_objectkeyprefix().empty()) {
+    _this->_internal_set_objectkeyprefix(from._internal_objectkeyprefix());
+  }
+  if (from._internal_quality() != 0) {
+    _this->_internal_set_quality(from._internal_quality());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ResponsiveImageRequest::CopyFrom(const ResponsiveImageRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.ResponsiveImageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResponsiveImageRequest::IsInitialized() const {
+  return true;
+}
+
+void ResponsiveImageRequest::InternalSwap(ResponsiveImageRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.imagepath_, lhs_arena,
+      &other->_impl_.imagepath_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.objectkeyprefix_, lhs_arena,
+      &other->_impl_.objectkeyprefix_, rhs_arena
+  );
+  swap(_impl_.quality_, other->_impl_.quality_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ResponsiveImageRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[4]);
+}
+
+// ===================================================================
+
+class ResponsiveImageVariant::_Internal {
+ public:
+};
+
+ResponsiveImageVariant::ResponsiveImageVariant(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.ResponsiveImageVariant)
+}
+ResponsiveImageVariant::ResponsiveImageVariant(const ResponsiveImageVariant& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ResponsiveImageVariant* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.url_){}
+    , decltype(_impl_.size_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.url_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_url().empty()) {
+    _this->_impl_.url_.Set(from._internal_url(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.size_ = from._impl_.size_;
+  // @@protoc_insertion_point(copy_constructor:media.ResponsiveImageVariant)
+}
+
+inline void ResponsiveImageVariant::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.url_){}
+    , decltype(_impl_.size_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.url_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ResponsiveImageVariant::~ResponsiveImageVariant() {
+  // @@protoc_insertion_point(destructor:media.ResponsiveImageVariant)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ResponsiveImageVariant::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.url_.Destroy();
+}
+
+void ResponsiveImageVariant::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ResponsiveImageVariant::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.ResponsiveImageVariant)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.url_.ClearToEmpty();
+  _impl_.size_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ResponsiveImageVariant::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string url = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_url();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.ResponsiveImageVariant.url"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ResponsiveImageVariant::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.ResponsiveImageVariant)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 size = 1;
+  if (this->_internal_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_size(), target);
+  }
+
+  // string url = 2;
+  if (!this->_internal_url().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.ResponsiveImageVariant.url");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_url(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.ResponsiveImageVariant)
+  return target;
+}
+
+size_t ResponsiveImageVariant::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.ResponsiveImageVariant)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string url = 2;
+  if (!this->_internal_url().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_url());
+  }
+
+  // int32 size = 1;
+  if (this->_internal_size() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_size());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResponsiveImageVariant::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ResponsiveImageVariant::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResponsiveImageVariant::GetClassData() const { return &_class_data_; }
+
+
+void ResponsiveImageVariant::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ResponsiveImageVariant*>(&to_msg);
+  auto& from = static_cast<const ResponsiveImageVariant&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.ResponsiveImageVariant)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_url().empty()) {
+    _this->_internal_set_url(from._internal_url());
+  }
+  if (from._internal_size() != 0) {
+    _this->_internal_set_size(from._internal_size());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ResponsiveImageVariant::CopyFrom(const ResponsiveImageVariant& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.ResponsiveImageVariant)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResponsiveImageVariant::IsInitialized() const {
+  return true;
+}
+
+void ResponsiveImageVariant::InternalSwap(ResponsiveImageVariant* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.url_, lhs_arena,
+      &other->_impl_.url_, rhs_arena
+  );
+  swap(_impl_.size_, other->_impl_.size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ResponsiveImageVariant::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[5]);
+}
+
+// ===================================================================
+
+class ResponsiveImageResponse::_Internal {
+ public:
+};
+
+ResponsiveImageResponse::ResponsiveImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:media.ResponsiveImageResponse)
+}
+ResponsiveImageResponse::ResponsiveImageResponse(const ResponsiveImageResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ResponsiveImageResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.variants_){from._impl_.variants_}
+    , decltype(_impl_.originalurl_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.originalurl_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.originalurl_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_originalurl().empty()) {
+    _this->_impl_.originalurl_.Set(from._internal_originalurl(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:media.ResponsiveImageResponse)
+}
+
+inline void ResponsiveImageResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.variants_){arena}
+    , decltype(_impl_.originalurl_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.originalurl_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.originalurl_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ResponsiveImageResponse::~ResponsiveImageResponse() {
+  // @@protoc_insertion_point(destructor:media.ResponsiveImageResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ResponsiveImageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.variants_.~RepeatedPtrField();
+  _impl_.originalurl_.Destroy();
+}
+
+void ResponsiveImageResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ResponsiveImageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:media.ResponsiveImageResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.variants_.Clear();
+  _impl_.originalurl_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ResponsiveImageResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string originalUrl = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_originalurl();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "media.ResponsiveImageResponse.originalUrl"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .media.ResponsiveImageVariant variants = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_variants(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ResponsiveImageResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:media.ResponsiveImageResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string originalUrl = 1;
+  if (!this->_internal_originalurl().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_originalurl().data(), static_cast<int>(this->_internal_originalurl().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "media.ResponsiveImageResponse.originalUrl");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_originalurl(), target);
+  }
+
+  // repeated .media.ResponsiveImageVariant variants = 2;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_variants_size()); i < n; i++) {
+    const auto& repfield = this->_internal_variants(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:media.ResponsiveImageResponse)
+  return target;
+}
+
+size_t ResponsiveImageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:media.ResponsiveImageResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .media.ResponsiveImageVariant variants = 2;
+  total_size += 1UL * this->_internal_variants_size();
+  for (const auto& msg : this->_impl_.variants_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string originalUrl = 1;
+  if (!this->_internal_originalurl().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_originalurl());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResponsiveImageResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ResponsiveImageResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResponsiveImageResponse::GetClassData() const { return &_class_data_; }
+
+
+void ResponsiveImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ResponsiveImageResponse*>(&to_msg);
+  auto& from = static_cast<const ResponsiveImageResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:media.ResponsiveImageResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.variants_.MergeFrom(from._impl_.variants_);
+  if (!from._internal_originalurl().empty()) {
+    _this->_internal_set_originalurl(from._internal_originalurl());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ResponsiveImageResponse::CopyFrom(const ResponsiveImageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:media.ResponsiveImageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResponsiveImageResponse::IsInitialized() const {
+  return true;
+}
+
+void ResponsiveImageResponse::InternalSwap(ResponsiveImageResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.variants_.InternalSwap(&other->_impl_.variants_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.originalurl_, lhs_arena,
+      &other->_impl_.originalurl_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ResponsiveImageResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
+      file_level_metadata_media_2eproto[6]);
+}
+
+// ===================================================================
+
 class VideoRequest::_Internal {
  public:
 };
@@ -1687,7 +2516,7 @@ void VideoRequest::InternalSwap(VideoRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[4]);
+      file_level_metadata_media_2eproto[7]);
 }
 
 // ===================================================================
@@ -1890,7 +2719,7 @@ void VideoResponse::InternalSwap(VideoResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[5]);
+      file_level_metadata_media_2eproto[8]);
 }
 
 // ===================================================================
@@ -2093,7 +2922,7 @@ void ThumbnailResponse::InternalSwap(ThumbnailResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ThumbnailResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[6]);
+      file_level_metadata_media_2eproto[9]);
 }
 
 // ===================================================================
@@ -2296,7 +3125,7 @@ void AudioResponse::InternalSwap(AudioResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[7]);
+      file_level_metadata_media_2eproto[10]);
 }
 
 // ===================================================================
@@ -2559,7 +3388,7 @@ void ImageResizeRequest::InternalSwap(ImageResizeRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ImageResizeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[8]);
+      file_level_metadata_media_2eproto[11]);
 }
 
 // ===================================================================
@@ -2812,7 +3641,7 @@ void VideoConvertRequest::InternalSwap(VideoConvertRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoConvertRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[9]);
+      file_level_metadata_media_2eproto[12]);
 }
 
 // ===================================================================
@@ -3115,7 +3944,7 @@ void VideoTrimRequest::InternalSwap(VideoTrimRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoTrimRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[10]);
+      file_level_metadata_media_2eproto[13]);
 }
 
 // ===================================================================
@@ -3357,7 +4186,7 @@ void VideoMergeRequest::InternalSwap(VideoMergeRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoMergeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[11]);
+      file_level_metadata_media_2eproto[14]);
 }
 
 // ===================================================================
@@ -3560,7 +4389,7 @@ void AudioRequest::InternalSwap(AudioRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[12]);
+      file_level_metadata_media_2eproto[15]);
 }
 
 // ===================================================================
@@ -3813,7 +4642,7 @@ void AudioFormatRequest::InternalSwap(AudioFormatRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioFormatRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[13]);
+      file_level_metadata_media_2eproto[16]);
 }
 
 // ===================================================================
@@ -4116,7 +4945,7 @@ void AudioTrimRequest::InternalSwap(AudioTrimRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioTrimRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[14]);
+      file_level_metadata_media_2eproto[17]);
 }
 
 // ===================================================================
@@ -4358,7 +5187,7 @@ void AudioMergeRequest::InternalSwap(AudioMergeRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioMergeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[15]);
+      file_level_metadata_media_2eproto[18]);
 }
 
 // ===================================================================
@@ -4661,7 +5490,7 @@ void MediaJobRequest::InternalSwap(MediaJobRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[16]);
+      file_level_metadata_media_2eproto[19]);
 }
 
 // ===================================================================
@@ -4864,7 +5693,7 @@ void MediaJobLookupRequest::InternalSwap(MediaJobLookupRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobLookupRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[17]);
+      file_level_metadata_media_2eproto[20]);
 }
 
 // ===================================================================
@@ -5427,7 +6256,7 @@ void MediaJobResponse::InternalSwap(MediaJobResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[18]);
+      file_level_metadata_media_2eproto[21]);
 }
 
 // ===================================================================
@@ -5830,7 +6659,7 @@ void MediaJobCallbackRequest::InternalSwap(MediaJobCallbackRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobCallbackRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[19]);
+      file_level_metadata_media_2eproto[22]);
 }
 
 // ===================================================================
@@ -6008,7 +6837,7 @@ void MediaJobCallbackResponse::InternalSwap(MediaJobCallbackResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobCallbackResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[20]);
+      file_level_metadata_media_2eproto[23]);
 }
 
 // ===================================================================
@@ -6561,7 +7390,7 @@ void MediaUploadMetadata::InternalSwap(MediaUploadMetadata* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaUploadMetadata::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[21]);
+      file_level_metadata_media_2eproto[24]);
 }
 
 // ===================================================================
@@ -6842,7 +7671,7 @@ void MediaUploadChunk::InternalSwap(MediaUploadChunk* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaUploadChunk::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[22]);
+      file_level_metadata_media_2eproto[25]);
 }
 
 // ===================================================================
@@ -7172,7 +8001,7 @@ void AdCreateRequest::InternalSwap(AdCreateRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdCreateRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[23]);
+      file_level_metadata_media_2eproto[26]);
 }
 
 // ===================================================================
@@ -7459,7 +8288,7 @@ void AdScheduleRequest::InternalSwap(AdScheduleRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdScheduleRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[24]);
+      file_level_metadata_media_2eproto[27]);
 }
 
 // ===================================================================
@@ -7662,7 +8491,7 @@ void AdIdRequest::InternalSwap(AdIdRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdIdRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[25]);
+      file_level_metadata_media_2eproto[28]);
 }
 
 // ===================================================================
@@ -7915,7 +8744,7 @@ void AdResponse::InternalSwap(AdResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[26]);
+      file_level_metadata_media_2eproto[29]);
 }
 
 // ===================================================================
@@ -8168,7 +8997,7 @@ void AdReportResponse::InternalSwap(AdReportResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AdReportResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_media_2eproto_getter, &descriptor_table_media_2eproto_once,
-      file_level_metadata_media_2eproto[27]);
+      file_level_metadata_media_2eproto[30]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -8189,6 +9018,18 @@ Arena::CreateMaybeMessage< ::media::ImageRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::media::ImageResponse*
 Arena::CreateMaybeMessage< ::media::ImageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::media::ImageResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::ResponsiveImageRequest*
+Arena::CreateMaybeMessage< ::media::ResponsiveImageRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::ResponsiveImageRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::ResponsiveImageVariant*
+Arena::CreateMaybeMessage< ::media::ResponsiveImageVariant >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::ResponsiveImageVariant >(arena);
+}
+template<> PROTOBUF_NOINLINE ::media::ResponsiveImageResponse*
+Arena::CreateMaybeMessage< ::media::ResponsiveImageResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::media::ResponsiveImageResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::media::VideoRequest*
 Arena::CreateMaybeMessage< ::media::VideoRequest >(Arena* arena) {
