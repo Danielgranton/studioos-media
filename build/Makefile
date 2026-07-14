@@ -345,6 +345,7 @@ src/config/config.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.o
@@ -361,6 +362,7 @@ src/config/config.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.i
@@ -377,6 +379,7 @@ src/config/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/config/config.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/config/config.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/config/config.cpp.s
@@ -391,6 +394,7 @@ src/ffmpeg/AudioEncoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/AudioEncoder.cpp.o
@@ -404,6 +408,7 @@ src/ffmpeg/AudioEncoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/AudioEncoder.cpp.i
@@ -417,6 +422,7 @@ src/ffmpeg/AudioEncoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/AudioEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/AudioEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/AudioEncoder.cpp.s
@@ -432,6 +438,7 @@ src/ffmpeg/CommandRunner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.o
@@ -448,6 +455,7 @@ src/ffmpeg/CommandRunner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.i
@@ -464,6 +472,7 @@ src/ffmpeg/CommandRunner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s3-storage-test.dir/build.make CMakeFiles/s3-storage-test.dir/src/ffmpeg/CommandRunner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/CommandRunner.cpp.s
@@ -480,6 +489,7 @@ src/ffmpeg/FFmpeg.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/FFmpeg.cpp.o
@@ -495,6 +505,7 @@ src/ffmpeg/FFmpeg.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/FFmpeg.cpp.i
@@ -510,6 +521,7 @@ src/ffmpeg/FFmpeg.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/FFmpeg.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/FFmpeg.cpp.s
@@ -523,6 +535,7 @@ src/ffmpeg/ThumbnailGenerator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
@@ -536,6 +549,7 @@ src/ffmpeg/ThumbnailGenerator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
@@ -549,6 +563,7 @@ src/ffmpeg/ThumbnailGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
@@ -562,6 +577,7 @@ src/ffmpeg/VideoConverter.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoConverter.cpp.o
@@ -575,6 +591,7 @@ src/ffmpeg/VideoConverter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoConverter.cpp.i
@@ -588,6 +605,7 @@ src/ffmpeg/VideoConverter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoConverter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoConverter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoConverter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoConverter.cpp.s
@@ -601,6 +619,7 @@ src/ffmpeg/VideoEncoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoEncoder.cpp.o
@@ -614,6 +633,7 @@ src/ffmpeg/VideoEncoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoEncoder.cpp.i
@@ -627,6 +647,7 @@ src/ffmpeg/VideoEncoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/ffmpeg/VideoEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/ffmpeg/VideoEncoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/ffmpeg/VideoEncoder.cpp.s
@@ -732,6 +753,7 @@ src/media/ImageProcessor.o: src/media/ImageProcessor.cpp.o
 src/media/ImageProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/ImageProcessor.cpp.o
@@ -744,6 +766,7 @@ src/media/ImageProcessor.i: src/media/ImageProcessor.cpp.i
 src/media/ImageProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/ImageProcessor.cpp.i
@@ -756,6 +779,7 @@ src/media/ImageProcessor.s: src/media/ImageProcessor.cpp.s
 src/media/ImageProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/ImageProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/media/ImageProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/ImageProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/ImageProcessor.cpp.s
@@ -768,6 +792,7 @@ src/media/VideoProcessor.o: src/media/VideoProcessor.cpp.o
 src/media/VideoProcessor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/VideoProcessor.cpp.o
@@ -780,6 +805,7 @@ src/media/VideoProcessor.i: src/media/VideoProcessor.cpp.i
 src/media/VideoProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/VideoProcessor.cpp.i
@@ -792,6 +818,7 @@ src/media/VideoProcessor.s: src/media/VideoProcessor.cpp.s
 src/media/VideoProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/media/VideoProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/media/VideoProcessor.cpp.s
@@ -974,7 +1001,12 @@ src/services/StreamingService.o: src/services/StreamingService.cpp.o
 # target to build an object file
 src/services/StreamingService.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/StreamingService.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/services/StreamingService.cpp.o
 .PHONY : src/services/StreamingService.cpp.o
 
 src/services/StreamingService.i: src/services/StreamingService.cpp.i
@@ -983,7 +1015,12 @@ src/services/StreamingService.i: src/services/StreamingService.cpp.i
 # target to preprocess a source file
 src/services/StreamingService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/StreamingService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/services/StreamingService.cpp.i
 .PHONY : src/services/StreamingService.cpp.i
 
 src/services/StreamingService.s: src/services/StreamingService.cpp.s
@@ -992,7 +1029,12 @@ src/services/StreamingService.s: src/services/StreamingService.cpp.s
 # target to generate assembly for a file
 src/services/StreamingService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/studioos-media.dir/build.make CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video-processor-test.dir/build.make CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/services/StreamingService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/services/StreamingService.cpp.s
 .PHONY : src/services/StreamingService.cpp.s
 
 src/services/VideoService.o: src/services/VideoService.cpp.o
@@ -1128,6 +1170,7 @@ src/utils/Logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Logger.cpp.o
@@ -1143,6 +1186,7 @@ src/utils/Logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Logger.cpp.i
@@ -1158,6 +1202,7 @@ src/utils/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Logger.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Logger.cpp.s
@@ -1173,6 +1218,7 @@ src/utils/Timer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Timer.cpp.o
@@ -1188,6 +1234,7 @@ src/utils/Timer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Timer.cpp.i
@@ -1203,6 +1250,7 @@ src/utils/Timer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image-processor-test.dir/build.make CMakeFiles/image-processor-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audio-processor-test.dir/build.make CMakeFiles/audio-processor-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/streaming-service-test.dir/build.make CMakeFiles/streaming-service-test.dir/src/utils/Timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ad-service-test.dir/build.make CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-ad-service-test.dir/build.make CMakeFiles/grpc-ad-service-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-job-test.dir/build.make CMakeFiles/grpc-media-job-test.dir/src/utils/Timer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grpc-media-callback-test.dir/build.make CMakeFiles/grpc-media-callback-test.dir/src/utils/Timer.cpp.s

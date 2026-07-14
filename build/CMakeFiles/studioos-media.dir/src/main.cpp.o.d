@@ -473,6 +473,7 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
  /home/linux/Documents/studioos-media/src/media/AudioProcessor.hpp \
  /home/linux/Documents/studioos-media/src/grpc/../services/AdService.hpp \
+ /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
  /home/linux/Documents/studioos-media/src/grpc/../services/MediaJobDispatcher.hpp \
  /usr/include/c++/15/condition_variable /usr/include/c++/15/stop_token \
  /usr/include/c++/15/bits/std_thread.h /usr/include/c++/15/semaphore \
@@ -488,7 +489,6 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
  /home/linux/Documents/studioos-media/src/grpc/../services/MediaJobService.hpp \
  /home/linux/Documents/studioos-media/src/grpc/../services/VideoService.hpp \
- /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
  /home/linux/Documents/studioos-media/src/config/config.hpp \
  /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp \
  /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \

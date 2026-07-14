@@ -2,14 +2,14 @@
   "jobs": [
     {
       "assetReference": "s3://studioos-media/uploads/artist-track.wav",
-      "createdAtUnixMs": 1783807551777,
+      "createdAtUnixMs": 1784051345868,
       "errorMessage": "",
       "jobId": "job-1",
       "operation": "normalize_audio",
       "parametersJson": "{\"targetLufs\":-16}",
       "resultReference": "",
       "status": "QUEUED",
-      "updatedAtUnixMs": 1783807551777
+      "updatedAtUnixMs": 1784051345868
     }
   ]
 }

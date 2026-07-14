@@ -114,10 +114,24 @@ CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/VideoService.cpp -o CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.s
 
+CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
+CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o: /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o -MF CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o -c /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+
+CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/StreamingService.cpp > CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.i
+
+CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/StreamingService.cpp -o CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.s
+
 CMakeFiles/video-processor-test.dir/src/config/config.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/config/config.cpp.o: /home/linux/Documents/studioos-media/src/config/config.cpp
 CMakeFiles/video-processor-test.dir/src/config/config.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/video-processor-test.dir/src/config/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/video-processor-test.dir/src/config/config.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/config/config.cpp.o -MF CMakeFiles/video-processor-test.dir/src/config/config.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/config/config.cpp.o -c /home/linux/Documents/studioos-media/src/config/config.cpp
 
 CMakeFiles/video-processor-test.dir/src/config/config.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/video-processor-test.dir/src/config/config.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/AudioEncoder.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s: cmake_f
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o -MF CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
 
 CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoConverter.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o: /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o -MF CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o -c /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 
 CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o: /home/linux/Documents/studioos-media/src/utils/Timer.cpp
 CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o -MF CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Timer.cpp
 
 CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/video-processor-test.dir/src/utils/Timer.cpp.s: cmake_force
 CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o: CMakeFiles/video-processor-test.dir/flags.make
 CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o: /home/linux/Documents/studioos-media/src/utils/Logger.cpp
 CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o: CMakeFiles/video-processor-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o -MF CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o.d -o CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Logger.cpp
 
 CMakeFiles/video-processor-test.dir/src/utils/Logger.cpp.i: cmake_force
@@ -259,6 +273,7 @@ video__processor__test_OBJECTS = \
 "CMakeFiles/video-processor-test.dir/tests/video_processor_test.cpp.o" \
 "CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o" \
 "CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o" \
+"CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o" \
 "CMakeFiles/video-processor-test.dir/src/config/config.cpp.o" \
 "CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o" \
 "CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o" \
@@ -276,6 +291,7 @@ video__processor__test_EXTERNAL_OBJECTS =
 video-processor-test: CMakeFiles/video-processor-test.dir/tests/video_processor_test.cpp.o
 video-processor-test: CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o
 video-processor-test: CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o
+video-processor-test: CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o
 video-processor-test: CMakeFiles/video-processor-test.dir/src/config/config.cpp.o
 video-processor-test: CMakeFiles/video-processor-test.dir/src/ffmpeg/CommandRunner.cpp.o
 video-processor-test: CMakeFiles/video-processor-test.dir/src/ffmpeg/FFmpeg.cpp.o
@@ -344,7 +360,7 @@ video-processor-test: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.10.0
 video-processor-test: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.10.0
 video-processor-test: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.10.0
 video-processor-test: CMakeFiles/video-processor-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable video-processor-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable video-processor-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/video-processor-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

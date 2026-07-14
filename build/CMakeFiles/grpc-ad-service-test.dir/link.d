@@ -10,6 +10,7 @@ grpc-ad-service-test: \
   CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o \
+  CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/media/AudioProcessor.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/media/ImageProcessor.cpp.o \
   CMakeFiles/grpc-ad-service-test.dir/src/media/VideoProcessor.cpp.o \
@@ -475,6 +476,8 @@ CMakeFiles/grpc-ad-service-test.dir/src/services/AudioService.cpp.o:
 CMakeFiles/grpc-ad-service-test.dir/src/services/ImageService.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o:
+
+CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.o:
 
 CMakeFiles/grpc-ad-service-test.dir/src/media/AudioProcessor.cpp.o:
 

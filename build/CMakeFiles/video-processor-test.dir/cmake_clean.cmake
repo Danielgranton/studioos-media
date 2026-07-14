@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/video-processor-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d"
   "CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o"
   "CMakeFiles/video-processor-test.dir/src/media/VideoProcessor.cpp.o.d"
+  "CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o"
+  "CMakeFiles/video-processor-test.dir/src/services/StreamingService.cpp.o.d"
   "CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o"
   "CMakeFiles/video-processor-test.dir/src/services/VideoService.cpp.o.d"
   "CMakeFiles/video-processor-test.dir/src/utils/FileUtils.cpp.o"

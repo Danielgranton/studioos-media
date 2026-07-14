@@ -100,10 +100,150 @@ CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/AdService.cpp -o CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.s
 
+CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o: /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o -MF CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o -c /home/linux/Documents/studioos-media/src/services/StreamingService.cpp
+
+CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/services/StreamingService.cpp > CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/services/StreamingService.cpp -o CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
+CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o -MF CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp
+
+CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp > CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/media/ImageProcessor.cpp -o CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o: /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
+CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o -MF CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o -c /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp
+
+CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp > CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/media/VideoProcessor.cpp -o CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o: /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o -MF CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o -c /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp > CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.cpp -o CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/config/config.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/config/config.cpp.o: /home/linux/Documents/studioos-media/src/config/config.cpp
+CMakeFiles/ad-service-test.dir/src/config/config.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ad-service-test.dir/src/config/config.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/config/config.cpp.o -MF CMakeFiles/ad-service-test.dir/src/config/config.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/config/config.cpp.o -c /home/linux/Documents/studioos-media/src/config/config.cpp
+
+CMakeFiles/ad-service-test.dir/src/config/config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/config/config.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/config/config.cpp > CMakeFiles/ad-service-test.dir/src/config/config.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/config/config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/config/config.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/config/config.cpp -o CMakeFiles/ad-service-test.dir/src/config/config.cpp.s
+
 CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
 CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o: /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o -MF CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o -c /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp
 
 CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.i: cmake_force
@@ -114,22 +254,129 @@ CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/utils/FileUtils.cpp -o CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.s
 
+CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o: /home/linux/Documents/studioos-media/src/utils/Logger.cpp
+CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o -MF CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Logger.cpp
+
+CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/utils/Logger.cpp > CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/utils/Logger.cpp -o CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.s
+
+CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o: CMakeFiles/ad-service-test.dir/flags.make
+CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o: /home/linux/Documents/studioos-media/src/utils/Timer.cpp
+CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o -MF CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o.d -o CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o -c /home/linux/Documents/studioos-media/src/utils/Timer.cpp
+
+CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/Documents/studioos-media/src/utils/Timer.cpp > CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.i
+
+CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/Documents/studioos-media/src/utils/Timer.cpp -o CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.s
+
 # Object files for target ad-service-test
 ad__service__test_OBJECTS = \
 "CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.o" \
 "CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.o" \
-"CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o"
+"CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/config/config.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o" \
+"CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o"
 
 # External object files for target ad-service-test
 ad__service__test_EXTERNAL_OBJECTS =
 
 ad-service-test: CMakeFiles/ad-service-test.dir/tests/ad_service_test.cpp.o
 ad-service-test: CMakeFiles/ad-service-test.dir/src/services/AdService.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/services/StreamingService.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/media/ImageProcessor.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/media/VideoProcessor.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/CommandRunner.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/FFmpeg.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/AudioEncoder.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/ThumbnailGenerator.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/ffmpeg/VideoConverter.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/config/config.cpp.o
 ad-service-test: CMakeFiles/ad-service-test.dir/src/utils/FileUtils.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/utils/Logger.cpp.o
+ad-service-test: CMakeFiles/ad-service-test.dir/src/utils/Timer.cpp.o
 ad-service-test: CMakeFiles/ad-service-test.dir/build.make
 ad-service-test: CMakeFiles/ad-service-test.dir/compiler_depend.ts
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_cvv.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_face.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_intensity_transform.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_mcc.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_rapid.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_signal.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_text.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_video.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.10.0
+ad-service-test: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.10.0
 ad-service-test: CMakeFiles/ad-service-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ad-service-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/linux/Documents/studioos-media/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ad-service-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ad-service-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -36,6 +36,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobDispatcher.cpp.o.d"
   "CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.o"
   "CMakeFiles/grpc-ad-service-test.dir/src/services/MediaJobService.cpp.o.d"
+  "CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.o"
+  "CMakeFiles/grpc-ad-service-test.dir/src/services/StreamingService.cpp.o.d"
   "CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o"
   "CMakeFiles/grpc-ad-service-test.dir/src/services/VideoService.cpp.o.d"
   "CMakeFiles/grpc-ad-service-test.dir/src/storage/S3Storage.cpp.o"
