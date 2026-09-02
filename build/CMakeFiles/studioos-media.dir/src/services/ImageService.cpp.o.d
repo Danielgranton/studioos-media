@@ -131,9 +131,6 @@ CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o: \
  /home/linux/Documents/studioos-media/src/core/Result.hpp \
  /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
  /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
- /home/linux/Documents/studioos-media/src/storage/S3Storage.hpp \
- /usr/include/c++/15/utility /usr/include/c++/15/bits/stl_relops.h \
- /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp \
  /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \
  /usr/include/c++/15/system_error \
  /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
@@ -214,4 +211,11 @@ CMakeFiles/studioos-media.dir/src/services/ImageService.cpp.o: \
  /usr/include/c++/15/bits/unique_ptr.h \
  /usr/include/c++/15/ext/aligned_buffer.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/fs_dir.h \
- /usr/include/c++/15/bits/fs_ops.h
+ /usr/include/c++/15/bits/fs_ops.h /usr/include/c++/15/algorithm \
+ /usr/include/c++/15/bits/ranges_algo.h \
+ /usr/include/c++/15/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ /home/linux/Documents/studioos-media/src/config/config.hpp \
+ /home/linux/Documents/studioos-media/src/storage/S3Storage.hpp \
+ /usr/include/c++/15/utility /usr/include/c++/15/bits/stl_relops.h \
+ /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp

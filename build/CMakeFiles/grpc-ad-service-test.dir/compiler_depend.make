@@ -2268,6 +2268,7 @@ CMakeFiles/grpc-ad-service-test.dir/src/ffmpeg/VideoEncoder.cpp.o: /home/linux/D
 CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Documents/studioos-media/src/grpc/MediaServer.cpp \
   /home/linux/Documents/studioos-media/generated/media.grpc.pb.h \
   /home/linux/Documents/studioos-media/generated/media.pb.h \
+  /home/linux/Documents/studioos-media/src/config/config.hpp \
   /home/linux/Documents/studioos-media/src/core/Result.hpp \
   /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
   /home/linux/Documents/studioos-media/src/services/AdService.hpp \
@@ -2280,6 +2281,7 @@ CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Docu
   /home/linux/Documents/studioos-media/src/media/AudioProcessor.hpp \
   /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
   /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
+  /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp \
   /usr/include/absl/base/attributes.h \
   /usr/include/absl/base/config.h \
   /usr/include/absl/base/const_init.h \
@@ -2353,6 +2355,11 @@ CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Docu
   /usr/include/c++/15/bits/exception_defines.h \
   /usr/include/c++/15/bits/exception_ptr.h \
   /usr/include/c++/15/bits/formatfwd.h \
+  /usr/include/c++/15/bits/fs_dir.h \
+  /usr/include/c++/15/bits/fs_fwd.h \
+  /usr/include/c++/15/bits/fs_ops.h \
+  /usr/include/c++/15/bits/fs_path.h \
+  /usr/include/c++/15/bits/fstream.tcc \
   /usr/include/c++/15/bits/functexcept.h \
   /usr/include/c++/15/bits/functional_hash.h \
   /usr/include/c++/15/bits/hash_bytes.h \
@@ -2458,6 +2465,7 @@ CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Docu
   /usr/include/c++/15/climits \
   /usr/include/c++/15/clocale \
   /usr/include/c++/15/cmath \
+  /usr/include/c++/15/codecvt \
   /usr/include/c++/15/compare \
   /usr/include/c++/15/concepts \
   /usr/include/c++/15/condition_variable \
@@ -2480,7 +2488,9 @@ CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Docu
   /usr/include/c++/15/ext/numeric_traits.h \
   /usr/include/c++/15/ext/string_conversions.h \
   /usr/include/c++/15/ext/type_traits.h \
+  /usr/include/c++/15/filesystem \
   /usr/include/c++/15/format \
+  /usr/include/c++/15/fstream \
   /usr/include/c++/15/functional \
   /usr/include/c++/15/initializer_list \
   /usr/include/c++/15/iomanip \
@@ -2831,8 +2841,10 @@ CMakeFiles/grpc-ad-service-test.dir/src/grpc/MediaServer.cpp.o: /home/linux/Docu
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h \

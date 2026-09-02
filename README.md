@@ -48,6 +48,7 @@ The service reads `config/config.json` at startup.
 
 Key fields:
 
+- `grpc.host` bind address; defaults to `127.0.0.1` for local-only access
 - `grpc.port` default: `50051`
 - `storage.temp` temporary working directory
 - `storage.assets` local asset root
@@ -57,6 +58,33 @@ Key fields:
 - `storage.s3Prefix` object prefix
 - `storage.s3UsePathStyle` path-style access toggle
 - `image.quality` output quality for image processing
+
+Profile image uploads are restricted to JPEG, PNG, and WebP, must decode successfully,
+and are limited to 5 MB, 10,000 pixels per dimension, and 25 megapixels total.
+
+### gRPC TLS / mTLS
+
+TLS is disabled for local development. For production, configure the media service
+with a server certificate, private key, and client CA:
+
+```json
+{
+  "grpc": {
+    "tls": {
+      "enabled": true,
+      "requireClientCertificate": true,
+      "certificateFile": "/run/secrets/media-server.crt",
+      "keyFile": "/run/secrets/media-server.key",
+      "caFile": "/run/secrets/studioos-ca.crt"
+    }
+  }
+}
+```
+
+Configure Spring Boot with `MEDIA_TLS_ENABLED=true`, `MEDIA_TLS_CA_FILE`,
+`MEDIA_TLS_CLIENT_CERT_FILE`, and `MEDIA_TLS_CLIENT_KEY_FILE`. The media server
+certificate must contain the private service hostname in its SAN. Never commit
+private keys or certificates to source control.
 
 ## Run locally
 
@@ -68,7 +96,11 @@ cmake --build build
 ./build/studioos-media
 ```
 
-The service listens on `0.0.0.0:50051` by default.
+The service listens on `127.0.0.1:50051` by default and is not reachable from other hosts.
+In a container, set `grpc.host` to `0.0.0.0` only when the container network is private,
+set `STUDIOOS_MEDIA_ALLOW_NON_LOOPBACK=true`, and do not publish port `50051` to the host.
+Spring Boot should connect to the service using its private service name and
+`MEDIA_SERVICE_PORT`.
 
 On first launch, if `config/config.json` is missing or unreadable, the app will create a default config file.
 

@@ -11,6 +11,12 @@ public:
     bool reload(const std::string& filename = "config/config.json");
 
     int grpcPort() const;
+    const std::string& grpcHost() const;
+    bool grpcTlsEnabled() const;
+    bool grpcTlsRequireClientCertificate() const;
+    const std::string& grpcTlsCertificateFile() const;
+    const std::string& grpcTlsKeyFile() const;
+    const std::string& grpcTlsCaFile() const;
     const std::string& tempFolder() const;
     const std::string& assetsFolder() const;
     const std::string& s3Bucket() const;
@@ -24,6 +30,12 @@ private:
     Config() = default;
 
     int mGrpcPort = 50051;
+    std::string mGrpcHost = "127.0.0.1";
+    bool mGrpcTlsEnabled = false;
+    bool mGrpcTlsRequireClientCertificate = true;
+    std::string mGrpcTlsCertificateFile;
+    std::string mGrpcTlsKeyFile;
+    std::string mGrpcTlsCaFile;
     std::string mTempFolder = "temp";
     std::string mAssetsFolder = "assets";
     std::string mS3Bucket;

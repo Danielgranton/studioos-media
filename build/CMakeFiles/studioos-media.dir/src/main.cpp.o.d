@@ -184,7 +184,10 @@ CMakeFiles/studioos-media.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/unicode-data.h \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/grpcpp/grpcpp.h \
+ /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/fstream \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/c++io.h \
+ /usr/include/c++/15/bits/fstream.tcc /usr/include/grpcpp/grpcpp.h \
  /usr/include/grpc/grpc.h /usr/include/grpc/support/port_platform.h \
  /usr/include/grpc/impl/codegen/port_platform.h \
  /usr/include/linux/version.h /usr/include/grpc/byte_buffer.h \

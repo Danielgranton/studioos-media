@@ -109,6 +109,11 @@ public:
         const media::MediaJobLookupRequest*,
         media::MediaJobResponse*) override;
 
+    grpc::Status UploadMedia(
+        grpc::ServerContext*,
+        grpc::ServerReader<media::MediaUploadChunk>*,
+        media::MediaJobResponse*) override;
+
     grpc::Status CreateVideoAd(
         grpc::ServerContext*,
         const media::AdCreateRequest*,

@@ -28,6 +28,13 @@ bool Config::load(const std::string& filename)
     file >> j;
 
     mGrpcPort = j.value("grpc", json::object()).value("port", mGrpcPort);
+    mGrpcHost = j.value("grpc", json::object()).value("host", mGrpcHost);
+    const auto tls = j.value("grpc", json::object()).value("tls", json::object());
+    mGrpcTlsEnabled = tls.value("enabled", mGrpcTlsEnabled);
+    mGrpcTlsRequireClientCertificate = tls.value("requireClientCertificate", mGrpcTlsRequireClientCertificate);
+    mGrpcTlsCertificateFile = tls.value("certificateFile", mGrpcTlsCertificateFile);
+    mGrpcTlsKeyFile = tls.value("keyFile", mGrpcTlsKeyFile);
+    mGrpcTlsCaFile = tls.value("caFile", mGrpcTlsCaFile);
     mTempFolder = j.value("storage", json::object()).value("temp", mTempFolder);
     mAssetsFolder = j.value("storage", json::object()).value("assets", mAssetsFolder);
     mS3Bucket = j.value("storage", json::object()).value("s3Bucket", mS3Bucket);
@@ -50,6 +57,12 @@ bool Config::save(const std::string& filename) const
 
     json j;
     j["grpc"]["port"] = mGrpcPort;
+    j["grpc"]["host"] = mGrpcHost;
+    j["grpc"]["tls"]["enabled"] = mGrpcTlsEnabled;
+    j["grpc"]["tls"]["requireClientCertificate"] = mGrpcTlsRequireClientCertificate;
+    j["grpc"]["tls"]["certificateFile"] = mGrpcTlsCertificateFile;
+    j["grpc"]["tls"]["keyFile"] = mGrpcTlsKeyFile;
+    j["grpc"]["tls"]["caFile"] = mGrpcTlsCaFile;
     j["storage"]["temp"] = mTempFolder;
     j["storage"]["assets"] = mAssetsFolder;
     j["storage"]["s3Bucket"] = mS3Bucket;
@@ -72,6 +85,17 @@ int Config::grpcPort() const
 {
     return mGrpcPort;
 }
+
+const std::string& Config::grpcHost() const
+{
+    return mGrpcHost;
+}
+
+bool Config::grpcTlsEnabled() const { return mGrpcTlsEnabled; }
+bool Config::grpcTlsRequireClientCertificate() const { return mGrpcTlsRequireClientCertificate; }
+const std::string& Config::grpcTlsCertificateFile() const { return mGrpcTlsCertificateFile; }
+const std::string& Config::grpcTlsKeyFile() const { return mGrpcTlsKeyFile; }
+const std::string& Config::grpcTlsCaFile() const { return mGrpcTlsCaFile; }
 
 const std::string& Config::tempFolder() const
 {

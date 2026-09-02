@@ -1,11 +1,22 @@
 #include "ImageService.hpp"
 
+#include <filesystem>
+#include <algorithm>
+#include <vector>
+
 #include "core/StatusCode.hpp"
+#include "config/config.hpp"
 #include "storage/S3Storage.hpp"
 #include "utils/FileUtils.hpp"
 
 namespace
 {
+bool isManagedTemporaryFile(const std::string& path)
+{
+    const std::string prefix = Config::instance().tempFolder() + "/";
+    return path.rfind(prefix, 0) == 0;
+}
+
 Result<std::string> uploadVariant(S3Storage& storage, const std::string& localPath, const std::string& objectKey)
 {
     if (!storage.configured())
@@ -89,24 +100,43 @@ Result<ResponsiveImageResult> ImageService::processResponsiveImage(
 
     S3Storage storage;
     const std::vector<int> sizes = {1024, 512, 256, 128, 64};
+    std::vector<std::string> temporaryFiles;
+    std::vector<std::string> localOutputs;
+    auto cleanup = [&temporaryFiles, &localOutputs](bool removeOutputs) {
+        for (const auto& file : temporaryFiles)
+        {
+            if (!removeOutputs && std::find(localOutputs.begin(), localOutputs.end(), file) != localOutputs.end()) {
+                continue;
+            }
+            if (isManagedTemporaryFile(file)) FileUtils::deleteFile(file);
+        }
+    };
+    auto fail = [&cleanup](const std::string& message, StatusCode status) {
+        cleanup(true);
+        return Result<ResponsiveImageResult>::fail(message, status);
+    };
+    if (isManagedTemporaryFile(path)) temporaryFiles.push_back(path);
 
     auto normalized = processor.removeMetadata(path);
     if (!normalized.success)
     {
-        return Result<ResponsiveImageResult>::fail(normalized.message, normalized.status);
+        return fail(normalized.message, normalized.status);
     }
+    temporaryFiles.push_back(normalized.value);
 
     auto originalWebp = processor.saveAsWebp(normalized.value, quality);
     if (!originalWebp.success)
     {
-        return Result<ResponsiveImageResult>::fail(originalWebp.message, originalWebp.status);
+        return fail(originalWebp.message, originalWebp.status);
     }
+    temporaryFiles.push_back(originalWebp.value);
+    if (!storage.configured()) localOutputs.push_back(originalWebp.value);
 
     ResponsiveImageResult result;
     auto originalUpload = uploadVariant(storage, originalWebp.value, objectKeyPrefix + "/original.webp");
     if (!originalUpload.success)
     {
-        return Result<ResponsiveImageResult>::fail(originalUpload.message, originalUpload.status);
+        return fail(originalUpload.message, originalUpload.status);
     }
     result.originalUrl = originalUpload.value;
 
@@ -115,14 +145,17 @@ Result<ResponsiveImageResult> ImageService::processResponsiveImage(
         auto square = processor.squareThumbnail(normalized.value, size);
         if (!square.success)
         {
-            return Result<ResponsiveImageResult>::fail(square.message, square.status);
+            return fail(square.message, square.status);
         }
+        temporaryFiles.push_back(square.value);
 
         auto webp = processor.saveAsWebp(square.value, quality);
         if (!webp.success)
         {
-            return Result<ResponsiveImageResult>::fail(webp.message, webp.status);
+            return fail(webp.message, webp.status);
         }
+        temporaryFiles.push_back(webp.value);
+        if (!storage.configured()) localOutputs.push_back(webp.value);
 
         const std::string objectKey = objectKeyPrefix + "/" + std::to_string(size) + ".webp";
         auto uploaded = uploadVariant(storage, webp.value, objectKey);
@@ -136,8 +169,9 @@ Result<ResponsiveImageResult> ImageService::processResponsiveImage(
 
     if (!storage.configured() && !FileUtils::exists(result.originalUrl))
     {
-        return Result<ResponsiveImageResult>::fail("Responsive image outputs were not created", StatusCode::INTERNAL_ERROR);
+        return fail("Responsive image outputs were not created", StatusCode::INTERNAL_ERROR);
     }
 
+    cleanup(storage.configured());
     return Result<ResponsiveImageResult>::ok(result);
 }

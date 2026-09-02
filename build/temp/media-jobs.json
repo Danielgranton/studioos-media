@@ -2,6 +2,28 @@
   "jobs": [
     {
       "assetReference": "s3://studioos-media/channels/song.mp3",
+      "createdAtUnixMs": 1788368425840,
+      "errorMessage": "fatal error: Could not connect to the endpoint URL: \"https://studioos-media.s3.eu-north-1.amazonaws.com/channels/song.mp3\"\n",
+      "jobId": "job-6",
+      "operation": "compress_audio",
+      "parametersJson": "{\"format\":\"mp3\"}",
+      "resultReference": "",
+      "status": "FAILED",
+      "updatedAtUnixMs": 1788368428050
+    },
+    {
+      "assetReference": "s3://studioos-media/channels/song.mp3",
+      "createdAtUnixMs": 1788368408963,
+      "errorMessage": "fatal error: Could not connect to the endpoint URL: \"https://studioos-media.s3.eu-north-1.amazonaws.com/channels/song.mp3\"\n",
+      "jobId": "job-5",
+      "operation": "compress_audio",
+      "parametersJson": "{\"format\":\"mp3\"}",
+      "resultReference": "",
+      "status": "FAILED",
+      "updatedAtUnixMs": 1788368413513
+    },
+    {
+      "assetReference": "s3://studioos-media/channels/song.mp3",
       "createdAtUnixMs": 1784051346007,
       "errorMessage": "fatal error: Could not connect to the endpoint URL: \"https://studioos-media.s3.eu-north-1.amazonaws.com/channels/song.mp3\"\n",
       "jobId": "job-3",
@@ -10,6 +32,17 @@
       "resultReference": "",
       "status": "FAILED",
       "updatedAtUnixMs": 1784051348557
+    },
+    {
+      "assetReference": "s3://studioos-media/channels/song.mp3",
+      "createdAtUnixMs": 1788368362323,
+      "errorMessage": "fatal error: Could not connect to the endpoint URL: \"https://studioos-media.s3.eu-north-1.amazonaws.com/channels/song.mp3\"\n",
+      "jobId": "job-4",
+      "operation": "compress_audio",
+      "parametersJson": "{\"format\":\"mp3\"}",
+      "resultReference": "",
+      "status": "FAILED",
+      "updatedAtUnixMs": 1788368365250
     },
     {
       "assetReference": "s3://studioos-media/channels/song.mp3",

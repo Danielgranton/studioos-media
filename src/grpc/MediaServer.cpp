@@ -1,9 +1,14 @@
 #include "MediaServer.hpp"
 
 #include <chrono>
+#include <fstream>
+#include <filesystem>
 #include <vector>
+#include <opencv2/imgcodecs.hpp>
 
 #include "core/Result.hpp"
+#include "config/config.hpp"
+#include "utils/FileUtils.hpp"
 
 namespace
 {
@@ -35,6 +40,16 @@ grpc::Status makeError(const Result<T>& result, const std::string& fallback)
 std::chrono::system_clock::time_point fromUnixMs(long long value)
 {
     return std::chrono::system_clock::time_point(std::chrono::milliseconds(value));
+}
+
+std::string safeExtension(const std::string& filename, const std::string& contentType)
+{
+    const auto extension = std::filesystem::path(filename).extension().string();
+    if (extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".webp")
+        return extension;
+    if (contentType == "image/png") return ".png";
+    if (contentType == "image/webp") return ".webp";
+    return ".jpg";
 }
 }
 
@@ -381,6 +396,82 @@ grpc::Status MediaServer::GetMediaJob(
     response->set_errormessage(job.errorMessage);
     response->set_createdatunixms(job.createdAtUnixMs);
     response->set_updatedatunixms(job.updatedAtUnixMs);
+    return grpc::Status::OK;
+}
+
+grpc::Status MediaServer::UploadMedia(
+    grpc::ServerContext*,
+    grpc::ServerReader<media::MediaUploadChunk>* reader,
+    media::MediaJobResponse* response)
+{
+    media::MediaUploadChunk chunk;
+    media::MediaUploadMetadata metadata;
+    bool receivedMetadata = false;
+    std::ofstream output;
+    std::string path;
+    std::size_t totalBytes = 0;
+    constexpr std::size_t maxProfileUploadBytes = 5ULL * 1024ULL * 1024ULL;
+
+    while (reader->Read(&chunk))
+    {
+        if (chunk.has_metadata())
+        {
+            if (receivedMetadata || output.is_open())
+                return grpc::Status(grpc::StatusCode::INVALID_ARGUMENT, "Upload metadata must be first and sent once");
+            metadata = chunk.metadata();
+            if (metadata.contenttype() != "image/jpeg"
+                    && metadata.contenttype() != "image/png"
+                    && metadata.contenttype() != "image/webp")
+                return grpc::Status(grpc::StatusCode::INVALID_ARGUMENT, "Only image uploads are supported");
+
+            const std::string prefix = Config::instance().tempFolder() + "/profile-upload-";
+            const std::string temporaryBase = FileUtils::tempFile(prefix);
+            FileUtils::deleteFile(temporaryBase);
+            path = temporaryBase + safeExtension(metadata.filename(), metadata.contenttype());
+            output.open(path, std::ios::binary | std::ios::trunc);
+            if (!output.is_open())
+                return grpc::Status(grpc::StatusCode::INTERNAL, "Could not create upload file");
+            receivedMetadata = true;
+        }
+        else if (chunk.has_data())
+        {
+            if (!receivedMetadata || !output.is_open())
+                return grpc::Status(grpc::StatusCode::INVALID_ARGUMENT, "Upload metadata is required");
+            totalBytes += static_cast<std::size_t>(chunk.data().size());
+            if (totalBytes > maxProfileUploadBytes)
+            {
+                output.close();
+                FileUtils::deleteFile(path);
+                return grpc::Status(grpc::StatusCode::RESOURCE_EXHAUSTED, "Profile image exceeds 5 MB");
+            }
+            output.write(chunk.data().data(), static_cast<std::streamsize>(chunk.data().size()));
+        }
+    }
+
+    if (output.is_open()) output.close();
+    if (!receivedMetadata || totalBytes == 0 || !FileUtils::exists(path))
+        return grpc::Status(grpc::StatusCode::INVALID_ARGUMENT, "Image upload is empty");
+
+    // MIME headers are client-controlled; decode the completed file before accepting it.
+    const cv::Mat decoded = cv::imread(path, cv::IMREAD_UNCHANGED);
+    if (decoded.empty())
+    {
+        FileUtils::deleteFile(path);
+        return grpc::Status(grpc::StatusCode::INVALID_ARGUMENT, "Uploaded file is not a valid supported image");
+    }
+    constexpr int maxImageDimension = 10000;
+    constexpr long long maxImagePixels = 25LL * 1000LL * 1000LL;
+    if (decoded.cols > maxImageDimension || decoded.rows > maxImageDimension
+            || static_cast<long long>(decoded.cols) * decoded.rows > maxImagePixels)
+    {
+        FileUtils::deleteFile(path);
+        return grpc::Status(grpc::StatusCode::RESOURCE_EXHAUSTED,
+                "Image dimensions exceed the supported safety limits");
+    }
+
+    response->set_status("COMPLETED");
+    response->set_assetreference(path);
+    response->set_operation(metadata.operation());
     return grpc::Status::OK;
 }
 

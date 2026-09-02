@@ -1,111 +1,308 @@
-Start testing: Jul 14 21:53 EAT
+Start testing: Sep 02 19:58 EAT
 ----------------------------------------------------------
-6/10 Testing: grpc-ad-service-test
-6/10 Test: grpc-ad-service-test
-Command: "/home/linux/Documents/studioos-media/build/grpc-ad-service-test"
+1/10 Testing: video-processor-test
+1/10 Test: video-processor-test
+Command: "/home/linux/Documents/studioos-media/build/video-processor-test"
 Directory: /home/linux/Documents/studioos-media/build
-"grpc-ad-service-test" start time: Jul 14 21:53 EAT
+"video-processor-test" start time: Sep 02 19:58 EAT
 Output:
 ----------------------------------------------------------
-2026-07-14 21:53:05[INFO]Normalizing video audio: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:05[INFO]Video audio normalization completed in 793 ms
-2026-07-14 21:53:05[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:09[INFO]Video resize completed in 3226 ms
-2026-07-14 21:53:09[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:10[INFO]Video resize completed in 1361 ms
-2026-07-14 21:53:10[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:11[INFO]Video resize completed in 933 ms
-2026-07-14 21:53:11[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Video resize completed in 784 ms
-2026-07-14 21:53:12[INFO]Generating video thumbnails: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Video thumbnails completed in 634 ms
-2026-07-14 21:53:12[INFO]Extracting video frame: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Frame extraction completed in 176 ms
-2026-07-14 21:53:12[INFO]Generating preview clip: temp/grpc-ad-service-tests/video.mp4
-2026-07-14 21:53:13[INFO]Preview clip completed in 819 ms
-grpc ad service smoke test passed
+2026-09-02 19:58:41[INFO]Compressing video: temp/tests/sample.mp4
+2026-09-02 19:58:42[INFO]Video compression completed in 448 ms
+2026-09-02 19:58:42[INFO]Resizing video: temp/tests/sample.mp4
+2026-09-02 19:58:42[INFO]Video resize completed in 311 ms
+2026-09-02 19:58:42[INFO]Watermarking video: temp/tests/sample.mp4
+2026-09-02 19:58:43[INFO]Video watermark completed in 469 ms
+2026-09-02 19:58:43[INFO]Rotating video: temp/tests/sample.mp4
+2026-09-02 19:58:43[INFO]Video rotate completed in 339 ms
+2026-09-02 19:58:43[INFO]Normalizing video audio: temp/tests/sample.mp4
+2026-09-02 19:58:43[INFO]Video audio normalization completed in 406 ms
+2026-09-02 19:58:43[INFO]Generating video thumbnails: temp/tests/sample.mp4
+2026-09-02 19:58:45[INFO]Video thumbnails completed in 1365 ms
+2026-09-02 19:58:45[INFO]Generating GIF preview: temp/tests/sample.mp4
+2026-09-02 19:58:45[INFO]GIF preview completed in 309 ms
+2026-09-02 19:58:45[INFO]Generating preview clip: temp/tests/sample.mp4
+2026-09-02 19:58:45[INFO]Preview clip completed in 317 ms
+2026-09-02 19:58:46[INFO]Generating thumbnail: temp/tests/sample.mp4
+2026-09-02 19:58:46[INFO]Thumbnail generation completed in 310 ms
+2026-09-02 19:58:46[INFO]Extracting audio: temp/tests/sample.mp4
+2026-09-02 19:58:46[INFO]Audio extraction completed in 245 ms
+2026-09-02 19:58:46[INFO]Converting video: temp/tests/sample.mp4 to mov
+2026-09-02 19:58:47[INFO]Video conversion completed in 329 ms
+2026-09-02 19:58:47[INFO]Trimming video: temp/tests/sample.mp4
+2026-09-02 19:58:47[INFO]Video trim completed in 334 ms
+2026-09-02 19:58:47[INFO]Merging videos
+2026-09-02 19:58:47[INFO]Video merge completed in 261 ms
+2026-09-02 19:58:47[INFO]Extracting video frame: temp/tests/sample.mp4
+2026-09-02 19:58:47[INFO]Frame extraction completed in 359 ms
+video processor smoke test passed
 <end of output>
-Test time =  15.34 sec
+Test time =   9.09 sec
 ----------------------------------------------------------
 Test Passed.
-"grpc-ad-service-test" end time: Jul 14 21:53 EAT
-"grpc-ad-service-test" time elapsed: 00:00:15
+"video-processor-test" end time: Sep 02 19:58 EAT
+"video-processor-test" time elapsed: 00:00:09
+----------------------------------------------------------
+
+2/10 Testing: image-processor-test
+2/10 Test: image-processor-test
+Command: "/home/linux/Documents/studioos-media/build/image-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"image-processor-test" start time: Sep 02 19:58 EAT
+Output:
+----------------------------------------------------------
+2026-09-02 19:58:50[INFO]Compressing image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Compression completed in 0 ms
+2026-09-02 19:58:50[INFO]Resizing image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Resize completed in 0 ms
+2026-09-02 19:58:50[INFO]Resizing image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Resize completed in 0 ms
+2026-09-02 19:58:50[INFO]Generating square thumbnail: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Square thumbnail completed in 0 ms
+2026-09-02 19:58:50[INFO]Cropping image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Crop completed in 0 ms
+2026-09-02 19:58:50[INFO]Rotating image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Rotate completed in 0 ms
+2026-09-02 19:58:50[INFO]Blurring image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Blur completed in 3 ms
+2026-09-02 19:58:50[INFO]Applying watermark: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Watermark completed in 0 ms
+2026-09-02 19:58:50[INFO]Sharpening image: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Sharpen completed in 0 ms
+2026-09-02 19:58:50[INFO]Removing metadata: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]Metadata removal completed in 0 ms
+2026-09-02 19:58:50[INFO]Saving image as WebP: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]WebP save completed in 1 ms
+2026-09-02 19:58:50[INFO]Saving image as AVIF: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]AVIF save completed in 217 ms
+2026-09-02 19:58:50[INFO]Optimizing PNG: temp/tests/sample.jpg
+2026-09-02 19:58:50[INFO]PNG optimization completed in 2 ms
+image processor smoke test passed
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"image-processor-test" end time: Sep 02 19:58 EAT
+"image-processor-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: audio-processor-test
+3/10 Test: audio-processor-test
+Command: "/home/linux/Documents/studioos-media/build/audio-processor-test"
+Directory: /home/linux/Documents/studioos-media/build
+"audio-processor-test" start time: Sep 02 19:58 EAT
+Output:
+----------------------------------------------------------
+2026-09-02 19:58:51[INFO]Encoding audio: temp/tests/sample.wav -> mp3
+2026-09-02 19:58:51[INFO]Audio encode completed in 307 ms
+2026-09-02 19:58:51[INFO]Normalizing audio: temp/tests/sample.wav
+2026-09-02 19:58:51[INFO]Audio normalize completed in 430 ms
+2026-09-02 19:58:51[INFO]Reducing noise in audio: temp/tests/sample.wav
+2026-09-02 19:58:52[INFO]Audio denoise completed in 352 ms
+2026-09-02 19:58:52[INFO]Merging audio inputs
+2026-09-02 19:58:52[INFO]Audio merge completed in 454 ms
+2026-09-02 19:58:52[INFO]Trimming audio: temp/tests/sample.wav
+2026-09-02 19:58:53[INFO]Audio trim completed in 561 ms
+2026-09-02 19:58:53[INFO]Converting audio: temp/tests/sample.wav -> aac
+2026-09-02 19:58:53[INFO]Audio convert completed in 816 ms
+audio processor smoke test passed
+<end of output>
+Test time =   3.11 sec
+----------------------------------------------------------
+Test Passed.
+"audio-processor-test" end time: Sep 02 19:58 EAT
+"audio-processor-test" time elapsed: 00:00:03
+----------------------------------------------------------
+
+4/10 Testing: streaming-service-test
+4/10 Test: streaming-service-test
+Command: "/home/linux/Documents/studioos-media/build/streaming-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"streaming-service-test" start time: Sep 02 19:58 EAT
+Output:
+----------------------------------------------------------
+streaming service smoke test passed
+<end of output>
+Test time =  10.02 sec
+----------------------------------------------------------
+Test Passed.
+"streaming-service-test" end time: Sep 02 19:59 EAT
+"streaming-service-test" time elapsed: 00:00:10
 ----------------------------------------------------------
 
 5/10 Testing: ad-service-test
 5/10 Test: ad-service-test
 Command: "/home/linux/Documents/studioos-media/build/ad-service-test"
 Directory: /home/linux/Documents/studioos-media/build
-"ad-service-test" start time: Jul 14 21:53 EAT
+"ad-service-test" start time: Sep 02 19:59 EAT
 Output:
 ----------------------------------------------------------
-2026-07-14 21:53:05[INFO]Normalizing video audio: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:05[INFO]Video audio normalization completed in 805 ms
-2026-07-14 21:53:05[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:09[INFO]Video resize completed in 3225 ms
-2026-07-14 21:53:09[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:10[INFO]Video resize completed in 1361 ms
-2026-07-14 21:53:10[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:11[INFO]Video resize completed in 901 ms
-2026-07-14 21:53:11[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Video resize completed in 815 ms
-2026-07-14 21:53:12[INFO]Generating video thumbnails: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Video thumbnails completed in 633 ms
-2026-07-14 21:53:12[INFO]Extracting video frame: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:12[INFO]Frame extraction completed in 173 ms
-2026-07-14 21:53:12[INFO]Generating preview clip: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:13[INFO]Preview clip completed in 828 ms
-2026-07-14 21:53:19[INFO]Normalizing video audio: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:20[INFO]Video audio normalization completed in 842 ms
-2026-07-14 21:53:20[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:22[INFO]Video resize completed in 1939 ms
-2026-07-14 21:53:22[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:23[INFO]Video resize completed in 1007 ms
-2026-07-14 21:53:23[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:23[INFO]Video resize completed in 670 ms
-2026-07-14 21:53:23[INFO]Resizing video: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:24[INFO]Video resize completed in 568 ms
-2026-07-14 21:53:24[INFO]Generating video thumbnails: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:25[INFO]Video thumbnails completed in 722 ms
-2026-07-14 21:53:25[INFO]Extracting video frame: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:25[INFO]Frame extraction completed in 191 ms
-2026-07-14 21:53:25[INFO]Generating preview clip: temp/ad-service-tests/video.mp4
-2026-07-14 21:53:25[INFO]Preview clip completed in 589 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 15 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 18 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 8 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 7 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 5 ms
-2026-07-14 21:53:29[INFO]Generating square thumbnail: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Square thumbnail completed in 7 ms
-2026-07-14 21:53:29[INFO]Saving image as WebP: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]WebP save completed in 113 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 12 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 9 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 6 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 5 ms
-2026-07-14 21:53:29[INFO]Resizing image: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Resize completed in 4 ms
-2026-07-14 21:53:29[INFO]Generating square thumbnail: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:29[INFO]Square thumbnail completed in 6 ms
-2026-07-14 21:53:29[INFO]Saving image as WebP: temp/ad-service-tests/image.jpg
-2026-07-14 21:53:30[INFO]WebP save completed in 114 ms
+2026-09-02 19:59:06[INFO]Normalizing video audio: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:06[INFO]Video audio normalization completed in 933 ms
+2026-09-02 19:59:06[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:12[INFO]Video resize completed in 5237 ms
+2026-09-02 19:59:12[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:15[INFO]Video resize completed in 3281 ms
+2026-09-02 19:59:15[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:17[INFO]Video resize completed in 2213 ms
+2026-09-02 19:59:17[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:19[INFO]Video resize completed in 2096 ms
+2026-09-02 19:59:19[INFO]Generating video thumbnails: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:22[INFO]Video thumbnails completed in 2673 ms
+2026-09-02 19:59:22[INFO]Extracting video frame: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:22[INFO]Frame extraction completed in 444 ms
+2026-09-02 19:59:22[INFO]Generating preview clip: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:24[INFO]Preview clip completed in 1214 ms
+2026-09-02 19:59:29[INFO]Normalizing video audio: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:30[INFO]Video audio normalization completed in 793 ms
+2026-09-02 19:59:30[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:34[INFO]Video resize completed in 4379 ms
+2026-09-02 19:59:34[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:37[INFO]Video resize completed in 2789 ms
+2026-09-02 19:59:37[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:41[INFO]Video resize completed in 3744 ms
+2026-09-02 19:59:41[INFO]Resizing video: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:43[INFO]Video resize completed in 2744 ms
+2026-09-02 19:59:43[INFO]Generating video thumbnails: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:47[INFO]Video thumbnails completed in 3882 ms
+2026-09-02 19:59:47[INFO]Extracting video frame: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:48[INFO]Frame extraction completed in 715 ms
+2026-09-02 19:59:48[INFO]Generating preview clip: temp/ad-service-tests/video.mp4
+2026-09-02 19:59:51[INFO]Preview clip completed in 3021 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 23 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 20 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 12 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 9 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 8 ms
+2026-09-02 20:00:07[INFO]Generating square thumbnail: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Square thumbnail completed in 19 ms
+2026-09-02 20:00:07[INFO]Saving image as WebP: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]WebP save completed in 242 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 18 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 18 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 10 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 9 ms
+2026-09-02 20:00:07[INFO]Resizing image: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Resize completed in 8 ms
+2026-09-02 20:00:07[INFO]Generating square thumbnail: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]Square thumbnail completed in 12 ms
+2026-09-02 20:00:07[INFO]Saving image as WebP: temp/ad-service-tests/image.jpg
+2026-09-02 20:00:07[INFO]WebP save completed in 231 ms
 ad service smoke test passed
 <end of output>
-Test time =  26.19 sec
+Test time =  63.72 sec
 ----------------------------------------------------------
 Test Passed.
-"ad-service-test" end time: Jul 14 21:53 EAT
-"ad-service-test" time elapsed: 00:00:26
+"ad-service-test" end time: Sep 02 20:00 EAT
+"ad-service-test" time elapsed: 00:01:03
 ----------------------------------------------------------
 
-End testing: Jul 14 21:53 EAT
+6/10 Testing: grpc-ad-service-test
+6/10 Test: grpc-ad-service-test
+Command: "/home/linux/Documents/studioos-media/build/grpc-ad-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"grpc-ad-service-test" start time: Sep 02 20:00 EAT
+Output:
+----------------------------------------------------------
+2026-09-02 20:00:10[INFO]Normalizing video audio: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:11[INFO]Video audio normalization completed in 1070 ms
+2026-09-02 20:00:11[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:13[WARN]Media job callback gRPC failed for job-5: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50052: Operation not permitted
+2026-09-02 20:00:16[INFO]Video resize completed in 5044 ms
+2026-09-02 20:00:16[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:17[INFO]Video resize completed in 1320 ms
+2026-09-02 20:00:17[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:18[INFO]Video resize completed in 800 ms
+2026-09-02 20:00:18[INFO]Resizing video: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:19[INFO]Video resize completed in 687 ms
+2026-09-02 20:00:19[INFO]Generating video thumbnails: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:19[INFO]Video thumbnails completed in 548 ms
+2026-09-02 20:00:19[INFO]Extracting video frame: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:19[INFO]Frame extraction completed in 179 ms
+2026-09-02 20:00:19[INFO]Generating preview clip: temp/grpc-ad-service-tests/video.mp4
+2026-09-02 20:00:20[INFO]Preview clip completed in 711 ms
+grpc ad service smoke test passed
+<end of output>
+Test time =  17.96 sec
+----------------------------------------------------------
+Test Passed.
+"grpc-ad-service-test" end time: Sep 02 20:00 EAT
+"grpc-ad-service-test" time elapsed: 00:00:17
+----------------------------------------------------------
+
+7/10 Testing: media-job-service-test
+7/10 Test: media-job-service-test
+Command: "/home/linux/Documents/studioos-media/build/media-job-service-test"
+Directory: /home/linux/Documents/studioos-media/build
+"media-job-service-test" start time: Sep 02 20:00 EAT
+Output:
+----------------------------------------------------------
+media job service smoke test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"media-job-service-test" end time: Sep 02 20:00 EAT
+"media-job-service-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: grpc-media-job-test
+8/10 Test: grpc-media-job-test
+Command: "/home/linux/Documents/studioos-media/build/grpc-media-job-test"
+Directory: /home/linux/Documents/studioos-media/build
+"grpc-media-job-test" start time: Sep 02 20:00 EAT
+Output:
+----------------------------------------------------------
+grpc media job smoke test passed
+2026-09-02 20:00:28[WARN]Media job callback gRPC failed for job-6: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50052: Operation not permitted
+<end of output>
+Test time =   2.39 sec
+----------------------------------------------------------
+Test Passed.
+"grpc-media-job-test" end time: Sep 02 20:00 EAT
+"grpc-media-job-test" time elapsed: 00:00:02
+----------------------------------------------------------
+
+9/10 Testing: grpc-media-callback-test
+9/10 Test: grpc-media-callback-test
+Command: "/home/linux/Documents/studioos-media/build/grpc-media-callback-test"
+Directory: /home/linux/Documents/studioos-media/build
+"grpc-media-callback-test" start time: Sep 02 20:00 EAT
+Output:
+----------------------------------------------------------
+E0902 20:00:28.212240785    3925 chttp2_server.cc:1045]                UNKNOWN:No address added out of total 1 resolved for '127.0.0.1:18080' {file:"./src/core/ext/transport/chttp2/server/chttp2_server.cc", file_line:960, created_time:"2026-09-02T20:00:28.2120827+03:00", children:[UNKNOWN:Operation not permitted {target_address:"[::ffff:127.0.0.1]:18080", syscall:"socket", os_error:"Operation not permitted", errno:1, created_time:"2026-09-02T20:00:28.212044511+03:00", file_line:424, file:"./src/core/lib/iomgr/socket_utils_common_posix.cc"}]}
+callback gRPC server failed to start
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Failed.
+"grpc-media-callback-test" end time: Sep 02 20:00 EAT
+"grpc-media-callback-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: s3-storage-test
+10/10 Test: s3-storage-test
+Command: "/home/linux/Documents/studioos-media/build/s3-storage-test"
+Directory: /home/linux/Documents/studioos-media/build
+"s3-storage-test" start time: Sep 02 20:00 EAT
+Output:
+----------------------------------------------------------
+s3 storage smoke test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"s3-storage-test" end time: Sep 02 20:00 EAT
+"s3-storage-test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 02 20:00 EAT
