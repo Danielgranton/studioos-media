@@ -14,10 +14,10 @@
     "storage": {
         "temp": "temp",
         "assets": "assets",
-        "s3Bucket": "",
-        "s3Region": "",
+        "s3Bucket": "studioos-files",
+        "s3Region": "eu-north-1",
         "s3EndpointUrl": "",
-        "s3Prefix": "",
+        "s3Prefix": "media",
         "s3UsePathStyle": false
     },
 
