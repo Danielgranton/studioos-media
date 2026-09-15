@@ -143,6 +143,16 @@ Result<std::string> processMediaJob(
     {
         processingResult = audioService.normalize(localInputPath);
     }
+    else if (containsOperation(job.operation, "audio.generatePreview"))
+    {
+        const std::string start = params.value("start", std::string("00:00:00"));
+        const std::string end = params.value("end", std::string("00:00:30"));
+        processingResult = audioService.trim(localInputPath, start, end);
+    }
+    else if (containsOperation(job.operation, "audio.generateWaveform"))
+    {
+        processingResult = audioService.waveform(localInputPath);
+    }
     else if (containsOperation(job.operation, "audio.compress"))
     {
         const std::string format = params.value("format", std::string("mp3"));

@@ -203,6 +203,35 @@ Result<std::string> AudioProcessor::trim(const std::string& inputPath, const std
     return Result<std::string>::ok(output);
 }
 
+Result<std::string> AudioProcessor::waveform(const std::string& inputPath)
+{
+    Timer timer;
+    Logger::info("Generating audio waveform: " + inputPath);
+
+    if (inputPath.empty() || !FileUtils::exists(inputPath))
+    {
+        return Result<std::string>::fail("Audio input not found", StatusCode::FILE_NOT_FOUND);
+    }
+
+    if (!FFmpeg::isAvailable())
+    {
+        return Result<std::string>::fail("FFmpeg is not available", StatusCode::AUDIO_ERROR);
+    }
+
+    const std::string output = makeOutputPath(inputPath, "waveform_", ".png");
+    const std::string args = "-y -i \"" + inputPath
+        + "\" -filter_complex \"aformat=channel_layouts=mono,showwavespic=s=1200x240:colors=#e8a33d\""
+        + " -frames:v 1 \"" + output + "\"";
+
+    if (!FFmpeg::run(args))
+    {
+        return Result<std::string>::fail("Failed to generate audio waveform with FFmpeg", StatusCode::AUDIO_ERROR);
+    }
+
+    Logger::info("Audio waveform completed in " + std::to_string(timer.elapsedMilliseconds()) + " ms");
+    return Result<std::string>::ok(output);
+}
+
 Result<std::string> AudioProcessor::convert(const std::string& inputPath, const std::string& format)
 {
     Timer timer;

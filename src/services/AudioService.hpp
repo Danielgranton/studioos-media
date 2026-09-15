@@ -19,6 +19,8 @@ public:
 
     Result<std::string> trim(const std::string& path, const std::string& start, const std::string& end);
 
+    Result<std::string> waveform(const std::string& path);
+
     Result<std::string> convert(const std::string& path, const std::string& format);
 
 private:

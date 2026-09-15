@@ -25,6 +25,11 @@ Result<std::string> AudioService::trim(const std::string& path, const std::strin
     return processor.trim(path, start, end);
 }
 
+Result<std::string> AudioService::waveform(const std::string& path)
+{
+    return processor.waveform(path);
+}
+
 Result<std::string> AudioService::convert(const std::string& path, const std::string& format)
 {
     return processor.convert(path, format);
