@@ -23,6 +23,8 @@ public:
     const std::string& s3Region() const;
     const std::string& s3EndpointUrl() const;
     const std::string& s3Prefix() const;
+    const std::string& s3AccessKeyId() const;
+    const std::string& s3SecretAccessKey() const;
     bool s3UsePathStyle() const;
     int imageQuality() const;
 
@@ -42,6 +44,8 @@ private:
     std::string mS3Region;
     std::string mS3EndpointUrl;
     std::string mS3Prefix;
+    std::string mS3AccessKeyId;
+    std::string mS3SecretAccessKey;
     bool mS3UsePathStyle = false;
     int mImageQuality = 85;
 };

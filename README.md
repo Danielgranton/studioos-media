@@ -55,6 +55,15 @@ Key fields:
 - `storage.s3Bucket` S3 bucket name
 - `storage.s3Region` S3 region
 - `storage.s3EndpointUrl` custom S3 endpoint if needed
+
+For S3-backed jobs, the worker reads credentials from the environment. Use
+`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`; the legacy names
+`AWS_ACCESS_KEY` and `AWS_SECRET_KEY` are also accepted. These values are not
+stored in `config/config.json`.
+
+The worker posts completed jobs back to the server at `localhost:50052` by
+default. Set `MEDIA_CALLBACK_GRPC_TARGET` when the server is running on another
+host, for example `localhost:50052` or `server:50052` in Docker.
 - `storage.s3Prefix` object prefix
 - `storage.s3UsePathStyle` path-style access toggle
 - `image.quality` output quality for image processing

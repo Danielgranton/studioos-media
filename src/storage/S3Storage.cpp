@@ -158,6 +158,15 @@ std::string S3Storage::makeS3Reference(const std::string& objectKey) const
 std::string S3Storage::buildBaseArgs() const
 {
     std::ostringstream args;
+    const auto& config = Config::instance();
+    if (!config.s3AccessKeyId().empty())
+    {
+        args << "AWS_ACCESS_KEY_ID=" << shellQuote(config.s3AccessKeyId()) << " ";
+    }
+    if (!config.s3SecretAccessKey().empty())
+    {
+        args << "AWS_SECRET_ACCESS_KEY=" << shellQuote(config.s3SecretAccessKey()) << " ";
+    }
     args << "aws";
 
     if (!Config::instance().s3Region().empty())

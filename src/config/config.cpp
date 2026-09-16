@@ -1,6 +1,7 @@
 #include "config.hpp"
 
 #include <fstream>
+#include <cstdlib>
 
 #include <nlohmann/json.hpp>
 
@@ -9,6 +10,22 @@ using json = nlohmann::json;
 namespace
 {
 constexpr const char* kDefaultConfigPath = "config/config.json";
+
+std::string environmentValue(const char* primary, const char* fallback = nullptr)
+{
+    if (const char* value = std::getenv(primary); value != nullptr && value[0] != '\0')
+    {
+        return value;
+    }
+    if (fallback != nullptr)
+    {
+        if (const char* value = std::getenv(fallback); value != nullptr && value[0] != '\0')
+        {
+            return value;
+        }
+    }
+    return {};
+}
 }
 
 Config& Config::instance()
@@ -41,6 +58,8 @@ bool Config::load(const std::string& filename)
     mS3Region = j.value("storage", json::object()).value("s3Region", mS3Region);
     mS3EndpointUrl = j.value("storage", json::object()).value("s3EndpointUrl", mS3EndpointUrl);
     mS3Prefix = j.value("storage", json::object()).value("s3Prefix", mS3Prefix);
+    mS3AccessKeyId = environmentValue("AWS_ACCESS_KEY_ID", "AWS_ACCESS_KEY");
+    mS3SecretAccessKey = environmentValue("AWS_SECRET_ACCESS_KEY", "AWS_SECRET_KEY");
     mS3UsePathStyle = j.value("storage", json::object()).value("s3UsePathStyle", mS3UsePathStyle);
     mImageQuality = j.value("image", json::object()).value("quality", mImageQuality);
 
@@ -125,6 +144,16 @@ const std::string& Config::s3EndpointUrl() const
 const std::string& Config::s3Prefix() const
 {
     return mS3Prefix;
+}
+
+const std::string& Config::s3AccessKeyId() const
+{
+    return mS3AccessKeyId;
+}
+
+const std::string& Config::s3SecretAccessKey() const
+{
+    return mS3SecretAccessKey;
 }
 
 bool Config::s3UsePathStyle() const
