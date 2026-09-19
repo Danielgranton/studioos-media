@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cctype>
+#include <cmath>
 #include <cstdlib>
 #include <thread>
 
@@ -58,31 +59,46 @@ std::string callbackTarget()
 
 void reportCallbackGrpc(
     const MediaJobService::JobRecord& job,
-    const Result<std::string>& result)
+    const Result<std::string>& result,
+    int durationSeconds)
 {
-    auto channel = grpc::CreateChannel(callbackTarget(), grpc::InsecureChannelCredentials());
-    auto stub = media::MediaCallbackService::NewStub(channel);
+    constexpr int maxAttempts = 5;
+    for (int attempt = 1; attempt <= maxAttempts; ++attempt)
+    {
+        auto channel = grpc::CreateChannel(callbackTarget(), grpc::InsecureChannelCredentials());
+        auto stub = media::MediaCallbackService::NewStub(channel);
 
-    media::MediaJobCallbackRequest request;
-    request.set_jobid(job.jobId);
-    request.set_externaljobid(job.jobId);
-    request.set_status(result.success ? "SUCCESS" : "FAILED");
-    if (result.success)
-    {
-        request.set_resultreference(result.value);
-    }
-    else
-    {
-        request.set_errormessage(result.message);
-    }
+        media::MediaJobCallbackRequest request;
+        request.set_jobid(job.jobId);
+        request.set_externaljobid(job.jobId);
+        request.set_status(result.success ? "SUCCESS" : "FAILED");
+        if (result.success)
+        {
+            request.set_resultreference(result.value);
+        }
+        else
+        {
+            request.set_errormessage(result.message);
+        }
+        if (durationSeconds > 0)
+        {
+            request.set_durationseconds(durationSeconds);
+        }
 
-    media::MediaJobCallbackResponse response;
-    grpc::ClientContext context;
-    grpc::Status status = stub->ReportMediaJob(&context, request, &response);
-    if (!status.ok() || !response.accepted())
-    {
-        Logger::warning(
-            "Media job callback gRPC failed for " + job.jobId + ": " + status.error_message());
+        media::MediaJobCallbackResponse response;
+        grpc::ClientContext context;
+        grpc::Status status = stub->ReportMediaJob(&context, request, &response);
+        if (status.ok() && response.accepted())
+        {
+            return;
+        }
+
+        Logger::warning("Media job callback gRPC failed for " + job.jobId
+                + " attempt " + std::to_string(attempt) + ": " + status.error_message());
+        if (attempt < maxAttempts)
+        {
+            std::this_thread::sleep_for(std::chrono::milliseconds(250 * attempt));
+        }
     }
 }
 
@@ -107,7 +123,8 @@ Result<std::string> processMediaJob(
     const MediaJobService::JobRecord& job,
     ImageService& imageService,
     VideoService& videoService,
-    AudioService& audioService)
+    AudioService& audioService,
+    int* durationSeconds)
 {
     ImageProcessor imageProcessor;
     const json params = parseParameters(job.parametersJson);
@@ -141,6 +158,19 @@ Result<std::string> processMediaJob(
 
     if (containsOperation(job.operation, "audio.normalize"))
     {
+        const auto metadata = videoService.metadata(localInputPath);
+        if (metadata.success)
+        {
+            try
+            {
+                const auto payload = json::parse(metadata.value);
+                *durationSeconds = static_cast<int>(std::lround(payload.value("durationSeconds", 0.0)));
+            }
+            catch (const json::exception&)
+            {
+                *durationSeconds = 0;
+            }
+        }
         processingResult = audioService.normalize(localInputPath);
     }
     else if (containsOperation(job.operation, "audio.generatePreview"))
@@ -326,7 +356,8 @@ void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
 
     (void)mJobService.updateJob(job.jobId, "RUNNING");
 
-    const auto result = processMediaJob(job, mImageService, mVideoService, mAudioService);
+    int durationSeconds = 0;
+    const auto result = processMediaJob(job, mImageService, mVideoService, mAudioService, &durationSeconds);
     if (result.success)
     {
         (void)mJobService.updateJob(job.jobId, "SUCCESS", result.value, "");
@@ -336,5 +367,5 @@ void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
         (void)mJobService.updateJob(job.jobId, "FAILED", "", result.message);
     }
 
-    reportCallbackGrpc(job, result);
+    reportCallbackGrpc(job, result, durationSeconds);
 }

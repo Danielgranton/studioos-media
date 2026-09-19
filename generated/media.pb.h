@@ -3745,6 +3745,7 @@ class MediaJobResponse final :
     kErrorMessageFieldNumber = 7,
     kCreatedAtUnixMsFieldNumber = 8,
     kUpdatedAtUnixMsFieldNumber = 9,
+    kDurationSecondsFieldNumber = 10,
   };
   // string jobId = 1;
   void clear_jobid();
@@ -3862,6 +3863,15 @@ class MediaJobResponse final :
   void _internal_set_updatedatunixms(int64_t value);
   public:
 
+  // int32 durationSeconds = 10;
+  void clear_durationseconds();
+  int32_t durationseconds() const;
+  void set_durationseconds(int32_t value);
+  private:
+  int32_t _internal_durationseconds() const;
+  void _internal_set_durationseconds(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:media.MediaJobResponse)
  private:
   class _Internal;
@@ -3879,6 +3889,7 @@ class MediaJobResponse final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
     int64_t createdatunixms_;
     int64_t updatedatunixms_;
+    int32_t durationseconds_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4012,6 +4023,7 @@ class MediaJobCallbackRequest final :
     kStatusFieldNumber = 3,
     kResultReferenceFieldNumber = 4,
     kErrorMessageFieldNumber = 5,
+    kDurationSecondsFieldNumber = 6,
   };
   // string jobId = 1;
   void clear_jobid();
@@ -4083,6 +4095,15 @@ class MediaJobCallbackRequest final :
   std::string* _internal_mutable_errormessage();
   public:
 
+  // int32 durationSeconds = 6;
+  void clear_durationseconds();
+  int32_t durationseconds() const;
+  void set_durationseconds(int32_t value);
+  private:
+  int32_t _internal_durationseconds() const;
+  void _internal_set_durationseconds(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:media.MediaJobCallbackRequest)
  private:
   class _Internal;
@@ -4096,6 +4117,7 @@ class MediaJobCallbackRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resultreference_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
+    int32_t durationseconds_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7788,6 +7810,26 @@ inline void MediaJobResponse::set_updatedatunixms(int64_t value) {
   // @@protoc_insertion_point(field_set:media.MediaJobResponse.updatedAtUnixMs)
 }
 
+// int32 durationSeconds = 10;
+inline void MediaJobResponse::clear_durationseconds() {
+  _impl_.durationseconds_ = 0;
+}
+inline int32_t MediaJobResponse::_internal_durationseconds() const {
+  return _impl_.durationseconds_;
+}
+inline int32_t MediaJobResponse::durationseconds() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.durationSeconds)
+  return _internal_durationseconds();
+}
+inline void MediaJobResponse::_internal_set_durationseconds(int32_t value) {
+  
+  _impl_.durationseconds_ = value;
+}
+inline void MediaJobResponse::set_durationseconds(int32_t value) {
+  _internal_set_durationseconds(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.durationSeconds)
+}
+
 // -------------------------------------------------------------------
 
 // MediaJobCallbackRequest
@@ -8040,6 +8082,26 @@ inline void MediaJobCallbackRequest::set_allocated_errormessage(std::string* err
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:media.MediaJobCallbackRequest.errorMessage)
+}
+
+// int32 durationSeconds = 6;
+inline void MediaJobCallbackRequest::clear_durationseconds() {
+  _impl_.durationseconds_ = 0;
+}
+inline int32_t MediaJobCallbackRequest::_internal_durationseconds() const {
+  return _impl_.durationseconds_;
+}
+inline int32_t MediaJobCallbackRequest::durationseconds() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.durationSeconds)
+  return _internal_durationseconds();
+}
+inline void MediaJobCallbackRequest::_internal_set_durationseconds(int32_t value) {
+  
+  _impl_.durationseconds_ = value;
+}
+inline void MediaJobCallbackRequest::set_durationseconds(int32_t value) {
+  _internal_set_durationseconds(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.durationSeconds)
 }
 
 // -------------------------------------------------------------------

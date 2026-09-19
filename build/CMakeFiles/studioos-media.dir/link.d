@@ -271,7 +271,6 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libOpenEXR-3_4.so.33 \
   /usr/lib/x86_64-linux-gnu/libgdal.so.39 \
   /usr/lib/x86_64-linux-gnu/libgdcmDSED.so.3.0 \
-  /usr/lib/x86_64-linux-gnu/libm.so.6 \
   /usr/lib/x86_64-linux-gnu/libGLX.so.0 \
   /usr/lib/x86_64-linux-gnu/liblapack.so.3 \
   /usr/lib/x86_64-linux-gnu/libblas.so.3 \
@@ -998,8 +997,6 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 /usr/lib/x86_64-linux-gnu/libgdal.so.39:
 
 /usr/lib/x86_64-linux-gnu/libgdcmDSED.so.3.0:
-
-/usr/lib/x86_64-linux-gnu/libm.so.6:
 
 /usr/lib/x86_64-linux-gnu/libGLX.so.0:
 

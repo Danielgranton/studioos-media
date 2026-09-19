@@ -199,6 +199,7 @@ message MediaJobResponse {
     string errorMessage = 7;
     int64 createdAtUnixMs = 8;
     int64 updatedAtUnixMs = 9;
+    int32 durationSeconds = 10;
 }
 
 message MediaJobCallbackRequest {
@@ -207,6 +208,7 @@ message MediaJobCallbackRequest {
     string status = 3;
     string resultReference = 4;
     string errorMessage = 5;
+    int32 durationSeconds = 6;
 }
 
 message MediaJobCallbackResponse {
