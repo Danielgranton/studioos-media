@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <thread>
+#include <vector>
 
 #include <grpcpp/grpcpp.h>
 #include <nlohmann/json.hpp>
@@ -43,6 +44,30 @@ std::string getEnvOrDefault(const char* name, const std::string& fallback)
         return value;
     }
     return fallback;
+}
+
+std::size_t workerCount()
+{
+    constexpr std::size_t defaultWorkers = 4;
+    if (const char* configured = std::getenv("MEDIA_WORKER_COUNT");
+        configured != nullptr && configured[0] != '\0')
+    {
+        try
+        {
+            return std::clamp<std::size_t>(std::stoul(configured), 1, 16);
+        }
+        catch (...)
+        {
+            Logger::warning("Invalid MEDIA_WORKER_COUNT; using the default worker count");
+        }
+    }
+
+    const auto hardwareThreads = std::thread::hardware_concurrency();
+    return std::max<std::size_t>(
+        1,
+        std::min<std::size_t>(
+            defaultWorkers,
+            hardwareThreads == 0 ? defaultWorkers : hardwareThreads));
 }
 
 std::string callbackTarget()
@@ -87,6 +112,7 @@ void reportCallbackGrpc(
 
         media::MediaJobCallbackResponse response;
         grpc::ClientContext context;
+        context.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(5));
         grpc::Status status = stub->ReportMediaJob(&context, request, &response);
         if (status.ok() && response.accepted())
         {
@@ -299,8 +325,15 @@ MediaJobDispatcher::MediaJobDispatcher(
       mImageService(imageService),
       mVideoService(videoService),
       mAudioService(audioService),
-      mWorker(&MediaJobDispatcher::workerLoop, this)
+      mWorkers()
 {
+    const auto count = workerCount();
+    mWorkers.reserve(count);
+    for (std::size_t index = 0; index < count; ++index)
+    {
+        mWorkers.emplace_back(&MediaJobDispatcher::workerLoop, this);
+    }
+    Logger::info("Media job dispatcher started with " + std::to_string(count) + " workers");
 }
 
 MediaJobDispatcher::~MediaJobDispatcher()
@@ -310,9 +343,12 @@ MediaJobDispatcher::~MediaJobDispatcher()
         mStop = true;
     }
     mCv.notify_all();
-    if (mWorker.joinable())
+    for (auto& worker : mWorkers)
     {
-        mWorker.join();
+        if (worker.joinable())
+        {
+            worker.join();
+        }
     }
 }
 
@@ -351,8 +387,11 @@ void MediaJobDispatcher::workerLoop()
 
 void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
 {
-    constexpr auto kProcessingDelay = std::chrono::milliseconds(50);
-    std::this_thread::sleep_for(kProcessingDelay);
+    const auto startedAt = std::chrono::steady_clock::now();
+    const auto queuedAt = std::chrono::system_clock::time_point(
+        std::chrono::milliseconds(job.createdAtUnixMs));
+    const auto queueWaitMs = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::system_clock::now() - queuedAt).count();
 
     (void)mJobService.updateJob(job.jobId, "RUNNING");
 
@@ -368,4 +407,10 @@ void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
     }
 
     reportCallbackGrpc(job, result, durationSeconds);
+
+    const auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::steady_clock::now() - startedAt).count();
+    Logger::info("Media job " + job.jobId + " " + (result.success ? "completed" : "failed")
+        + " queueWaitMs=" + std::to_string(queueWaitMs)
+        + " totalMs=" + std::to_string(elapsedMs));
 }

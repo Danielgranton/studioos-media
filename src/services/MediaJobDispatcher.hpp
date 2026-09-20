@@ -4,6 +4,7 @@
 #include <mutex>
 #include <queue>
 #include <thread>
+#include <vector>
 
 #include "AudioService.hpp"
 #include "ImageService.hpp"
@@ -35,5 +36,5 @@ private:
     std::condition_variable mCv;
     std::queue<MediaJobService::JobRecord> mQueue;
     bool mStop = false;
-    std::thread mWorker;
+    std::vector<std::thread> mWorkers;
 };
