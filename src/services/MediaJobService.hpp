@@ -24,6 +24,7 @@ public:
         std::string errorMessage;
         std::int64_t createdAtUnixMs = 0;
         std::int64_t updatedAtUnixMs = 0;
+        int progressPercent = 0;
     };
 
     Result<JobRecord> submitJob(
@@ -36,7 +37,8 @@ public:
         const std::string& jobId,
         const std::string& status,
         const std::string& resultReference = "",
-        const std::string& errorMessage = "");
+        const std::string& errorMessage = "",
+        int progressPercent = -1);
 
     std::vector<JobRecord> recoverPendingJobs() const;
 

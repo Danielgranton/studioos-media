@@ -4,6 +4,7 @@
 #include <mutex>
 #include <queue>
 #include <thread>
+#include <unordered_map>
 #include <vector>
 
 #include "AudioService.hpp"
@@ -25,6 +26,8 @@ public:
 
 private:
     void workerLoop();
+    void progressCallbackLoop();
+    void enqueueProgressCallback(const MediaJobService::JobRecord& job, int progressPercent);
     void processJob(const MediaJobService::JobRecord& job);
 
     MediaJobService& mJobService;
@@ -37,4 +40,10 @@ private:
     std::queue<MediaJobService::JobRecord> mQueue;
     bool mStop = false;
     std::vector<std::thread> mWorkers;
+
+    std::mutex mProgressMutex;
+    std::condition_variable mProgressCv;
+    std::unordered_map<std::string, std::pair<MediaJobService::JobRecord, int>> mPendingProgressCallbacks;
+    bool mStopProgressCallbacks = false;
+    std::thread mProgressCallbackWorker;
 };

@@ -234,19 +234,22 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/c++/15/bits/uniform_int_dist.h \
  /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/unicode-data.h \
- /home/linux/Documents/studioos-media/src/services/AudioService.hpp \
- /home/linux/Documents/studioos-media/src/core/Result.hpp \
- /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
- /home/linux/Documents/studioos-media/src/media/AudioProcessor.hpp \
- /home/linux/Documents/studioos-media/src/services/ImageService.hpp \
- /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
- /home/linux/Documents/studioos-media/src/services/MediaJobService.hpp \
  /usr/include/c++/15/unordered_map \
  /usr/include/c++/15/bits/unordered_map.h \
  /usr/include/c++/15/bits/hashtable.h \
  /usr/include/c++/15/bits/hashtable_policy.h \
  /usr/include/c++/15/bits/node_handle.h \
  /usr/include/c++/15/bits/erase_if.h \
+ /home/linux/Documents/studioos-media/src/services/AudioService.hpp \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/bits/move_only_function.h \
+ /usr/include/c++/15/bits/mofunc_impl.h \
+ /home/linux/Documents/studioos-media/src/core/Result.hpp \
+ /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
+ /home/linux/Documents/studioos-media/src/media/AudioProcessor.hpp \
+ /home/linux/Documents/studioos-media/src/services/ImageService.hpp \
+ /home/linux/Documents/studioos-media/src/media/ImageProcessor.hpp \
+ /home/linux/Documents/studioos-media/src/services/MediaJobService.hpp \
  /home/linux/Documents/studioos-media/src/services/VideoService.hpp \
  /home/linux/Documents/studioos-media/src/media/VideoProcessor.hpp \
  /usr/include/c++/15/algorithm /usr/include/c++/15/bits/ranges_algo.h \
@@ -279,7 +282,16 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/grpcpp/grpcpp.h \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/filesystem \
+ /usr/include/c++/15/bits/fs_fwd.h /usr/include/c++/15/bits/fs_path.h \
+ /usr/include/c++/15/codecvt /usr/include/c++/15/bits/fs_dir.h \
+ /usr/include/c++/15/bits/fs_ops.h /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/bits/ranges_uninitialized.h \
+ /usr/include/c++/15/bits/out_ptr.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h /usr/include/grpcpp/grpcpp.h \
  /usr/include/grpc/grpc.h /usr/include/grpc/support/port_platform.h \
  /usr/include/grpc/impl/codegen/port_platform.h \
  /usr/include/linux/version.h /usr/include/grpc/byte_buffer.h \
@@ -299,16 +311,9 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/grpc/impl/codegen/connectivity_state.h \
  /usr/include/grpc/impl/codegen/propagation_bits.h \
  /usr/include/grpc/status.h /usr/include/grpc/support/time.h \
- /usr/include/grpcpp/channel.h /usr/include/c++/15/memory \
- /usr/include/c++/15/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15/bits/shared_ptr_atomic.h \
- /usr/include/c++/15/backward/auto_ptr.h \
- /usr/include/c++/15/bits/ranges_uninitialized.h \
- /usr/include/c++/15/bits/out_ptr.h \
- /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/grpcpp/completion_queue.h /usr/include/c++/15/list \
- /usr/include/c++/15/bits/stl_list.h /usr/include/c++/15/bits/list.tcc \
- /usr/include/grpc/support/atm.h \
+ /usr/include/grpcpp/channel.h /usr/include/grpcpp/completion_queue.h \
+ /usr/include/c++/15/list /usr/include/c++/15/bits/stl_list.h \
+ /usr/include/c++/15/bits/list.tcc /usr/include/grpc/support/atm.h \
  /usr/include/grpcpp/impl/codegen/completion_queue_tag.h \
  /usr/include/grpcpp/impl/codegen/core_codegen_interface.h \
  /usr/include/grpc/impl/codegen/byte_buffer_reader.h \
@@ -327,15 +332,12 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/absl/base/internal/thread_identity.h \
  /usr/include/absl/base/internal/per_thread_tls.h \
  /usr/include/absl/base/port.h /usr/include/absl/base/optimization.h \
- /usr/include/assert.h \
+ /usr/include/assert.h /usr/include/c++/15/stdlib.h \
  /usr/include/absl/base/internal/tsan_mutex_interface.h \
  /usr/include/absl/base/macros.h /usr/include/c++/15/cassert \
  /usr/include/absl/base/nullability.h \
  /usr/include/absl/base/thread_annotations.h \
- /usr/include/absl/meta/type_traits.h /usr/include/c++/15/functional \
- /usr/include/c++/15/bits/std_function.h \
- /usr/include/c++/15/bits/move_only_function.h \
- /usr/include/c++/15/bits/mofunc_impl.h \
+ /usr/include/absl/meta/type_traits.h \
  /usr/include/absl/synchronization/internal/kernel_timeout.h \
  /usr/include/absl/base/internal/raw_logging.h \
  /usr/include/absl/base/internal/atomic_hook.h \
@@ -347,7 +349,7 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/absl/time/internal/cctz/include/cctz/time_zone.h \
  /usr/include/absl/synchronization/internal/per_thread_sem.h \
  /usr/include/absl/synchronization/internal/create_thread_identity.h \
- /usr/include/grpc/impl/codegen/log.h /usr/include/c++/15/stdlib.h \
+ /usr/include/grpc/impl/codegen/log.h \
  /usr/include/grpcpp/impl/rpc_service_method.h /usr/include/c++/15/map \
  /usr/include/c++/15/bits/stl_tree.h /usr/include/c++/15/bits/stl_map.h \
  /usr/include/c++/15/bits/stl_multimap.h /usr/include/grpc/support/log.h \
@@ -437,9 +439,6 @@ CMakeFiles/studioos-media.dir/src/services/MediaJobDispatcher.cpp.o: \
  /usr/include/nlohmann/detail/string_concat.hpp \
  /usr/include/nlohmann/detail/meta/identity_tag.hpp \
  /usr/include/nlohmann/detail/meta/std_fs.hpp \
- /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \
- /usr/include/c++/15/bits/fs_path.h /usr/include/c++/15/codecvt \
- /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
  /usr/include/nlohmann/detail/conversions/to_json.hpp \
  /usr/include/nlohmann/detail/iterators/iteration_proxy.hpp \
  /usr/include/nlohmann/byte_container_with_subtype.hpp \

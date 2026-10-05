@@ -1,12 +1,14 @@
-video-processor-test 30 0.146769
-image-processor-test 31 0.00902712
-audio-processor-test 14 0.0719548
-streaming-service-test 13 0.230877
-ad-service-test 13 1.59255
-grpc-ad-service-test 9 1.14865
-media-job-service-test 7 0.000628058
-grpc-media-job-test 7 0.799991
-s3-storage-test 6 0.000635271
+video-processor-test 31 0.17989
+image-processor-test 32 0.0120356
+audio-processor-test 15 0.0765246
+streaming-service-test 14 0.173906
+ad-service-test 14 1.91842
+grpc-ad-service-test 9 0
+media-job-service-test 8 0.000375311
+grpc-media-job-test 7 0
+s3-storage-test 7 0.000309694
 grpc-media-callback-test 0 0
 ---
+grpc-ad-service-test
+grpc-media-job-test
 grpc-media-callback-test

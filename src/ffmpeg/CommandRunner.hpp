@@ -2,10 +2,15 @@
 
 #include <string>
 #include <vector>
+#include <functional>
 
 class CommandRunner
 {
 public:
     static bool run(const std::string& command, std::string* output = nullptr);
     static bool run(const std::vector<std::string>& args, std::string* output = nullptr);
+    static bool runWithProgress(
+        const std::string& command,
+        int durationSeconds,
+        const std::function<void(int)>& onProgress);
 };

@@ -199,6 +199,16 @@ CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o: \
  /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
  /usr/include/c++/15/bits/sstream.tcc \
  /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.hpp \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h \
+ /usr/include/c++/15/bits/move_only_function.h \
+ /usr/include/c++/15/bits/mofunc_impl.h \
  /home/linux/Documents/studioos-media/src/utils/FileUtils.hpp \
  /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \
  /usr/include/c++/15/bits/chrono.h /usr/include/c++/15/ratio \
@@ -209,8 +219,6 @@ CMakeFiles/studioos-media.dir/src/services/StreamingService.cpp.o: \
  /usr/include/c++/15/bits/shared_ptr.h \
  /usr/include/c++/15/bits/shared_ptr_base.h \
  /usr/include/c++/15/bits/allocated_ptr.h \
- /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/fs_dir.h \
- /usr/include/c++/15/bits/fs_ops.h \
+ /usr/include/c++/15/bits/unique_ptr.h /usr/include/c++/15/bits/align.h \
+ /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
  /home/linux/Documents/studioos-media/src/utils/Logger.hpp

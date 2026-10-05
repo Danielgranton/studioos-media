@@ -226,12 +226,7 @@ CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o: \
  /home/linux/Documents/studioos-media/src/config/config.hpp \
  /home/linux/Documents/studioos-media/src/ffmpeg/AudioEncoder.hpp \
  /home/linux/Documents/studioos-media/src/ffmpeg/CommandRunner.hpp \
- /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.hpp \
- /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.hpp \
- /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.hpp \
- /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.hpp \
- /usr/include/nlohmann/json.hpp /usr/include/c++/15/functional \
- /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
  /usr/include/c++/15/unordered_map \
  /usr/include/c++/15/bits/unordered_map.h \
  /usr/include/c++/15/bits/hashtable.h \
@@ -240,7 +235,12 @@ CMakeFiles/studioos-media.dir/src/media/VideoProcessor.cpp.o: \
  /usr/include/c++/15/bits/node_handle.h \
  /usr/include/c++/15/bits/erase_if.h \
  /usr/include/c++/15/bits/move_only_function.h \
- /usr/include/c++/15/bits/mofunc_impl.h /usr/include/c++/15/iterator \
+ /usr/include/c++/15/bits/mofunc_impl.h \
+ /home/linux/Documents/studioos-media/src/ffmpeg/FFmpeg.hpp \
+ /home/linux/Documents/studioos-media/src/ffmpeg/ThumbnailGenerator.hpp \
+ /home/linux/Documents/studioos-media/src/ffmpeg/VideoConverter.hpp \
+ /home/linux/Documents/studioos-media/src/ffmpeg/VideoEncoder.hpp \
+ /usr/include/nlohmann/json.hpp /usr/include/c++/15/iterator \
  /usr/include/c++/15/bits/stream_iterator.h /usr/include/c++/15/memory \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \

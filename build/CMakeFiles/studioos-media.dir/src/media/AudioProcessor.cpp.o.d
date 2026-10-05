@@ -126,13 +126,24 @@ CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o: \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/bits/formatfwd.h \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/typeinfo /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/enable_special_members.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/array \
+ /usr/include/c++/15/bits/move_only_function.h \
+ /usr/include/c++/15/bits/mofunc_impl.h \
  /home/linux/Documents/studioos-media/src/core/Result.hpp \
  /home/linux/Documents/studioos-media/src/core/StatusCode.hpp \
  /usr/include/c++/15/fstream /usr/include/c++/15/istream \
  /usr/include/c++/15/ios /usr/include/c++/15/exception \
  /usr/include/c++/15/bits/exception_ptr.h \
  /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/bits/nested_exception.h \
  /usr/include/c++/15/bits/ios_base.h /usr/include/c++/15/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h \
@@ -172,15 +183,14 @@ CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o: \
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc /usr/include/c++/15/ostream \
  /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/format \
- /usr/include/c++/15/array /usr/include/c++/15/charconv \
- /usr/include/c++/15/limits /usr/include/c++/15/locale \
+ /usr/include/c++/15/charconv /usr/include/c++/15/limits \
+ /usr/include/c++/15/locale \
  /usr/include/c++/15/bits/locale_facets_nonio.h /usr/include/c++/15/ctime \
  /usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/15/bits/codecvt.h \
  /usr/include/c++/15/bits/locale_facets_nonio.tcc \
  /usr/include/c++/15/bits/locale_conv.h /usr/include/c++/15/optional \
- /usr/include/c++/15/bits/enable_special_members.h \
  /usr/include/c++/15/span /usr/include/c++/15/bits/monostate.h \
  /usr/include/c++/15/bits/unicode.h /usr/include/c++/15/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h /usr/include/stdint.h \
@@ -210,10 +220,8 @@ CMakeFiles/studioos-media.dir/src/media/AudioProcessor.cpp.o: \
  /usr/include/c++/15/bits/shared_ptr.h \
  /usr/include/c++/15/bits/shared_ptr_base.h \
  /usr/include/c++/15/bits/allocated_ptr.h \
- /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/fs_dir.h \
- /usr/include/c++/15/bits/fs_ops.h \
+ /usr/include/c++/15/bits/unique_ptr.h /usr/include/c++/15/bits/align.h \
+ /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
  /home/linux/Documents/studioos-media/src/utils/Logger.hpp \
  /home/linux/Documents/studioos-media/src/utils/Timer.hpp \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono_io.h

@@ -1,7 +1,10 @@
 #include "CommandRunner.hpp"
 
 #include <array>
+#include <algorithm>
 #include <cstdio>
+#include <cstdlib>
+#include <string_view>
 
 namespace
 {
@@ -57,4 +60,52 @@ bool CommandRunner::run(const std::vector<std::string>& args, std::string* outpu
     }
 
     return run(command, output);
+}
+
+bool CommandRunner::runWithProgress(
+    const std::string& command,
+    int durationSeconds,
+    const std::function<void(int)>& onProgress)
+{
+    FILE* pipe = popen((command + " 2>&1").c_str(), "r");
+    if (!pipe)
+    {
+        return false;
+    }
+
+    int lastReported = -1;
+    std::array<char, 1024> buffer{};
+    while (fgets(buffer.data(), static_cast<int>(buffer.size()), pipe) != nullptr)
+    {
+        const std::string_view line(buffer.data());
+        constexpr std::string_view key = "out_time_us=";
+        const auto position = line.find(key);
+        if (position == std::string_view::npos || durationSeconds <= 0 || !onProgress)
+        {
+            continue;
+        }
+
+        const auto valueStart = position + key.size();
+        char* end = nullptr;
+        const long long elapsedMicros = std::strtoll(buffer.data() + valueStart, &end, 10);
+        if (end == buffer.data() + valueStart || elapsedMicros <= 0)
+        {
+            continue;
+        }
+
+        const int percent = static_cast<int>(std::clamp<long long>(
+            elapsedMicros * 100 / (static_cast<long long>(durationSeconds) * 1'000'000), 0, 99));
+        if (percent > lastReported)
+        {
+            lastReported = percent;
+            onProgress(percent);
+        }
+    }
+
+    const int exitCode = pclose(pipe);
+    if (exitCode == 0 && onProgress && lastReported < 100)
+    {
+        onProgress(100);
+    }
+    return exitCode == 0;
 }

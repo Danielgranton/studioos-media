@@ -48,7 +48,8 @@ Result<std::string> AudioProcessor::encode(const std::string& inputPath, const s
     return Result<std::string>::ok(output);
 }
 
-Result<std::string> AudioProcessor::normalize(const std::string& inputPath)
+Result<std::string> AudioProcessor::normalize(
+    const std::string& inputPath, int durationSeconds, const std::function<void(int)>& onProgress)
 {
     Timer timer;
     Logger::info("Normalizing audio: " + inputPath);
@@ -66,7 +67,10 @@ Result<std::string> AudioProcessor::normalize(const std::string& inputPath)
     const std::string output = makeOutputPath(inputPath, "normalized_", ".mp3");
     const std::string args = "-y -i \"" + inputPath + "\" -af loudnorm=I=-16:TP=-1.5:LRA=11 \"" + output + "\"";
 
-    if (!FFmpeg::run(args))
+    const bool processed = onProgress
+        ? FFmpeg::runWithProgress(args, durationSeconds, onProgress)
+        : FFmpeg::run(args);
+    if (!processed)
     {
         return Result<std::string>::fail("Failed to normalize audio with FFmpeg", StatusCode::AUDIO_ERROR);
     }
@@ -176,7 +180,9 @@ Result<std::string> AudioProcessor::merge(const std::vector<std::string>& inputP
     return Result<std::string>::ok(outputPath);
 }
 
-Result<std::string> AudioProcessor::trim(const std::string& inputPath, const std::string& start, const std::string& end)
+Result<std::string> AudioProcessor::trim(
+    const std::string& inputPath, const std::string& start, const std::string& end,
+    int durationSeconds, const std::function<void(int)>& onProgress)
 {
     Timer timer;
     Logger::info("Trimming audio: " + inputPath);
@@ -194,7 +200,10 @@ Result<std::string> AudioProcessor::trim(const std::string& inputPath, const std
     const std::string output = makeOutputPath(inputPath, "trimmed_audio_", ".mp3");
     const std::string args = "-y -i \"" + inputPath + "\" -ss " + start + " -to " + end + " \"" + output + "\"";
 
-    if (!FFmpeg::run(args))
+    const bool processed = onProgress
+        ? FFmpeg::runWithProgress(args, durationSeconds, onProgress)
+        : FFmpeg::run(args);
+    if (!processed)
     {
         return Result<std::string>::fail("Failed to trim audio with FFmpeg", StatusCode::AUDIO_ERROR);
     }

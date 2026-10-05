@@ -320,6 +320,7 @@ PROTOBUF_CONSTEXPR MediaJobResponse::MediaJobResponse(
   , /*decltype(_impl_.createdatunixms_)*/int64_t{0}
   , /*decltype(_impl_.updatedatunixms_)*/int64_t{0}
   , /*decltype(_impl_.durationseconds_)*/0
+  , /*decltype(_impl_.progresspercent_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MediaJobResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR MediaJobResponseDefaultTypeInternal()
@@ -338,6 +339,7 @@ PROTOBUF_CONSTEXPR MediaJobCallbackRequest::MediaJobCallbackRequest(
   , /*decltype(_impl_.resultreference_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.errormessage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.durationseconds_)*/0
+  , /*decltype(_impl_.progresspercent_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MediaJobCallbackRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR MediaJobCallbackRequestDefaultTypeInternal()
@@ -652,6 +654,7 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.createdatunixms_),
   PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.updatedatunixms_),
   PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.durationseconds_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobResponse, _impl_.progresspercent_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -664,6 +667,7 @@ const uint32_t TableStruct_media_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.resultreference_),
   PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.errormessage_),
   PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.durationseconds_),
+  PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackRequest, _impl_.progresspercent_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::media::MediaJobCallbackResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -761,15 +765,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 146, -1, -1, sizeof(::media::MediaJobRequest)},
   { 155, -1, -1, sizeof(::media::MediaJobLookupRequest)},
   { 162, -1, -1, sizeof(::media::MediaJobResponse)},
-  { 178, -1, -1, sizeof(::media::MediaJobCallbackRequest)},
-  { 190, -1, -1, sizeof(::media::MediaJobCallbackResponse)},
-  { 197, -1, -1, sizeof(::media::MediaUploadMetadata)},
-  { 211, -1, -1, sizeof(::media::MediaUploadChunk)},
-  { 220, -1, -1, sizeof(::media::AdCreateRequest)},
-  { 230, -1, -1, sizeof(::media::AdScheduleRequest)},
-  { 240, -1, -1, sizeof(::media::AdIdRequest)},
-  { 247, -1, -1, sizeof(::media::AdResponse)},
-  { 255, -1, -1, sizeof(::media::AdReportResponse)},
+  { 179, -1, -1, sizeof(::media::MediaJobCallbackRequest)},
+  { 192, -1, -1, sizeof(::media::MediaJobCallbackResponse)},
+  { 199, -1, -1, sizeof(::media::MediaUploadMetadata)},
+  { 213, -1, -1, sizeof(::media::MediaUploadChunk)},
+  { 222, -1, -1, sizeof(::media::AdCreateRequest)},
+  { 232, -1, -1, sizeof(::media::AdScheduleRequest)},
+  { 242, -1, -1, sizeof(::media::AdIdRequest)},
+  { 249, -1, -1, sizeof(::media::AdResponse)},
+  { 257, -1, -1, sizeof(::media::AdReportResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -835,82 +839,84 @@ const char descriptor_table_protodef_media_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "Path\030\002 \001(\t\"T\n\017MediaJobRequest\022\026\n\016assetRe"
   "ference\030\001 \001(\t\022\021\n\toperation\030\002 \001(\t\022\026\n\016para"
   "metersJson\030\003 \001(\t\"&\n\025MediaJobLookupReques"
-  "t\022\r\n\005jobId\030\001 \001(\t\"\356\001\n\020MediaJobResponse\022\r\n"
+  "t\022\r\n\005jobId\030\001 \001(\t\"\207\002\n\020MediaJobResponse\022\r\n"
   "\005jobId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\026\n\016assetRef"
   "erence\030\003 \001(\t\022\021\n\toperation\030\004 \001(\t\022\026\n\016param"
   "etersJson\030\005 \001(\t\022\027\n\017resultReference\030\006 \001(\t"
   "\022\024\n\014errorMessage\030\007 \001(\t\022\027\n\017createdAtUnixM"
   "s\030\010 \001(\003\022\027\n\017updatedAtUnixMs\030\t \001(\003\022\027\n\017dura"
-  "tionSeconds\030\n \001(\005\"\227\001\n\027MediaJobCallbackRe"
-  "quest\022\r\n\005jobId\030\001 \001(\t\022\025\n\rexternalJobId\030\002 "
-  "\001(\t\022\016\n\006status\030\003 \001(\t\022\027\n\017resultReference\030\004"
-  " \001(\t\022\024\n\014errorMessage\030\005 \001(\t\022\027\n\017durationSe"
-  "conds\030\006 \001(\005\",\n\030MediaJobCallbackResponse\022"
-  "\020\n\010accepted\030\001 \001(\010\"\261\001\n\023MediaUploadMetadat"
-  "a\022\017\n\007mediaId\030\001 \001(\t\022\017\n\007ownerId\030\002 \001(\t\022\021\n\tm"
-  "ediaType\030\003 \001(\t\022\020\n\010filename\030\004 \001(\t\022\023\n\013cont"
-  "entType\030\005 \001(\t\022\021\n\toperation\030\006 \001(\t\022\026\n\016para"
-  "metersJson\030\007 \001(\t\022\023\n\013uploadToken\030\010 \001(\t\"]\n"
-  "\020MediaUploadChunk\022.\n\010metadata\030\001 \001(\0132\032.me"
-  "dia.MediaUploadMetadataH\000\022\016\n\004data\030\002 \001(\014H"
-  "\000B\t\n\007payload\"^\n\017AdCreateRequest\022\021\n\tasset"
-  "Path\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\027\n\017durationSec"
-  "onds\030\003 \001(\005\022\020\n\010clickUrl\030\004 \001(\t\"a\n\021AdSchedu"
-  "leRequest\022\014\n\004adId\030\001 \001(\t\022\026\n\016startsAtUnixM"
-  "s\030\002 \001(\003\022\024\n\014endsAtUnixMs\030\003 \001(\003\022\020\n\010priorit"
-  "y\030\004 \001(\005\"\033\n\013AdIdRequest\022\014\n\004adId\030\001 \001(\t\"*\n\n"
-  "AdResponse\022\014\n\004adId\030\001 \001(\t\022\016\n\006status\030\002 \001(\t"
-  "\"4\n\020AdReportResponse\022\014\n\004adId\030\001 \001(\t\022\022\n\nre"
-  "portJson\030\002 \001(\t2\252\r\n\014MediaService\0225\n\006Healt"
-  "h\022\024.media.HealthRequest\032\025.media.HealthRe"
-  "sponse\022:\n\rCompressImage\022\023.media.ImageReq"
-  "uest\032\024.media.ImageResponse\022:\n\rCompressVi"
-  "deo\022\023.media.VideoRequest\032\024.media.VideoRe"
-  "sponse\022B\n\021GenerateThumbnail\022\023.media.Vide"
-  "oRequest\032\030.media.ThumbnailResponse\0229\n\014Ex"
-  "tractAudio\022\023.media.VideoRequest\032\024.media."
-  "AudioResponse\022@\n\014ConvertVideo\022\032.media.Vi"
-  "deoConvertRequest\032\024.media.VideoResponse\022"
-  ":\n\tTrimVideo\022\027.media.VideoTrimRequest\032\024."
-  "media.VideoResponse\022=\n\013MergeVideos\022\030.med"
-  "ia.VideoMergeRequest\032\024.media.VideoRespon"
-  "se\022>\n\013ResizeImage\022\031.media.ImageResizeReq"
-  "uest\032\024.media.ImageResponse\022;\n\016ThumbnailI"
-  "mage\022\023.media.ImageRequest\032\024.media.ImageR"
-  "esponse\022W\n\026ProcessResponsiveImage\022\035.medi"
-  "a.ResponsiveImageRequest\032\036.media.Respons"
-  "iveImageResponse\022>\n\013EncodeAudio\022\031.media."
-  "AudioFormatRequest\032\024.media.AudioResponse"
-  "\022;\n\016NormalizeAudio\022\023.media.AudioRequest\032"
-  "\024.media.AudioResponse\0229\n\014DenoiseAudio\022\023."
-  "media.AudioRequest\032\024.media.AudioResponse"
-  "\022<\n\nMergeAudio\022\030.media.AudioMergeRequest"
-  "\032\024.media.AudioResponse\022:\n\tTrimAudio\022\027.me"
-  "dia.AudioTrimRequest\032\024.media.AudioRespon"
-  "se\022\?\n\014ConvertAudio\022\031.media.AudioFormatRe"
-  "quest\032\024.media.AudioResponse\022A\n\016SubmitMed"
-  "iaJob\022\026.media.MediaJobRequest\032\027.media.Me"
-  "diaJobResponse\022D\n\013GetMediaJob\022\034.media.Me"
-  "diaJobLookupRequest\032\027.media.MediaJobResp"
-  "onse\022A\n\013UploadMedia\022\027.media.MediaUploadC"
-  "hunk\032\027.media.MediaJobResponse(\001\022:\n\rCreat"
-  "eVideoAd\022\026.media.AdCreateRequest\032\021.media"
-  ".AdResponse\022:\n\rCreateImageAd\022\026.media.AdC"
-  "reateRequest\032\021.media.AdResponse\022:\n\rCreat"
-  "eAudioAd\022\026.media.AdCreateRequest\032\021.media"
-  ".AdResponse\0229\n\nScheduleAd\022\030.media.AdSche"
-  "duleRequest\032\021.media.AdResponse\0229\n\020Record"
-  "Impression\022\022.media.AdIdRequest\032\021.media.A"
-  "dResponse\0224\n\013RecordClick\022\022.media.AdIdReq"
-  "uest\032\021.media.AdResponse\022:\n\013GetAdReport\022\022"
-  ".media.AdIdRequest\032\027.media.AdReportRespo"
-  "nse2i\n\024MediaCallbackService\022Q\n\016ReportMed"
-  "iaJob\022\036.media.MediaJobCallbackRequest\032\037."
-  "media.MediaJobCallbackResponseb\006proto3"
+  "tionSeconds\030\n \001(\005\022\027\n\017progressPercent\030\013 \001"
+  "(\005\"\260\001\n\027MediaJobCallbackRequest\022\r\n\005jobId\030"
+  "\001 \001(\t\022\025\n\rexternalJobId\030\002 \001(\t\022\016\n\006status\030\003"
+  " \001(\t\022\027\n\017resultReference\030\004 \001(\t\022\024\n\014errorMe"
+  "ssage\030\005 \001(\t\022\027\n\017durationSeconds\030\006 \001(\005\022\027\n\017"
+  "progressPercent\030\007 \001(\005\",\n\030MediaJobCallbac"
+  "kResponse\022\020\n\010accepted\030\001 \001(\010\"\261\001\n\023MediaUpl"
+  "oadMetadata\022\017\n\007mediaId\030\001 \001(\t\022\017\n\007ownerId\030"
+  "\002 \001(\t\022\021\n\tmediaType\030\003 \001(\t\022\020\n\010filename\030\004 \001"
+  "(\t\022\023\n\013contentType\030\005 \001(\t\022\021\n\toperation\030\006 \001"
+  "(\t\022\026\n\016parametersJson\030\007 \001(\t\022\023\n\013uploadToke"
+  "n\030\010 \001(\t\"]\n\020MediaUploadChunk\022.\n\010metadata\030"
+  "\001 \001(\0132\032.media.MediaUploadMetadataH\000\022\016\n\004d"
+  "ata\030\002 \001(\014H\000B\t\n\007payload\"^\n\017AdCreateReques"
+  "t\022\021\n\tassetPath\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\027\n\017d"
+  "urationSeconds\030\003 \001(\005\022\020\n\010clickUrl\030\004 \001(\t\"a"
+  "\n\021AdScheduleRequest\022\014\n\004adId\030\001 \001(\t\022\026\n\016sta"
+  "rtsAtUnixMs\030\002 \001(\003\022\024\n\014endsAtUnixMs\030\003 \001(\003\022"
+  "\020\n\010priority\030\004 \001(\005\"\033\n\013AdIdRequest\022\014\n\004adId"
+  "\030\001 \001(\t\"*\n\nAdResponse\022\014\n\004adId\030\001 \001(\t\022\016\n\006st"
+  "atus\030\002 \001(\t\"4\n\020AdReportResponse\022\014\n\004adId\030\001"
+  " \001(\t\022\022\n\nreportJson\030\002 \001(\t2\252\r\n\014MediaServic"
+  "e\0225\n\006Health\022\024.media.HealthRequest\032\025.medi"
+  "a.HealthResponse\022:\n\rCompressImage\022\023.medi"
+  "a.ImageRequest\032\024.media.ImageResponse\022:\n\r"
+  "CompressVideo\022\023.media.VideoRequest\032\024.med"
+  "ia.VideoResponse\022B\n\021GenerateThumbnail\022\023."
+  "media.VideoRequest\032\030.media.ThumbnailResp"
+  "onse\0229\n\014ExtractAudio\022\023.media.VideoReques"
+  "t\032\024.media.AudioResponse\022@\n\014ConvertVideo\022"
+  "\032.media.VideoConvertRequest\032\024.media.Vide"
+  "oResponse\022:\n\tTrimVideo\022\027.media.VideoTrim"
+  "Request\032\024.media.VideoResponse\022=\n\013MergeVi"
+  "deos\022\030.media.VideoMergeRequest\032\024.media.V"
+  "ideoResponse\022>\n\013ResizeImage\022\031.media.Imag"
+  "eResizeRequest\032\024.media.ImageResponse\022;\n\016"
+  "ThumbnailImage\022\023.media.ImageRequest\032\024.me"
+  "dia.ImageResponse\022W\n\026ProcessResponsiveIm"
+  "age\022\035.media.ResponsiveImageRequest\032\036.med"
+  "ia.ResponsiveImageResponse\022>\n\013EncodeAudi"
+  "o\022\031.media.AudioFormatRequest\032\024.media.Aud"
+  "ioResponse\022;\n\016NormalizeAudio\022\023.media.Aud"
+  "ioRequest\032\024.media.AudioResponse\0229\n\014Denoi"
+  "seAudio\022\023.media.AudioRequest\032\024.media.Aud"
+  "ioResponse\022<\n\nMergeAudio\022\030.media.AudioMe"
+  "rgeRequest\032\024.media.AudioResponse\022:\n\tTrim"
+  "Audio\022\027.media.AudioTrimRequest\032\024.media.A"
+  "udioResponse\022\?\n\014ConvertAudio\022\031.media.Aud"
+  "ioFormatRequest\032\024.media.AudioResponse\022A\n"
+  "\016SubmitMediaJob\022\026.media.MediaJobRequest\032"
+  "\027.media.MediaJobResponse\022D\n\013GetMediaJob\022"
+  "\034.media.MediaJobLookupRequest\032\027.media.Me"
+  "diaJobResponse\022A\n\013UploadMedia\022\027.media.Me"
+  "diaUploadChunk\032\027.media.MediaJobResponse("
+  "\001\022:\n\rCreateVideoAd\022\026.media.AdCreateReque"
+  "st\032\021.media.AdResponse\022:\n\rCreateImageAd\022\026"
+  ".media.AdCreateRequest\032\021.media.AdRespons"
+  "e\022:\n\rCreateAudioAd\022\026.media.AdCreateReque"
+  "st\032\021.media.AdResponse\0229\n\nScheduleAd\022\030.me"
+  "dia.AdScheduleRequest\032\021.media.AdResponse"
+  "\0229\n\020RecordImpression\022\022.media.AdIdRequest"
+  "\032\021.media.AdResponse\0224\n\013RecordClick\022\022.med"
+  "ia.AdIdRequest\032\021.media.AdResponse\022:\n\013Get"
+  "AdReport\022\022.media.AdIdRequest\032\027.media.AdR"
+  "eportResponse2i\n\024MediaCallbackService\022Q\n"
+  "\016ReportMediaJob\022\036.media.MediaJobCallback"
+  "Request\032\037.media.MediaJobCallbackResponse"
+  "b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_media_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_media_2eproto = {
-    false, false, 3998, descriptor_table_protodef_media_2eproto,
+    false, false, 4048, descriptor_table_protodef_media_2eproto,
     "media.proto",
     &descriptor_table_media_2eproto_once, nullptr, 0, 31,
     schemas, file_default_instances, TableStruct_media_2eproto::offsets,
@@ -5727,6 +5733,7 @@ MediaJobResponse::MediaJobResponse(const MediaJobResponse& from)
     , decltype(_impl_.createdatunixms_){}
     , decltype(_impl_.updatedatunixms_){}
     , decltype(_impl_.durationseconds_){}
+    , decltype(_impl_.progresspercent_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -5787,8 +5794,8 @@ MediaJobResponse::MediaJobResponse(const MediaJobResponse& from)
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.createdatunixms_, &from._impl_.createdatunixms_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.durationseconds_) -
-    reinterpret_cast<char*>(&_impl_.createdatunixms_)) + sizeof(_impl_.durationseconds_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.progresspercent_) -
+    reinterpret_cast<char*>(&_impl_.createdatunixms_)) + sizeof(_impl_.progresspercent_));
   // @@protoc_insertion_point(copy_constructor:media.MediaJobResponse)
 }
 
@@ -5807,6 +5814,7 @@ inline void MediaJobResponse::SharedCtor(
     , decltype(_impl_.createdatunixms_){int64_t{0}}
     , decltype(_impl_.updatedatunixms_){int64_t{0}}
     , decltype(_impl_.durationseconds_){0}
+    , decltype(_impl_.progresspercent_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.jobid_.InitDefault();
@@ -5877,8 +5885,8 @@ void MediaJobResponse::Clear() {
   _impl_.resultreference_.ClearToEmpty();
   _impl_.errormessage_.ClearToEmpty();
   ::memset(&_impl_.createdatunixms_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.durationseconds_) -
-      reinterpret_cast<char*>(&_impl_.createdatunixms_)) + sizeof(_impl_.durationseconds_));
+      reinterpret_cast<char*>(&_impl_.progresspercent_) -
+      reinterpret_cast<char*>(&_impl_.createdatunixms_)) + sizeof(_impl_.progresspercent_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5978,6 +5986,14 @@ const char* MediaJobResponse::_InternalParse(const char* ptr, ::_pbi::ParseConte
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _impl_.durationseconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 progressPercent = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.progresspercent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6099,6 +6115,12 @@ uint8_t* MediaJobResponse::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_durationseconds(), target);
   }
 
+  // int32 progressPercent = 11;
+  if (this->_internal_progresspercent() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_progresspercent(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6179,6 +6201,11 @@ size_t MediaJobResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_durationseconds());
   }
 
+  // int32 progressPercent = 11;
+  if (this->_internal_progresspercent() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_progresspercent());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -6226,6 +6253,9 @@ void MediaJobResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   }
   if (from._internal_durationseconds() != 0) {
     _this->_internal_set_durationseconds(from._internal_durationseconds());
+  }
+  if (from._internal_progresspercent() != 0) {
+    _this->_internal_set_progresspercent(from._internal_progresspercent());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6275,8 +6305,8 @@ void MediaJobResponse::InternalSwap(MediaJobResponse* other) {
       &other->_impl_.errormessage_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MediaJobResponse, _impl_.durationseconds_)
-      + sizeof(MediaJobResponse::_impl_.durationseconds_)
+      PROTOBUF_FIELD_OFFSET(MediaJobResponse, _impl_.progresspercent_)
+      + sizeof(MediaJobResponse::_impl_.progresspercent_)
       - PROTOBUF_FIELD_OFFSET(MediaJobResponse, _impl_.createdatunixms_)>(
           reinterpret_cast<char*>(&_impl_.createdatunixms_),
           reinterpret_cast<char*>(&other->_impl_.createdatunixms_));
@@ -6310,6 +6340,7 @@ MediaJobCallbackRequest::MediaJobCallbackRequest(const MediaJobCallbackRequest& 
     , decltype(_impl_.resultreference_){}
     , decltype(_impl_.errormessage_){}
     , decltype(_impl_.durationseconds_){}
+    , decltype(_impl_.progresspercent_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -6353,7 +6384,9 @@ MediaJobCallbackRequest::MediaJobCallbackRequest(const MediaJobCallbackRequest& 
     _this->_impl_.errormessage_.Set(from._internal_errormessage(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.durationseconds_ = from._impl_.durationseconds_;
+  ::memcpy(&_impl_.durationseconds_, &from._impl_.durationseconds_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.progresspercent_) -
+    reinterpret_cast<char*>(&_impl_.durationseconds_)) + sizeof(_impl_.progresspercent_));
   // @@protoc_insertion_point(copy_constructor:media.MediaJobCallbackRequest)
 }
 
@@ -6368,6 +6401,7 @@ inline void MediaJobCallbackRequest::SharedCtor(
     , decltype(_impl_.resultreference_){}
     , decltype(_impl_.errormessage_){}
     , decltype(_impl_.durationseconds_){0}
+    , decltype(_impl_.progresspercent_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.jobid_.InitDefault();
@@ -6425,7 +6459,9 @@ void MediaJobCallbackRequest::Clear() {
   _impl_.status_.ClearToEmpty();
   _impl_.resultreference_.ClearToEmpty();
   _impl_.errormessage_.ClearToEmpty();
-  _impl_.durationseconds_ = 0;
+  ::memset(&_impl_.durationseconds_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.progresspercent_) -
+      reinterpret_cast<char*>(&_impl_.durationseconds_)) + sizeof(_impl_.progresspercent_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6489,6 +6525,14 @@ const char* MediaJobCallbackRequest::_InternalParse(const char* ptr, ::_pbi::Par
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _impl_.durationseconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 progressPercent = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.progresspercent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6578,6 +6622,12 @@ uint8_t* MediaJobCallbackRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_durationseconds(), target);
   }
 
+  // int32 progressPercent = 7;
+  if (this->_internal_progresspercent() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_progresspercent(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6634,6 +6684,11 @@ size_t MediaJobCallbackRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_durationseconds());
   }
 
+  // int32 progressPercent = 7;
+  if (this->_internal_progresspercent() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_progresspercent());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -6669,6 +6724,9 @@ void MediaJobCallbackRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg
   }
   if (from._internal_durationseconds() != 0) {
     _this->_internal_set_durationseconds(from._internal_durationseconds());
+  }
+  if (from._internal_progresspercent() != 0) {
+    _this->_internal_set_progresspercent(from._internal_progresspercent());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6709,7 +6767,12 @@ void MediaJobCallbackRequest::InternalSwap(MediaJobCallbackRequest* other) {
       &_impl_.errormessage_, lhs_arena,
       &other->_impl_.errormessage_, rhs_arena
   );
-  swap(_impl_.durationseconds_, other->_impl_.durationseconds_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MediaJobCallbackRequest, _impl_.progresspercent_)
+      + sizeof(MediaJobCallbackRequest::_impl_.progresspercent_)
+      - PROTOBUF_FIELD_OFFSET(MediaJobCallbackRequest, _impl_.durationseconds_)>(
+          reinterpret_cast<char*>(&_impl_.durationseconds_),
+          reinterpret_cast<char*>(&other->_impl_.durationseconds_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MediaJobCallbackRequest::GetMetadata() const {

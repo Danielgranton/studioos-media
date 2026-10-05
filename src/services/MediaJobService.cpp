@@ -95,7 +95,8 @@ Result<MediaJobService::JobRecord> MediaJobService::updateJob(
     const std::string& jobId,
     const std::string& status,
     const std::string& resultReference,
-    const std::string& errorMessage)
+    const std::string& errorMessage,
+    int progressPercent)
 {
     std::lock_guard<std::mutex> lock(mMutex);
     const auto it = mJobs.find(jobId);
@@ -107,6 +108,14 @@ Result<MediaJobService::JobRecord> MediaJobService::updateJob(
     it->second.status = status;
     it->second.resultReference = resultReference;
     it->second.errorMessage = errorMessage;
+    if (progressPercent >= 0)
+    {
+        it->second.progressPercent = std::clamp(progressPercent, 0, 100);
+    }
+    if (status == "SUCCESS")
+    {
+        it->second.progressPercent = 100;
+    }
     it->second.updatedAtUnixMs = nowUnixMs();
     saveToDiskLocked();
     return Result<JobRecord>::ok(it->second);
@@ -190,6 +199,7 @@ void MediaJobService::loadFromDisk()
             job.errorMessage = item.value("errorMessage", "");
             job.createdAtUnixMs = item.value("createdAtUnixMs", 0LL);
             job.updatedAtUnixMs = item.value("updatedAtUnixMs", 0LL);
+            job.progressPercent = item.value("progressPercent", 0);
 
             if (!job.jobId.empty())
             {
@@ -230,6 +240,7 @@ void MediaJobService::saveToDiskLocked() const
                 {"errorMessage", job.errorMessage},
                 {"createdAtUnixMs", job.createdAtUnixMs},
                 {"updatedAtUnixMs", job.updatedAtUnixMs},
+                {"progressPercent", job.progressPercent},
             });
         }
 

@@ -5,7 +5,12 @@
 #include <cctype>
 #include <cmath>
 #include <cstdlib>
+#include <filesystem>
+#include <functional>
+#include <memory>
+#include <mutex>
 #include <thread>
+#include <unordered_map>
 #include <vector>
 
 #include <grpcpp/grpcpp.h>
@@ -24,6 +29,36 @@ using json = nlohmann::json;
 
 namespace
 {
+std::shared_ptr<std::mutex> sourceMutexFor(const std::string& reference)
+{
+    static std::mutex mutex;
+    static std::unordered_map<std::string, std::weak_ptr<std::mutex>> sourceMutexes;
+
+    std::lock_guard lock(mutex);
+    if (sourceMutexes.size() > 256)
+    {
+        for (auto iterator = sourceMutexes.begin(); iterator != sourceMutexes.end();)
+        {
+            if (iterator->second.expired())
+            {
+                iterator = sourceMutexes.erase(iterator);
+            }
+            else
+            {
+                ++iterator;
+            }
+        }
+    }
+    auto& weakMutex = sourceMutexes[reference];
+    auto sourceMutex = weakMutex.lock();
+    if (!sourceMutex)
+    {
+        sourceMutex = std::make_shared<std::mutex>();
+        weakMutex = sourceMutex;
+    }
+    return sourceMutex;
+}
+
 bool containsOperation(const std::string& operation, const std::string& needle)
 {
     auto lhs = operation;
@@ -48,7 +83,7 @@ std::string getEnvOrDefault(const char* name, const std::string& fallback)
 
 std::size_t workerCount()
 {
-    constexpr std::size_t defaultWorkers = 4;
+    constexpr std::size_t defaultWorkers = 8;
     if (const char* configured = std::getenv("MEDIA_WORKER_COUNT");
         configured != nullptr && configured[0] != '\0')
     {
@@ -128,6 +163,25 @@ void reportCallbackGrpc(
     }
 }
 
+void reportProgressCallbackGrpc(const MediaJobService::JobRecord& job, int progressPercent)
+{
+    auto channel = grpc::CreateChannel(callbackTarget(), grpc::InsecureChannelCredentials());
+    auto stub = media::MediaCallbackService::NewStub(channel);
+    media::MediaJobCallbackRequest request;
+    request.set_jobid(job.jobId);
+    request.set_externaljobid(job.jobId);
+    request.set_status("RUNNING");
+    request.set_progresspercent(progressPercent);
+    media::MediaJobCallbackResponse response;
+    grpc::ClientContext context;
+    context.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(1));
+    const grpc::Status status = stub->ReportMediaJob(&context, request, &response);
+    if (!status.ok())
+    {
+        Logger::debug("Media progress callback failed for " + job.jobId + ": " + status.error_message());
+    }
+}
+
 json parseParameters(const std::string& parametersJson)
 {
     if (parametersJson.empty())
@@ -150,8 +204,10 @@ Result<std::string> processMediaJob(
     ImageService& imageService,
     VideoService& videoService,
     AudioService& audioService,
-    int* durationSeconds)
+    int* durationSeconds,
+    const std::function<void(int)>& onProgress)
 {
+    using Clock = std::chrono::steady_clock;
     ImageProcessor imageProcessor;
     const json params = parseParameters(job.parametersJson);
     const std::string tempFolder = Config::instance().tempFolder();
@@ -159,6 +215,7 @@ Result<std::string> processMediaJob(
 
     S3Storage storage;
     std::string localInputPath = job.assetReference;
+    const auto transferStartedAt = Clock::now();
 
     if (S3Storage::isS3Reference(job.assetReference))
     {
@@ -168,11 +225,29 @@ Result<std::string> processMediaJob(
             return Result<std::string>::fail(parsedReference.message, parsedReference.status);
         }
 
-        localInputPath = tempFolder + "/input_" + job.jobId + "_" + FileUtils::filename(parsedReference.value.key);
-        const auto download = storage.downloadFile(job.assetReference, localInputPath);
-        if (!download.success)
+        static const auto processCacheId = std::chrono::steady_clock::now().time_since_epoch().count();
+        localInputPath = tempFolder + "/shared_input_" + std::to_string(processCacheId) + "_"
+            + std::to_string(std::hash<std::string>{}(job.assetReference))
+            + "_" + FileUtils::filename(parsedReference.value.key);
+        const auto sourceMutex = sourceMutexFor(job.assetReference);
+        std::lock_guard sourceLock(*sourceMutex);
+
+        const bool cacheHit = FileUtils::exists(localInputPath);
+        if (cacheHit)
         {
-            return Result<std::string>::fail(download.message, download.status);
+            Logger::info("Media job " + job.jobId + " inputCacheHit=true");
+        }
+        else
+        {
+            const auto download = storage.downloadFile(job.assetReference, localInputPath);
+            if (!download.success)
+            {
+                std::error_code error;
+                std::filesystem::remove(localInputPath, error);
+                return Result<std::string>::fail(download.message, download.status);
+            }
+            Logger::info("Media job " + job.jobId + " inputDownloadMs="
+                + std::to_string(std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now() - transferStartedAt).count()));
         }
     }
     else if (!FileUtils::exists(localInputPath))
@@ -181,6 +256,7 @@ Result<std::string> processMediaJob(
     }
 
     Result<std::string> processingResult = Result<std::string>::fail("Unsupported operation", StatusCode::INVALID_FORMAT);
+    const auto processingStartedAt = Clock::now();
 
     if (containsOperation(job.operation, "audio.normalize"))
     {
@@ -197,13 +273,14 @@ Result<std::string> processMediaJob(
                 *durationSeconds = 0;
             }
         }
-        processingResult = audioService.normalize(localInputPath);
+        processingResult = audioService.normalize(localInputPath, *durationSeconds, onProgress);
     }
     else if (containsOperation(job.operation, "audio.generatePreview"))
     {
         const std::string start = params.value("start", std::string("00:00:00"));
         const std::string end = params.value("end", std::string("00:00:30"));
-        processingResult = audioService.trim(localInputPath, start, end);
+        const int previewSeconds = params.value("durationSeconds", 70);
+        processingResult = audioService.trim(localInputPath, start, end, previewSeconds, onProgress);
     }
     else if (containsOperation(job.operation, "audio.generateWaveform"))
     {
@@ -299,16 +376,21 @@ Result<std::string> processMediaJob(
     {
         return Result<std::string>::fail(processingResult.message, processingResult.status);
     }
+    Logger::info("Media job " + job.jobId + " transformMs="
+        + std::to_string(std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now() - processingStartedAt).count()));
 
     std::string resultReference = processingResult.value;
     if (storage.configured())
     {
+        const auto uploadStartedAt = Clock::now();
         const std::string objectKey = "processed/" + job.jobId + "/" + FileUtils::filename(processingResult.value);
         const auto upload = storage.uploadFile(processingResult.value, objectKey);
         if (!upload.success)
         {
             return Result<std::string>::fail(upload.message, upload.status);
         }
+        Logger::info("Media job " + job.jobId + " outputUploadMs="
+            + std::to_string(std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now() - uploadStartedAt).count()));
         resultReference = upload.value;
     }
 
@@ -333,6 +415,7 @@ MediaJobDispatcher::MediaJobDispatcher(
     {
         mWorkers.emplace_back(&MediaJobDispatcher::workerLoop, this);
     }
+    mProgressCallbackWorker = std::thread(&MediaJobDispatcher::progressCallbackLoop, this);
     Logger::info("Media job dispatcher started with " + std::to_string(count) + " workers");
 }
 
@@ -349,6 +432,15 @@ MediaJobDispatcher::~MediaJobDispatcher()
         {
             worker.join();
         }
+    }
+    {
+        std::lock_guard<std::mutex> lock(mProgressMutex);
+        mStopProgressCallbacks = true;
+    }
+    mProgressCv.notify_all();
+    if (mProgressCallbackWorker.joinable())
+    {
+        mProgressCallbackWorker.join();
     }
 }
 
@@ -385,6 +477,40 @@ void MediaJobDispatcher::workerLoop()
     }
 }
 
+void MediaJobDispatcher::enqueueProgressCallback(
+    const MediaJobService::JobRecord& job,
+    int progressPercent)
+{
+    {
+        std::lock_guard<std::mutex> lock(mProgressMutex);
+        mPendingProgressCallbacks[job.jobId] = {job, progressPercent};
+    }
+    mProgressCv.notify_one();
+}
+
+void MediaJobDispatcher::progressCallbackLoop()
+{
+    while (true)
+    {
+        std::pair<MediaJobService::JobRecord, int> update;
+        {
+            std::unique_lock<std::mutex> lock(mProgressMutex);
+            mProgressCv.wait(lock, [this] {
+                return mStopProgressCallbacks || !mPendingProgressCallbacks.empty();
+            });
+            if (mStopProgressCallbacks && mPendingProgressCallbacks.empty())
+            {
+                return;
+            }
+            const auto next = mPendingProgressCallbacks.begin();
+            update = std::move(next->second);
+            mPendingProgressCallbacks.erase(next);
+        }
+
+        reportProgressCallbackGrpc(update.first, update.second);
+    }
+}
+
 void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
 {
     const auto startedAt = std::chrono::steady_clock::now();
@@ -394,9 +520,26 @@ void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
         std::chrono::system_clock::now() - queuedAt).count();
 
     (void)mJobService.updateJob(job.jobId, "RUNNING");
+    enqueueProgressCallback(job, 0);
 
     int durationSeconds = 0;
-    const auto result = processMediaJob(job, mImageService, mVideoService, mAudioService, &durationSeconds);
+    auto lastProgressCallbackAt = std::chrono::steady_clock::now();
+    int lastReportedProgress = 0;
+    const auto onProgress = [this, &job, &lastProgressCallbackAt, &lastReportedProgress](int progress) {
+        const auto now = std::chrono::steady_clock::now();
+        if (progress < 100 && progress - lastReportedProgress < 5
+            && now - lastProgressCallbackAt < std::chrono::seconds(1))
+        {
+            return;
+        }
+        const int boundedProgress = std::clamp(progress, 0, 100);
+        (void)mJobService.updateJob(job.jobId, "RUNNING", "", "", boundedProgress);
+        lastReportedProgress = boundedProgress;
+        lastProgressCallbackAt = now;
+        enqueueProgressCallback(job, boundedProgress);
+    };
+    const auto result = processMediaJob(
+        job, mImageService, mVideoService, mAudioService, &durationSeconds, onProgress);
     if (result.success)
     {
         (void)mJobService.updateJob(job.jobId, "SUCCESS", result.value, "");
@@ -406,7 +549,11 @@ void MediaJobDispatcher::processJob(const MediaJobService::JobRecord& job)
         (void)mJobService.updateJob(job.jobId, "FAILED", "", result.message);
     }
 
+    const auto callbackStartedAt = std::chrono::steady_clock::now();
     reportCallbackGrpc(job, result, durationSeconds);
+    const auto callbackFinishedAt = std::chrono::steady_clock::now();
+    Logger::info("Media job " + job.jobId + " callbackMs="
+        + std::to_string(std::chrono::duration_cast<std::chrono::milliseconds>(callbackFinishedAt - callbackStartedAt).count()));
 
     const auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::steady_clock::now() - startedAt).count();

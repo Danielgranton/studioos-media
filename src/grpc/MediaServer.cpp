@@ -372,6 +372,7 @@ grpc::Status MediaServer::SubmitMediaJob(
     response->set_errormessage(job.errorMessage);
     response->set_createdatunixms(job.createdAtUnixMs);
     response->set_updatedatunixms(job.updatedAtUnixMs);
+    response->set_progresspercent(job.progressPercent);
     return grpc::Status::OK;
 }
 
@@ -396,6 +397,7 @@ grpc::Status MediaServer::GetMediaJob(
     response->set_errormessage(job.errorMessage);
     response->set_createdatunixms(job.createdAtUnixMs);
     response->set_updatedatunixms(job.updatedAtUnixMs);
+    response->set_progresspercent(job.progressPercent);
     return grpc::Status::OK;
 }
 

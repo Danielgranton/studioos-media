@@ -64,6 +64,14 @@ stored in `config/config.json`.
 The worker posts completed jobs back to the server at `localhost:50052` by
 default. Set `MEDIA_CALLBACK_GRPC_TARGET` when the server is running on another
 host, for example `localhost:50052` or `server:50052` in Docker.
+
+The media dispatcher uses up to 8 workers by default, capped by the detected
+CPU thread count. Set `MEDIA_WORKER_COUNT` to tune concurrent jobs (1 to 16).
+More workers can improve throughput for bursts of independent jobs, but may
+increase latency if CPU, memory, or S3 bandwidth is saturated. Job logs include
+download, transform, upload, and callback timings to identify the active bottleneck.
+Concurrent transforms for the same S3 source share a process-local cached
+download, avoiding repeated downloads of the beat master and cover.
 - `storage.s3Prefix` object prefix
 - `storage.s3UsePathStyle` path-style access toggle
 - `image.quality` output quality for image processing

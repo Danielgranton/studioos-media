@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <functional>
 
 #include "core/Result.hpp"
 #include "media/AudioProcessor.hpp"
@@ -11,13 +12,15 @@ class AudioService
 public:
     Result<std::string> encode(const std::string& path, const std::string& format);
 
-    Result<std::string> normalize(const std::string& path);
+    Result<std::string> normalize(const std::string& path, int durationSeconds = 0,
+        const std::function<void(int)>& onProgress = {});
 
     Result<std::string> denoise(const std::string& path);
 
     Result<std::string> merge(const std::vector<std::string>& paths, const std::string& outputPath);
 
-    Result<std::string> trim(const std::string& path, const std::string& start, const std::string& end);
+    Result<std::string> trim(const std::string& path, const std::string& start, const std::string& end,
+        int durationSeconds = 0, const std::function<void(int)>& onProgress = {});
 
     Result<std::string> waveform(const std::string& path);
 

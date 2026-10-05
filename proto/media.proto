@@ -200,6 +200,7 @@ message MediaJobResponse {
     int64 createdAtUnixMs = 8;
     int64 updatedAtUnixMs = 9;
     int32 durationSeconds = 10;
+    int32 progressPercent = 11;
 }
 
 message MediaJobCallbackRequest {
@@ -209,6 +210,7 @@ message MediaJobCallbackRequest {
     string resultReference = 4;
     string errorMessage = 5;
     int32 durationSeconds = 6;
+    int32 progressPercent = 7;
 }
 
 message MediaJobCallbackResponse {

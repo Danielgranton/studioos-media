@@ -3746,6 +3746,7 @@ class MediaJobResponse final :
     kCreatedAtUnixMsFieldNumber = 8,
     kUpdatedAtUnixMsFieldNumber = 9,
     kDurationSecondsFieldNumber = 10,
+    kProgressPercentFieldNumber = 11,
   };
   // string jobId = 1;
   void clear_jobid();
@@ -3872,6 +3873,15 @@ class MediaJobResponse final :
   void _internal_set_durationseconds(int32_t value);
   public:
 
+  // int32 progressPercent = 11;
+  void clear_progresspercent();
+  int32_t progresspercent() const;
+  void set_progresspercent(int32_t value);
+  private:
+  int32_t _internal_progresspercent() const;
+  void _internal_set_progresspercent(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:media.MediaJobResponse)
  private:
   class _Internal;
@@ -3890,6 +3900,7 @@ class MediaJobResponse final :
     int64_t createdatunixms_;
     int64_t updatedatunixms_;
     int32_t durationseconds_;
+    int32_t progresspercent_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4024,6 +4035,7 @@ class MediaJobCallbackRequest final :
     kResultReferenceFieldNumber = 4,
     kErrorMessageFieldNumber = 5,
     kDurationSecondsFieldNumber = 6,
+    kProgressPercentFieldNumber = 7,
   };
   // string jobId = 1;
   void clear_jobid();
@@ -4104,6 +4116,15 @@ class MediaJobCallbackRequest final :
   void _internal_set_durationseconds(int32_t value);
   public:
 
+  // int32 progressPercent = 7;
+  void clear_progresspercent();
+  int32_t progresspercent() const;
+  void set_progresspercent(int32_t value);
+  private:
+  int32_t _internal_progresspercent() const;
+  void _internal_set_progresspercent(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:media.MediaJobCallbackRequest)
  private:
   class _Internal;
@@ -4118,6 +4139,7 @@ class MediaJobCallbackRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resultreference_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
     int32_t durationseconds_;
+    int32_t progresspercent_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7830,6 +7852,26 @@ inline void MediaJobResponse::set_durationseconds(int32_t value) {
   // @@protoc_insertion_point(field_set:media.MediaJobResponse.durationSeconds)
 }
 
+// int32 progressPercent = 11;
+inline void MediaJobResponse::clear_progresspercent() {
+  _impl_.progresspercent_ = 0;
+}
+inline int32_t MediaJobResponse::_internal_progresspercent() const {
+  return _impl_.progresspercent_;
+}
+inline int32_t MediaJobResponse::progresspercent() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobResponse.progressPercent)
+  return _internal_progresspercent();
+}
+inline void MediaJobResponse::_internal_set_progresspercent(int32_t value) {
+
+  _impl_.progresspercent_ = value;
+}
+inline void MediaJobResponse::set_progresspercent(int32_t value) {
+  _internal_set_progresspercent(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobResponse.progressPercent)
+}
+
 // -------------------------------------------------------------------
 
 // MediaJobCallbackRequest
@@ -8102,6 +8144,26 @@ inline void MediaJobCallbackRequest::_internal_set_durationseconds(int32_t value
 inline void MediaJobCallbackRequest::set_durationseconds(int32_t value) {
   _internal_set_durationseconds(value);
   // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.durationSeconds)
+}
+
+// int32 progressPercent = 7;
+inline void MediaJobCallbackRequest::clear_progresspercent() {
+  _impl_.progresspercent_ = 0;
+}
+inline int32_t MediaJobCallbackRequest::_internal_progresspercent() const {
+  return _impl_.progresspercent_;
+}
+inline int32_t MediaJobCallbackRequest::progresspercent() const {
+  // @@protoc_insertion_point(field_get:media.MediaJobCallbackRequest.progressPercent)
+  return _internal_progresspercent();
+}
+inline void MediaJobCallbackRequest::_internal_set_progresspercent(int32_t value) {
+
+  _impl_.progresspercent_ = value;
+}
+inline void MediaJobCallbackRequest::set_progresspercent(int32_t value) {
+  _internal_set_progresspercent(value);
+  // @@protoc_insertion_point(field_set:media.MediaJobCallbackRequest.progressPercent)
 }
 
 // -------------------------------------------------------------------

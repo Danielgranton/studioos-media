@@ -1,6 +1,72 @@
 {
   "jobs": [
     {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg",
+      "createdAtUnixMs": 1791231140595,
+      "errorMessage": "",
+      "jobId": "job-23",
+      "operation": "image.generateThumbnail",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-23/resized_input_job-23_cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1791231163042
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
+      "createdAtUnixMs": 1789571538476,
+      "errorMessage": "",
+      "jobId": "job-6",
+      "operation": "image.convertWebp",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-6/webp_input_job-6_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg.webp",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789572100627
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "createdAtUnixMs": 1789573083072,
+      "errorMessage": "",
+      "jobId": "job-7",
+      "operation": "audio.normalize",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-7/normalized_input_job-7_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789573156490
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
+      "createdAtUnixMs": 1789571538471,
+      "errorMessage": "",
+      "jobId": "job-5",
+      "operation": "image.generateThumbnail",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-5/resized_input_job-5_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789572066523
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
+      "createdAtUnixMs": 1789571538465,
+      "errorMessage": "",
+      "jobId": "job-4",
+      "operation": "image.resize",
+      "parametersJson": "{\"width\":1000,\"height\":1000}",
+      "resultReference": "s3://studioos-files/media/processed/job-4/resized_input_job-4_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789572023327
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "createdAtUnixMs": 1789573083085,
+      "errorMessage": "",
+      "jobId": "job-8",
+      "operation": "audio.generatePreview",
+      "parametersJson": "{\"start\":\"00:00:00\",\"end\":\"00:00:30\"}",
+      "resultReference": "s3://studioos-files/media/processed/job-8/trimmed_audio_input_job-8_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789573362321
+    },
+    {
       "assetReference": "s3://studioos-files/beats/uploads/cover_ad807cdf-b673-4103-8a7b-75678fec4f12_original.jpg",
       "createdAtUnixMs": 1789897655772,
       "errorMessage": "",
@@ -10,6 +76,17 @@
       "resultReference": "s3://studioos-files/media/processed/job-17/resized_input_job-17_cover_ad807cdf-b673-4103-8a7b-75678fec4f12_original.jpg",
       "status": "SUCCESS",
       "updatedAtUnixMs": 1789897839228
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/beat_41026711-9cbc-4b14-9644-3de3204fb953_original.mp3",
+      "createdAtUnixMs": 1791231140541,
+      "errorMessage": "",
+      "jobId": "job-20",
+      "operation": "audio.generatePreview",
+      "parametersJson": "{\"start\":\"00:00:00\",\"end\":\"00:01:10\"}",
+      "resultReference": "s3://studioos-files/media/processed/job-20/trimmed_audio_input_job-20_beat_41026711-9cbc-4b14-9644-3de3204fb953_original.mp3",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1791231210425
     },
     {
       "assetReference": "s3://studioos-files/beats/uploads/cover_ad807cdf-b673-4103-8a7b-75678fec4f12_original.jpg",
@@ -23,6 +100,17 @@
       "updatedAtUnixMs": 1789897834127
     },
     {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg",
+      "createdAtUnixMs": 1791231140614,
+      "errorMessage": "",
+      "jobId": "job-24",
+      "operation": "image.convertWebp",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-24/webp_input_job-24_cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg.webp",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1791231182080
+    },
+    {
       "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
       "createdAtUnixMs": 1789897655743,
       "errorMessage": "",
@@ -32,6 +120,28 @@
       "resultReference": "s3://studioos-files/media/processed/job-15/waveform_input_job-15_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.png",
       "status": "SUCCESS",
       "updatedAtUnixMs": 1789897826619
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/beat_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.mp3",
+      "createdAtUnixMs": 1789571538455,
+      "errorMessage": "",
+      "jobId": "job-2",
+      "operation": "audio.generatePreview",
+      "parametersJson": "{\"start\":\"00:00:00\",\"end\":\"00:00:30\"}",
+      "resultReference": "s3://studioos-files/media/processed/job-2/trimmed_audio_input_job-2_beat_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.mp3",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1789571893038
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg",
+      "createdAtUnixMs": 1791231140570,
+      "errorMessage": "",
+      "jobId": "job-22",
+      "operation": "image.resize",
+      "parametersJson": "{\"width\":1000,\"height\":1000}",
+      "resultReference": "s3://studioos-files/media/processed/job-22/resized_input_job-22_cover_41026711-9cbc-4b14-9644-3de3204fb953_original.jpg",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1791231150729
     },
     {
       "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
@@ -89,15 +199,15 @@
       "updatedAtUnixMs": 1789571729127
     },
     {
-      "assetReference": "s3://studioos-files/beats/uploads/beat_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.mp3",
-      "createdAtUnixMs": 1789571538455,
+      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "createdAtUnixMs": 1789897655711,
       "errorMessage": "",
-      "jobId": "job-2",
-      "operation": "audio.generatePreview",
-      "parametersJson": "{\"start\":\"00:00:00\",\"end\":\"00:00:30\"}",
-      "resultReference": "s3://studioos-files/media/processed/job-2/trimmed_audio_input_job-2_beat_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.mp3",
+      "jobId": "job-13",
+      "operation": "audio.normalize",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-13/normalized_input_job-13_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
       "status": "SUCCESS",
-      "updatedAtUnixMs": 1789571893038
+      "updatedAtUnixMs": 1789897722495
     },
     {
       "assetReference": "s3://studioos-files/beats/uploads/cover_ad807cdf-b673-4103-8a7b-75678fec4f12_original.jpg",
@@ -111,15 +221,26 @@
       "updatedAtUnixMs": 1789897845662
     },
     {
-      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
-      "createdAtUnixMs": 1789897655711,
+      "assetReference": "s3://studioos-files/beats/uploads/beat_41026711-9cbc-4b14-9644-3de3204fb953_original.mp3",
+      "createdAtUnixMs": 1791231140554,
       "errorMessage": "",
-      "jobId": "job-13",
+      "jobId": "job-21",
+      "operation": "audio.generateWaveform",
+      "parametersJson": "{}",
+      "resultReference": "s3://studioos-files/media/processed/job-21/waveform_input_job-21_beat_41026711-9cbc-4b14-9644-3de3204fb953_original.png",
+      "status": "SUCCESS",
+      "updatedAtUnixMs": 1791231193878
+    },
+    {
+      "assetReference": "s3://studioos-files/beats/uploads/beat_41026711-9cbc-4b14-9644-3de3204fb953_original.mp3",
+      "createdAtUnixMs": 1791231140527,
+      "errorMessage": "",
+      "jobId": "job-19",
       "operation": "audio.normalize",
       "parametersJson": "{}",
-      "resultReference": "s3://studioos-files/media/processed/job-13/normalized_input_job-13_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
+      "resultReference": "s3://studioos-files/media/processed/job-19/normalized_input_job-19_beat_41026711-9cbc-4b14-9644-3de3204fb953_original.mp3",
       "status": "SUCCESS",
-      "updatedAtUnixMs": 1789897722495
+      "updatedAtUnixMs": 1791231213136
     },
     {
       "assetReference": "s3://studioos-files/beats/uploads/cover_ad807cdf-b673-4103-8a7b-75678fec4f12_original.jpg",
@@ -142,61 +263,6 @@
       "resultReference": "s3://studioos-files/media/processed/job-3/waveform_input_job-3_beat_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.png",
       "status": "SUCCESS",
       "updatedAtUnixMs": 1789572010583
-    },
-    {
-      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
-      "createdAtUnixMs": 1789573083085,
-      "errorMessage": "",
-      "jobId": "job-8",
-      "operation": "audio.generatePreview",
-      "parametersJson": "{\"start\":\"00:00:00\",\"end\":\"00:00:30\"}",
-      "resultReference": "s3://studioos-files/media/processed/job-8/trimmed_audio_input_job-8_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
-      "status": "SUCCESS",
-      "updatedAtUnixMs": 1789573362321
-    },
-    {
-      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
-      "createdAtUnixMs": 1789571538465,
-      "errorMessage": "",
-      "jobId": "job-4",
-      "operation": "image.resize",
-      "parametersJson": "{\"width\":1000,\"height\":1000}",
-      "resultReference": "s3://studioos-files/media/processed/job-4/resized_input_job-4_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
-      "status": "SUCCESS",
-      "updatedAtUnixMs": 1789572023327
-    },
-    {
-      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
-      "createdAtUnixMs": 1789571538471,
-      "errorMessage": "",
-      "jobId": "job-5",
-      "operation": "image.generateThumbnail",
-      "parametersJson": "{}",
-      "resultReference": "s3://studioos-files/media/processed/job-5/resized_input_job-5_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
-      "status": "SUCCESS",
-      "updatedAtUnixMs": 1789572066523
-    },
-    {
-      "assetReference": "s3://studioos-files/beats/uploads/beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
-      "createdAtUnixMs": 1789573083072,
-      "errorMessage": "",
-      "jobId": "job-7",
-      "operation": "audio.normalize",
-      "parametersJson": "{}",
-      "resultReference": "s3://studioos-files/media/processed/job-7/normalized_input_job-7_beat_ad807cdf-b673-4103-8a7b-75678fec4f12_original.mp3",
-      "status": "SUCCESS",
-      "updatedAtUnixMs": 1789573156490
-    },
-    {
-      "assetReference": "s3://studioos-files/beats/uploads/cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg",
-      "createdAtUnixMs": 1789571538476,
-      "errorMessage": "",
-      "jobId": "job-6",
-      "operation": "image.convertWebp",
-      "parametersJson": "{}",
-      "resultReference": "s3://studioos-files/media/processed/job-6/webp_input_job-6_cover_048dd2c8-f0bf-413a-96d3-53e2b683281c_original.jpg.webp",
-      "status": "SUCCESS",
-      "updatedAtUnixMs": 1789572100627
     }
   ]
 }

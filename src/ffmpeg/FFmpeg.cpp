@@ -15,3 +15,14 @@ bool FFmpeg::run(const std::string& args, std::string* output)
     const std::string command = "ffmpeg " + args;
     return CommandRunner::run(command, output);
 }
+
+bool FFmpeg::runWithProgress(
+    const std::string& args,
+    int durationSeconds,
+    const std::function<void(int)>& onProgress)
+{
+    return CommandRunner::runWithProgress(
+        "ffmpeg -progress pipe:1 -nostats " + args,
+        durationSeconds,
+        onProgress);
+}
