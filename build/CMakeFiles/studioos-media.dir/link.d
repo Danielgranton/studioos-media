@@ -113,7 +113,7 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so \
-  /usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so \
+  /home/linux/Documents/studioos-media/build/compat/libabsl_borrowed_fixup_buffer.so \
   /usr/lib/x86_64-linux-gnu/libabsl_hash.so \
   /usr/lib/x86_64-linux-gnu/libabsl_city.so \
   /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so \
@@ -137,63 +137,63 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so \
   /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so \
   /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260526.0.0 \
   /usr/lib/x86_64-linux-gnu/libgpr.so.29.0.0 \
   /usr/lib/x86_64-linux-gnu/libdl.a \
   /usr/lib/x86_64-linux-gnu/librt.a \
-  /usr/lib/x86_64-linux-gnu/libabsl_status.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_leak_check.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_cord.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_crc32c.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_crc_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_crc_cpu_detect.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_city.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_int128.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_status.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_leak_check.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_cord.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_city.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_crc32c.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_crc_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_crc_cpu_detect.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_int128.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_source_location.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20260526.0.0 \
   /usr/lib/gcc/x86_64-linux-gnu/15/libatomic.so \
-  /usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260526.0.0 \
   /usr/lib/x86_64-linux-gnu/libssl.so \
   /usr/lib/x86_64-linux-gnu/libcrypto.so \
   /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.10.0 \
@@ -250,8 +250,8 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libabsl_strings.so \
   /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so \
   /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_status.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_status.so.20260526.0.0 \
   /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so \
@@ -283,16 +283,15 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libabsl_cord.so \
   /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so \
   /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260526.0.0 \
   /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so \
   /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so \
   /usr/lib/x86_64-linux-gnu/libabsl_leak_check.so \
   /usr/lib/x86_64-linux-gnu/libabsl_strerror.so \
-  /usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so \
   /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so \
   /usr/lib/x86_64-linux-gnu/libabsl_int128.so \
@@ -362,10 +361,10 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so \
   /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so \
   /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260107.0.0 \
-  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260107.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260526.0.0 \
+  /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260526.0.0 \
   /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so \
   /usr/lib/x86_64-linux-gnu/libopenjph.so.0.28 \
   /usr/lib/x86_64-linux-gnu/libnettle.so.8 \
@@ -391,6 +390,9 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libicuuc.so.78 \
   /usr/lib/x86_64-linux-gnu/libyuv.so.0 \
   /usr/lib/x86_64-linux-gnu/libdav1d.so.7 \
+  /usr/lib/x86_64-linux-gnu/libgav1.so.2 \
+  /lib/x86_64-linux-gnu/libgav1.so.2 \
+  /usr/lib/x86_64-linux-gnu/libgav1.so.2 \
   /usr/lib/x86_64-linux-gnu/libgav1.so.2 \
   /usr/lib/x86_64-linux-gnu/librav1e.so.0.8 \
   /usr/lib/x86_64-linux-gnu/libSvtAv1Enc.so.4 \
@@ -439,6 +441,10 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libkrb5support.so.0 \
   /usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1 \
   /usr/lib/x86_64-linux-gnu/libicudata.so.78 \
+  /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107 \
   /usr/lib/x86_64-linux-gnu/libgpgme.so.45 \
   /usr/lib/x86_64-linux-gnu/libnssutil3.so \
   /usr/lib/x86_64-linux-gnu/libplds4.so \
@@ -451,8 +457,85 @@ studioos-media: \
   /usr/lib/x86_64-linux-gnu/libffi.so.8 \
   /usr/lib/x86_64-linux-gnu/libkeyutils.so.1 \
   /usr/lib/x86_64-linux-gnu/libresolv.so.2 \
+  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_time.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_base.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260107 \
   /usr/lib/x86_64-linux-gnu/libassuan.so.9 \
-  /usr/lib/x86_64-linux-gnu/libgpg-error.so.0
+  /usr/lib/x86_64-linux-gnu/libgpg-error.so.0 \
+  /home/linux/Documents/studioos-media/build/compat/libabsl_borrowed_fixup_buffer.so \
+  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_strings.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107 \
+  /lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107 \
+  /usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260107
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o:
 
@@ -682,7 +765,7 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so:
 
-/usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so:
+/home/linux/Documents/studioos-media/build/compat/libabsl_borrowed_fixup_buffer.so:
 
 /usr/lib/x86_64-linux-gnu/libabsl_hash.so:
 
@@ -730,11 +813,11 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260526.0.0:
 
 /usr/lib/x86_64-linux-gnu/libgpr.so.29.0.0:
 
@@ -742,107 +825,107 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/librt.a:
 
-/usr/lib/x86_64-linux-gnu/libabsl_status.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_status.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_leak_check.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_leak_check.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_cord.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_cord.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_city.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_crc32c.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_crc_cord_state.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_crc_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_crc32c.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_crc_cpu_detect.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_crc_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_crc_cpu_detect.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_city.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_int128.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_int128.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_source_location.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20260526.0.0:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libatomic.so:
 
-/usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260526.0.0:
 
 /usr/lib/x86_64-linux-gnu/libssl.so:
 
@@ -956,9 +1039,9 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_status.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_status.so.20260526.0.0:
 
 /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so:
 
@@ -1022,13 +1105,13 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_entropy_pool.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20260526.0.0:
 
 /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so:
 
@@ -1039,8 +1122,6 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 /usr/lib/x86_64-linux-gnu/libabsl_leak_check.so:
 
 /usr/lib/x86_64-linux-gnu/libabsl_strerror.so:
-
-/usr/lib/x86_64-linux-gnu/libabsl_borrowed_fixup_buffer.so:
 
 /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so:
 
@@ -1180,13 +1261,13 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20260526.0.0:
 
-/usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260107.0.0:
+/usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20260526.0.0:
 
 /usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so:
 
@@ -1237,6 +1318,12 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 /usr/lib/x86_64-linux-gnu/libyuv.so.0:
 
 /usr/lib/x86_64-linux-gnu/libdav1d.so.7:
+
+/usr/lib/x86_64-linux-gnu/libgav1.so.2:
+
+/lib/x86_64-linux-gnu/libgav1.so.2:
+
+/usr/lib/x86_64-linux-gnu/libgav1.so.2:
 
 /usr/lib/x86_64-linux-gnu/libgav1.so.2:
 
@@ -1334,6 +1421,14 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libicudata.so.78:
 
+/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20260107:
+
 /usr/lib/x86_64-linux-gnu/libgpgme.so.45:
 
 /usr/lib/x86_64-linux-gnu/libnssutil3.so:
@@ -1358,6 +1453,160 @@ CMakeFiles/studioos-media.dir/src/utils/Timer.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libresolv.so.2:
 
+/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_kernel_timeout_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_time.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_time.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_tracing_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_base.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_base.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20260107:
+
 /usr/lib/x86_64-linux-gnu/libassuan.so.9:
 
 /usr/lib/x86_64-linux-gnu/libgpg-error.so.0:
+
+/home/linux/Documents/studioos-media/build/compat/libabsl_borrowed_fixup_buffer.so:
+
+/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_strings.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_hash.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_demangle_rust.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107:
+
+/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_decode_rust_punycode.so.20260107:
+
+/usr/lib/x86_64-linux-gnu/libabsl_utf8_for_code_point.so.20260107:
